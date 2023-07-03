@@ -1,0 +1,29 @@
+.home_container{
+    width: 100%;
+    height: calc(100vh - var(--height));
+    background-color: var(--color-main);
+    display: flex;
+    padding:8px;
+}
+
+.home_system{
+    width: 60%;
+    height: 100%;
+    background-color: var(--color-item);
+    margin-right: 8px;
+    padding: 8px;
+}
+
+.home_chart{
+    width: 40%;
+    height: 100%;
+    background-color: var(--color-item);
+    margin-left: 8px;
+}
+
+.system_item{
+    width: 100%;
+    height: calc(100% / 3 - 6px);
+    background-color: var(--color-body);
+    margin-bottom: 8px;
+}
