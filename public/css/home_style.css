@@ -11,7 +11,6 @@
     margin-right: 8px;
     padding: 8px;
     border-radius: 10px;
-
 }
 
 .system_item{
@@ -109,6 +108,10 @@
     border: 1px solid var(--color-border);
     border-radius: 10px;
     overflow-y: scroll;
+}
+
+.home_chart-room h2{
+    margin-top: 8px;
 }
 
 .home_chart-room::-webkit-scrollbar{

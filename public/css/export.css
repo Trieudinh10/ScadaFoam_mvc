@@ -1,0 +1,135 @@
+.export_container{
+    width: 100%;
+    min-height: calc(100vh - var(--height));
+    background-color: var(--color-main);
+    display: flex;
+    padding:8px;
+}
+
+.container_chart{
+    width: 100%;
+    height: 100%;
+}
+
+#Baocao{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#Baocao input {
+    color: #000;
+}
+/*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
+#div_table_info {
+    background-color:#234664;
+    top: 10%; 
+    left: 40%;
+    width: 100%;
+    text-align: center;
+    text-align:center;
+    border:1px solid #a3855f;
+    overflow-y: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
+    max-height: 900px;
+ }
+
+ /*Table*/
+ #table_info {
+     border: 1px  ; 
+     background-color:  lavender;
+     width:100%;
+     text-align:center;
+ }
+ 
+ #table_info tr{
+     cursor: pointer;
+ }
+ #table_info tr:hover{background-color: #ddd;}
+ #table_info thead th { position: sticky; top: 0;  }
+ /* Just common table stuff. Really. */
+ #table_info  { border-collapse: collapse; width: 100%; }
+ #table_info th, td { padding: 8px 2px}
+ #table_info th     { background:#183853; color: #2bb892; width: 70px; border:1px solid #a3855f;}
+ #table_info td  { background:#03243f; color:#4b657b; width: 70px; border:1px solid #a3855f;}
+
+ /*Lable tìm kiếm từ*/
+#lb_Search_Start {
+    color: #3de36f;   
+    font-size: 24px; 
+    font-weight: normal;
+    left: 48%;
+     top: 5%;
+     min-width: 12%;
+     margin-right: 10px;
+}
+/*Chọn ngày tháng bắt đầu*/
+#dtpk_Search_Start {
+    text-align: left; 
+    left: 50%; 
+    top:  4%;
+    padding: 15px;
+    border: 1px solid rgb(173, 168, 168);
+    border-radius: 10px;
+    height:20px;
+}
+ 
+/*Lable tìm kiếm đến*/
+#lb_Search_End {
+    color: #d96464;  
+    font-size: 24px; 
+    font-weight: normal;
+    left:63%; 
+    top: 5%;
+    min-width: 12%;
+    margin: 0 10px;
+}
+/*Chọn ngày tháng kết thúc*/
+#dtpk_Search_End {
+    text-align: left;
+    left: 65.5%; 
+    top:  4%;
+    padding: 15px;
+    border: 1px solid rgb(173, 168, 168);
+    border-radius: 10px;
+    height:20px;
+}
+/*Nút tìm kiếm*/
+#btt_Search {
+   
+    background-color: #12cff3; 
+    color: #03243f;  
+    text-align: center; 
+    display: inline-block;
+    font-size: 11px; 
+    font-weight: bold;
+    cursor: pointer;
+    width: 130px;
+    height: 37px; 
+    left: 77%; 
+    top:  4.2%;
+    border-radius: 4px;
+}
+
+.input_item{
+    width: calc(100% / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Nút Xuaast Excel*/
+#btt_Excel {
+  border-radius: 4px;
+    background-color: rgb(14, 199, 153); 
+    color: #03243f;  
+    text-align: center; 
+    display: inline-block;
+    font-size: 11px; 
+    font-weight: bold;
+    cursor: pointer;
+    width: 130px; 
+    height: 37px; 
+    left: 84%; 
+    top:  4.2%;
+}

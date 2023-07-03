@@ -12,6 +12,15 @@ app.get('/', function(req,res)
     res.render('home');
 })
 
+app.get('/export', function(req,res)
+{
+    res.render('export');
+})
+app.get('/setting', function(req,res)
+{
+    res.render('setting');
+})
+
 if(server){
     console.log('ket noi thanh cong')
 }

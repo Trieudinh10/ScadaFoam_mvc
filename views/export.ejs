@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/export.css">
+    <title>Lưu Foam</title>
+</head>
+<body>
+    <%- include('header.ejs'); -%>
+    <div class="export_container">
+            <div class="container_chart">
+                                <div class="content">
+                    <div id="Baocao">
+                        <div class="input_item"> 
+                            <label id="lb_Search_Start">Từ:</label>
+                            <input id="dtpk_Search_Start" type="datetime-local">
+                        </div>
+                        <div class="input_item">
+                            <label id="lb_Search_End">Đến:</label>
+                            <input id="dtpk_Search_End" type="datetime-local">
+                        </div>
+                       <div class="input_item_btn">
+                        <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();
+                        "></i> TÌM KIẾM</button>
+
+                       </div>
+                         <div class="input_item_btn">
+                            <button id="btt_Excel" class="btn" onclick="fn_excel();
+                            "></i> BÁO CÁO</button>
+
+                         </div>
+                    </div>
+                          <div id = "div_table_info">
+                             <table id="table_info" >
+                                 <thead>
+                                 <tr >
+                
+                                     <th class="th_time" >Thời gian</th>
+                             
+                                     <th >Trạng Thái</th>
+                
+                                     <th >Nhiệt Độ</th>
+                
+                                     <th >Độ ẨM</th>
+                
+                                     <th >Góc Mở</th>
+                                     
+                                     <th >Tốc Độ Quạt</th>
+                                     <th >Thông Tin Lỗi/Cảnh Báo</th>
+                                 </tr>
+                                 </thead>
+                             </table>
+                           </div>
+                </div>
+
+</body>
+</html>

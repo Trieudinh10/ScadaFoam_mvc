@@ -29,6 +29,29 @@
   .header_container .menu_mobile{
     display: flex;
   }
+  #Baocao{
+    flex-wrap: wrap;
+  }
+  .input_item{
+    width: 100%;
+  }
+  #dtpk_Search_Start {
+    width: 80%;
+  }
+  #dtpk_Search_End{
+    width: 80%;
+  }
+  #lb_Search_End{
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .header_container{
+    position: fixed;
+    top: 0;
+  }
+  .home_container{
+    margin-top: var(--height);
+  }
 }
 
 @media (min-width: 768.5px) and (max-width: 1113px) {
