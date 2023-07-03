@@ -29,3 +29,7 @@ li {
 a {
   text-decoration: none;
 }
+
+canvas{
+  height: 100% !important;
+}

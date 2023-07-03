@@ -10,6 +10,10 @@
   </head>
   <body>
     <div class="header_container">
+      <input type="checkbox" id="menu_mobile-check" />
+      <label for="menu_mobile-check" class="menu_mobile">
+        <i class="fa-solid fa-bars"></i>
+      </label>
       <div class="header_logo">
         <img src="/images/cropped-logo-thaco-industries.png" alt="logo" />
       </div>
@@ -30,6 +34,30 @@
       <div class="header_title">
         <h1>Hệ Thống giám sát Foam</h1>
       </div>
+      <%- include('modal_menu.ejs'); -%>
     </div>
   </body>
+  <script>
+    const url = window.location.pathname; // lấy đường dẫn đầy đủ
+    const tachchuoi = url.split("/"); // tách đường dẫn thành các đoạn
+    const value = tachchuoi[1]; // lấy giá trị ở đoạn thứ 2
+    const href = document.querySelectorAll(".header_menu a li");
+    if (value == "") {
+      href[0].classList.add("active");
+    } else if (value == "setting") {
+      href[1].classList.add("active");
+    } else if (value == "export") {
+      href[2].classList.add("active");
+    } else {
+      href[3].classList.add("active");
+    }
+    const screen = () => {
+      const screenWidth = document.documentElement.clientWidth;
+      if (screenWidth >= 767.5) {
+        const checkbox = document.getElementById("menu_mobile-check");
+        checkbox.checked = false;
+      }
+    };
+    setInterval(screen, 100);
+  </script>
 </html>

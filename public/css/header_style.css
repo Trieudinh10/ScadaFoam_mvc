@@ -50,3 +50,44 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.active{
+    animation: animation_link 1s linear infinite;
+}
+
+@keyframes animation_link {
+    from{
+    color: var(--color-border);
+        
+    }
+    to{
+        color: var(--color-yellow);
+    }
+}
+
+.menu_mobile{
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    display: none;
+    height: 100%;
+    position: relative;
+}
+
+.menu_mobile::before{
+    content: "\f0c9";
+    position: absolute;
+    top: 50%;
+    font-family: "fontawesome";
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#menu_mobile-check{
+    display: none;
+}
+
+#menu_mobile-check:checked ~ .modal{
+    display: block;
+}
