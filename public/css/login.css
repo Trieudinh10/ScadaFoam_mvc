@@ -1,0 +1,104 @@
+.login_container{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-body);
+    display: flex
+}
+
+.login_body{
+    width: 40%;
+    height: 50%;
+    background-color: var(--color-item);
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+.login_body h2{
+    margin: 16px 0;
+    text-align: center;
+    color: var(--color-skyblue);
+}
+
+.login_block{
+    padding: 32px;
+    height: 80%;
+}
+
+.login_btn{
+    background-color: var(--color-main);
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.login_user{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.login_user label {
+    font-size: 32px;
+    margin-right: 20px;
+    min-width: 150px;
+    display: inline-block;
+}
+
+.login_user input{
+    width: 50%;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    color: #000;
+}
+
+.login_password{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.login_password label {
+    font-size: 32px;
+    margin-right: 20px;
+    min-width: 150px;
+    display: inline-block;
+}
+
+.login_password input{
+    width: 50%;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    color: #000;
+}
+
+.btn_submit{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submitBtn{
+    width: 50%;
+    height: 30px;
+    background-color: var(--color-skyblue);
+    text-align: center;
+    margin-top:16px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+#submitBtn:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+

@@ -43,8 +43,19 @@
     align-items: center;
 }
 
-.system_item-air h2{
+.item_air-status h2{
     min-width: 125px;
+    background-color: var(--color-item);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.item_air-tem h2{
+    min-width: 125px;
+    background-color: var(--color-item);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
 }
 
 .item_air-tem{
@@ -135,4 +146,11 @@
 .footer h2{
     text-align: center;
     color: var(--color-main);
+}
+
+.item_air-data{
+    flex: 1;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
 }

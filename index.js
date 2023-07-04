@@ -7,6 +7,9 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 server.listen(8080)
 
+
+
+
 app.get('/', function(req,res)
 {
     res.render('home');
@@ -19,6 +22,21 @@ app.get('/export', function(req,res)
 app.get('/setting', function(req,res)
 {
     res.render('setting');
+})
+
+app.get('/energy', function(req,res)
+{
+    res.render('energy');
+})
+
+app.get('/operate', function(req,res)
+{
+    res.render('operate');
+})
+
+app.get('/login', function(req,res)
+{
+    res.render('login');
 })
 
 if(server){

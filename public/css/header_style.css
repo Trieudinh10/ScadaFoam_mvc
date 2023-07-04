@@ -37,18 +37,20 @@
 }
 
 .header_title{
-    width: 15%;
+    width: 20%;
     height: 100%;
-    text-align: center;
 }
 
-.header_title h1{
+.header_title h3{
     width: 100%;
     height: 100%;
     padding:0 8px;
     background: -webkit-linear-gradient(var(--color-green),var(--color-skyblue),var(--color-green),var(--color-skyblue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .active{

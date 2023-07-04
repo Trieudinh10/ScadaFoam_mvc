@@ -21,19 +21,23 @@
       <div class="header_menu">
         <ul>
           <a href="http://localhost:8080"><li>Foam</li></a>
-          <a href="http://localhost:8080/setting">
-            <li>Cài đặt</li>
-          </a>
+          
           <a href="http://localhost:8080/export">
             <li>Trích xuất</li>
           </a>
-          <a href="">
+          <a href="http://localhost:8080/energy">
             <li>điện năng</li>
+          </a>
+          <a href="http://localhost:8080/setting">
+            <li>Cài đặt</li>
+          </a>
+          <a href="http://localhost:8080/operate">
+            <li>Vận Hành</li>
           </a>
         </ul>
       </div>
       <div class="header_title">
-        <h1>Hệ Thống Giám Sát Foam</h1>
+        <h3>PHÒNG SẢN XUẤT VÀ LƯU TRỮ FOAM</h3>
       </div>
       <%- include('modal_menu.ejs'); -%>
     </div>
@@ -45,12 +49,16 @@
     const href = document.querySelectorAll(".header_menu a li");
     if (value == "") {
       href[0].classList.add("active");
-    } else if (value == "setting") {
+    } else if (value ==  "export") {
       href[1].classList.add("active");
-    } else if (value == "export") {
-      href[2].classList.add("active");
-    } else {
+    } else if (value == "setting") {
       href[3].classList.add("active");
+    } 
+    else if(value === "energy"){
+      href[2].classList.add("active");
+    }
+    else{
+      href[4].classList.add("active");
     }
     const screen = () => {
       const screenWidth = document.documentElement.clientWidth;
