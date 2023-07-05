@@ -21,7 +21,7 @@
       <div class="header_menu">
         <ul>
           <a href="http://localhost:8080"><li>Foam</li></a>
-          
+
           <a href="http://localhost:8080/export">
             <li>Trích xuất</li>
           </a>
@@ -34,6 +34,7 @@
           <a href="http://localhost:8080/operate">
             <li>Vận Hành</li>
           </a>
+          <a><li class="icon_logout"></li></a>
         </ul>
       </div>
       <div class="header_title">
@@ -47,17 +48,16 @@
     const tachchuoi = url.split("/"); // tách đường dẫn thành các đoạn
     const value = tachchuoi[1]; // lấy giá trị ở đoạn thứ 2
     const href = document.querySelectorAll(".header_menu a li");
+    const logout = document.querySelector(".icon_logout");
     if (value == "") {
       href[0].classList.add("active");
-    } else if (value ==  "export") {
+    } else if (value == "export") {
       href[1].classList.add("active");
     } else if (value == "setting") {
       href[3].classList.add("active");
-    } 
-    else if(value === "energy"){
+    } else if (value === "energy") {
       href[2].classList.add("active");
-    }
-    else{
+    } else {
       href[4].classList.add("active");
     }
     const screen = () => {
@@ -68,5 +68,27 @@
       }
     };
     setInterval(screen, 100);
+    var logoutBtn = document.querySelector(".icon_logout");
+    logoutBtn.addEventListener("click", function () {
+      document.cookie =
+        "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      window.location.href = "http://localhost:8080/login";
+    });
+    function checkLoggedIn() {
+      var cookieValue = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("loggedIn="));
+      if (cookieValue) {
+        var loggedIn = cookieValue.split("=")[1];
+        if (loggedIn === "true") {
+          console.log("Người dùng đã đăng nhập.");
+        } else {
+          logout.style.display = "none";
+        }
+      } else {
+        logout.style.display = "none";
+      }
+    }
+    checkLoggedIn();
   </script>
 </html>

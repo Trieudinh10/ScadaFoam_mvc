@@ -22,7 +22,18 @@
         <a href="http://localhost:8080/operate">
           <li>Vận Hành</li>
         </a>
+        <a>
+          <li class="icon_logout-modal">LogOut<div class="icon_modal"></div></li>
+        </a>
       </ul>
     </div>
   </body>
+  <script>
+    var logoutBtn = document.querySelector(".icon_logout-modal");
+    logoutBtn.addEventListener("click", function () {
+      document.cookie =
+        "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.href = "http://localhost:8080/login";
+    });
+  </script>
 </html>

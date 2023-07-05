@@ -1,36 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/energy.css" />
     <title>Scada Foam</title>
-</head>
-<body>
+    <script src="js/home.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/code.jscharting.com_latest_jscharting.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jscharting.com/latest/modules/types.js"
+    ></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="/js/canvasjs.min.js"></script>
+    <script src="/js/chart_min.js"></script>
+  </head>
+  <script>
+    var socket = io(document.location.host);
+  </script>
+  <body>
     <%- include('header.ejs'); -%>
     <div class="energy_container">
-        <div class="energy_watch">
-            <div class="energy_watch-item">
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-            </div>
-            <div class="energy_watch-item">
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-            </div>
-            <div class="energy_watch-item">
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-                <div class="watch_item"></div>
-            </div>
+      <div class="energy_watch">
+        <div class="energy_watch-item">
+          <div class="watch_item">
+            <div id="gauge_L1_lines"></div>
+            <p class="infogauge">Line L1-L2</p>
+          </div>
+          <script>
+            gauge_temp_1("gauge_L1_lines", "L1_line");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L2_lines"></div>
+            <p class="infogauge">Line L2-L3</p>
+          </div>
+          <script>
+            gauge_temp_1("gauge_L2_lines", "L2_line");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L3_lines"></div>
+            <p class="infogauge">Line L3-L1</p>
+          </div>
+          <script>
+            gauge_temp_1("gauge_L3_lines", "L3_line");
+          </script>
         </div>
-        <div class="energy_chart">
-            <div class="chart_item"></div>
-            <div class="chart_item"></div>
-            <div class="chart_item"></div>
+        <div class="energy_watch-item">
+          <div class="watch_item">
+            <div id="gauge_L1_phases"></div>
+            <p class="infogauge">Phase L1</p>
+          </div>
+          <script>
+            gauge_temp_2("gauge_L1_phases", "L1_phase");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L2_phases"></div>
+            <p class="infogauge">Phase L2</p>
+          </div>
+          <script>
+            gauge_temp_2("gauge_L2_phases", "L2_phase");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L3_phases"></div>
+            <p class="infogauge">Phase L3</p>
+          </div>
+          <script>
+            gauge_temp_2("gauge_L3_phases", "L3_phase");
+          </script>
         </div>
+        <div class="energy_watch-item">
+          <div class="watch_item">
+            <div id="gauge_L1_phases_cr"></div>
+            <p class="infogauge">Current L1</p>
+          </div>
+          <script>
+            gauge_temp_3("gauge_L1_phases_cr", "L1_phase_cr", "A");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L2_phases_cr"></div>
+            <p class="infogauge">Current L2</p>
+          </div>
+          <script>
+            gauge_temp_3("gauge_L2_phases_cr", "L2_phase_cr");
+          </script>
+          <div class="watch_item">
+            <div id="gauge_L3_phases_cr"></div>
+            <p class="infogauge">Current L3</p>
+          </div>
+          <script>
+            gauge_temp_3("gauge_L3_phases_cr", "L3_phase_cr");
+          </script>
+        </div>
+      </div>
+      <div class="energy_chart">
+        <div class="chart_item">
+          <canvas id="chartLine"></canvas>
+          <script src="js/chart_line.js"></script>
+        </div>
+        <div class="chart_item">
+          <canvas id="chartPhase"></canvas>
+          <script src="js/chart_phase.js"></script>
+        </div>
+        <div class="chart_item">
+          <canvas id="chartCurrent"></canvas>
+          <script src="js/current_chart.js"></script>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

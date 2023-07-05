@@ -29,3 +29,25 @@
     padding-left: 8px;
 }
 
+.icon_logout-modal{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+}
+
+.icon_modal{
+    width: 50px;
+    height: 100%;
+    position: relative;
+}
+
+.icon_modal::before{
+    content: '\f08b';
+    position: absolute;
+    font-family: 'fontawesome';
+    font-size: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}

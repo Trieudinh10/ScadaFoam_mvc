@@ -1,33 +1,38 @@
 .login_container{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--color-body);
     display: flex
 }
 
 .login_body{
     width: 40%;
-    height: 50%;
     background-color: var(--color-item);
     margin: auto;
     border-radius: 10px;
     border: 1px solid var(--color-border);
+    padding: 16px;
+    text-align: center;
 }
 
 .login_body h2{
     margin: 16px 0;
     text-align: center;
     color: var(--color-skyblue);
+    text-transform: uppercase;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login_block{
-    padding: 32px;
+    padding: 16px;
     height: 80%;
 }
 
 .login_btn{
     background-color: var(--color-main);
-    height: 100%;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -36,11 +41,34 @@
     border-radius: 10px;
 }
 
+.btn_home{
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: relative;
+}
+
+.btn_home:hover{
+    opacity: 0.8;
+}
+
+.btn_home::before{
+    content: '\f015';
+    position: absolute;
+    font-family: 'fontawesome';
+    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
 .login_user{
     width: 100%;
     height: 20%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .login_user label {
@@ -63,6 +91,7 @@
     height: 20%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .login_password label {
@@ -88,7 +117,7 @@
 }
 
 #submitBtn{
-    width: 50%;
+    width: 25%;
     height: 30px;
     background-color: var(--color-skyblue);
     text-align: center;
@@ -102,3 +131,6 @@
     cursor: pointer;
 }
 
+.login_body img{
+    width: 30%;
+}

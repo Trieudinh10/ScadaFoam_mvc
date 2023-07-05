@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 795px) {
   .home_container {
     flex-wrap: wrap;
   }
@@ -32,6 +32,7 @@
   .header_container{
     position: fixed;
     top: 0;
+    z-index: 10;
   }
   .home_container{
     margin-top: var(--height);
@@ -50,9 +51,44 @@
   .setting_container{
     margin-top: var(--height);
   }
+  .login_body{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .login_user{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .login_user input{
+    width: 100%;
+  }
+  .login_password{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .login_password input{
+    width: 100%;
+  }
+  #submitBtn{
+    width: 100%;
+  }
+  .energy_container{
+    height: auto;
+    flex-wrap: wrap;
+    max-height: none;
+    margin-top: var(--height);
+  }
+  .energy_watch{
+    width: 100%;
+    margin-right: 0;
+  }
+  .energy_chart{
+    width: 100%;
+  }
 }
 
-@media (min-width: 768.5px) and (max-width: 1310px) {
+@media (min-width: 795.5px) and (max-width: 1310px) {
   .home_container {
     flex-wrap: wrap;
   }

@@ -37,7 +37,7 @@
 }
 
 .header_title{
-    width: 20%;
+    width: 23%;
     height: 100%;
 }
 
@@ -50,7 +50,7 @@
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .active{
@@ -92,4 +92,23 @@
 
 #menu_mobile-check:checked ~ .modal{
     display: block;
+}
+
+.icon_logout{
+    width: 30px;
+    height: 100%;
+    position: relative;
+}
+
+.icon_logout::after{
+    content: "\f08b";
+    position: absolute;
+    top: 50%;
+    font-family: "fontawesome";
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.icon_logout:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }

@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login_container">
-        <div class="login_body">
-            <h2>Login Lưu Trữ FOAM</h2>
-            <div class="login_block">
-             <div class="login_btn">
-                <div class="login_user">
-                    <label>Tài Khoản</label><input id="username" type="text" placeholder="tài khoản" />
-                </div>
-                <div class="login_password">
-                    <label>Mật Khẩu</label><input id="password" type="password" placeholder="mật khẩu"/>
-                </div>
-                <div class="btn_submit">
-                    <button id="submitBtn">Đăng nhập</button>
-                </div>
-             </div>
+      <div class="login_body">
+        <img src="/images/cropped-logo-thaco-industries.png" alt="logo" />
+        <div class="login_block">
+          <div class="login_btn">
+            <h2>Đăng nhập <a href="/" class="btn_home"></a></h2>
+            <div class="login_user">
+              <label>Tài Khoản</label
+              ><input id="username" type="text" placeholder="tài khoản" />
             </div>
+            <div class="login_password">
+              <label>Mật Khẩu</label
+              ><input id="password" type="password" placeholder="mật khẩu" />
+            </div>
+            <div class="btn_submit">
+              <button id="submitBtn">Đăng nhập</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <script src="js/check_login.js"></script>
-</body>
+    <script>
+      document.onkeyup = (e) => {
+        switch (e.which) {
+          case 13:
+            login();
+            break;
+        }
+      };  
+      console.log(document.cookie)
+    </script>
+  </body>
 </html>
