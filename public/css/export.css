@@ -2,7 +2,7 @@
     width: 100%;
     min-height: calc(100vh - var(--height));
     background-color: var(--color-main);
-    padding-top:8px ;
+    padding: 8px;
 }
 
 .container_chart{
@@ -68,6 +68,7 @@
  #table_info tr{
      cursor: pointer;
  }
+ table {border-collapse: collapse}
  #table_info tr:hover{background-color: #ddd;}
  #table_info thead th { position: sticky; top: 0;  }
  /* Just common table stuff. Really. */

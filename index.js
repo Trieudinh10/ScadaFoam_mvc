@@ -39,6 +39,11 @@ app.get('/login', function(req,res)
     res.render('login');
 })
 
+app.get('/manual', function(req,res)
+{
+    res.render('manual');
+})
+
 if(server){
     console.log('ket noi thanh cong port: 8080')
 }
