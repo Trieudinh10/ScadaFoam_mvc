@@ -5,21 +5,8 @@ function myTimer()
 }
 
  // Chương trình con đọc dữ liệu lên IO Field
- function fn_IOFieldDataShow(tag, IOField, tofix,content,unit){
-    socket.on(tag,function(data){
-        if(tofix == 0){
-            document.getElementById(IOField).innerText = data;
-        } else{
-        document.getElementById(IOField).innerText  = content+data.toFixed(tofix)+unit;
-        }
-    });
-}
-
-
 function gauge_temp_1(idg,data_pre) {
     var  value_gauge=0;
-   
-    
        socket.on(data_pre, function (data)
         { 
    
@@ -142,9 +129,9 @@ function gauge_temp_1(idg,data_pre) {
             customTicks: [160, 200, 240, 280],
             line: {
               width: 5,
-              /*Defining the option will enable it.*/
+
               breaks: {},   
-              /*Palette is defined at series level with an ID referenced here.*/
+
               color: 'smartPalette:pal1'
             },
             scale_range: [160, 280]
@@ -214,9 +201,6 @@ function gauge_temp_1(idg,data_pre) {
         
          var a =value_gauge.toFixed(1);
          value_gauge=parseFloat(a);
-        //  console.log(value_gauge);
-         
-  
         });
     var chart = JSC.chart(idg, 
   
@@ -287,4 +271,3 @@ function gauge_temp_1(idg,data_pre) {
           }); 
         }, 500);  
   }
-  

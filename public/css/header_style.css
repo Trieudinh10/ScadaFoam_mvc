@@ -21,7 +21,9 @@
     flex: 1;
     height: 100%;
 }
-
+.header_menu a:active{
+    opacity: 0.8;
+}
 .header_menu ul{
     display: flex;
     align-items: center;

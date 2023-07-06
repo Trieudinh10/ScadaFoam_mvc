@@ -6,9 +6,13 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/css/home_style.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
+    <script src="socket.io/socket.io.js"></script>
     <script src="/js/chart_min.js"></script>
     <title>Lưu Foam</title>
   </head>
+  <script>
+    var socket = io(document.location.host);
+  </script>
   <body>
     <%- include('header.ejs'); -%>
     <div class="home_container">
@@ -143,19 +147,6 @@
           <script src="js/chart_room.js"></script>
         </div>
       </div>
-      <div class="home_chart">
-        <div class="home_chart-tem">
-          <h2>Biểu Đồ Góc Mở</h2>
-          <canvas id="chartDeg"></canvas>
-          <script src="js/chart_deg.js"></script>
-        </div>
-        <div class="home_chart-room">
-          <h2>Biểu Đồ Tốc Độ GiÓ</h2>
-          <canvas id="chartSpeed"></canvas>
-          <script src="js/chart_speed.js"></script>
-        </div>
-      </div>
     </div>
   </body>
-
 </html>

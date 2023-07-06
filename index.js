@@ -40,7 +40,7 @@ app.get('/login', function(req,res)
 })
 
 if(server){
-    console.log('ket noi thanh cong')
+    console.log('ket noi thanh cong port: 8080')
 }
 else{
     console.log('loi')
@@ -59,7 +59,7 @@ const Modbus2 = require('modbus-serial');
 const client2 = new Modbus2();
 
 // Thiết lập kết nối TCP/IP đến thiết bị Modbus
-client2.connectTCP("10.14.12.240", { port:502 })
+client2.connectTCP("10.14.84.3", { port:502 })
     .then(setClient)
     .then(function() {
         console.log("Connected"); })
@@ -130,3 +130,23 @@ function run() {
             console.log(e.message);
         })
 }
+
+io.on("connection", function(socket){
+    socket.on("Client-send-data", function(data){
+    socket.emit("L1_line",dataArrip[9]*0.1);
+    socket.emit("L2_line",dataArrip[11]*0.1);
+    socket.emit("L3_line",dataArrip[13]*0.1);
+    socket.emit("L1_phase",dataArrip[15]*0.1);
+    socket.emit("L2_phase",dataArrip[17]*0.1);
+    socket.emit("L3_phase",dataArrip[19]*0.1);
+    socket.emit("L1_phase_cr",dataArrip[1]*0.001);
+    socket.emit("L2_phase_cr",dataArrip[3]*0.001);
+    socket.emit("L3_phase_cr",dataArrip[5]*0.001);
+    socket.emit("L1_power",dataArrip[21]);
+    socket.emit("L2_power",dataArrip[23]);
+    socket.emit("L3_power",dataArrip[25]);
+    socket.emit("Total_Energy",data_total_4byte*0.001);
+    var a =dataArrip[21]+dataArrip[23]+dataArrip[25];
+    socket.emit("Total_power",a);
+    console.log("giá trị la:" +data);      
+});});

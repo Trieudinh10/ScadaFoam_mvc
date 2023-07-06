@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     border-radius: 0;
     margin: 0;
+    overflow-y: unset;
   }
   .system_item {
     width: 100%;
@@ -16,75 +17,98 @@
     width: 100%;
     margin: 0;
     border-radius: 0;
+    padding: 8px 0 0 0;
   }
   .header_title {
     display: none;
   }
-  .header_menu{
+  .header_menu {
     display: none;
   }
   .header_container .header_logo {
     width: 60%;
   }
-  .header_container .menu_mobile{
+  .header_container .menu_mobile {
     display: flex;
   }
-  .header_container{
+  .header_container {
     position: fixed;
     top: 0;
     z-index: 10;
   }
-  .home_container{
+  .home_container {
     margin-top: var(--height);
+    padding: 0;
   }
-  .item_air-tem h2{
+  .system_item {
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .home_system {
+    padding: 0;
+  }
+  .item_air-tem h2 {
     border: none;
     background-color: transparent;
+    margin-bottom: 8px;
   }
-  .item_air-data{
-    width: 100%;
+  .item_air-data {
     flex: none;
   }
-  .export_container{
+  .export_container {
     margin-top: var(--height);
   }
-  .setting_container{
+  .setting_container {
     margin-top: var(--height);
   }
-  .login_body{
+  .login_body {
     width: 100%;
     height: 100%;
     border-radius: 0;
   }
-  .login_user{
+  .login_user {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-  .login_user input{
+  .login_user input {
     width: 100%;
   }
-  .login_password{
+  .login_password {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-  .login_password input{
+  .login_password input {
     width: 100%;
   }
-  #submitBtn{
+  #submitBtn {
     width: 100%;
   }
-  .energy_container{
+  .energy_container {
     height: auto;
     flex-wrap: wrap;
     max-height: none;
     margin-top: var(--height);
   }
-  .energy_watch{
+  .energy_watch {
     width: 100%;
     margin-right: 0;
   }
-  .energy_chart{
+  .energy_chart {
     width: 100%;
+  }
+  .item_air-data label {
+    min-width: none;
+  }
+  .system_item-air {
+    border-radius: 0;
+  }
+  .home_chart-tem,
+  .home_chart-room,
+  .home_chart {
+    border-radius: 0px;
+  }
+  .item_air-tem input{
+    margin: 0;
   }
 }
 
@@ -95,9 +119,9 @@
   .home_system {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     border-radius: 0;
     margin: 0;
+    flex-wrap: wrap;
   }
   .system_item {
     width: 50%;
@@ -113,7 +137,7 @@
   .header_container .header_logo {
     width: 25%;
   }
-  .item_air-tem h2{
+  .item_air-tem h2 {
     border: none;
   }
 }
@@ -125,9 +149,9 @@
   .home_system {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     border-radius: 0;
     margin: 0;
+    flex-wrap: nowrap;
   }
   .system_item {
     width: 50%;
@@ -137,7 +161,7 @@
     margin: 0;
     border-radius: 0;
   }
-  .header_title{
+  .header_title {
     width: 30%;
   }
 }

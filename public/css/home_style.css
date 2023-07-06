@@ -1,6 +1,6 @@
 .home_container{
     width: 100%;
-    min-height: calc(100vh - var(--height));
+    height: calc(100vh - var(--height));
     background-color: var(--color-main);
     display: flex;
     padding:8px;
@@ -11,11 +11,21 @@
     margin-right: 8px;
     padding: 8px;
     border-radius: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home_system::-webkit-scrollbar{
+    width: 8px;
+}
+.home_system::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
 }
 
 .system_item{
     width: 100%;
-    min-height: calc(100% / 3);
     display: flex;
     padding: 8px;
 }
@@ -66,20 +76,15 @@
 }
 
 .item_air-tem input{
-    width: 100px;
-    height: 35px;
-    margin-right: 8px;
+    width: 90px;
+    height: 30px;
     border-radius: 5px;
     background-color: var(--color-item);
     border: 1px solid var(--color-border);
-}
-
-.item_air-tem label{
-    margin-right:8px ;
-
+    margin-right: 8px;
 }
 .home_chart{
-    width: 35%;
+    flex: 1;
     min-height: 100%;
     background-color: var(--color-item);
     margin-left: 8px;
@@ -123,6 +128,7 @@
 
 .home_chart-room h2{
     margin-top: 8px;
+    text-transform: uppercase;
 }
 
 .home_chart-room::-webkit-scrollbar{
@@ -152,5 +158,12 @@
     flex: 1;
     display:flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+}
+
+.item_air-data label{
+    margin-right: 8px;
+    display: inline-block;
+    font-size: 20px;
+    min-width: 72.5px;
 }

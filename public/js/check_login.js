@@ -10,7 +10,6 @@ function login() {
         if (username === i.user && password === i.pass) {
           found = true; 
           document.cookie = "loggedIn=true; path=/";
-
           window.location.href = "http://localhost:8080/setting";
         }
       });

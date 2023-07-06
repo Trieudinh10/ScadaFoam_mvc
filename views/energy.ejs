@@ -16,6 +16,8 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="/js/canvasjs.min.js"></script>
     <script src="/js/chart_min.js"></script>
+    <script src="js/chart_line.js"></script>
+
   </head>
   <script>
     var socket = io(document.location.host);
@@ -97,7 +99,7 @@
       <div class="energy_chart">
         <div class="chart_item">
           <canvas id="chartLine"></canvas>
-          <script src="js/chart_line.js"></script>
+          <script>chart_line('chartLine','L1_line','L2_line','L3_line','Line 1','Line 2','Line 3')</script>
         </div>
         <div class="chart_item">
           <canvas id="chartPhase"></canvas>
