@@ -11,7 +11,7 @@ const chart_line = (id, data1, data2, data3, Label_1, Label_2, Label_3) => {
     datasets: [
       {
         label: Label_1,
-        data: [23, 28, 20, 19, 30, 23, 28, 20, 19, 30],
+        data: [0, 30, 20, 19, 30, 23, 28, 20, 19, 30],
         fill: false,
         borderColor: "rgb(75, 192, 192)",
         tension: 0.1,
