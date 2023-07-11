@@ -19,9 +19,9 @@ app.get('/export', function(req,res)
 {
     res.render('export');
 })
-app.get('/setting', function(req,res)
+app.get('/auto', function(req,res)
 {
-    res.render('setting');
+    res.render('auto');
 })
 
 app.get('/energy', function(req,res)
@@ -29,9 +29,9 @@ app.get('/energy', function(req,res)
     res.render('energy');
 })
 
-app.get('/operate', function(req,res)
+app.get('/manual', function(req,res)
 {
-    res.render('operate');
+    res.render('manual');
 })
 
 app.get('/login', function(req,res)
@@ -39,9 +39,9 @@ app.get('/login', function(req,res)
     res.render('login');
 })
 
-app.get('/manual', function(req,res)
+app.get('/huongdan', function(req,res)
 {
-    res.render('manual');
+    res.render('huongdan');
 })
 
 if(server){

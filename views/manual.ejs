@@ -3,85 +3,197 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/manual.css" />
+    <link rel="stylesheet" href="/css/manual.css" />
     <title>Scada Foam</title>
   </head>
+  <script src="js/login.js"></script>
   <body>
     <%- include('header.ejs'); -%>
-    <div class="manual_container">
-      <div class="menu_manual">
-        <nav>
-          <ul>
-            <a href="#home">
-              <li>Trang Chủ</li>
-            </a>
-            <a href="#header">
-              <li>Header</li>
-            </a>
-            <a href="#export">
-              <li>Trích Xuất</li>
-            </a>
-            <a href="#energy">
-              <li>Điện Năng</li>
-            </a>
-            <a href="#login">
-              <li>Đăng nhập</li>
-            </a>
-            <a href="#setting">
-              <li>Cài Đặt</li>
-            </a>
-            <a href="#operate">
-              <li>Vận Hành</li>
-            </a>
-          </ul>
-        </nav>
-      </div>
-      <div class="manual_body">
-        <h2 id="home">Trang Chủ</h2>
-        <p>
-          Đây sẽ là trang đầu tiên hiện lên khi đăng nhập vào hệ thống<br />
-          * Trang này bao gồm: <br />
-          - Thống số của 3 điều hòa. <br />
-          - Biểu đồ nhiệt độ và biểu đồ thông số phòng.
-        </p>
-        <img src="images/home.png" alt="img home FOAM" />
-        <h2 id="header">Header</h2>
-        <p>
-          Môi trang đều có cấu trúc tương tự nhau gồm 2 phần
-          <strong>HEADER(Phần đầu của trang)</strong> và
-          <strong>phần nội dung trang</strong><br />
-          Dưới đây là phần header. Header có 2 loại: <br />
-          1.Header khi không có đăng nhập:
-        </p>
-        <img src="images/header_NaN.png" alt="header no login" />
-        <p>2.Header khi có đăng nhập</p>
-        <img src="images/header.png" alt="header" />
-        <h2 id="export">Trích Xuất</h2>
-        <p>Đây là giao diện hệ thống <strong>Trích Xuất Dữ Liệu</strong></p>
-        <img src="images/export.png" alt="export" />
-        <h2 id="energy">Điện Năng</h2>
-        <p>Đây là giao diện hệ thống <strong>Giám Sát Điện</strong></p>
-        <img src="images/energy.png" alt="energy" />
-        <h2 id="login">Đăng Nhập</h2>
-        <p>
-          Khi vào trang cài đặt và vận hành giao diện
-          <strong>Đăng Nhập</strong> sẽ hiện lên. <br />Đây là giao diện
-          <strong>Đăng Nhập</strong>:
-        </p>
-        <img src="images/login.png" alt="login">
-        <h2 id="setting">Cài Đặt</h2>
-        <p>Đây là giao diện hệ thống <strong>Cài Đặt</strong></p>
-        <img src="images/setting.png" alt="">
-        <h2 id="operate">Vận Hành</h2>
-        <p>Đây là giao diện hệ thống <strong>Vận Hành</strong><br>
-        *Hệ thống vận hành chia làm 2 trang: <br>
-        - Vận hành thủ công:
-        <img src="images/opreate_1.png" alt="operate manual">
-        -vận hành tự động:
-        <img src="images/operate_2.png" alt="operate auto">
-      </p>
+    <div class="operate_container">
+      <div class="operate_manual">
+        <div class="operate_manual-body">
+          <h2>Chế độ thủ công</h2>
+          <div class="operate_manual-item">
+            <div class="operate_item-title">
+              <h2>điều hòa 1</h2>
+            </div>
+            <div class="operate_item-status">
+              <h2>trạng thái</h2>
+              <div class="operate_status-btn">
+                <div class="btn_on active_btn">on</div>
+                <div class="btn_off">off</div>
+              </div>
+            </div>
+            <div class="operate_item-content">
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label><input type="text" />
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>góc mở</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>tốc độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+            </div>
+          </div>
+          <div class="operate_manual-item">
+            <div class="operate_item-title">
+              <h2>điều hòa 2</h2>
+            </div>
+            <div class="operate_item-status">
+              <h2>trạng thái</h2>
+              <div class="operate_status-btn">
+                <div class="btn_on active_btn">on</div>
+                <div class="btn_off">off</div>
+              </div>
+            </div>
+            <div class="operate_item-content">
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label><input type="text" />
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>góc mở</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>tốc độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+            </div>
+          </div>
+          <div class="operate_manual-item">
+            <div class="operate_item-title">
+              <h2>điều hòa 3</h2>
+            </div>
+            <div class="operate_item-status">
+              <h2>trạng thái</h2>
+              <div class="operate_status-btn">
+                <div class="btn_on active_btn">on</div>
+                <div class="btn_off">off</div>
+              </div>
+            </div>
+            <div class="operate_item-content">
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label><input type="text" />
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>góc mở</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+              <div class="item_air-tem">
+                <h2>tốc độ</h2>
+                <div class="item_air-data">
+                  <label for="">Cài Đặt</label
+                  ><select name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="btn_submit">Áp Dụng</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+    $ = document.querySelector.bind(document);
+    $$ = document.querySelectorAll.bind(document);
+
+    const container = $(".operate_container");
+    const containerManual = $(".operate_manual");
+    const containerAuto = $(".operate_auto");
+    const btnExit = $(".btn-exit");
+    const bodyManual = $(".operate_manual-body");
+    const bodyAuto = $(".operate_auto-body");
+
+    const listBlock = $$(".operate_item-content");
+    const listBtnOn = $$(".btn_on");
+    const listBtnOff = $$(".btn_off");
+
+    const statusBlock = $$(".operate_item-status");
+
+    listBtnOn.forEach((e, index) => {
+      e.onclick = function () {
+        this.classList.remove("active_btn");
+        listBtnOff[index].classList.add("active_btn");
+      };
+    });
+    listBtnOff.forEach((e, index) => {
+      e.onclick = function () {
+        this.classList.remove("active_btn");
+        listBtnOn[index].classList.add("active_btn");
+      };
+    });
+
+  </script>
 </html>

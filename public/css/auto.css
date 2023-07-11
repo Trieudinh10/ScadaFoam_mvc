@@ -1,6 +1,6 @@
 .setting_container{
     width: 100%;
-    height: calc(100vh - var(--height));
+    min-height: calc(100vh - var(--height));
     background-color: var(--color-main);
     display: flex;
     padding:8px;
