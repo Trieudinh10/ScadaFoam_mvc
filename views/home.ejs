@@ -149,4 +149,22 @@
       </div>
     </div>
   </body>
+  <script>
+    const content_P = document.querySelectorAll('.item_air-status p')
+    console.log(content_P[1].outerText)
+    const test = () =>{
+      content_P.forEach(function(item,index){
+      item.onchange = function(){
+        if(this.outerText === 'Off'){
+          this.style.backgroundColor = 'var(--color-red)'
+        }
+        else{
+          this.style.backgroundColor = 'var(--color-border)'
+        }
+      }
+    } )
+    }
+
+    test()
+  </script>
 </html>

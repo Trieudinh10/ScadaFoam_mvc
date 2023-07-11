@@ -53,12 +53,17 @@
     align-items: center;
 }
 
+.item_air-status p{
+    background: var(--color-border);
+    padding: 4px;
+}
+
 .item_air-status h2{
     min-width: 125px;
     background-color: var(--color-item);
     border: 1px solid var(--color-border);
     border-radius: 10px;
-    margin-right: 8px;
+    margin-right: 40px;
 }
 
 .item_air-tem h2{
