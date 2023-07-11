@@ -6,154 +6,228 @@
     border: 1px solid var(--color-border);
 }
 
-.container_chart{
-    width: 100%;
-    height: 100%;
+.export_body {
+  width: 100%;
+  display: flex;
 }
 
-#Baocao{
-    width: 100%;
-    display: flex;
-    margin-bottom: 10px;
-    align-items: center;
-    overflow-x: scroll;
+.export_para,
+.export_error {
+  max-width: 50%;
+  max-height: 500px;
+  min-width: 50%;
 }
 
-#Baocao::-webkit-scrollbar{
-    width: 4px;
-    height: 4px;
+.export_para {
+  margin-right: 8px;
+}
+
+.container_chart {
+  width: 100%;
+  height: 100%;
+}
+
+#Baocao {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+#Baocao::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
 #Baocao::-webkit-scrollbar-thumb {
-    background: var(--color-item);
-    border-radius: 10px;
+  background: var(--color-item);
+  border-radius: 10px;
 }
-
 
 #Baocao input {
-    color: #000;
+  color: #000;
 }
 /*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
-#div_table_info {
-    background-color:#234664;
-    top: 10%; 
-    left: 40%;
-    width: 100%;
-    text-align: center;
-    text-align:center;
-    border:1px solid #a3855f;
-    overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
-    max-height: 900px;
- }
-
-#div_table_info::-webkit-scrollbar{
-    width: 4px;
-    height: 4px;
-}
-#div_table_info::-webkit-scrollbar-thumb {
-    background: var(--color-item);
-    border-radius: 10px;
+#div_table_info,
+#div_table_error {
+  background-color: #234664;
+  top: 10%;
+  left: 40%;
+  width: 100%;
+  text-align: center;
+  text-align: center;
+  border: 1px solid #a3855f;
+  overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
+  max-height: 700px;
+  max-width: 100%;
 }
 
- .input_item_btn{
-    margin: 0 16px;
- }
+#div_table_info::-webkit-scrollbar,
+#div_table_error::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#div_table_info::-webkit-scrollbar-thumb,
+#div_table_error::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
 
- /*Table*/
- #table_info {
-     border: 1px  ; 
-     background-color:  lavender;
-     width:100%;
-     text-align:center;
- }
- 
- #table_info tr{
-     cursor: pointer;
- }
- table {border-collapse: collapse}
- #table_info tr:hover{background-color: #ddd;}
- #table_info thead th { position: sticky; top: 0;  }
- /* Just common table stuff. Really. */
- #table_info  { border-collapse: collapse; width: 100%; }
- #table_info th, td { padding: 8px 2px}
- #table_info th     { background:#183853; color: #2bb892; width: 70px; border:1px solid #a3855f;}
- #table_info td  { background:#03243f; color:#4b657b; width: 70px; border:1px solid #a3855f;}
+.input_item_btn {
+  margin: 0 16px;
+}
 
- /*Lable tìm kiếm từ*/
+/*Table*/
+#table_info,
+#table_error {
+  border: 1px;
+  background-color: lavender;
+  width: 100%;
+  text-align: center;
+}
+
+#table_info tr,
+#table_error tr {
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+}
+#table_info tr:hover {
+  background-color: #ddd;
+}
+#table_error tr:hover {
+  background-color: #ddd;
+}
+#table_info thead th {
+  position: sticky;
+  top: 0;
+}
+#table_error thead th {
+  position: sticky;
+  top: 0;
+}
+
+/* Just common table stuff. Really. */
+#table_info {
+  border-collapse: collapse;
+  width: 100%;
+}
+#table_info th,
+td {
+  padding: 8px 2px;
+}
+#table_info th {
+  background: #183853;
+  color: #2bb892;
+  width: 70px;
+  border: 1px solid #a3855f;
+}
+#table_info td {
+  background: #03243f;
+  color: #4b657b;
+  width: 70px;
+  border: 1px solid #a3855f;
+  min-width: 200px;
+}
+
+#table_error {
+  border-collapse: collapse;
+  width: 100%;
+}
+#table_error th,
+td {
+  padding: 8px 2px;
+}
+#table_error th {
+  background: #183853;
+  color: #2bb892;
+  width: 70px;
+  border: 1px solid #a3855f;
+}
+#table_error td {
+  background: #03243f;
+  color: #4b657b;
+  width: 70px;
+  border: 1px solid #a3855f;
+  min-width: 200px;
+}
+
+/*Lable tìm kiếm từ*/
 #lb_Search_Start {
-    color: #3de36f;   
-    font-size: 24px; 
-    font-weight: normal;
-    left: 48%;
-     top: 5%;
-     min-width: 12%;
-     margin-right: 10px;
+  color: #3de36f;
+  font-size: 24px;
+  font-weight: normal;
+  left: 48%;
+  top: 5%;
+  min-width: 12%;
+  margin-right: 10px;
 }
 /*Chọn ngày tháng bắt đầu*/
 #dtpk_Search_Start {
-    text-align: left; 
-    left: 50%; 
-    top:  4%;
-    padding: 15px;
-    border: 1px solid rgb(173, 168, 168);
-    border-radius: 10px;
-    height:20px;
+  text-align: left;
+  left: 50%;
+  top: 4%;
+  padding: 15px;
+  border: 1px solid rgb(173, 168, 168);
+  border-radius: 10px;
+  height: 20px;
 }
- 
+
 /*Lable tìm kiếm đến*/
 #lb_Search_End {
-    color: #d96464;  
-    font-size: 24px; 
-    font-weight: normal;
-    left:63%; 
-    top: 5%;
-    min-width: 12%;
-    margin: 0 10px;
+  color: #d96464;
+  font-size: 24px;
+  font-weight: normal;
+  left: 63%;
+  top: 5%;
+  min-width: 12%;
+  margin: 0 10px;
 }
 /*Chọn ngày tháng kết thúc*/
 #dtpk_Search_End {
-    text-align: left;
-    left: 65.5%; 
-    top:  4%;
-    padding: 15px;
-    border: 1px solid rgb(173, 168, 168);
-    border-radius: 10px;
-    height:20px;
+  text-align: left;
+  left: 65.5%;
+  top: 4%;
+  padding: 15px;
+  border: 1px solid rgb(173, 168, 168);
+  border-radius: 10px;
+  height: 20px;
 }
 /*Nút tìm kiếm*/
 #btt_Search {
-   
-    background-color: #12cff3; 
-    color: #03243f;  
-    text-align: center; 
-    display: inline-block;
-    font-size: 11px; 
-    font-weight: bold;
-    cursor: pointer;
-    width: 130px;
-    height: 37px; 
-    left: 77%; 
-    top:  4.2%;
-    border-radius: 4px;
+  background-color: #12cff3;
+  color: #03243f;
+  text-align: center;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 130px;
+  height: 37px;
+  left: 77%;
+  top: 4.2%;
+  border-radius: 4px;
 }
 
-.input_item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.input_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Nút Xuaast Excel*/
 #btt_Excel {
   border-radius: 4px;
-    background-color: rgb(14, 199, 153); 
-    color: #03243f;  
-    text-align: center; 
-    display: inline-block;
-    font-size: 11px; 
-    font-weight: bold;
-    cursor: pointer;
-    width: 130px; 
-    height: 37px; 
-    left: 84%; 
-    top:  4.2%;
+  background-color: rgb(14, 199, 153);
+  color: #03243f;
+  text-align: center;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 130px;
+  height: 37px;
+  left: 84%;
+  top: 4.2%;
 }

@@ -108,7 +108,7 @@
     width: 8px;
 }
 .home_chart-tem::-webkit-scrollbar-thumb {
-    background: var(--color-item);
+    background: var(--color-border);
     border-radius: 10px;
 }
 
@@ -135,7 +135,7 @@
     width: 8px;
 }
 .home_chart-room::-webkit-scrollbar-thumb {
-    background: var(--color-item);
+    background: var(--color-border);
     border-radius: 10px;
 }
 

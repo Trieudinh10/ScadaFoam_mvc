@@ -1,18 +1,19 @@
 .login_container{
     width: 100%;
     min-height: 100vh;
-    background-color: var(--color-body);
+    background-image: linear-gradient(var(--color-main),var(--color-body));
+
     display: flex
 }
 
 .login_body{
     width: 40%;
-    background-color: var(--color-item);
     margin: auto;
     border-radius: 10px;
     border: 1px solid var(--color-border);
     padding: 16px;
     text-align: center;
+    background-image: linear-gradient(var(--color-main),var(--color-body));
 }
 
 .login_body h2{
@@ -32,13 +33,13 @@
 }
 
 .login_btn{
-    background-color: var(--color-main);
     padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     border-radius: 10px;
+    border: 1px solid var(--color-border);
 }
 
 .btn_home{
