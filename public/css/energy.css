@@ -48,7 +48,7 @@
 .chart_item {
   width: 100%;
   height: calc(100% / 3 - 8px);
-  background-color: var(--color-main);
+  background-color: var(--color-body);
   margin-bottom: 8px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
