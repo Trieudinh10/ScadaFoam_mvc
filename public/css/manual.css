@@ -246,3 +246,16 @@ select {
     border: 1px solid var(--color-border);
     margin-right: 8px;
 }
+
+.operate_row{
+  display: flex;
+  justify-content: space-around;
+}
+
+.operate_container-title h2{
+  width: 100%;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 32px;
+  text-transform: uppercase;
+}
