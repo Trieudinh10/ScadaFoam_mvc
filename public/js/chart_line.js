@@ -39,6 +39,7 @@ const chart_line = (id, data1, data2, data3, Label_1, Label_2, Label_3) => {
     data: data,
     options: {
       responsive: true,
+    maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,

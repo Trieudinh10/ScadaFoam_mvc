@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/export.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="/js/fontawesome.js"></script>
     <title>Lưu Foam</title>
 </head>
 <body>
@@ -26,8 +28,8 @@
              <div class="input_item_btn">
                 <button id="btt_Excel" class="btn" onclick="fn_excel();
                 "></i> BÁO CÁO</button>
-
              </div>
+             <div class="change_btn" onclick=changeTable()></div>
         </div>
         <div class="export_body">
             <div class="export_para">
@@ -49,7 +51,7 @@
                            <th >Tốc Độ Quạt</th>
                            <th >Thông Tin Lỗi/Cảnh Báo</th>
                            <tr>
-                           <td>06/07/2023 - 06/07/2023 06/07/2023 - 06/07/2023</td>
+                           <td>06/07/2023 - 10h30p20s</td>
                            <td>on</td>
                            <td>100*c</td>
                            <td>23*</td>
@@ -80,16 +82,6 @@
                     
                     <th >Tốc Độ Quạt</th>
                     <th >Thông Tin Lỗi/Cảnh Báo</th>
-                    <tr>
-                    <td>06/07/2023 - 06/07/2023 06/07/2023 - 06/07/2023</td>
-                    <td>on</td>
-                    <td>100*c</td>
-                    <td>23*</td>
-                    <td>360deg</td>
-                    <td>300</td>
-                    <td>on</td>
-
-                    </tr>
                 </tr>
                 </thead>
             </table>
@@ -99,4 +91,21 @@
     </div>
 
 </body>
+<script>
+    const btnChange = document.querySelector('.change_btn');
+    const body = document.querySelector('.export_para');
+    const error = document.querySelector('.export_error');
+    const changeTable = () =>{
+        if(btnChange.classList[1] === 'change'){
+            body.style.display = 'block';
+            error.style.display ='none';
+            btnChange.classList.remove('change');
+        }
+        else{
+            body.style.display = 'none';
+            error.style.display ='block';
+            btnChange.classList.add('change');
+        }
+    }
+</script>
 </html>

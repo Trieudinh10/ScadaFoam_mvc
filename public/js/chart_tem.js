@@ -36,9 +36,10 @@ const myChart = new Chart(ctx, {
   data: data,
   options: {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
-        beginAtZero: true,
+        bstacked: true
       },
     },
   },

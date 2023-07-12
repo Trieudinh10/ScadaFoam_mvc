@@ -1,9 +1,10 @@
 .header_container{
     width: 100%;
     height: var(--height);
-        background-image: linear-gradient(var(--color-main),var(--color-body));
+    background-color: var(--color-main);
     display: flex;
     align-items: center;
+    border-bottom:1px solid var(--color-border) ;
 }
 
 .header_logo{
@@ -36,6 +37,7 @@
     text-transform: uppercase;
     font-family:'fontawesome';
     height: 100%;
+    color:#fff;
 }
 
 .header_title{
@@ -50,7 +52,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    color:#fff;
+    background: -webkit-linear-gradient(var(--color-green),var(--color-skyblue),var(--color-green),var(--color-skyblue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .active{
