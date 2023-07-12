@@ -2,7 +2,6 @@
   width: 100%;
   min-height: calc(100vh - var(--height));
   background-color: var(--color-main);
-  padding: 8px;
   border: 1px solid var(--color-border);
 }
 
@@ -261,7 +260,7 @@ select {
 .operate_container-title{
   width: 100%;
   text-align: center;
-  margin: 8px 0;
+  margin: 16px 0;
   font-size: 32px;
   text-transform: uppercase;
 }

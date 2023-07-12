@@ -2,10 +2,12 @@ const chart_line = (id, data1, data2, data3, Label_1, Label_2, Label_3) => {
   const dataTime = [];
   const fn_time = () => {
     const time = new Date();
-    dataTime.push(`${time.getHours()}/${time.getMinutes()}/${time.getSeconds()}`);
+    dataTime.push(
+      `${time.getHours()}/${time.getMinutes()}/${time.getSeconds()}`
+    );
     console.log(dataTime);
   };
-  fn_time()
+  fn_time();
   const data = {
     labels: ["1h", "2h", "3h", "4h", "5h", "1h", "2h", "3h", "4h", "5h"],
     datasets: [
@@ -39,7 +41,7 @@ const chart_line = (id, data1, data2, data3, Label_1, Label_2, Label_3) => {
     data: data,
     options: {
       responsive: true,
-    maintainAspectRatio: false,
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
