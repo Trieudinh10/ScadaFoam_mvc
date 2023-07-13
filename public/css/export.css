@@ -1,8 +1,9 @@
-.export_container {
-  width: 100%;
-  min-height: calc(100vh - var(--height));
-  background-color: var(--color-main);
-  padding: 8px;
+.export_container{
+    width: 100%;
+    min-height: calc(100vh - var(--height));
+    background-color: var(--color-body);
+    padding: 8px;
+    border-top: 1px solid var(--color-border);
 }
 
 .export_body {
@@ -12,9 +13,13 @@
 
 .export_para,
 .export_error {
-  max-width: 50%;
+  max-width: 100%;
   max-height: 500px;
-  min-width: 50%;
+  min-width: 100%;
+}
+
+.export_error{
+  display: none;
 }
 
 .export_para {
@@ -57,8 +62,16 @@
   text-align: center;
   border: 1px solid #a3855f;
   overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
-  max-height: 900px;
+  max-height: 700px;
   max-width: 100%;
+}
+
+#div_table_info h2,
+#div_table_error h2{
+  font-size: 32px;
+  color: #fff;
+  padding: 8px 0;
+  text-transform: uppercase;
 }
 
 #div_table_info::-webkit-scrollbar,
@@ -127,7 +140,7 @@ td {
   color: #4b657b;
   width: 70px;
   border: 1px solid #a3855f;
-  min-width: 200px;
+  /* min-width: 200px; */
 }
 
 #table_error {
@@ -229,4 +242,30 @@ td {
   height: 37px;
   left: 84%;
   top: 4.2%;
+}
+
+
+.change_btn{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-left: 16px;
+}
+
+.change_btn::after{
+  content: '\f074';
+  position: absolute;
+  font-size: 32px;
+  font-family: 'fontawesome';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.change_btn:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.change_btn.change{
+  transform: rotate(180deg);
 }

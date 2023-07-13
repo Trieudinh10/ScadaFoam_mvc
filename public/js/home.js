@@ -51,7 +51,7 @@ function gauge_temp_1(idg,data_pre) {
               align: 'center',
               verticalAlign: 'middle',
               style_fontSize: 12,
-              color:"white"
+              color:"#000"
             }
           }
         },
@@ -145,7 +145,7 @@ function gauge_temp_1(idg,data_pre) {
               align: 'center',
               verticalAlign: 'middle',
               style_fontSize: 12,
-              color:"white"
+              color:"#000"
             }
           }
         },
@@ -232,7 +232,7 @@ function gauge_temp_1(idg,data_pre) {
               align: 'center',
               verticalAlign: 'middle',
               style_fontSize: 12,
-              color:"white"
+              color:"#000"
             }
           }
         },

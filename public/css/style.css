@@ -3,7 +3,7 @@
   margin: 0px;
   border: none;
   color: var(--color-text);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif !important;
   box-sizing: border-box;
 }
 
@@ -11,15 +11,15 @@
   --height: 80px;
   --color-main: #031c31;
   --color-border: #2bb892;
-  --color-item: #173752;
-  --color-body: #03243f;
+  --color-item: #fff;
+  --color-body: #fff;
   --color-skyblue: #0b849a;
   --color-skyblue_alpha: #89dafd;
   --color-yellow: #fcde10;
   --color-orange: #ff5d1a;
   --color-red: #fd1900;
   --color-green: #00e478;
-  --color-text: #fff;
+  --color-text: #000;
 }
 
 li {

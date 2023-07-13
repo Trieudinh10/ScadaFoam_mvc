@@ -200,6 +200,21 @@
   .item_air-tem h2 {
     border: none;
   }
+
+  .setting_item{
+    width: 55%;
+  }
+  .header_menu ul li{
+    font-size: 15px;
+  }
+  #submitBtn{
+    width: 70%;
+  }
+  .login_user label,
+  .login_password label{
+    min-width: 100px;
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {

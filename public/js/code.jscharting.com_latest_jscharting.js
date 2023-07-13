@@ -26316,7 +26316,7 @@
         b = b ? A(b.renderer, "errorReporting.chart") : void 0;
         b = (b ? b.boxDefaults() : Qf()).outline;
         return {
-          fill: "white",
+          fill: "#000",
           "border-color": b.color,
           "border-width": b.width,
         };
@@ -29440,7 +29440,7 @@
         a.background &&
           ((c.caBackgroundPanel = b.panel({ padding: h / 2 })),
           (c.caBackground = b
-            .rect(He({ fill: "#031c31", shadow: !1 }))
+            .rect(He({ fill: "#fff", shadow: !1 }))
             .add(c.caBackgroundPanel)),
           (a.contentHolderFront || k) &&
             c.contentStroke.add(c.caBackgroundPanel),
@@ -36245,7 +36245,7 @@
           line: { color: "#e2e2e2", length: 5 },
           label: {
             offset: "0,0",
-            style: { color: "yellow", fontSize: "12px" },
+            style: { color: "#000", fontSize: "12px" },
             margin: 5,
           },
           fill: "none",

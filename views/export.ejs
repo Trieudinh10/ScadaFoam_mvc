@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/export.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
     <title>Lưu Foam</title>
 </head>
 <body>
@@ -19,19 +21,20 @@
                 <input id="dtpk_Search_End" type="datetime-local">
             </div>
            <div class="input_item_btn">
-            <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();
+            <button id="btt_Search" class="btn" onclick="changeData()
             "></i> TÌM KIẾM</button>
 
            </div>
              <div class="input_item_btn">
                 <button id="btt_Excel" class="btn" onclick="fn_excel();
                 "></i> BÁO CÁO</button>
-
              </div>
+             <div class="change_btn" onclick=changeTable()></div>
         </div>
         <div class="export_body">
             <div class="export_para">
                 <div id = "div_table_info">
+                    <h2>Bảng Thông Số</h2>
                    <table id="table_info" >
                        <thead>
                        <tr >
@@ -49,15 +52,15 @@
                            <th >Tốc Độ Quạt</th>
                            <th >Thông Tin Lỗi/Cảnh Báo</th>
                            <tr>
-                           <td>06/07/2023 - 06/07/2023 06/07/2023 - 06/07/2023</td>
+                           <td>06/07/2023 - 10h30p20s</td>
                            <td>on</td>
                            <td>100*c</td>
                            <td>23*</td>
                            <td>360deg</td>
                            <td>300</td>
                            <td>on</td>
-
                            </tr>
+                           
                        </tr>
                        </thead>
                    </table>
@@ -65,6 +68,7 @@
       </div>
       <div class="export_error">
         <div id = "div_table_error">
+            <h2>Bảng Báo Lỗi</h2>
             <table id="table_error" >
                 <thead>
                 <tr >
@@ -81,16 +85,6 @@
                     
                     <th >Tốc Độ Quạt</th>
                     <th >Thông Tin Lỗi/Cảnh Báo</th>
-                    <tr>
-                    <td>06/07/2023 - 06/07/2023 06/07/2023 - 06/07/2023</td>
-                    <td>on</td>
-                    <td>100*c</td>
-                    <td>23*</td>
-                    <td>360deg</td>
-                    <td>300</td>
-                    <td>on</td>
-
-                    </tr>
                 </tr>
                 </thead>
             </table>
@@ -100,4 +94,35 @@
     </div>
 
 </body>
+<script>
+    const btnChange = document.querySelector('.change_btn');
+    const body = document.querySelector('.export_para');
+    const error = document.querySelector('.export_error');
+
+    let changeBtn = true;
+    const changeTable = () =>{
+        if(btnChange.classList[1] === 'change'){
+            body.style.display = 'block';
+            error.style.display ='none';
+            btnChange.classList.remove('change');
+            changeBtn = true;
+        }
+        else{
+            changeBtn = false;
+            body.style.display = 'none';
+            error.style.display ='block';
+            btnChange.classList.add('change');
+        }
+    }
+
+    const changeData = () =>{
+        if(changeBtn){
+            alert(1)
+        }
+        else{
+            alert(2)
+        }
+    }
+
+</script>
 </html>
