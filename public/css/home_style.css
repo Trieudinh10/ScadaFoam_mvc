@@ -175,3 +175,8 @@
     font-size: 20px;
     min-width: 72.5px;
 }
+
+#iframe_no_work{
+    display: flex;
+    margin: auto;
+}
