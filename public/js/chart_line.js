@@ -1,19 +1,22 @@
 const chart_line = (id, data1, data2, data3, Label_1, Label_2, Label_3) => {
-  const dataTime = [];
-  const fn_time = () => {
-    const time = new Date();
-    dataTime.push(
-      `${time.getHours()}/${time.getMinutes()}/${time.getSeconds()}`
-    );
-    console.log(dataTime);
-  };
-  fn_time();
+
+  var labelTime = new Date()
+  var dataLabel = []
+  var a = [] 
+    setInterval(() => {
+      
+      socket.on(data3, function (data)
+      { 
+        a.push(data)     
+        chartLine.update()
+      });
+    },1000)
   const data = {
     labels: ["1h", "2h", "3h", "4h", "5h", "1h", "2h", "3h", "4h", "5h"],
     datasets: [
       {
         label: Label_1,
-        data: [0, 30, 20, 19, 30, 23, 28, 20, 19, 30],
+        data: [111, 12, 99, 33, 77, 44, 88, 66, 0, 77],
         fill: false,
         borderColor: "rgb(75, 192, 192)",
         tension: 0.1,

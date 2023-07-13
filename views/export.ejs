@@ -21,7 +21,7 @@
                 <input id="dtpk_Search_End" type="datetime-local">
             </div>
            <div class="input_item_btn">
-            <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();
+            <button id="btt_Search" class="btn" onclick="changeData()
             "></i> TÌM KIẾM</button>
 
            </div>
@@ -34,6 +34,7 @@
         <div class="export_body">
             <div class="export_para">
                 <div id = "div_table_info">
+                    <h2>Bảng Thông Số</h2>
                    <table id="table_info" >
                        <thead>
                        <tr >
@@ -59,6 +60,7 @@
                            <td>300</td>
                            <td>on</td>
                            </tr>
+                           
                        </tr>
                        </thead>
                    </table>
@@ -66,6 +68,7 @@
       </div>
       <div class="export_error">
         <div id = "div_table_error">
+            <h2>Bảng Báo Lỗi</h2>
             <table id="table_error" >
                 <thead>
                 <tr >
@@ -95,17 +98,31 @@
     const btnChange = document.querySelector('.change_btn');
     const body = document.querySelector('.export_para');
     const error = document.querySelector('.export_error');
+
+    let changeBtn = true;
     const changeTable = () =>{
         if(btnChange.classList[1] === 'change'){
             body.style.display = 'block';
             error.style.display ='none';
             btnChange.classList.remove('change');
+            changeBtn = true;
         }
         else{
+            changeBtn = false;
             body.style.display = 'none';
             error.style.display ='block';
             btnChange.classList.add('change');
         }
     }
+
+    const changeData = () =>{
+        if(changeBtn){
+            alert(1)
+        }
+        else{
+            alert(2)
+        }
+    }
+
 </script>
 </html>

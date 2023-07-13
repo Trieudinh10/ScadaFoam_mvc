@@ -125,7 +125,6 @@ select {
   border-radius: 5px;
   background-color: var(--color-item);
   border: 1px solid var(--color-border);
-  margin-right: 8px;
 }
 
 .operate_item-content {
@@ -248,7 +247,6 @@ select {
     border-radius: 5px;
     background-color: var(--color-item);
     border: 1px solid var(--color-border);
-    margin-right: 8px;
 }
 
 .operate_row{

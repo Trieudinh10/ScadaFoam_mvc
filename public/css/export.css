@@ -66,6 +66,14 @@
   max-width: 100%;
 }
 
+#div_table_info h2,
+#div_table_error h2{
+  font-size: 32px;
+  color: #fff;
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+
 #div_table_info::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
   width: 8px;

@@ -24,7 +24,6 @@
     text-transform: uppercase;
     margin: 16px 0;
 }
-
 .setting_container-title h2{
     color: #fff;
 }
@@ -34,13 +33,16 @@
     padding: 8px;
     margin-bottom: 32px;
     border: 1px solid var(--color-border);
+    margin: 16px 8px; 
+    flex: 1;
 }
 .setting_item-title{
     text-align: center;
 }
 
 .setting_item h2{
-    min-width: 125px;
+    min-width: 200px;
+    font-size: 48px;
 
 }
 
@@ -90,10 +92,12 @@
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .setting_input label{
     margin-right: 16px;
+    font-size: 32px;
 }
 
 .setting_input input,select{

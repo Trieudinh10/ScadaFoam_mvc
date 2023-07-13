@@ -84,7 +84,7 @@ function setClient() {
 
 setInterval(() => {
     setClient();
-}, 500);
+}, 1000);
 
 
 function run() {
