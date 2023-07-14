@@ -10,6 +10,21 @@
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
     <title>Lưu Foam</title>
+
+    <!-- ////////////// CÁC KHỐI CHƯƠNG TRÌNH CON //////////////-->
+<script>
+  // Chương trình con đọc dữ liệu lên IO Field
+  function fn_IOFieldDataShow(tag, IOField, tofix){
+      socket.on(tag,function(data){
+          if(tofix == 0){
+              document.getElementById(IOField).value = data;
+          } else{
+          document.getElementById(IOField).value = data.toFixed(tofix);
+          }
+      });
+  }
+</script>
+
   </head>
   <script>
     var socket = io(document.location.host);
@@ -26,15 +41,17 @@
             <div class="item_air-tem">
               <h2>Nhiệt Độ</h2>
               <div class="item_air-data">
-                <label for="">Thực Tế</label><input type="text" disabled />
-                <label for="">Cài Đặt</label><input type="text" disabled />
+                <label for="">Thực Tế</label>
+                <input id="nhiet_do" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0)</script>
               </div>
             </div>
             <div class="item_air-tem">
               <h2>Độ Ẩm</h2>
               <div class="item_air-data">
-                <label for="">Thực Tế</label><input type="text" disabled />
-                <label for="">Cài Đặt</label><input type="text" disabled />
+                <label for="">Thực Tế</label>
+                <input id="do_am" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Do_am", "do_am", 0)</script>
               </div>
             </div>
           </div>
