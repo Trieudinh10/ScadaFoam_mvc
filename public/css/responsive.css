@@ -235,6 +235,9 @@
   .item_data-room:last-child{
     justify-content: flex-start;
   }
+  .item_air-room h2{
+    min-width: 150px;
+  }
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {
