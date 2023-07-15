@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="css/font.css" />
 
     <title>Lưu Foam</title>
+
+    <!-- ////////////// CÁC KHỐI CHƯƠNG TRÌNH CON //////////////-->
+<script>
+  // Chương trình con đọc dữ liệu lên IO Field
+  function fn_IOFieldDataShow(tag, IOField, tofix){
+      socket.on(tag,function(data){
+          if(tofix == 0){
+              document.getElementById(IOField).value = data;
+          } else{
+          document.getElementById(IOField).value = data.toFixed(tofix);
+          }
+      });
+  }
+</script>
+
   </head>
   <script>
     var socket = io(document.location.host);
@@ -25,14 +40,20 @@
             <div class="item_air-title">
               <h2>Thông Số Phòng</h2>
             </div>
-            <div class="item_air-room">
-              <div class="item_data-room">
-                <h2>Nhiệt Độ (&deg;C)</h2>
-                <input type="text" disabled />
+            <div class="item_air-tem">
+              <h2>Nhiệt Độ</h2>
+              <div class="item_air-data">
+                <label for="">Thực Tế</label>
+                <input id="nhiet_do" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0)</script>
               </div>
-              <div class="item_data-room">
-                <h2>Độ Ẩm</h2>
-                <input type="text" disabled />
+            </div>
+            <div class="item_air-tem">
+              <h2>Độ Ẩm</h2>
+              <div class="item_air-data">
+                <label for="">Thực Tế</label>
+                <input id="do_am" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Do_am", "do_am", 0)</script>
               </div>
             </div>
           </div>
