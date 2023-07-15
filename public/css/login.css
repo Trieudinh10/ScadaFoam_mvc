@@ -7,7 +7,6 @@
 }
 
 .login_body{
-    width: 40%;
     margin: auto;
     border-radius: 10px;
     border: 1px solid var(--color-border);
@@ -70,6 +69,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 16px;
 }
 
 .login_user label {

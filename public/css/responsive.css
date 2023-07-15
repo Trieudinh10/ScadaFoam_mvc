@@ -145,6 +145,13 @@
   .setting_container-title {
     font-size: 22px;
   }
+
+  .setting_content-item h2{
+    font-size: 32px;
+  }
+  .setting_content-item{
+    display: unset;
+  }
   /*end mobile auto */
 
   /* mobile manual  */
@@ -170,12 +177,15 @@
     padding: 5px;
   }
   /* end mobile manual  */
+  .login_body h2{
+    font-size: 32px;
+  }
+  .home_container{
+    height: auto;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
-  .home_container {
-    flex-wrap: wrap;
-  }
   .home_system {
     width: 100%;
     display: flex;
@@ -215,6 +225,10 @@
     min-width: 100px;
     font-size: 20px;
   }
+  .home_container{
+    height: auto;
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {
@@ -239,6 +253,7 @@
   .header_title {
     width: 30%;
   }
+
 }
 
 @media (min-width: 1790px) {

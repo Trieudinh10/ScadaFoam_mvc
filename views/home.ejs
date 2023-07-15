@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/responsive.css" />
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/chart_min.js"></script>
-    <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
+    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/font.css" />
+
     <title>Lưu Foam</title>
   </head>
   <script>
@@ -23,18 +25,14 @@
             <div class="item_air-title">
               <h2>Thông Số Phòng</h2>
             </div>
-            <div class="item_air-tem">
-              <h2>Nhiệt Độ</h2>
-              <div class="item_air-data">
-                <label for="">Thực Tế</label><input type="text" disabled />
-                <label for="">Cài Đặt</label><input type="text" disabled />
+            <div class="item_air-room">
+              <div class="item_data-room">
+                <h2>Nhiệt Độ (&deg;C)</h2>
+                <input type="text" disabled />
               </div>
-            </div>
-            <div class="item_air-tem">
-              <h2>Độ Ẩm</h2>
-              <div class="item_air-data">
-                <label for="">Thực Tế</label><input type="text" disabled />
-                <label for="">Cài Đặt</label><input type="text" disabled />
+              <div class="item_data-room">
+                <h2>Độ Ẩm</h2>
+                <input type="text" disabled />
               </div>
             </div>
           </div>
@@ -44,26 +42,34 @@
             <div class="item_air-title">
               <h2>Điều Hòa 1</h2>
             </div>
+
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p>Đang Chạy</p>
+              <p class="status_mode">Đang Chạy</p>
             </div>
             <div class="item_air-tem">
-              <h2>Nhiệt Độ</h2>
+              <h2>Chế Độ</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>Góc Mở</h2>
+              <h2>Nhiệt Độ (&deg;C)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>T/Đ Quạt</h2>
+              <h2>Góc mở (mod)</h2>
+              <div class="item_air-data">
+                <label for="">Thực Tế</label><input type="text" disabled />
+                <label for="">Cài Đặt</label><input type="text" disabled />
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Tốc độ quạt (mod)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
@@ -76,26 +82,34 @@
             <div class="item_air-title">
               <h2>Điều Hòa 2</h2>
             </div>
+
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p>Đang Chạy</p>
+              <p class="status_mode">Đang Chạy</p>
             </div>
             <div class="item_air-tem">
-              <h2>Nhiệt Độ</h2>
+              <h2>Chế Độ</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>Góc Mở</h2>
+              <h2>Nhiệt Độ (&deg;C)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>T/Đ Quạt</h2>
+              <h2>Góc mở (mod)</h2>
+              <div class="item_air-data">
+                <label for="">Thực Tế</label><input type="text" disabled />
+                <label for="">Cài Đặt</label><input type="text" disabled />
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Tốc độ quạt (mod)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
@@ -108,26 +122,34 @@
             <div class="item_air-title">
               <h2>Điều Hòa 3</h2>
             </div>
+
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p>Đang Chạy</p>
+              <p class="status_mode">Đang Chạy</p>
             </div>
             <div class="item_air-tem">
-              <h2>Nhiệt Độ</h2>
+              <h2>Chế Độ</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>Góc Mở</h2>
+              <h2>Nhiệt Độ (&deg;C)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
               </div>
             </div>
             <div class="item_air-tem">
-              <h2>T/Đ Quạt</h2>
+              <h2>Góc mở (mod)</h2>
+              <div class="item_air-data">
+                <label for="">Thực Tế</label><input type="text" disabled />
+                <label for="">Cài Đặt</label><input type="text" disabled />
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Tốc độ quạt (mod)</h2>
               <div class="item_air-data">
                 <label for="">Thực Tế</label><input type="text" disabled />
                 <label for="">Cài Đặt</label><input type="text" disabled />
@@ -137,17 +159,48 @@
         </div>
       </div>
       <div class="home_chart">
+        <h2>Biểu Đồ Nhiệt Độ</h2>
         <div class="home_chart-tem">
-          <h2>Biểu Đồ Nhiệt Độ</h2>
           <canvas id="myChart"></canvas>
           <script src="js/chart_tem.js"></script>
         </div>
+        <h2>Thông Số Phòng Foam</h2>
         <div class="home_chart-room">
-          <h2>Thông Số Phòng Foam</h2>
           <canvas id="chartRoom"></canvas>
           <script src="js/chart_room.js"></script>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    const status = document.querySelectorAll(".status_mode");
+    const operate = document.querySelectorAll(".operate_mode");
+
+    status.forEach((e, index) => {
+      let mode = true;
+      e.onclick = function () {
+        if (mode) {
+          this.innerHTML = "Đang Dừng";
+          this.style.backgroundColor = "var(--color-red)";
+        } else {
+          this.innerHTML = "Đang Chạy";
+          this.style.backgroundColor = "var(--color-border)";
+        }
+        mode = !mode;
+      };
+    });
+    operate.forEach((e, index) => {
+      let mode = true;
+      e.onclick = function () {
+        if (mode) {
+          this.innerHTML = "Thủ Công";
+          this.style.backgroundColor = "var(--color-red)";
+        } else {
+          this.innerHTML = "Tự Động";
+          this.style.backgroundColor = "var(--color-border)";
+        }
+        mode = !mode;
+      };
+    });
+  </script>
 </html>

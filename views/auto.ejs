@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/auto.css" />
     <link rel="stylesheet" href="css/manual.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/font.css">
     <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
     <title>Lưu Foam</title>
   </head>
@@ -21,17 +22,16 @@
         <div class="setting_item">
           <h2 class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item">
-            <h2>Nhiệt Độ</h2>
+            <h2>Nhiệt Độ (&deg;C) </h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><input type="text" />
+              <label for="tem_dh1">Cài Đặt</label><input id="tem_dh1" class="tem" type="number" min="16" max="31" value="16" />
             </div>
             <div class="setting_input-btn"></div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc Mở</h2>
+            <h2>Góc Mở (mode)</h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
-                <option value="1">1</option>
+              <label for="deg_dh1">Cài Đặt</label><select name="" id="deg_dh1">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -40,10 +40,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>T/Đ Quạt</h2>
+            <h2>Tốc độ Quạt (mode)</h2>
             <div class="setting_input">
               <label for="">Cài Đặt</label><select name="" id="">
-                <option value="1">1</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -62,15 +61,15 @@
         <div class="setting_item">
           <h2 class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item">
-            <h2>Nhiệt Độ</h2>
+            <h2>Nhiệt Độ (&deg;C) </h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><input type="text" />
+              <label for="tem_dh2">Cài Đặt</label><input id="tem_dh2" class="tem" type="number" min="16" max="31" value="16" />
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc Mở</h2>
+            <h2>Góc Mở (mode)</h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
+              <label for="deg_dh2">Cài Đặt</label><select name="" id="deg_dh2">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -79,7 +78,7 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>T/Đ Quạt</h2>
+            <h2>Tốc độ Quạt (mode)</h2>
             <div class="setting_input">
               <label for="">Cài Đặt</label><select name="" id="">
                 <option value="1">1</option>
@@ -101,15 +100,15 @@
           <h2 class="setting_item-title">Điều Hòa 3</h2>
          
           <div class="setting_content-item">
-            <h2>Nhiệt Độ</h2>
+            <h2>Nhiệt Độ (&deg;C) </h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><input type="text" />
+              <label for="tem_dh3">Cài Đặt</label><input id="tem_dh3" class="tem" type="number" min="16" max="31" value="16"/>
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc Mở</h2>
+            <h2>Góc Mở (mode)</h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
+              <label for="deg_dh3">Cài Đặt</label><select name="" id="deg_dh3">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -118,7 +117,7 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>T/Đ Quạt</h2>
+            <h2>Tốc độ Quạt (mode)</h2>
             <div class="setting_input">
               <label for="">Cài Đặt</label><select name="" id="">
                 <option value="1">1</option>
@@ -141,21 +140,20 @@
     
   </body>
   <script>
-        $ = document.querySelector.bind(document);
+    $ = document.querySelector.bind(document);
     $$ = document.querySelectorAll.bind(document);
-    const listStart = $$(".btn_start");
-    const listStop = $$(".btn_stop");
-    listStart.forEach((e, index) => {
-      e.onclick = function () {
-        this.classList.remove("active_btn");
-        listStop[index].classList.add("active_btn");
-      };
-    });
+    const listSubmit = $$(".btn_auto");
+    const valueTem = $$(".tem")
 
-    listStop.forEach((e, index) => {
+    listSubmit.forEach((e, index) => {
       e.onclick = function () {
-        this.classList.remove("active_btn");
-        listStart[index].classList.add("active_btn");
+        if(valueTem[index].value < 16 || valueTem[index].value > 31){
+
+          alert(`nhiệt độ từ khoảng 16 tới 31`)
+        }
+        else{
+          alert(valueTem[index].value)
+        }
       };
     });
   </script>
