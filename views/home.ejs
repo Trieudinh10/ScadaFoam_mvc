@@ -7,25 +7,13 @@
     <link rel="stylesheet" href="/css/home_style.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
     <script src="socket.io/socket.io.js"></script>
+    <script src = "/js/FC1_Common.js"></script>
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css" />
 
     <title>Lưu Foam</title>
 
-    <!-- ////////////// CÁC KHỐI CHƯƠNG TRÌNH CON //////////////-->
-    <script>
-      // Chương trình con đọc dữ liệu lên IO Field
-      function fn_IOFieldDataShow(tag, IOField, tofix) {
-        socket.on(tag, function (data) {
-          if (tofix == 0) {
-            document.getElementById(IOField).value = data;
-          } else {
-            document.getElementById(IOField).value = data.toFixed(tofix);
-          }
-        });
-      }
-    </script>
   </head>
   <script>
     var socket = io(document.location.host);
@@ -65,7 +53,7 @@
             </div>
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p class="status_mode">Đang Chạy</p>
+              <img id="Trang_thai_ml_2" class="status_mode den_ml"><script> fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "On_off_data_2") </script>
             </div>
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>
@@ -160,7 +148,7 @@
 
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p class="status_mode">Đang Chạy</p>
+              <img id="Trang_thai_ml_3" class="status_mode den_ml"><script> fn_SymbolStatus("Trang_thai_ml_3", "Den_xanh", "On_off_data_3") </script>
             </div>
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>
@@ -254,7 +242,7 @@
 
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <p class="status_mode">Đang Chạy</p>
+              <img id="Trang_thai_ml_4" class="status_mode den_ml "><script> fn_SymbolStatus("Trang_thai_ml_4", "Den_xanh", "On_off_data_4") </script>
             </div>
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>

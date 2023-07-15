@@ -69,7 +69,7 @@
 }
 
 .item_air-tem h2{
-    min-width: 228px;
+    min-width: 225px;
     background-color: var(--color-item);
     border-radius: 10px;
     padding: 4px;
@@ -186,7 +186,7 @@
 }
 
 .item_air-room h2{
-
+    min-width: 150px;
 }
 
 .item_data-room{
@@ -203,6 +203,10 @@
     min-width: 100px;
  }
 
+ .den_ml{
+    width: 45px;
+    height: 45px;
+ }
  .block_data-item{
     display: flex;
     flex-direction: column;
