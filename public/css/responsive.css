@@ -194,11 +194,21 @@
   }
   .item_air-room h2{
     min-width: 150px;
+    display: inline-block;
+    text-align: center;
   }
 
   .chart-item{
     min-height: 300px;
   }
+  .item_air-room  {
+    margin: 8px 0 0 0;
+    border-radius: 0;
+  }
+  .item_air-room + .item_air-room{
+    margin: 8px 0 0 0 ;
+  }
+  
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -246,11 +256,23 @@
     flex-wrap: wrap;
   }
   .item_air-room{
-    display: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .item_air-room + .item_air-room{
+    display: flex;
+    align-items: center;
   }
   .item_air-room h2{
     min-width: 150px;
     display: flex;
+    justify-content: center;
+  }
+  .item_air-room +.item_air-room {
+    margin: 8px 0 0 0;
+  }
+  .item_data-room.item_data-status{
     justify-content: center;
   }
 }
