@@ -229,6 +229,12 @@
     height: auto;
     flex-wrap: wrap;
   }
+  .item_air-room{
+    display: unset;
+  }
+  .item_data-room:last-child{
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {

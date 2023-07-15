@@ -113,3 +113,8 @@
     text-align: center;
     font-weight: 600;
 }
+
+.setting_input input:focus,select:focus{
+    outline: none !important;
+    border-color: var(--color-red) ;
+}

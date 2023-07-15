@@ -42,7 +42,6 @@
     display: flex;
     justify-content: space-evenly;
     margin: 4px 0;
-
 }
 
 .item_air-status{
@@ -84,12 +83,11 @@
 }
 
 .item_air-tem input,.item_air-room input{
-    width: 60px;
+    width: 76px;
     height: 30px;
     border-radius: 5px;
     background-color: var(--color-item);
     border: 1px solid var(--color-border);
-    margin-right: 8px;
 }
 .home_chart{
     flex: 1;
@@ -166,7 +164,7 @@
     flex: 1;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .item_air-data label{
@@ -183,16 +181,17 @@
 
 .item_air-room{
     display: flex;
-    margin: 8px 8px;
 }
 
 .item_air-room h2{
-    margin-right: 16px;
+    min-width: 150px;
 }
 
 .item_data-room{
     display: flex;
     flex: 1;
+    margin-bottom: 16px;
+    margin-left: 8px;
 }
 
 .item_data-room:last-child{
@@ -200,4 +199,9 @@
 }
  .item_air-room input {
     min-width: 100px;
+ }
+
+ .block_data-item{
+    display: flex;
+    flex-direction: column;
  }
