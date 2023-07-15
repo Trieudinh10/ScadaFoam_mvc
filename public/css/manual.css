@@ -248,6 +248,10 @@ select {
     border: 4px solid var(--color-border);
 }
 
+.auto_value-item input:focus, select:focus{
+  outline: none !important;
+}
+
 .operate_row{
   display: flex;
   justify-content: space-around;
