@@ -18,10 +18,12 @@
 
 .home_system::-webkit-scrollbar{
     width: 8px;
+    display: inline-block;
 }
 .home_system::-webkit-scrollbar-thumb {
     background: var(--color-border);
     border-radius: 10px;
+    height: 10%;
 }
 
 .system_item{

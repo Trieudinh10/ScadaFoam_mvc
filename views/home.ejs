@@ -348,22 +348,4 @@
       </div>
     </div>
   </body>
-  <script>
-    const status = document.querySelectorAll(".status_mode");
-    const operate = document.querySelectorAll(".operate_mode");
-
-    status.forEach((e, index) => {
-      let mode = true;
-      e.onclick = function () {
-        if (mode) {
-          this.innerHTML = "Đang Dừng";
-          this.style.backgroundColor = "var(--color-red)";
-        } else {
-          this.innerHTML = "Đang Chạy";
-          this.style.backgroundColor = "var(--color-border)";
-        }
-        mode = !mode;
-      };
-    });
-  </script>
 </html>
