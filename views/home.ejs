@@ -49,11 +49,19 @@
               <div class="room_container block_status">
                 <div class="item_data-room item_data-status">
                   <h2>Tự Động:</h2>
-                  <img src="/images/Symbol/Den_xanh_0.png" class="den_ml" alt="">
+                  <img
+                    src="/images/Symbol/Den_xanh_0.png"
+                    class="den_ml"
+                    alt=""
+                  />
                 </div>
                 <div class="item_data-room item_data-status">
                   <h2>Thủ Công:</h2>
-                  <img src="/images/Symbol/Den_xanh_0.png" class="den_ml" alt="">
+                  <img
+                    src="/images/Symbol/Den_xanh_0.png"
+                    class="den_ml"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -72,17 +80,27 @@
               </script>
             </div>
             <div class="item_air-tem">
-              <h2 >Chế Độ (mode):</h2>
+              <h2></h2>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
+                </div>
+
+                <div class="block_data-item">
+                  <label for="">Cài đặt</label>
+                </div>
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Chế Độ (mode):</h2>
+              <div class="item_air-data">
+                <div class="block_data-item">
                   <input id="che_do_2" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);
                   </script>
                 </div>
                 <div class="block_data-item">
-                  <label for="">Cài Đặt</label>
                   <input id="cai_che_do_2" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);
@@ -163,10 +181,21 @@
               </script>
             </div>
             <div class="item_air-tem">
-              <h2>Chế Độ (mode):</h2>
+              <h2></h2>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
+                </div>
+
+                <div class="block_data-item">
+                  <label for="">Cài đặt</label>
+                </div>
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Chế Độ (mode):</h2>
+              <div class="item_air-data">
+                <div class="block_data-item">
                   <input id="che_do_3" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);
@@ -174,7 +203,6 @@
                 </div>
 
                 <div class="block_data-item">
-                  <label for="">Cài Đặt</label>
                   <input id="cai_che_do_3" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);
@@ -255,10 +283,21 @@
               </script>
             </div>
             <div class="item_air-tem">
-              <h2>Chế Độ (mode):</h2>
+              <h2></h2>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
+                </div>
+
+                <div class="block_data-item">
+                  <label for="">Cài đặt</label>
+                </div>
+              </div>
+            </div>
+            <div class="item_air-tem">
+              <h2>Chế Độ (mode):</h2>
+              <div class="item_air-data">
+                <div class="block_data-item">
                   <input id="che_do_4" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);
@@ -266,7 +305,6 @@
                 </div>
 
                 <div class="block_data-item">
-                  <label for="">Cài Đặt</label>
                   <input id="cai_che_do_4" disabled="disabled" type="text" />
                   <script>
                     fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);
@@ -347,5 +385,27 @@
         </div>
       </div>
     </div>
+    <div class="btn_scroll">
+      <a href="#top_header"><div class="scroll_top"></div></a>
+      <a href="#myChart"><div class="scroll_bottom btn_active"></div></a>
+    </div>
   </body>
+  <script>
+    var btn_scroll = document.querySelectorAll(".btn_scroll a div");
+    btn_scroll.forEach((e, index) => {
+      e.onclick = function () {
+        var btn_bottom_remove = document.querySelector(".scroll_bottom.btn_active");
+        var btn_top_remove = document.querySelector(".scroll_top.btn_active");
+        if(index === 1 ){
+          btn_bottom_remove.classList.remove("btn_active");
+          btn_scroll[0].classList.add("btn_active");
+        }
+        else{
+          btn_top_remove.classList.remove("btn_active");
+          btn_scroll[1].classList.add("btn_active");
+        }
+
+      };
+    });
+  </script>
 </html>

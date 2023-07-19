@@ -221,6 +221,7 @@
   }
   .system_item {
     width: 50%;
+    padding: 4px 0 0 8px;
   }
   .home_chart {
     width: 50%;
@@ -274,6 +275,27 @@
   }
   .item_data-room.item_data-status{
     justify-content: center;
+  }
+  .item_air-tem input,.item_air-room input{
+    width: 50px;
+  }
+  .item_air-tem{
+    margin: 0;
+  }
+  .item_air-status{
+    margin: 0 0 0 4px;
+  }
+  .item_air-title{
+    margin: 0;
+  }
+  .btn_scroll{
+    display: block;
+  }
+  .energy_container{
+    max-height: calc(100vh - var(--height));
+  }
+  .block_scroll_num{
+    display: flex;
   }
 }
 

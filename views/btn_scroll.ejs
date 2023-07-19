@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="PQH tobi" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/header_style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/font.css" />
+
+    <title>Scada Foam</title>
+  </head>
+  <body>
+    <div class="block_scroll_btn">
+     <a href="#top_header"><div class="scroll_btn btn_active">1</div></a>
+      <a href="#dieuhoa2"><div class="scroll_btn">2</div></a>
+      <a href="#dieuhoa3"><div class="scroll_btn">3</div></a>
+    </div>
+  </body>
+  <script>
+    $ = document.querySelector.bind(document);
+    $$ = document.querySelectorAll.bind(document);
+    const btn_scroll = $$('.scroll_btn')
+
+    btn_scroll.forEach((e,index) => {
+        e.onclick = function (){
+            $('.scroll_btn.btn_active').classList.remove('btn_active');
+            this.classList.add('btn_active');
+        }
+    });
+  </script>
+</html>

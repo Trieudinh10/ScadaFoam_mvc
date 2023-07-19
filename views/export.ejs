@@ -96,10 +96,13 @@
 
 </body>
 <script>
+     $ = document.querySelector.bind(document);
+    $$ = document.querySelectorAll.bind(document);
     const btnChange = document.querySelector('.change_btn');
     const body = document.querySelector('.export_para');
     const error = document.querySelector('.export_error');
-
+    const dataTo = $('#dtpk_Search_Start')
+    const dataEnd = $('#dtpk_Search_End')
     let changeBtn = true;
     const changeTable = () =>{
         if(btnChange.classList[1] === 'change'){
@@ -117,12 +120,18 @@
     }
 
     const changeData = () =>{
-        if(changeBtn){
-            alert(1)
+        if(!dataTo.value){
+            alert(`chọn mốc thời gian`)
         }
         else{
-            alert(2)
+            if(changeBtn){
+            alert(`1 ${dataTo.value}` )
         }
+        else{
+            alert(`2 ${dataEnd.value}`)
+        }
+        }
+
     }
 
 </script>
