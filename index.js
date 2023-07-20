@@ -289,7 +289,6 @@ function valuesWritten(anythingBad) {
 }
 
 
-<<<<<<< HEAD
 // ++++++++++++++++++++++++++GHI DỮ LIỆU XUỐNG PLC+++++++++++++++++++++++++++
 // MÀN HÌNH CHÍNH
 io.on("connection", function(socket)
@@ -302,7 +301,6 @@ io.on("connection", function(socket)
                         ], valuesWritten);
         });
 });
-=======
 var mysql = require("mysql");
 var sqlcon = mysql.createConnection({
   host: "localhost",
@@ -406,4 +404,3 @@ function fn_sql_insert() {
 setInterval(() => {
   fn_sql_insert();
 }, 1000);
->>>>>>> 3b6fb8baf5437073de6fa7b560a0b52562a5376b
