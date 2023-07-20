@@ -245,6 +245,10 @@
     width: 45px;
     height: 45px;
  }
+ .den_cd{
+    width: 55px;
+    height: 55px;
+ }
  .block_data-item{
     display: flex;
     flex-direction: column;
