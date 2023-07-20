@@ -8,7 +8,10 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
-
+body{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 :root {
   --height: 80px;
   --color-main: #031c31;
@@ -26,6 +29,7 @@
 
 li {
   list-style: none;
+
 }
 
 a {
