@@ -74,6 +74,7 @@
   text-transform: uppercase;
 }
 
+
 #div_table_info::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
   width: 8px;
