@@ -301,3 +301,108 @@ io.on("connection", function(socket)
                         ], valuesWritten);
         });
 });
+=======
+var mysql = require("mysql");
+var sqlcon = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "123456",
+  database: "sql_dpm680",
+});
+
+var L1_line = 0;
+var L2_line = 0;
+var L3_line = 0;
+var L1_phase = 0;
+var L2_phase = 0;
+var L3_phase = 0;
+var L1_phase_cr = 0;
+var L2_phase_cr = 0;
+var L3_phase_cr = 0;
+var L1_power = 0;
+var L2_power = 0;
+var L3_power = 0;
+var Total_power = 0;
+var Total_Energy = 0;
+
+function fn_sql_insert() {
+  // console.log("dât là:"+dataArr[3]);
+
+  var sqltable_Name = "dpm680_data";
+  L1_line = dataArrip[9] * 0.1;
+  L2_line = dataArrip[11] * 0.1;
+  L3_line = dataArrip[13] * 0.1;
+  L1_phase = dataArrip[15] * 0.1;
+  L2_phase = dataArrip[17] * 0.1;
+  L3_phase = dataArrip[19] * 0.1;
+  L1_phase_cr = dataArrip[1] * 0.001;
+  L2_phase_cr = dataArrip[3] * 0.001;
+  L3_phase_cr = dataArrip[5] * 0.001;
+  L1_power = dataArrip[21];
+  L2_power = dataArrip[23];
+  L3_power = dataArrip[25];
+  Total_Energy = data_total_4byte * 0.001;
+  Total_power = L1_power + L2_power + L3_power;
+
+  // Lấy thời gian hiện tại
+  var tzoffset = new Date().getTimezoneOffset() * 60000; //Vùng Việt Nam (GMT7+)
+  var temp_datenow = new Date();
+  var timeNow = new Date(temp_datenow - tzoffset)
+    .toISOString()
+    .slice(0, -1)
+    .replace("T", " ");
+  var timeNow_toSQL = "'" + timeNow + "',";
+
+  // Dữ liệu đọc lên từ các tag
+  var L1_line_sql = "'" + L1_line + "',";
+  var L2_line_sql = "'" + L2_line + "',";
+  var L3_line_sql = "'" + L3_line + "',";
+  var L1_phase_sql = "'" + L1_phase + "',";
+  var L2_phase_sql = "'" + L2_phase + "',";
+  var L3_phase_sql = "'" + L3_phase + "',";
+  var L1_phase_cr_sql = "'" + L1_phase_cr + "',";
+  var L2_phase_cr_sql = "'" + L2_phase_cr + "',";
+  var L3_phase_cr_sql = "'" + L3_phase_cr + "',";
+  var L1_power_sql = "'" + L1_power + "',";
+  var L2_power_sql = "'" + L2_power + "',";
+  var L3_power_sql = "'" + L3_power + "',";
+  var Total_power_sql = "'" + Total_power + "',";
+  var Total_Energy_sql = "'" + Total_Energy + "'";
+  // Ghi dữ liệu vào SQL
+
+  var sql_write_str11 =
+    "INSERT INTO " +
+    sqltable_Name +
+    " (date_time, L1_line, L2_line, L3_line, L1_phase,L2_phase, L3_phase, L1_phase_cr,L2_phase_cr, L3_phase_cr,L1_power,L2_power,L3_power,Total_power,Total_Energy) VALUES (";
+  var sql_write_str12 =
+    timeNow_toSQL +
+    L1_line_sql +
+    L2_line_sql +
+    L3_line_sql +
+    L1_phase_sql +
+    L2_phase_sql +
+    L3_phase_sql +
+    L1_phase_cr_sql +
+    L2_phase_cr_sql +
+    L3_phase_cr_sql +
+    L1_power_sql +
+    L2_power_sql +
+    L3_power_sql +
+    Total_power_sql +
+    Total_Energy_sql;
+  var sql_write_str1 = sql_write_str11 + sql_write_str12 + ");";
+  // Thực hiện ghi dữ liệu vào SQL
+  sqlcon.query(sql_write_str1, function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      // console.log("SQL - Ghi dữ liệu thành công"+sql_write_str1);
+    }
+  });
+  //  dataArrip=[0,0,0,0,0,0,0,0,0];
+}
+
+setInterval(() => {
+  fn_sql_insert();
+}, 1000);
+>>>>>>> 3b6fb8baf5437073de6fa7b560a0b52562a5376b
