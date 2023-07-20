@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="/css/manual.css" />
     <link rel="stylesheet" href="/css/auto.css" />
     <link rel="stylesheet" href="/css/responsive.css">
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="/js/FC1_Common.js"></script>
+    <script src="/js/FC2_set.js"></script>
+
     <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css">
     <title>Scada Foam</title>
@@ -21,7 +26,7 @@
       <div class="block_start_stop">
       </div>
       <div class="operate_row">
-      <div class="setting_item" id="dieuhoa1">
+      <div class="setting_item">
         <h2 class="setting_item-title">Điều Hòa 1</h2>
         <div class="setting_content-item">
           <h2>Nhiệt độ (&deg;C)</h2>
@@ -55,11 +60,13 @@
         </div>
         <div class="setting_content">
           <div class="setting_btn">
-            <div class="btn_auto">Áp dụng</div>
+
+            <button class="btt_sua_luu" id="btt_Main_Save"  onclick= "fn_Main_SaveBtt()">LƯU</button>
+            <button class="btt_sua_luu" id="btt_Main_Edit"  onclick= "fn_Main_EditBtt()">SỬA</button>
           </div>
         </div>
       </div>
-      <div class="setting_item" id="dieuhoa2">
+      <div class="setting_item">
         <h2 class="setting_item-title">Điều Hòa 2</h2>
         <div class="setting_content-item">
           <h2>Nhiệt độ (&deg;C)</h2>
@@ -97,7 +104,7 @@
           </div>
         </div>
       </div>
-      <div class="setting_item" id="dieuhoa3">
+      <div class="setting_item">
         <h2 class="setting_item-title">Điều Hòa 3</h2>
         <div class="setting_content-item">
           <h2>Nhiệt độ (&deg;C)</h2>
@@ -137,8 +144,6 @@
       </div>
     </div>
     </div>
-    <%- include('btn_scroll.ejs'); -%>
-
   </body>
 
   <script>

@@ -164,7 +164,7 @@ io.on("connection", function(socket){
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '10.14.84.74', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.84.102', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
@@ -289,6 +289,20 @@ function valuesWritten(anythingBad) {
 }
 
 
+<<<<<<< HEAD
+// ++++++++++++++++++++++++++GHI DỮ LIỆU XUỐNG PLC+++++++++++++++++++++++++++
+// MÀN HÌNH CHÍNH
+io.on("connection", function(socket)
+{
+    // Ghi dữ liệu từ IO field
+    socket.on("cmd_Main_Edit_Data", function(data){
+        conn_plc.writeItems([
+                            'tag_Bool'],
+                            [data[0]
+                        ], valuesWritten);
+        });
+});
+=======
 var mysql = require("mysql");
 var sqlcon = mysql.createConnection({
   host: "localhost",
@@ -392,3 +406,4 @@ function fn_sql_insert() {
 setInterval(() => {
   fn_sql_insert();
 }, 1000);
+>>>>>>> 3b6fb8baf5437073de6fa7b560a0b52562a5376b
