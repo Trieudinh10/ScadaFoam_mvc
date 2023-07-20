@@ -73,7 +73,7 @@
   padding: 8px 0;
   text-transform: uppercase;
 }
-:last-child
+
 
 #div_table_info::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
