@@ -113,6 +113,16 @@
     padding: 8px;
     flex-direction: column;
     border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.home_chart::-webkit-scrollbar{
+    width: 8px;
+    display: inline-block;
+}
+.home_chart::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
 }
 
 .home_chart-tem{
