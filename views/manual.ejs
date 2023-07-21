@@ -24,20 +24,30 @@
         <h2>Chế độ thủ công</h2>
       </div>
       <div class="block_start_stop">
+        <button class="btn_on" id="btn_on_tn1" onclick= "socket.emit('cmd_start_manual', true);">START</button>
+
+        <img id="Trang_thai_manual" class="den_cd"/>
+        <script>fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");</script>
+
+        <button class="btt_sua_luu" id="btt_Main_Save"  onclick= "fn_Main_SaveBtt()">LƯU</button>
+        <button class="btt_sua_luu" id="btt_Main_Edit"  onclick= "fn_Main_EditBtt()">SỬA</button>
       </div>
+      
       <div class="operate_row">
       <div class="setting_item">
         <h2 class="setting_item-title">Điều Hòa 1</h2>
         <div class="setting_content-item">
           <h2>Nhiệt độ (&deg;C)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><input type="number" min="16" max="31" value="16"/>
+            <label for="">Cài đặt</label>
+            <input id="temp_manu_2" disabled="disabled" type="number" min="16" max="31"/>
+            <script>fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);</script>
           </div>
         </div>
         <div class="setting_content-item">
           <h2>Góc mở (mod)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
+            <label for="">Cài đặt</label><select id="position_manu_2" disabled="disabled" type="text">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -45,57 +55,19 @@
               <option value="5">5</option>
               <option value="10">10</option>
             </select>
+            <script>fn_Main_IOField_IO("Van_position_manu_2", "position_manu_2", 0);</script>
           </div>
         </div>
         <div class="setting_content-item">
           <h2>Tốc độ Quạt (mod)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
+            <label for="">Cài đặt</label><select id="speed_manu_2" disabled="disabled" type="text">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
-          </div>
-        </div>
-        <div class="setting_content">
-          <div class="setting_btn">
-
-            <button class="btt_sua_luu" id="btt_Main_Save"  onclick= "fn_Main_SaveBtt()">LƯU</button>
-            <button class="btt_sua_luu" id="btt_Main_Edit"  onclick= "fn_Main_EditBtt()">SỬA</button>
-          </div>
-        </div>
-      </div>
-      <div class="setting_item">
-        <h2 class="setting_item-title">Điều Hòa 2</h2>
-        <div class="setting_content-item">
-          <h2>Nhiệt độ (&deg;C)</h2>
-          <div class="setting_input">
-            <label for="">Cài đặt</label><input type="number" min="16" max="31" value="16" />
-          </div>
-        </div>
-        <div class="setting_content-item">
-          <h2>Góc mở (mod)</h2>
-          <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-        </div>
-        <div class="setting_content-item">
-          <h2>Tốc độ Quạt (mod)</h2>
-          <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
+            <script>fn_Main_IOField_IO("Fan_speed_manu_2", "speed_manu_2", 0);</script>
           </div>
         </div>
         <div class="setting_content">
@@ -105,17 +77,19 @@
         </div>
       </div>
       <div class="setting_item">
-        <h2 class="setting_item-title">Điều Hòa 3</h2>
+        <h2 class="setting_item-title">Điều Hòa 2</h2>
         <div class="setting_content-item">
           <h2>Nhiệt độ (&deg;C)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><input type="number" min="16" max="31" value="16" />
+            <label for="">Cài đặt</label>
+            <input id="temp_manu_3" disabled="disabled" type="number" min="16" max="31"/>
+            <script>fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);</script>
           </div>
         </div>
         <div class="setting_content-item">
           <h2>Góc mở (mod)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
+            <label for="">Cài đặt</label><select id="position_manu_3" disabled="disabled" type="text">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -123,17 +97,62 @@
               <option value="5">5</option>
               <option value="10">10</option>
             </select>
+            <script>fn_Main_IOField_IO("Van_position_manu_3", "position_manu_3", 0);</script>
           </div>
         </div>
         <div class="setting_content-item">
           <h2>Tốc độ Quạt (mod)</h2>
           <div class="setting_input">
-            <label for="">Cài đặt</label><select name="" id="">
+            <label for="">Cài đặt</label><select id="speed_manu_3" disabled="disabled" type="text">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
+            <script>fn_Main_IOField_IO("Fan_speed_manu_3", "speed_manu_3", 0);</script>
+          </div>
+        </div>
+        <div class="setting_content">
+          <div class="setting_btn">
+            <div class="btn_auto">Áp dụng</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting_item">
+        <h2 class="setting_item-title">Điều Hòa 3</h2>
+        <div class="setting_content-item">
+          <h2>Nhiệt độ (&deg;C)</h2>
+          <div class="setting_input">
+            <label for="">Cài đặt</label>
+            <input id="temp_manu_4" disabled="disabled" type="number" min="16" max="31"/>
+            <script>fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);</script>
+          </div>
+        </div>
+        <div class="setting_content-item">
+          <h2>Góc mở (mod)</h2>
+          <div class="setting_input">
+            <label for="">Cài đặt</label><select id="position_manu_4" disabled="disabled" type="text">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            <script>fn_Main_IOField_IO("Van_position_manu_4", "position_manu_4", 0);</script>
+          </div>
+        </div>
+        <div class="setting_content-item">
+          <h2>Tốc độ Quạt (mod)</h2>
+          <div class="setting_input">
+            <label for="">Cài đặt</label><select id="speed_manu_4" disabled="disabled" type="text">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <script>fn_Main_IOField_IO("Fan_speed_manu_4", "speed_manu_4", 0);</script>
           </div>
         </div>
         <div class="setting_content">
@@ -146,35 +165,4 @@
     </div>
   </body>
 
-  <script>
-    $ = document.querySelector.bind(document);
-    $$ = document.querySelectorAll.bind(document);
-
-    const container = $(".operate_container");
-    const containerManual = $(".operate_manual");
-    const containerAuto = $(".operate_auto");
-    const btnExit = $(".btn-exit");
-    const bodyManual = $(".operate_manual-body");
-    const bodyAuto = $(".operate_auto-body");
-
-    const listBlock = $$(".operate_item-content");
-    const listBtnOn = $$(".btn_on");
-    const listBtnOff = $$(".btn_off");
-
-    const statusBlock = $$(".operate_item-status");
-
-    listBtnOn.forEach((e, index) => {
-      e.onclick = function () {
-        this.classList.remove("active_btn");
-        listBtnOff[index].classList.add("active_btn");
-      };
-    });
-    listBtnOff.forEach((e, index) => {
-      e.onclick = function () {
-        this.classList.remove("active_btn");
-        listBtnOn[index].classList.add("active_btn");
-      };
-    });
-
-  </script>
 </html>
