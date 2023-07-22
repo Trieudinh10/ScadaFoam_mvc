@@ -7,7 +7,15 @@ function fn_Main_EditBtt(){
     // Cho tag báo đang sửa dữ liệu lên giá trị true
     Main_data_edditting = true;
     // Kích hoạt chức năng sửa của các IO Field
-    document.getElementById("Bool").disabled = false; // Tag bool
+    document.getElementById("temp_manu_2").disabled = false; 
+    document.getElementById("position_manu_2").disabled = false;
+    document.getElementById("speed_manu_2").disabled = false;
+    document.getElementById("temp_manu_3").disabled = false;
+    document.getElementById("position_manu_3").disabled = false;
+    document.getElementById("speed_manu_3").disabled = false;
+    document.getElementById("temp_manu_4").disabled = false;
+    document.getElementById("position_manu_4").disabled = false;
+    document.getElementById("speed_manu_4").disabled = false;
     
 }
 ///// CHƯƠNG TRÌNH CON NÚT NHẤN LƯU //////
@@ -17,12 +25,27 @@ fn_DataEdit('btt_Main_Edit','btt_Main_Save');
     // Cho tag đang sửa dữ liệu về 0
     Main_data_edditting = false;
                         // Gửi dữ liệu cần sửa xuống PLC
-    var data_edit_array = [document.getElementById('Bool').value];
+    var data_edit_array = [document.getElementById('temp_manu_2').value,
+                            document.getElementById('position_manu_2').value,
+                            document.getElementById('speed_manu_2').value,
+                            document.getElementById('temp_manu_3').value,
+                            document.getElementById('position_manu_3').value,
+                            document.getElementById('speed_manu_3').value,
+                            document.getElementById('temp_manu_4').value,
+                            document.getElementById('position_manu_4').value,
+                            document.getElementById('speed_manu_4').value];
     socket.emit('cmd_Main_Edit_Data', data_edit_array);
     alert('Dữ liệu đã được lưu!');
     // Vô hiệu hoá chức năng sửa của các IO Field
-    document.getElementById("Bool").disabled = true;    // Tag bool
-    
+    document.getElementById("temp_manu_2").disabled = true;    
+    document.getElementById("position_manu_2").disabled = true;    
+    document.getElementById("speed_manu_2").disabled = true;   
+    document.getElementById("temp_manu_3").disabled = true;
+    document.getElementById("position_manu_3").disabled = true;
+    document.getElementById("speed_manu_3").disabled = true;
+    document.getElementById("temp_manu_4").disabled = true;
+    document.getElementById("position_manu_4").disabled = true;
+    document.getElementById("speed_manu_4").disabled = true;
 }
 
 // Chương trình con đọc dữ liệu lên IO Field
