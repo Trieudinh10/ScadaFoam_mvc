@@ -5,7 +5,8 @@
   .home_system {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     border-radius: 0;
     margin: 0;
     overflow-y: unset;
@@ -18,6 +19,8 @@
     margin: 0;
     border-radius: 0;
     padding: 8px 0 0 0;
+    max-height: 50%;
+    overflow-y: unset;
   }
   .header_title {
     display: none;
@@ -183,7 +186,7 @@
     font-size: 32px;
   }
   .home_container{
-    height: auto;
+    /* height: 100%; */
   }
 
   .item_air-room{
@@ -208,7 +211,10 @@
   .item_air-room + .item_air-room{
     margin: 8px 0 0 0 ;
   }
-  
+  .energy_chart .chart_item {
+    min-height: calc(100% / 3 - 8px);
+    height: unset;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -227,6 +233,7 @@
     width: 50%;
     margin: 0;
     border-radius: 0;
+    max-height: 100%;
   }
   .header_title {
     display: none;
@@ -253,7 +260,7 @@
     font-size: 20px;
   }
   .home_container{
-    height: auto;
+    max-height: unset;
     flex-wrap: wrap;
   }
   .item_air-room{
