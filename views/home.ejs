@@ -415,6 +415,7 @@
     btn_scroll.forEach((e, index) => {
       e.onclick = function () {
         btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+
         if (index === 1) {
           autoCheckLink_top.classList.add("btn_active");
         } else {

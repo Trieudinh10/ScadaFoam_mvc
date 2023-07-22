@@ -247,7 +247,12 @@
 
   .setting_item{
     width: 55%;
+    margin: 0 8px 8px 8px;
   }
+  .setting_item:first-child{
+    margin-top: 8px;
+  } 
+
   .header_menu ul li{
     font-size: 15px;
   }

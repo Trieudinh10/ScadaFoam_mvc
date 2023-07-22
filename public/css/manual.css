@@ -160,7 +160,7 @@ select {
 .btn_off,
 .btn_start,
 .btn_stop {
-  width: 50%;
+  width: auto;
   height: 50px;
   border-radius: 10px;
   display: flex;
@@ -172,8 +172,8 @@ select {
 }
 .btn_on,.btn_start {
   background-color: var(--color-green);
-  margin-right: 8px;
   border: 1px solid var(--color-main);
+  margin: 0 8px;
 }
 
 .btn_off,.btn_stop {
@@ -260,7 +260,7 @@ select {
 .operate_container-title{
   width: 100%;
   text-align: center;
-  margin: 16px 0;
+  margin: 8px 0;
   font-size: 32px;
   text-transform: uppercase;
 }
@@ -282,6 +282,18 @@ select {
     width: 120px;
     height: 50px;
 }
+
+.start_stop-btn-start{
+  display: flex;
+}
+
+.start_stop-btn-save{
+  height: 100%;
+  align-items: center;
+  display: flex;
+  margin-left: 8px;
+}
+
 .btt_sua_luu:hover{
   background-image: linear-gradient(180deg, rgb(45, 63, 106), rgb(228, 216, 110));
   color: rgb(255, 255, 255);
@@ -293,4 +305,34 @@ select {
 .den_cd{
   width: 55px;
   height: 55px;
+}
+
+.setting_on,.setting_off{
+  flex: 1;
+}
+.setting_off{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.setting_on-btn{
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 17px;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183));
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  width: 120px;
+  height: 50px;
+}
+
+.setting_on-btn:hover{
+  background-image: linear-gradient(180deg, rgb(45, 63, 106), rgb(228, 216, 110));
+  color: rgb(255, 255, 255);
+}
+.setting_on-btn:active{
+  background-image: linear-gradient(0deg, rgb(45, 63, 106), rgb(228, 216, 110));
 }
