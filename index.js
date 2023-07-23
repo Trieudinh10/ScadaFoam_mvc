@@ -406,7 +406,7 @@ io.on("connection", function(socket){
     socket.on("cmd_Main_Edit_Data", function(data){conn_plc.writeItems(['Mode_manu_2','Nhap_temp_manu_2','Van_position_manu_2','Fan_speed_manu_2',
                                                                         'Mode_manu_3','Nhap_temp_manu_3','Van_position_manu_3','Fan_speed_manu_3',
                                                                         'Mode_manu_4','Nhap_temp_manu_4','Van_position_manu_4','Fan_speed_manu_4'],
-                                                                        [data[0],data[1],data[2],data[3],
+                                                                         [data[0],data[1],data[2],data[3],
                                                                          data[4],data[5],data[6],data[7],
                                                                          data[8],data[9],data[10],data[11]], valuesWritten);});
 });

@@ -8,17 +8,17 @@ function fn_Auto_EditBtt(){
     Auto_data_edditting = true;
     // Kích hoạt chức năng sửa của các IO Field
     document.getElementById("mode_aut_2").disabled = false; 
-    document.getElementById("speed_auto_2").disabled = false; 
-    document.getElementById("position_auto_2").disabled = false;
     document.getElementById("temp_auto_2").disabled = false;
+    document.getElementById("position_auto_2").disabled = false;
+    document.getElementById("speed_auto_2").disabled = false; 
     document.getElementById("mode_aut_3").disabled = false;
-    document.getElementById("speed_auto_3").disabled = false;
-    document.getElementById("position_auto_3").disabled = false;
     document.getElementById("temp_auto_3").disabled = false;
+    document.getElementById("position_auto_3").disabled = false;
+    document.getElementById("speed_auto_3").disabled = false;
     document.getElementById("mode_aut_4").disabled = false;
-    document.getElementById("temp_manu_4").disabled = false;
-    document.getElementById("position_auto_4").disabled = false;
     document.getElementById("temp_auto_4").disabled = false;
+    document.getElementById("position_auto_4").disabled = false;
+    document.getElementById("speed_auto_4").disabled = false;
 }
 ///// CHƯƠNG TRÌNH CON NÚT NHẤN LƯU //////
 function fn_Auto_SaveBtt(){
@@ -28,43 +28,43 @@ fn_DataEdit('btt_Auto_Edit','btt_Auto_Save');
     Auto_data_edditting = false;
                         // Gửi dữ liệu cần sửa xuống PLC
     var data_edit_array = [document.getElementById('mode_aut_2').value,
-                            document.getElementById('speed_auto_2').value,
-                            document.getElementById('position_auto_2').value,
                             document.getElementById('temp_auto_2').value,
+                            document.getElementById('position_auto_2').value,
+                            document.getElementById('speed_auto_2').value,
                             document.getElementById('mode_aut_3').value,
-                            document.getElementById('speed_auto_3').value,
-                            document.getElementById('position_auto_3').value,
                             document.getElementById('temp_auto_3').value,
+                            document.getElementById('position_auto_3').value,
+                            document.getElementById('speed_auto_3').value,
                             document.getElementById('mode_aut_4').value,
-                            document.getElementById('speed_auto_4').value,
+                            document.getElementById('temp_auto_4').value,
                             document.getElementById('position_auto_4').value,
-                            document.getElementById('temp_auto_4').value];
+                            document.getElementById('speed_auto_4').value];
     socket.emit('cmd_Auto_Edit_Data', data_edit_array);
     alert('Dữ liệu đã được lưu!');
     // Vô hiệu hoá chức năng sửa của các IO Field
     document.getElementById("mode_aut_2").disabled = true;
-    document.getElementById("speed_auto_2").disabled = true;    
-    document.getElementById("position_auto_2").disabled = true;    
     document.getElementById("temp_auto_2").disabled = true;  
+    document.getElementById("position_auto_2").disabled = true;
+    document.getElementById("speed_auto_2").disabled = true;    
     document.getElementById("mode_aut_3").disabled = true; 
-    document.getElementById("speed_auto_3").disabled = true;
-    document.getElementById("position_auto_3").disabled = true;
     document.getElementById("temp_auto_3").disabled = true;
+    document.getElementById("position_auto_3").disabled = true;
+    document.getElementById("speed_auto_3").disabled = true;
     document.getElementById("mode_aut_4").disabled = true;
-    document.getElementById("speed_auto_4").disabled = true;
-    document.getElementById("position_auto_4").disabled = true;
     document.getElementById("temp_auto_4").disabled = true;
+    document.getElementById("position_auto_4").disabled = true;
+    document.getElementById("speed_auto_4").disabled = true;
 }
 
 // Chương trình con đọc dữ liệu lên IO Field
 function fn_Auto_IOField_IO(tag, IOField, tofix)
 {
     socket.on(tag, function(data){
-        if (tofix == 0 & Main_data_edditting != true)
+        if (tofix == 0 & Auto_data_edditting != true)
         {
             document.getElementById(IOField).value = data;
         }
-        else if(Main_data_edditting != true)
+        else if(Auto_data_edditting != true)
         {
             document.getElementById(IOField).value = data.toFixed(tofix);
         }
