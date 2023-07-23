@@ -180,7 +180,7 @@ var Total_power = 0;
 var Total_Energy = 0;
 
 function fn_sql_insert() {
-  // console.log("dât là:"+dataArr[3]);
+  // console.log("data la:"+dataArr[3]);
 
   var sqltable_Name = "dpm680_data";
   L1_line = dataArrip[9] * 0.1;
@@ -395,12 +395,29 @@ function valuesWritten(anythingBad) {
 
 // Nhận các bức điện được gửi từ trình duyệt
 io.on("connection", function(socket){
-    // Bật tắt động cơ M1
+    // Start che do manual
         socket.on("cmd_start_manual", function(data){conn_plc.writeItems('Start_manual', data, valuesWritten);});
+    // Start che do auto
+        socket.on("cmd_start_auto", function(data){conn_plc.writeItems('Start_auto', data, valuesWritten);});
+
+});
+io.on("connection", function(socket){       
     // Ghi dữ liệu từ IO field
-    socket.on("cmd_Main_Edit_Data", function(data){conn_plc.writeItems(['Nhap_temp_manu_2', 'Van_position_manu_2','Fan_speed_manu_2','Nhap_temp_manu_3','Van_position_manu_3'
-                                                                        ,'Fan_speed_manu_3','Nhap_temp_manu_4', 'Van_position_manu_4','Fan_speed_manu_4'],
-                                                                    [data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8]], valuesWritten);});
+    socket.on("cmd_Main_Edit_Data", function(data){conn_plc.writeItems(['Mode_manu_2','Nhap_temp_manu_2','Van_position_manu_2','Fan_speed_manu_2',
+                                                                        'Mode_manu_3','Nhap_temp_manu_3','Van_position_manu_3','Fan_speed_manu_3',
+                                                                        'Mode_manu_4','Nhap_temp_manu_4','Van_position_manu_4','Fan_speed_manu_4'],
+                                                                        [data[0],data[1],data[2],data[3],
+                                                                         data[4],data[5],data[6],data[7],
+                                                                         data[8],data[9],data[10],data[11]], valuesWritten);});
+});
+
+io.on("connection", function(socket){
+socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
+                                                                    'Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
+                                                                    'Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
+                                                                        [data[0],data[1],data[2],data[3],
+                                                                         data[4],data[5],data[6],data[7],
+                                                                         data[8],data[9],data[10],data[11]], valuesWritten);});
 });
 
 
