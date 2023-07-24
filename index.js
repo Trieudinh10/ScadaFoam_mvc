@@ -427,12 +427,12 @@ io.on("connection", function(socket){
 });
 
 io.on("connection", function(socket){
-socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
-                                                                    'Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
-                                                                    'Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
-                                                                        [data[0],data[1],data[2],data[3],
-                                                                         data[4],data[5],data[6],data[7],
-                                                                         data[8],data[9],data[10],data[11]], valuesWritten);});
+socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['On_off_auto_2','Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
+                                                                    'On_off_auto_3','Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
+                                                                    'On_off_auto_4','Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
+                                                                        [data[0],data[1],data[2],data[3],data[4],
+                                                                         data[5],data[6],data[7],data[8],data[9],
+                                                                         data[10],data[11],data[12],data[13],data[14]], valuesWritten);});
 });
 
 
