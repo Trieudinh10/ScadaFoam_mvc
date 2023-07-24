@@ -417,7 +417,7 @@ io.on("connection", function(socket){
 
 });
 io.on("connection", function(socket){       
-    // Ghi dữ liệu từ IO field
+    // Ghi dữ liệu từ IO field che do thu cong
     socket.on("cmd_Main_Edit_Data", function(data){conn_plc.writeItems(['Mode_manu_2','Nhap_temp_manu_2','Van_position_manu_2','Fan_speed_manu_2',
                                                                         'Mode_manu_3','Nhap_temp_manu_3','Van_position_manu_3','Fan_speed_manu_3',
                                                                         'Mode_manu_4','Nhap_temp_manu_4','Van_position_manu_4','Fan_speed_manu_4'],
@@ -427,6 +427,7 @@ io.on("connection", function(socket){
 });
 
 io.on("connection", function(socket){
+    // Ghi dữ liệu từ IO field che do tu dong
 socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['On_off_auto_2','Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
                                                                     'On_off_auto_3','Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
                                                                     'On_off_auto_4','Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
