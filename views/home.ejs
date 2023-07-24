@@ -48,22 +48,16 @@
             <div class="item_air-room">
               <div class="room_container block_status">
                 <div class="item_data-room item_data-status">
-                  <h2>Tự Động:</h2>
+                  <h2>Tự Động</h2>
                   <img id="Trang_thai_auto" class="den_cd" />
                   <script>
                     fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
                   </script>
                 </div>
                 <div class="item_data-room item_data-status">
-                  <h2>Thủ Công:</h2>
+                  <h2>Thủ Công</h2>
                   <img id="Trang_thai_manual" class="den_cd" />
-                  <script>
-                    fn_SymbolStatus(
-                      "Trang_thai_manual",
-                      "Den_xanh",
-                      "Den_manual"
-                    );
-                  </script>
+                  <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual");</script>
                 </div>
               </div>
             </div>
@@ -77,9 +71,7 @@
             <div class="item_air-status">
               <h2>Trạng thái</h2>
               <img id="Trang_thai_ml_2" class="status_mode den_ml" />
-              <script>
-                fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "On_off_data_2");
-              </script>
+              <script>fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "On_off_data_2");</script>
             </div>
             <div class="item_air-tem">
               <h2></h2>
@@ -141,13 +133,7 @@
 
                 <div class="block_data-item">
                   <input id="cai_goc_mo_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_2",
-                      "cai_goc_mo_2",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_2","cai_goc_mo_2",0);</script>
                 </div>
               </div>
             </div>
@@ -246,13 +232,7 @@
 
                 <div class="block_data-item">
                   <input id="cai_goc_mo_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_3",
-                      "cai_goc_mo_3",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_3","cai_goc_mo_3",0);</script>
                 </div>
               </div>
             </div>
@@ -351,13 +331,7 @@
 
                 <div class="block_data-item">
                   <input id="cai_goc_mo_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_4",
-                      "cai_goc_mo_4",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_4","cai_goc_mo_4",0);</script>
                 </div>
               </div>
             </div>
@@ -402,34 +376,4 @@
       <a href="#myChart"><div class="scroll_bottom"></div></a>
     </div>
   </body>
-  <script>
-    var btn_scroll = document.querySelectorAll(".btn_scroll a div");
-    const local_url = window.location.href;
-    const split_local = local_url.split("/");
-    const autoCheckLink_bottom = document.querySelector(".scroll_bottom");
-    const autoCheckLink_top = document.querySelector(".scroll_top");
-
-    const check_href = () => {
-      btn_scroll.forEach((el) => el.classList.remove("btn_active"));
-      if (split_local[3] === "#myChart") {
-        autoCheckLink_top.classList.add("btn_active");
-      } else {
-        autoCheckLink_bottom.classList.add("btn_active");
-      }
-    };
-
-    window.onload = check_href();
-
-    btn_scroll.forEach((e, index) => {
-      e.onclick = function () {
-        btn_scroll.forEach((el) => el.classList.remove("btn_active"));
-
-        if (index === 1) {
-          autoCheckLink_top.classList.add("btn_active");
-        } else {
-          autoCheckLink_bottom.classList.add("btn_active");
-        }
-      };
-    });
-  </script>
 </html>

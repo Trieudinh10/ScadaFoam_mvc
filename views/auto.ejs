@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="css/manual.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/font.css">
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="/js/FC1_Common.js"></script>
+    <script src="/js/FC3_set_auto.js"></script>
+
     <script src="/js/fontawesome.js"  crossorigin="anonymous"></script>
     <title>Lưu Foam</title>
   </head>
@@ -71,14 +76,17 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc Mở (mode)</h2>
+            <h2>Chế độ (mod)</h2>
             <div class="setting_input">
-              <label for="deg_dh1">Cài Đặt</label><select name="" id="deg_dh1">
+              <label for="">Cài đặt</label>
+              <select id="mode_aut_2" disabled="disabled" type="text">
+                <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
+              <script>fn_Auto_IOField_IO("Mode_auto_2", "mode_aut_2", 0);</script>
             </div>
           </div>
 
@@ -96,21 +104,35 @@
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
             <div class="setting_input">
-              <label for="">Cài đặt</label
-              ><select id="position_manu_2" disabled="disabled" type="text">
+              <label for="">Cài đặt</label>
+              <select id="mode_aut_3" disabled="disabled" type="text">
+                <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
               </select>
+              <script>fn_Auto_IOField_IO("Mode_auto_3", "mode_aut_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mode)</h2>
+            <h2>Tốc độ Quạt (mod)</h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
+              <label for="">Cài đặt</label>
+              <select id="speed_auto_2" disabled="disabled" type="text">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <script>fn_Auto_IOField_IO("Fan_speed_auto_2", "speed_auto_2", 0);</script>
+            </div>
+          </div>
+          <div class="setting_content-item">
+            <h2>Góc mở (mod)</h2>
+            <div class="setting_input">
+              <label for="">Cài đặt</label>
+              <select id="position_auto_2" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -118,20 +140,12 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
+              <script>
+                fn_Auto_IOField_IO("Van_position_auto_2", "position_auto_2", 0);
+              </script>
             </div>
           </div>
 
-          <div class="setting_content-item">
-            <h2>Góc Mở (mode)</h2>
-            <div class="setting_input">
-              <label for="deg_dh2">Cài Đặt</label><select name="" id="deg_dh2">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </div>
-          </div>
 
           <div class="setting_content-item">
             <h2>Nhiệt Độ (&deg;C) </h2>
@@ -145,8 +159,35 @@
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
             <div class="setting_input">
-              <label for="">Cài đặt</label
-              ><select id="position_manu_2" disabled="disabled" type="text">
+              <label for="">Cài đặt</label>
+              <select id="mode_aut_4" disabled="disabled" type="text">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <script>fn_Auto_IOField_IO("Mode_auto_4", "mode_aut_4", 0);</script>
+            </div>
+          </div>
+          <div class="setting_content-item">
+            <h2>Tốc độ Quạt (mod)</h2>
+            <div class="setting_input">
+              <label for="">Cài đặt</label>
+              <select id="speed_auto_3" disabled="disabled" type="text">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <script>fn_Auto_IOField_IO("Fan_speed_auto_3", "speed_auto_3", 0);</script>
+            </div>
+          </div>
+          <div class="setting_content-item">
+            <h2>Góc mở (mod)</h2>
+            <div class="setting_input">
+              <label for="">Cài đặt</label>
+              <select id="position_auto_3" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -154,32 +195,10 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
+              <script>fn_Auto_IOField_IO("Van_position_auto_3", "position_auto_3", 0);</script>
             </div>
           </div>
-          <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mode)</h2>
-            <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-              </select>
-            </div>
-          </div>
-          <div class="setting_content-item">
-            <h2>Góc Mở (mode)</h2>
-            <div class="setting_input">
-              <label for="deg_dh3">Cài Đặt</label><select name="" id="deg_dh3">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </div>
-          </div>
+
 
           <div class="setting_content-item">
             <h2>Nhiệt Độ (&deg;C) </h2>
@@ -192,21 +211,4 @@
     </div>
     <%- include('btn_scroll.ejs'); -%>
   </body>
-  <script>
-    $ = document.querySelector.bind(document);
-    $$ = document.querySelectorAll.bind(document);
-    const listSubmit = $$(".btn_auto");
-    const valueTem = $$(".tem")
-    listSubmit.forEach((e, index) => {
-      e.onclick = function () {
-        if(valueTem[index].value < 16 || valueTem[index].value > 31){
-
-          alert(`nhiệt độ từ khoảng 16 tới 31`)
-        }
-        else{
-          alert(`${valueTem[index].value}`)
-        }
-      };
-    });
-  </script>
 </html>
