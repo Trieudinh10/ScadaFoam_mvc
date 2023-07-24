@@ -78,6 +78,12 @@ var tags_list = {
     Read_tem_set_4: 'DB7,WORD134',
     Read_tem_refer_4: 'DB7,WORD136',
     Time_delay_set_tem_auto: 'DB7,DWORD138',
-    Trigger: 'DB7,X142.0'
+    On_manu_2:'DB7,X142.0',
+    Off_manu_2:'DB7,X142.1',
+    On_manu_3:'DB7,X142.2',
+    Off_manu_3:'DB7,X142.3',
+    On_manu_4:'DB7,X142.4',
+    Off_manu_4:'DB7,X142.5',
+    Trigger: 'DB7,X142.6'
     
 };

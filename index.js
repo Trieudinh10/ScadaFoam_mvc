@@ -389,6 +389,12 @@ function fn_tag(){
     io.sockets.emit("Read_tem_set_4", obj_tag_value["Read_tem_set_4"]);
     io.sockets.emit("Read_tem_refer_4", obj_tag_value["Read_tem_refer_4"]);
     io.sockets.emit("Time_delay_set_tem_auto", obj_tag_value["Time_delay_set_tem_auto"]);
+    io.sockets.emit("On_manu_2", obj_tag_value["On_manu_2"]);
+    io.sockets.emit("Off_manu_2", obj_tag_value["Off_manu_2"]);
+    io.sockets.emit("On_manu_3", obj_tag_value["On_manu_3"]);
+    io.sockets.emit("Off_manu_3", obj_tag_value["Off_manu_3"]);
+    io.sockets.emit("On_manu_4", obj_tag_value["On_manu_4"]);
+    io.sockets.emit("Off_manu_4", obj_tag_value["Off_manu_4"]);
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);
 }
 
@@ -404,6 +410,15 @@ io.on("connection", function(socket){
         socket.on("cmd_start_manual", function(data){conn_plc.writeItems('Start_manual', data, valuesWritten);});
     // Start che do auto
         socket.on("cmd_start_auto", function(data){conn_plc.writeItems('Start_auto', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml2", function(data){conn_plc.writeItems('On_manu_2', data, valuesWritten);});
+        socket.on("cmd_stop_ml2", function(data){conn_plc.writeItems('Off_manu_2', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml3", function(data){conn_plc.writeItems('On_manu_3', data, valuesWritten);});
+        socket.on("cmd_stop_ml3", function(data){conn_plc.writeItems('Off_manu_3', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml4", function(data){conn_plc.writeItems('On_manu_4', data, valuesWritten);});
+        socket.on("cmd_stop_ml4", function(data){conn_plc.writeItems('Off_manu_4', data, valuesWritten);});
 
 });
 io.on("connection", function(socket){       
@@ -417,12 +432,12 @@ io.on("connection", function(socket){
 });
 
 io.on("connection", function(socket){
-socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
-                                                                    'Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
-                                                                    'Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
-                                                                        [data[0],data[1],data[2],data[3],
-                                                                         data[4],data[5],data[6],data[7],
-                                                                         data[8],data[9],data[10],data[11]], valuesWritten);});
+socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['On_off_auto_2','Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
+                                                                    'On_off_auto_3','Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
+                                                                    'On_off_auto_4','Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4'],
+                                                                        [data[0],data[1],data[2],data[3],data[4],
+                                                                         data[5],data[6],data[7],data[8],data[9],
+                                                                         data[10],data[11],data[12],data[13],data[14]], valuesWritten);});
 });
 
 
