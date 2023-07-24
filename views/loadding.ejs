@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loadding...</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loadding.css">
+</head>
+<body>
+    <div class="container_loadding">
+        <div class="loadding"></div>
+    </div>
+</body>
+<script>
+    const loadding = document.querySelector('.container_loadding');
+    window.addEventListener('load',() =>{
+        loadding.style.display = 'none';
+    })
+    window.addEventListener('DOMContentLoaded', () => {
+        loadding.style.display = 'block';
+});
+
+</script>
+</html>

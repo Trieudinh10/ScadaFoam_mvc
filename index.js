@@ -44,6 +44,11 @@ app.get('/huongdan', function(req,res)
     res.render('huongdan');
 })
 
+app.get('/loadding', function(req,res)
+{
+    res.render('loadding');
+})
+
 if(server){
     console.log('ket noi thanh cong port: 8080')
 }

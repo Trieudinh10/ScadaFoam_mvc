@@ -19,6 +19,7 @@
   </script>
   <body>
     <%- include('header.ejs'); -%>
+    <%- include('loadding.ejs'); -%>
     <div class="home_container">
       <div class="home_system">
         <div class="system_item">
@@ -49,14 +50,14 @@
               <div class="room_container block_status">
                 <div class="item_data-room item_data-status">
                   <h2>Tự Động</h2>
-                  <img id="Trang_thai_auto" class="den_cd" />
+                  <img id="Trang_thai_auto" class="den_cd" alt="den_bao" />
                   <script>
                     fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
                   </script>
                 </div>
                 <div class="item_data-room item_data-status">
                   <h2>Thủ Công</h2>
-                  <img id="Trang_thai_manual" class="den_cd" />
+                  <img id="Trang_thai_manual" class="den_cd" alt="den_bao"  />
                   <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual");</script>
                 </div>
               </div>
@@ -68,13 +69,13 @@
             <div class="item_air-title">
               <h2>Điều Hòa 1</h2>
             </div>
-            <div class="item_air-status">
-              <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_2" class="status_mode den_ml" />
-              <script>fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "Read_on_off_2");</script>
-            </div>
-            <div class="item_air-tem">
-              <h2></h2>
+
+            <div class="item_air-status-block">
+              <div class="item_air-status">
+                <h2>Trạng thái</h2>
+                <img id="Trang_thai_ml_2" class="status_mode den_ml" />
+                <script>fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "Read_on_off_2");</script>
+              </div>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
@@ -164,15 +165,15 @@
             <div class="item_air-title">
               <h2>Điều Hòa 2</h2>
             </div>
-            <div class="item_air-status">
-              <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_3" class="status_mode den_ml" />
-              <script>
-                fn_SymbolStatus("Trang_thai_ml_3", "Den_xanh", "Read_on_off_3");
-              </script>
-            </div>
-            <div class="item_air-tem">
-              <h2></h2>
+            
+            <div class="item_air-status-block">
+              <div class="item_air-status">
+                <h2>Trạng thái</h2>
+                <img id="Trang_thai_ml_3" class="status_mode den_ml" alt="den_bao"  />
+                <script>
+                  fn_SymbolStatus("Trang_thai_ml_3", "Den_xanh", "Read_on_off_3");
+                </script>
+              </div>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
@@ -263,15 +264,15 @@
               <h2>Điều Hòa 3</h2>
             </div>
 
-            <div class="item_air-status">
-              <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_4" class="status_mode den_ml" />
-              <script>
-                fn_SymbolStatus("Trang_thai_ml_4", "Den_xanh", "Read_on_off_4");
-              </script>
-            </div>
-            <div class="item_air-tem">
-              <h2></h2>
+            
+            <div class="item_air-status-block">
+              <div class="item_air-status">
+                <h2>Trạng thái</h2>
+                <img id="Trang_thai_ml_4" class="status_mode den_ml" alt="den_bao"  />
+                <script>
+                  fn_SymbolStatus("Trang_thai_ml_4", "Den_xanh", "Read_on_off_4");
+                </script>
+              </div>
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
@@ -376,4 +377,30 @@
       <a href="#myChart"><div class="scroll_bottom"></div></a>
     </div>
   </body>
+  <script>
+    var btn_scroll = document.querySelectorAll(".btn_scroll a div");
+    const local_url = window.location.href;
+    const split_local = local_url.split("/");
+    const autoCheckLink_bottom = document.querySelector(".scroll_bottom");
+    const autoCheckLink_top = document.querySelector(".scroll_top");
+    const check_href = () => {
+      btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+      if (split_local[3] === "#myChart") {
+        autoCheckLink_top.classList.add("btn_active");
+      } else {
+        autoCheckLink_bottom.classList.add("btn_active");
+      }
+    };
+    window.onload = check_href();
+    btn_scroll.forEach((e, index) => {
+      e.onclick = function () {
+        btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+        if (index === 1) {
+          autoCheckLink_top.classList.add("btn_active");
+        } else {
+          autoCheckLink_bottom.classList.add("btn_active");
+        }
+      };
+    });
+  </script>
 </html>

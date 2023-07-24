@@ -15,9 +15,9 @@
   </head>
   <body>
     <div class="block_scroll_num">
-     <a href="#top_header"><div class="scroll_btn">1</div></a>
-      <a href="#dieuhoa2"><div class="scroll_btn">2</div></a>
-      <a href="#dieuhoa3"><div class="scroll_btn">3</div></a>
+     <a     onclick = "window.scrollTo(0, 0)"><div class="scroll_btn"   >1</div></a>
+      <a   onclick = "window.scrollTo(0, 525)"><div class="scroll_btn">2</div></a>
+      <a   onclick = "window.scrollTo(0, 783)"><div class="scroll_btn">3</div></a>
     </div>
   </body>
   <script>
@@ -27,15 +27,15 @@
 
     const local_url = window.location.href;
     const split_local = local_url.split("#");
-    
-    console.log(split_local[1])
+
 
     const check_href = () => {
       btn_scroll.forEach((el) => el.classList.remove("btn_active"));
-      if (split_local[1] === "top_header" || !split_local[1]) {
+      const scroll_load = window.scrollY
+      if (scroll_load >= 0  && scroll_load < 524 ) {
         btn_scroll[0].classList.add('btn_active');
       } 
-      else if (split_local[1] === "dieuhoa2") {
+      else if (scroll_load >= 525 && scroll_load < 692 ) {
         btn_scroll[1].classList.add('btn_active');
       }
       else{

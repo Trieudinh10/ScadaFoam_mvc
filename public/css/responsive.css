@@ -157,6 +157,7 @@
   .setting_content-item{
     display: unset;
   }
+
   /*end mobile auto */
 
   /* mobile manual  */
@@ -216,6 +217,9 @@
     height: unset;
   }
   .operate_container-title{
+    flex-wrap: wrap;
+  }
+  .item_air-status-block{
     flex-wrap: wrap;
   }
 }
@@ -314,7 +318,15 @@
   }
   .start_stop-btn-start{
     flex: 1;
+  }
+  .start_stop-btn-save{
     justify-content: flex-end;
+  }
+  .block_start_stop{
+    position: sticky;
+    top: -5px;
+    background-color: var(--color-main);
+    z-index: 1;
   }
   .setting_off{
     justify-content: center;

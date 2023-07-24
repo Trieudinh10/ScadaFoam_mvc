@@ -22,10 +22,6 @@
     <div class="operate_container">
       <div class="operate_container-title">
         <h2>Chế độ thủ công</h2>
-        <img id="Trang_thai_manual" class="den_cd" />
-        <script>
-          fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
-        </script>
       </div>
       <div class="block_start_stop">
         <div class="start_stop-btn-start">
@@ -41,7 +37,7 @@
       <div class="operate_row">
         <div class="setting_item">
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
-          <div class="setting_content-item">
+          <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml2', true);" >START</button>
             </div>
@@ -107,7 +103,7 @@
 
         <div class="setting_item">
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
-          <div class="setting_content-item">
+          <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml3', true);" >START</button>
             </div>
@@ -171,7 +167,7 @@
 
         <div class="setting_item">
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
-          <div class="setting_content-item">
+          <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml4', true);" >START</button>
             </div>
