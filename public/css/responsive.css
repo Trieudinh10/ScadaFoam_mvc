@@ -314,7 +314,15 @@
   }
   .start_stop-btn-start{
     flex: 1;
+  }
+  .start_stop-btn-save{
     justify-content: flex-end;
+  }
+  .block_start_stop{
+    position: sticky;
+    top: -20px;
+    background-color: var(--color-main);
+    z-index: 1;
   }
   .setting_off{
     justify-content: center;
