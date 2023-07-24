@@ -45,3 +45,14 @@ canvas{
 html{
 	scroll-behavior: smooth;
 }
+
+.iframe_block{
+  display: flex;
+  justify-content: center;
+}
+
+iframe{
+  width: 300px;
+  height: 300px;
+
+}
