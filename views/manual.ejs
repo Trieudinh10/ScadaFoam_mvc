@@ -29,7 +29,7 @@
       </div>
       <div class="block_start_stop">
         <div class="start_stop-btn-start">
-          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">START</button>
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);" >START</button>
           <img id="Trang_thai_manual" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");</script>
         </div>
         <div class="start_stop-btn-save">
@@ -43,10 +43,11 @@
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item">
             <div class="setting_on">
-              <button class="setting_on-btn">Khởi động</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml2', true);" >START</button>
             </div>
+            <img id="Trang_thai_on_ml2" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_on_ml2", "Den_xanh", "On_off_data_2");</script>
             <div class="setting_off">
-              <button class="setting_on-btn">Dừng</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_stop_ml2', true);" >STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -108,10 +109,11 @@
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item">
             <div class="setting_on">
-              <button class="setting_on-btn">Khởi động</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml3', true);" >START</button>
             </div>
+            <img id="Trang_thai_on_ml3" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_on_ml3", "Den_xanh", "On_off_data_3");</script>
             <div class="setting_off">
-              <button class="setting_on-btn">Dừng</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_stop_ml3', true);" >STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -171,12 +173,13 @@
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
           <div class="setting_content-item">
             <div class="setting_on">
-              <button class="setting_on-btn">Khởi động</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_start_ml4', true);" >START</button>
             </div>
+            <img id="Trang_thai_on_ml4" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_on_ml4", "Den_xanh", "On_off_data_4");</script>
             <div class="setting_off">
-              <button class="setting_on-btn">Dừng</button>
+              <button class="setting_on-btn"  onclick="socket.emit('cmd_stop_ml4', true);" >STOP</button>
             </div>
-          </div>
+            </div>
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
             <div class="setting_input">

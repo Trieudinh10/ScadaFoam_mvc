@@ -384,6 +384,12 @@ function fn_tag(){
     io.sockets.emit("Read_tem_set_4", obj_tag_value["Read_tem_set_4"]);
     io.sockets.emit("Read_tem_refer_4", obj_tag_value["Read_tem_refer_4"]);
     io.sockets.emit("Time_delay_set_tem_auto", obj_tag_value["Time_delay_set_tem_auto"]);
+    io.sockets.emit("On_manu_2", obj_tag_value["On_manu_2"]);
+    io.sockets.emit("Off_manu_2", obj_tag_value["Off_manu_2"]);
+    io.sockets.emit("On_manu_3", obj_tag_value["On_manu_3"]);
+    io.sockets.emit("Off_manu_3", obj_tag_value["Off_manu_3"]);
+    io.sockets.emit("On_manu_4", obj_tag_value["On_manu_4"]);
+    io.sockets.emit("Off_manu_4", obj_tag_value["Off_manu_4"]);
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);
 }
 
@@ -399,6 +405,15 @@ io.on("connection", function(socket){
         socket.on("cmd_start_manual", function(data){conn_plc.writeItems('Start_manual', data, valuesWritten);});
     // Start che do auto
         socket.on("cmd_start_auto", function(data){conn_plc.writeItems('Start_auto', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml2", function(data){conn_plc.writeItems('On_manu_2', data, valuesWritten);});
+        socket.on("cmd_stop_ml2", function(data){conn_plc.writeItems('Off_manu_2', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml3", function(data){conn_plc.writeItems('On_manu_3', data, valuesWritten);});
+        socket.on("cmd_stop_ml3", function(data){conn_plc.writeItems('Off_manu_3', data, valuesWritten);});
+    // on_off may lanh 1 che do manual
+        socket.on("cmd_start_ml4", function(data){conn_plc.writeItems('On_manu_4', data, valuesWritten);});
+        socket.on("cmd_stop_ml4", function(data){conn_plc.writeItems('Off_manu_4', data, valuesWritten);});
 
 });
 io.on("connection", function(socket){       
