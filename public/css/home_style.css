@@ -1,6 +1,7 @@
 .home_container{
     width: 100%;
     max-height: calc(100vh - var(--height));
+    min-height: calc(100vh - var(--height));
     background-color: var(--color-main);
     display: flex;
     padding:8px;
@@ -29,7 +30,7 @@
 .system_item{
     width: 100%;
     display: flex;
-    padding: 4px 0 0 8px;
+    padding: 4px 0 3px 8px;
 }
 
 .system_item-air{
@@ -59,7 +60,8 @@
     margin-left: 8px;
     margin-bottom: 8px;
     align-items: center;
-    flex: 1;
+    /* flex: 1; */
+    min-width: 215px;
 }
 
 .item_air-status p{
@@ -69,7 +71,7 @@
 }
 
 .item_air-status h2{
-    min-width: 125px;
+    min-width: 125px !important;
     background-color: var(--color-item);
     border: 1px solid var(--color-border);
     border-radius: 10px;
@@ -94,6 +96,13 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.item_air-status-block{
+    display: flex;
+    margin: 0px 0 0px 8px;
+    align-items: center;
+}
+
 
 .item_air-tem input,.item_air-room input{
     width: 100px;

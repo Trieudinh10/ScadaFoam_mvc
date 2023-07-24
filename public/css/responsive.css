@@ -219,6 +219,9 @@
   .operate_container-title{
     flex-wrap: wrap;
   }
+  .item_air-status-block{
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
