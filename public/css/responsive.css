@@ -215,6 +215,9 @@
     min-height: calc(100% / 3 - 8px);
     height: unset;
   }
+  .operate_container-title{
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -308,6 +311,14 @@
   }
   .block_scroll_num{
     display: flex;
+  }
+  .start_stop-btn-start{
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .setting_off{
+    justify-content: center;
+    margin-right: -10px;
   }
 }
 

@@ -259,10 +259,12 @@ select {
 
 .operate_container-title{
   width: 100%;
-  text-align: center;
   margin: 8px 0;
-  font-size: 32px;
+  font-size: 24px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .operate_container-title h2{
@@ -292,6 +294,8 @@ select {
   align-items: center;
   display: flex;
   margin-left: 8px;
+  /* justify-content: flex-end; */
+  flex: 1;
 }
 
 .btt_sua_luu:hover{
@@ -305,11 +309,13 @@ select {
 .den_cd{
   width: 55px;
   height: 55px;
+  margin-left: 8px;
 }
 
 .setting_on,.setting_off{
   flex: 1;
 }
+
 .setting_off{
   display: flex;
   justify-content: flex-end;

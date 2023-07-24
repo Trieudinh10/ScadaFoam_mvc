@@ -275,7 +275,7 @@
 .scroll_top,.scroll_bottom{
     width: 40px;
     height: 40px;
-    background-color: var(--color-border);
+    background-color: rgba(43,184,146,0.7);
     position: relative;
     margin-bottom: 8px;
     border-radius: 50%;

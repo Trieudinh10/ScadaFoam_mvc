@@ -17,18 +17,58 @@
     <div class="setting_container">
       <div class="setting_container-title">
         <h2>Chế Độ Tự động</h2>
+        <img src="/images/Symbol/Den_xanh_0.png" id="Trang_thai_manual" class="den_cd" />
       </div>
       <div class="block_start_stop">
+        <div class="start_stop-btn-start">
+          <button
+            class="btn_on"
+          >
+            START
+          </button>
+        </div>
+        <div class="start_stop-btn-save">
+          <button
+            class="btt_sua_luu"
+          >
+            LƯU
+          </button>
+          <button
+            class="btt_sua_luu"
+          >
+            SỬA
+          </button>
+        </div>
       </div>
       <div class="auto_body">
         <div class="setting_item" id="dieuhoa1">
           <h2 class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item">
-            <h2>Nhiệt Độ (&deg;C) </h2>
+            <h2>Chế độ (mod)</h2>
             <div class="setting_input">
-              <label for="tem_dh1">Cài Đặt</label><input id="tem_dh1" class="tem" type="number" min="16" max="31" value="16" />
+              <label for="">Cài đặt</label
+              ><select id="position_manu_2" disabled="disabled" type="text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
             </div>
-            <div class="setting_input-btn"></div>
+          </div>
+          <div class="setting_content-item">
+            <h2>Tốc độ Quạt (mode)</h2>
+            <div class="setting_input">
+              <label for="">Cài Đặt</label><select name="" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
           </div>
           <div class="setting_content-item">
             <h2>Góc Mở (mode)</h2>
@@ -41,6 +81,32 @@
               </select>
             </div>
           </div>
+
+          <div class="setting_content-item">
+            <h2>Nhiệt Độ (&deg;C) </h2>
+            <div class="setting_input">
+              <label for="tem_dh1">Cài Đặt</label><input id="tem_dh1" class="tem" type="number" min="16" max="31" value="16" />
+            </div>
+            <div class="setting_input-btn"></div>
+          </div>
+        </div>
+        <div class="setting_item" id="dieuhoa2">
+          <h2 class="setting_item-title">Điều Hòa 2</h2>
+
+          <div class="setting_content-item">
+            <h2>Chế độ (mod)</h2>
+            <div class="setting_input">
+              <label for="">Cài đặt</label
+              ><select id="position_manu_2" disabled="disabled" type="text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
           <div class="setting_content-item">
             <h2>Tốc độ Quạt (mode)</h2>
             <div class="setting_input">
@@ -54,20 +120,7 @@
               </select>
             </div>
           </div>
-          <div class="setting_content">
-            <div class="setting_btn">
-              <div class="btn_auto">Áp Dụng</div>
-            </div>
-          </div>
-        </div>
-        <div class="setting_item" id="dieuhoa2">
-          <h2 class="setting_item-title">Điều Hòa 2</h2>
-          <div class="setting_content-item">
-            <h2>Nhiệt Độ (&deg;C) </h2>
-            <div class="setting_input">
-              <label for="tem_dh2">Cài Đặt</label><input id="tem_dh2" class="tem" type="number" min="16" max="31" value="16" />
-            </div>
-          </div>
+
           <div class="setting_content-item">
             <h2>Góc Mở (mode)</h2>
             <div class="setting_input">
@@ -79,6 +132,30 @@
               </select>
             </div>
           </div>
+
+          <div class="setting_content-item">
+            <h2>Nhiệt Độ (&deg;C) </h2>
+            <div class="setting_input">
+              <label for="tem_dh2">Cài Đặt</label><input id="tem_dh2" class="tem" type="number" min="16" max="31" value="16" />
+            </div>
+          </div>
+        </div>
+        <div class="setting_item" id="dieuhoa3">
+          <h2 class="setting_item-title">Điều Hòa 3</h2>
+          <div class="setting_content-item">
+            <h2>Chế độ (mod)</h2>
+            <div class="setting_input">
+              <label for="">Cài đặt</label
+              ><select id="position_manu_2" disabled="disabled" type="text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
           <div class="setting_content-item">
             <h2>Tốc độ Quạt (mode)</h2>
             <div class="setting_input">
@@ -90,21 +167,6 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-            </div>
-          </div>
-          <div class="setting_content">
-            <div class="setting_btn">
-              <div class="btn_auto">Áp Dụng</div>
-            </div>
-          </div>
-        </div>
-        <div class="setting_item" id="dieuhoa3">
-          <h2 class="setting_item-title">Điều Hòa 3</h2>
-         
-          <div class="setting_content-item">
-            <h2>Nhiệt Độ (&deg;C) </h2>
-            <div class="setting_input">
-              <label for="tem_dh3">Cài Đặt</label><input id="tem_dh3" class="tem" type="number" min="16" max="31" value="16"/>
             </div>
           </div>
           <div class="setting_content-item">
@@ -118,22 +180,11 @@
               </select>
             </div>
           </div>
+
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mode)</h2>
+            <h2>Nhiệt Độ (&deg;C) </h2>
             <div class="setting_input">
-              <label for="">Cài Đặt</label><select name="" id="">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-              </select>
-            </div>
-          </div>
-          <div class="setting_content">
-            <div class="setting_btn">
-              <div class="btn_auto">Áp Dụng</div>
+              <label for="tem_dh3">Cài Đặt</label><input id="tem_dh3" class="tem" type="number" min="16" max="31" value="16"/>
             </div>
           </div>
         </div>
