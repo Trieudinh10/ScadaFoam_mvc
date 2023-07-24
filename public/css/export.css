@@ -115,6 +115,7 @@ table {
 #table_info thead th {
   position: sticky;
   top: 0;
+  min-width: 220px;
 }
 #table_error thead th {
   position: sticky;

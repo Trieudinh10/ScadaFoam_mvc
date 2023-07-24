@@ -376,4 +376,30 @@
       <a href="#myChart"><div class="scroll_bottom"></div></a>
     </div>
   </body>
+  <script>
+    var btn_scroll = document.querySelectorAll(".btn_scroll a div");
+    const local_url = window.location.href;
+    const split_local = local_url.split("/");
+    const autoCheckLink_bottom = document.querySelector(".scroll_bottom");
+    const autoCheckLink_top = document.querySelector(".scroll_top");
+    const check_href = () => {
+      btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+      if (split_local[3] === "#myChart") {
+        autoCheckLink_top.classList.add("btn_active");
+      } else {
+        autoCheckLink_bottom.classList.add("btn_active");
+      }
+    };
+    window.onload = check_href();
+    btn_scroll.forEach((e, index) => {
+      e.onclick = function () {
+        btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+        if (index === 1) {
+          autoCheckLink_top.classList.add("btn_active");
+        } else {
+          autoCheckLink_bottom.classList.add("btn_active");
+        }
+      };
+    });
+  </script>
 </html>

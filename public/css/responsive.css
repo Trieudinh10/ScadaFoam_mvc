@@ -157,6 +157,7 @@
   .setting_content-item{
     display: unset;
   }
+
   /*end mobile auto */
 
   /* mobile manual  */
@@ -320,7 +321,7 @@
   }
   .block_start_stop{
     position: sticky;
-    top: -20px;
+    top: -5px;
     background-color: var(--color-main);
     z-index: 1;
   }
