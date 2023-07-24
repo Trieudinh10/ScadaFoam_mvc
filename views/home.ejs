@@ -19,6 +19,7 @@
   </script>
   <body>
     <%- include('header.ejs'); -%>
+    <%- include('loadding.ejs'); -%>
     <div class="home_container">
       <div class="home_system">
         <div class="system_item">
@@ -49,14 +50,14 @@
               <div class="room_container block_status">
                 <div class="item_data-room item_data-status">
                   <h2>Tự Động</h2>
-                  <img id="Trang_thai_auto" class="den_cd" />
+                  <img id="Trang_thai_auto" class="den_cd" alt="den_bao" />
                   <script>
                     fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
                   </script>
                 </div>
                 <div class="item_data-room item_data-status">
                   <h2>Thủ Công</h2>
-                  <img id="Trang_thai_manual" class="den_cd" />
+                  <img id="Trang_thai_manual" class="den_cd" alt="den_bao"  />
                   <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual");</script>
                 </div>
               </div>
@@ -70,7 +71,7 @@
             </div>
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_2" class="status_mode den_ml" />
+              <img id="Trang_thai_ml_2" class="status_mode den_ml" alt="den_bao"  />
               <script>fn_SymbolStatus("Trang_thai_ml_2", "Den_xanh", "On_off_data_2");</script>
             </div>
             <div class="item_air-tem">
@@ -166,7 +167,7 @@
             </div>
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_3" class="status_mode den_ml" />
+              <img id="Trang_thai_ml_3" class="status_mode den_ml" alt="den_bao"  />
               <script>
                 fn_SymbolStatus("Trang_thai_ml_3", "Den_xanh", "On_off_data_3");
               </script>
@@ -265,7 +266,7 @@
 
             <div class="item_air-status">
               <h2>Trạng thái</h2>
-              <img id="Trang_thai_ml_4" class="status_mode den_ml" />
+              <img id="Trang_thai_ml_4" class="status_mode den_ml" alt="den_bao"  />
               <script>
                 fn_SymbolStatus("Trang_thai_ml_4", "Den_xanh", "On_off_data_4");
               </script>
