@@ -236,9 +236,16 @@
     flex: 1;
     margin-left: 8px;
     margin-bottom: 4px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
 }
+
+.item_data-room h2 {
+    font-size: 20px;
+    min-width: 128px;
+}
+
+
 .item_data-room.item_data-status{
     flex-direction: column;
     justify-content: space-around;
@@ -246,9 +253,7 @@
 }
 .room_container{
     display: flex;
-    flex-direction: column;
     flex: 1;
-    justify-content: center;
 }
 
 .room_container.block_status{
@@ -257,7 +262,7 @@
 }
 
  .item_air-room input {
-    min-width: 100px;
+    max-width: 50px;
  }
 
  .den_ml{
@@ -309,4 +314,12 @@
 .scroll_top.btn_active,
 .scroll_bottom.btn_active{
     opacity: 1;
+}
+
+
+.data_room-img{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
