@@ -293,10 +293,10 @@ select {
   height: 100%;
   align-items: center;
   display: flex;
-  margin-left: 8px;
   justify-content: flex-end;
   flex: 1;
-  margin-right: 8px;
+  /* position: absolute; */
+  width: 100%;
 }
 
 .btt_sua_luu:hover{

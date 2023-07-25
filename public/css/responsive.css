@@ -222,6 +222,22 @@
   .item_air-status-block{
     flex-wrap: wrap;
   }
+  .block_start_stop{
+    height: unset;
+  }
+  .start_stop-btn-save{
+    top:-55px;
+    position: absolute;
+  }
+  .lable_tem-input{
+    font-size: 17px !important;
+  }
+  .air_con{
+    display: none;
+  }
+  .setting_input{
+    flex:unset;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -317,7 +333,7 @@
     display: flex;
   }
   .start_stop-btn-start{
-    flex: 1;
+    /* flex: 1; */
   }
   .start_stop-btn-save{
     justify-content: flex-end;

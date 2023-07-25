@@ -13,10 +13,11 @@ body{
 }
 :root {
   --height: 80px;
-  --color-main: #031c31;
+  /* --color-main: #031c31; */
+  --color-main: #00529c;
   --color-border: #2bb892;
-  --color-item: #fff;
-  --color-body: #fff;
+  --color-item: #fffcd5;  /* #fff*/
+  --color-body: #fffcd5;  /* #fff*/
   --color-skyblue: #0b849a;
   --color-skyblue_alpha: #89dafd;
   --color-yellow: #fcde10;

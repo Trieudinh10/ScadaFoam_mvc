@@ -100,11 +100,13 @@
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .setting_input label{
-    margin-right: 16px;
+    margin-right: 12px;
     font-size: 32px;
     font-weight: 300;
 }
@@ -117,6 +119,18 @@
     font-size: 24px;
     text-align: center;
     font-weight: 600;
+    max-width: 150px;
+}
+
+.lable_tem-input{
+    color: #fff;
+    /* margin-left: 32px; */
+    font-size: 26px !important;
+}
+
+#nhiet_do_thap,#nhiet_do_cao{
+    min-width: 60px;
+    max-width: 60px;
 }
 
 .setting_input input:focus,select:focus{
@@ -133,4 +147,5 @@
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
+    flex-wrap: wrap;
 }
