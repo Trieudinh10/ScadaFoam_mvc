@@ -28,6 +28,14 @@
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);" >START</button>
           <img id="Trang_thai_manual" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");</script>
         </div>
+        <div class="setting_input">
+          <label for="">NHIỆT ĐỘ THẤP</label>
+          <input id="nhiet_do_thap" isabled="disabled" type="number" />
+          <script>fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);</script>
+          <label for="">NHIỆT ĐỘ CAO</label>
+          <input id="nhiet_do_cao" isabled="disabled" type="number" />
+          <script>fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);</script>
+        </div>
         <div class="start_stop-btn-save">
           <button class="btt_sua_luu" id="btt_Main_Save"onclick="fn_Main_SaveBtt()">LƯU</button>
           <button class="btt_sua_luu" id="btt_Main_Edit"onclick="fn_Main_EditBtt()">SỬA</button>
@@ -94,7 +102,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_manu_2" disabled="disabled" type="number" min="16" max="31"/>
+              <input id="temp_manu_2" disabled="disabled" type="number" />
               <script>fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);</script>
             </div>
           </div>
@@ -158,7 +166,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_manu_3" isabled="disabled" type="number" min="16" max="31"/>
+              <input id="temp_manu_3" isabled="disabled" type="number" />
               <script>fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);</script>
             </div>
           </div>
@@ -222,7 +230,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_manu_4" disabled="disabled" type="number" min="16"max="31"/>
+              <input id="temp_manu_4" disabled="disabled" type="number" />
               <script>fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);</script>
             </div>
           </div>

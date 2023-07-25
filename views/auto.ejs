@@ -29,10 +29,19 @@
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true);">START</button>
           <img id="Trang_thai_auto" class="den_cd" /><script>fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");</script>
         </div>
+        <div class="setting_input">
+          <label for="">NHIỆT ĐỘ THẤP</label>
+          <input id="nhiet_do_thap" isabled="disabled" type="number" />
+          <script>fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);</script>
+          <label for="">NHIỆT ĐỘ CAO</label>
+          <input id="nhiet_do_cao" isabled="disabled" type="number" />
+          <script>fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);</script>
+        </div>
         <div class="start_stop-btn-save">
           <button class="btt_sua_luu" id="btt_Auto_Save"onclick="fn_Auto_SaveBtt()">LƯU</button>
           <button class="btt_sua_luu" id="btt_Auto_Edit"onclick="fn_Auto_EditBtt()">SỬA</button>
         </div>
+        
       </div>
 
       <div class="operate_row">
@@ -97,7 +106,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_auto_2" disabled="disabled" type="number" min="16" max="31"/>
+              <input id="temp_auto_2" disabled="disabled" type="number" />
               <script>fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);</script>
             </div>
           </div>
@@ -163,7 +172,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_auto_3" isabled="disabled" type="number" min="16" max="31"/>
+              <input id="temp_auto_3" isabled="disabled" type="number" />
               <script>fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);</script>
             </div>
           </div>
@@ -229,7 +238,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input id="temp_auto_4" disabled="disabled" type="number" min="16"max="31"/>
+              <input id="temp_auto_4" disabled="disabled" type="number" />
               <script>fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);</script>
             </div>
           </div>

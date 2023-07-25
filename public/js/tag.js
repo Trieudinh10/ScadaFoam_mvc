@@ -84,6 +84,9 @@ var tags_list = {
     Off_manu_3:'DB7,X142.3',
     On_manu_4:'DB7,X142.4',
     Off_manu_4:'DB7,X142.5',
+    Cai_nhiet_do_thap:'DB7,WORD144',
+    Cai_nhiet_do_cao:'DB7,WORD146',
+    Canh_bao_nhiet:'DB7,X148.0',
     Trigger: 'DB7,X142.6'
     
 };

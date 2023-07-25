@@ -22,6 +22,8 @@ function fn_Auto_EditBtt(){
     document.getElementById("temp_auto_4").disabled = false;
     document.getElementById("position_auto_4").disabled = false;
     document.getElementById("speed_auto_4").disabled = false;
+    document.getElementById("nhiet_do_thap").disabled = false;
+    document.getElementById("nhiet_do_cao").disabled = false;
 }
 ///// CHƯƠNG TRÌNH CON NÚT NHẤN LƯU //////
 function fn_Auto_SaveBtt(){
@@ -44,7 +46,9 @@ fn_DataEdit('btt_Auto_Edit','btt_Auto_Save');
                             document.getElementById('mode_aut_4').value,
                             document.getElementById('temp_auto_4').value,
                             document.getElementById('position_auto_4').value,
-                            document.getElementById('speed_auto_4').value];
+                            document.getElementById('speed_auto_4').value,
+                            document.getElementById('nhiet_do_thap').value,
+                            document.getElementById('nhiet_do_cao').value];
     socket.emit('cmd_Auto_Edit_Data', data_edit_array);
     alert('Dữ liệu đã được lưu!');
     // Vô hiệu hoá chức năng sửa của các IO Field
@@ -63,6 +67,8 @@ fn_DataEdit('btt_Auto_Edit','btt_Auto_Save');
     document.getElementById("temp_auto_4").disabled = true;
     document.getElementById("position_auto_4").disabled = true;
     document.getElementById("speed_auto_4").disabled = true;
+    document.getElementById("nhiet_do_thap").disabled = true;
+    document.getElementById("nhiet_do_cao").disabled = true;
 }
 
 // Chương trình con đọc dữ liệu lên IO Field
