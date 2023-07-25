@@ -370,24 +370,24 @@ function fn_tag(){
     io.sockets.emit("Nhap_temp_data_4", obj_tag_value["Nhap_temp_data_4"]);
     io.sockets.emit("Nhiet_do", obj_tag_value["Nhiet_do"]);//
     io.sockets.emit("Do_am", obj_tag_value["Do_am"]);//
-    io.sockets.emit("Read_on_off_2", obj_tag_value["Read_on_off_2"]);
-    io.sockets.emit("Read_mode_2", obj_tag_value["Read_mode_2"]);
-    io.sockets.emit("Read_speed_2", obj_tag_value["Read_speed_2"]);
-    io.sockets.emit("Read_position_2", obj_tag_value["Read_position_2"]);
-    io.sockets.emit("Read_tem_set_2", obj_tag_value["Read_tem_set_2"]);
-    io.sockets.emit("Read_tem_refer_2", obj_tag_value["Read_tem_refer_2"]);
-    io.sockets.emit("Read_on_off_3", obj_tag_value["Read_on_off_3"]);
-    io.sockets.emit("Read_mode_3", obj_tag_value["Read_mode_3"]);
-    io.sockets.emit("Read_speed_3", obj_tag_value["Read_speed_3"]);
-    io.sockets.emit("Read_position_3", obj_tag_value["Read_position_3"]);
-    io.sockets.emit("Read_tem_set_3", obj_tag_value["Read_tem_set_3"]);
-    io.sockets.emit("Read_tem_refer_3", obj_tag_value["Read_tem_refer_3"]);
-    io.sockets.emit("Read_on_off_4", obj_tag_value["Read_on_off_4"]);
-    io.sockets.emit("Read_mode_4", obj_tag_value["Read_mode_4"]);
-    io.sockets.emit("Read_speed_4", obj_tag_value["Read_speed_4"]);
-    io.sockets.emit("Read_position_4", obj_tag_value["Read_position_4"]);
-    io.sockets.emit("Read_tem_set_4", obj_tag_value["Read_tem_set_4"]);
-    io.sockets.emit("Read_tem_refer_4", obj_tag_value["Read_tem_refer_4"]);
+    io.sockets.emit("Read_on_off_2", obj_tag_value["Read_on_off_2"]);//
+    io.sockets.emit("Read_mode_2", obj_tag_value["Read_mode_2"]);//
+    io.sockets.emit("Read_speed_2", obj_tag_value["Read_speed_2"]);//
+    io.sockets.emit("Read_position_2", obj_tag_value["Read_position_2"]);//
+    io.sockets.emit("Read_tem_set_2", obj_tag_value["Read_tem_set_2"]);//
+    io.sockets.emit("Read_tem_refer_2", obj_tag_value["Read_tem_refer_2"]);//
+    io.sockets.emit("Read_on_off_3", obj_tag_value["Read_on_off_3"]);//
+    io.sockets.emit("Read_mode_3", obj_tag_value["Read_mode_3"]);//
+    io.sockets.emit("Read_speed_3", obj_tag_value["Read_speed_3"]);//
+    io.sockets.emit("Read_position_3", obj_tag_value["Read_position_3"]);//
+    io.sockets.emit("Read_tem_set_3", obj_tag_value["Read_tem_set_3"]);//
+    io.sockets.emit("Read_tem_refer_3", obj_tag_value["Read_tem_refer_3"]);//
+    io.sockets.emit("Read_on_off_4", obj_tag_value["Read_on_off_4"]);//
+    io.sockets.emit("Read_mode_4", obj_tag_value["Read_mode_4"]);//
+    io.sockets.emit("Read_speed_4", obj_tag_value["Read_speed_4"]);//
+    io.sockets.emit("Read_position_4", obj_tag_value["Read_position_4"]);//
+    io.sockets.emit("Read_tem_set_4", obj_tag_value["Read_tem_set_4"]);//
+    io.sockets.emit("Read_tem_refer_4", obj_tag_value["Read_tem_refer_4"]);//
     io.sockets.emit("Time_delay_set_tem_auto", obj_tag_value["Time_delay_set_tem_auto"]);//
     io.sockets.emit("On_manu_2", obj_tag_value["On_manu_2"]);//
     io.sockets.emit("Off_manu_2", obj_tag_value["Off_manu_2"]);//
@@ -442,11 +442,32 @@ io.on("connection", function(socket){
 socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['On_off_auto_2','Mode_auto_2','Nhap_temp_auto_2','Van_position_auto_2','Fan_speed_auto_2',
                                                                     'On_off_auto_3','Mode_auto_3','Nhap_temp_auto_3','Van_position_auto_3','Fan_speed_auto_3',
                                                                     'On_off_auto_4','Mode_auto_4','Nhap_temp_auto_4','Van_position_auto_4','Fan_speed_auto_4',
-                                                                    'Cai_nhiet_do_thap','Cai_nhiet_do_cao'],
+                                                                    'Cai_nhiet_do_thap','Cai_nhiet_do_cao','Time_delay_set_tem_auto'],
                                                                         [data[0],data[1],data[2],data[3],data[4],
                                                                          data[5],data[6],data[7],data[8],data[9],
                                                                          data[10],data[11],data[12],data[13],data[14],
-                                                                         data[15],data[16]], valuesWritten);});
+                                                                         data[15],data[16],data[17]], valuesWritten);});
 });
 
 
+
+// Khởi tạo SQL
+var mysql = require('mysql');
+ 
+var sqlcon = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "123456",
+  database: "SQL_VAM",
+  dateStrings:true // Hiển thị không có T và Z
+});
+
+function fn_sql_insert(){
+    insert_trigger = arr_tag_value[43];		// Read trigger from PLC
+    var sqltable_Name = "plc_dulieu";
+    // Lấy thời gian hiện tại
+	var tzoffset = (new Date()).getTimezoneOffset() * 60000; //Vùng Việt Nam (GMT7+)
+	var temp_datenow = new Date();
+	var timeNow = (new Date(temp_datenow - tzoffset)).toISOString().slice(0, -1).replace("T"," ");
+	var timeNow_toSQL = "'" + timeNow + "',";
+}
