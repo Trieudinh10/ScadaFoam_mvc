@@ -253,7 +253,6 @@
 }
 .room_container{
     display: flex;
-    flex: 1;
 }
 
 .room_container.block_status{
