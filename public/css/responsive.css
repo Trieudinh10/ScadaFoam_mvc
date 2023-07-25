@@ -226,7 +226,7 @@
     height: unset;
   }
   .start_stop-btn-save{
-    top:-55px;
+    top: -103px;
     position: absolute;
   }
   .lable_tem-input{
@@ -237,6 +237,8 @@
   }
   .setting_input{
     flex:unset;
+    justify-content: center;
+    margin-top: 8px;
   }
 }
 
