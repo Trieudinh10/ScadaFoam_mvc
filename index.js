@@ -540,21 +540,21 @@ old_insert_trigger = insert_trigger;
 }
 
 // Đọc dữ liệu từ SQL
-function fn_SQLSearch(){
-    io.on("connection", function(socket){
-        socket.on("msg_SQL_Show", function(data){
-            var sqltable_Name = "plc_data";
-            var queryy1 = "SELECT * FROM " + sqltable_Name + ";"
-            sqlcon.query(queryy1, function(err, results, fields) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    const objectifyRawPacket = row => ({...row});
-                    const convertedResponse = results.map(objectifyRawPacket);
-                    socket.emit('SQL_Show', convertedResponse);
-                    console.log(convertedResponse);
-                }
-            });
+function fn_SQLSearch() {
+    io.on("connection", function(socket) {
+      socket.on("msg_SQL_Show", function(data) {
+        var sqltable_Name = "plc_data";
+        var queryy1 = "SELECT * FROM " + sqltable_Name + " WHERE date_time >= DATE_SUB(NOW(), INTERVAL 1 HOUR);";
+        sqlcon.query(queryy1, function(err, results, fields) {
+          if (err) {
+            console.log(err);
+          } else {
+            const objectifyRawPacket = row => ({ ...row });
+            const convertedResponse = results.map(objectifyRawPacket);
+            socket.emit("SQL_Show", convertedResponse);
+            console.log(convertedResponse);
+          }
         });
+      });
     });
-    }
+  }

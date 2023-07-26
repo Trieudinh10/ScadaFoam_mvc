@@ -19,62 +19,58 @@
     <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
 
     <div class="export_container">
-        <div id="Baocao">
-            <div class="input_item"> 
-                <label id="lb_Search_Start">Từ:</label>
-                <input aria-label="input date" id="dtpk_Search_Start" type="datetime-local">
-            </div>
-            <div class="input_item">
-                <label id="lb_Search_End">Đến:</label>
-                <input aria-label="input date" id="dtpk_Search_End" type="datetime-local">
-            </div>
-           <div class="input_item_btn">
-            <button id="btt_Search" class="btn"></i> TÌM KIẾM</button>
-
-           </div>
-           <div class="input_item_btn">
-            <button id="btt_Excel" class="btn" onclick="fn_excel();
-            "></i> BÁO CÁO</button>
-            </div>
-             <div class="change_btn" onclick=changeTable()></div>
-             
-             <div class="input_item_btn">
-                <button id="btt_Excel" class="btn" onclick="fn_Table01_SQL_Show();
-                "></i> DU LIEU</button>
-             </div>
-
+      <div id="Baocao">
+        <div class="input_item">
+          <label id="lb_Search_Start">Từ:</label>
+          <input aria-label="input date" id="dtpk_Search_Start"type="datetime-local"/>
         </div>
-        <div class="export_body">
-            <div class="export_para">
-                <div id = "div_Table_01">
-                    <h2>Bảng Thông Số</h2>
-                   <table id="table_01" >
-                       <thead>
-                       <tr >
-                           <th class="th_time" >Thời gian</th>
-                           <th >Auto</th>
-                           <th >Manual</th>
-                           <th >Nhiệt độ phòng</th>
-                           <th >Độ ẩm</th>
-                           <th >Trạng thái máy lạnh 1</th>
-                           <th >Nhiệt độ máy lạnh 1 </th>
-                           <th >Nhiệt độ tham chiếu máy lạnh 1 </th>
-                           <th >Trạng thái máy lạnh 2</th>
-                           <th >Nhiệt độ máy lạnh 2</th>
-                           <th >Nhiệt độ tham chiếu máy lạnh 2</th>
-                           <th >Trạng thái máy lạnh 3</th>
-                           <th >Nhiệt độ máy lạnh 3</th>
-                           <th >Nhiệt độ tham chiếu máy lạnh 3</th>
-                           <th >Thời gian cập nhật nhiệt độ </th>
-                           <th >Biên độ nhiệt thấp </th>
-                           <th >Biên độ nhiệt cao </th>
-                           <th >Cảnh báo nhiệt độ </th>
-                       </tr>
-                       </thead>
-                       <tbody></tbody>
-                   </table>
-                 </div>
+        <div class="input_item">
+          <label id="lb_Search_End">Đến:</label>
+          <input aria-label="input date" id="dtpk_Search_End" type="datetime-local"/>
+        </div>
+        <div class="input_item_btn">
+          <button id="btt_Search" onclick="fn_Table01_SQL_Show();" class="btn">
+            TÌM KIẾM
+          </button>
+        </div>
+        <div class="input_item_btn">
+          <button id="btt_Excel" class="btn" onclick="fn_excel();
+            ">BÁO CÁO
+          </button>
+        </div>
+        <div class="change_btn" onclick="changeTable()"></div>
       </div>
+      <div class="export_body">
+        <div class="export_para">
+          <div id="div_Table_01">
+            <h2>Bảng Thông Số</h2>
+            <table id="table_01">
+              <thead>
+                <tr>
+                  <th class="th_time">Thời gian</th>
+                  <th>Auto</th>
+                  <th>Manual</th>
+                  <th>Nhiệt độ phòng</th>
+                  <th>Độ ẩm</th>
+                  <th>Trạng thái máy lạnh 1</th>
+                  <th>Nhiệt độ máy lạnh 1</th>
+                  <th>Nhiệt độ tham chiếu máy lạnh 1</th>
+                  <th>Trạng thái máy lạnh 2</th>
+                  <th>Nhiệt độ máy lạnh 2</th>
+                  <th>Nhiệt độ tham chiếu máy lạnh 2</th>
+                  <th>Trạng thái máy lạnh 3</th>
+                  <th>Nhiệt độ máy lạnh 3</th>
+                  <th>Nhiệt độ tham chiếu máy lạnh 3</th>
+                  <th>Thời gian cập nhật nhiệt độ</th>
+                  <th>Biên độ nhiệt thấp</th>
+                  <th>Biên độ nhiệt cao</th>
+                  <th>Cảnh báo nhiệt độ</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
 
         <div class="export_error">
           <div id="div_table_error">
