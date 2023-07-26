@@ -1,13 +1,13 @@
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap");
 * {
   padding: 0px;
   margin: 0px;
   border: none;
   color: var(--color-text);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-body{
+body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -16,8 +16,8 @@ body{
   /* --color-main: #031c31; */
   --color-main: #00529c;
   --color-border: #2bb892;
-  --color-item: #fffcd5;  /* #fff*/
-  --color-body: #fff;  /* #fff*/
+  --color-item: #fffcd5; /* #fff*/
+  --color-body: #fff; /* #fff*/
   --color-skyblue: #0b849a;
   --color-skyblue_alpha: #89dafd;
   --color-yellow: #fcde10;
@@ -29,30 +29,27 @@ body{
 
 li {
   list-style: none;
-
 }
 
 a {
   text-decoration: none;
 }
 
-canvas{
+canvas {
   height: 100% !important;
   width: 100% !important;
 }
 
-
-html{
-	scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-.iframe_block{
+.iframe_block {
   display: flex;
   justify-content: center;
 }
 
-iframe{
+iframe {
   width: 300px;
   height: 300px;
-
 }

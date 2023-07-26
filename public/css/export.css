@@ -1,8 +1,8 @@
-.export_container{
-    width: 100%;
-    min-height: calc(100vh - var(--height));
-    background-color: var(--color-item);
-    border-top: 1px solid var(--color-border);
+.export_container {
+  width: 100%;
+  min-height: calc(100vh - var(--height));
+  background-color: var(--color-item);
+  border-top: 1px solid var(--color-border);
 }
 
 .export_body {
@@ -17,7 +17,7 @@
   min-width: 100%;
 }
 
-.export_error{
+.export_error {
   display: none;
 }
 
@@ -65,13 +65,12 @@
 }
 
 #div_table_info h2,
-#div_table_error h2{
+#div_table_error h2 {
   font-size: 32px;
   color: var(--color-item);
   padding: 8px 0;
   text-transform: uppercase;
 }
-
 
 #div_table_info::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
@@ -244,54 +243,75 @@ td {
   top: 4.2%;
 }
 
-
-.change_btn{
+.change_btn {
   width: 50px;
   height: 50px;
   position: relative;
   margin-left: 16px;
 }
 
-.change_btn::after{
-  content: '\f074';
+.change_btn::after {
+  content: "\f074";
   position: absolute;
   font-size: 32px;
-  font-family: 'fontawesome';
+  font-family: "fontawesome";
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.change_btn:hover{
+.change_btn:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.change_btn.change{
+.change_btn.change {
   transform: rotate(180deg);
 }
 
 /*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
 #div_Table_01 {
-  position: fixed; 
-  left: 80px; top: 155px; 
-  width: 90%; height: 75%;
+  position: fixed;
+  left: 80px;
+  top: 155px;
+  width: 90%;
+  height: 75%;
   overflow-y: scroll;
   border-radius: 16px; /*bo góc*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+#div_Table_01 h2 {
+  width: 100%;
+  text-align: center;
+}
 /*Table*/
 #table_01 {
-  position: absolute;  
-  width:100%;
+  position: absolute;
+  width: 100%;
 }
-#table_01 tr{
+#table_01 tr {
   cursor: pointer;
 }
-#table_01 tr:hover{background-color: #ddd;}
-#table_01   { overflow: auto; }
-#table_01 thead th { position: sticky; top: 0; }
+#table_01 tr:hover {
+  background-color: #ddd;
+}
+#table_01 {
+  overflow: auto;
+}
+#table_01 thead th {
+  position: sticky;
+  top: 0;
+}
 /* Just common table stuff. Really. */
-#table_01  { border-collapse: collapse; width: 100%; }
-#table_01 th, td { padding: 8px 16px; }
-#table_01 th     { background:#75c0ef; }
+#table_01 {
+  border-collapse: collapse;
+  width: 100%;
+}
+#table_01 th,
+td {
+  padding: 8px 16px;
+}
+#table_01 th {
+  background: #75c0ef;
+}
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
