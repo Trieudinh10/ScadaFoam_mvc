@@ -97,7 +97,7 @@
 }
 
 .setting_input{
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -109,6 +109,7 @@
     margin-right: 12px;
     font-size: 32px;
     font-weight: 300;
+    color: #000;
 }
 
 .setting_input input,select{
@@ -123,10 +124,11 @@
 }
 
 .lable_tem-input{
-    color: #fff;
+    color: #000;
     /* margin-left: 32px; */
     font-size: 26px !important;
 }
+
 
 #nhiet_do_thap,#nhiet_do_cao{
     min-width: 60px;

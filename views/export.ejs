@@ -18,11 +18,11 @@
         <div id="Baocao">
             <div class="input_item"> 
                 <label id="lb_Search_Start">Từ:</label>
-                <input id="dtpk_Search_Start" type="datetime-local">
+                <input aria-label="input date" id="dtpk_Search_Start" type="datetime-local">
             </div>
             <div class="input_item">
                 <label id="lb_Search_End">Đến:</label>
-                <input id="dtpk_Search_End" type="datetime-local">
+                <input aria-label="input date" id="dtpk_Search_End" type="datetime-local">
             </div>
            <div class="input_item_btn">
             <button id="btt_Search" class="btn" onclick="changeData()
@@ -54,19 +54,33 @@
                            <th >Góc Mở</th>
                            
                            <th >Tốc Độ Quạt</th>
-                           <th >Thông Tin Lỗi/Cảnh Báo</th>
-                           <tr>
-                           <td>06/07/2023 - 10h30p20s</td>
-                           <td>on</td>
-                           <td>100*c</td>
-                           <td>23*</td>
-                           <td>360deg</td>
-                           <td>300</td>
-                           <td>on</td>
-                           </tr>
-                           
+                           <th >Thông Tin Lỗi/Cảnh Báo</th>                                                  
                        </tr>
                        </thead>
+                       <tbody></tbody>
+                       <script>
+                        fetch('https://64bf73d45ee688b6250d716d.mockapi.io/apiExportFoam')
+                          .then((res) => res.json())
+                          .then((data) => {
+                            const tableBody = document.querySelector('#table_info tbody');
+                            data.forEach((element) => {
+                              const row = document.createElement('tr');
+                              row.innerHTML = `
+                                <td>${element.time}</td>
+                                <td>${element.status}</td>
+                                <td>${element.tem}</td>
+                                <td>${element.DA}</td>
+                                <td>${element.deg}</td>
+                                <td>${element.speed}</td>
+                                <td>${element.error}</td>
+                              `;
+                              tableBody.appendChild(row);
+                            });
+                          })
+                          .catch((error) => {
+                            console.error('Error fetching data:', error);
+                          });
+                      </script>
                    </table>
                  </div>
       </div>

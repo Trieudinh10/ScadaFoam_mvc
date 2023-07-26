@@ -345,10 +345,18 @@
     top: -5px;
     background-color: var(--color-main);
     z-index: 1;
+    margin-top: 16px;
+    height: unset;
+    padding: 8px;
   }
   .setting_off{
     justify-content: center;
     margin-right: -10px;
+  }
+  .setting_input-mt{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
   }
 }
 
