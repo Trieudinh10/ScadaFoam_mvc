@@ -22,11 +22,11 @@
         <div id="Baocao">
             <div class="input_item"> 
                 <label id="lb_Search_Start">Từ:</label>
-                <input aria-label="input date" id="dtpk_Search_Start" type="datetime-local">
+                <input id="dtpk_Search_Start" type="datetime-local">
             </div>
             <div class="input_item">
                 <label id="lb_Search_End">Đến:</label>
-                <input aria-label="input date" id="dtpk_Search_End" type="datetime-local">
+                <input id="dtpk_Search_End" type="datetime-local">
             </div>
            <div class="input_item_btn">
             <button id="btt_Search" class="btn" onclick="changeData()
@@ -72,7 +72,6 @@
                            <th >Cảnh báo nhiệt độ </th>
                        </tr>
                        </thead>
-                       <tbody></tbody>
                    </table>
                  </div>
       </div>
@@ -111,6 +110,8 @@
     const btnChange = document.querySelector('.change_btn');
     const body = document.querySelector('.export_para');
     const error = document.querySelector('.export_error');
+    const dataTo = $('#dtpk_Search_Start')
+    const dataEnd = $('#dtpk_Search_End')
     let changeBtn = true;
     const changeTable = () =>{
         if(btnChange.classList[1] === 'change'){
@@ -126,5 +127,21 @@
             btnChange.classList.add('change');
         }
     }
+
+    const changeData = () =>{
+        if(!dataTo.value){
+            alert(`chọn mốc thời gian`)
+        }
+        else{
+            if(changeBtn){
+            alert(`1 ${dataTo.value}` )
+        }
+        else{
+            alert(`2 ${dataEnd.value}`)
+        }
+        }
+
+    }
+
 </script>
 </html>
