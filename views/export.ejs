@@ -77,7 +77,6 @@
                  </div>
       </div>
 
-      
       <div class="export_error">
         <div id = "div_table_error">
             <h2>Bảng Báo Lỗi</h2>
@@ -106,12 +105,13 @@
 
 </body>
 <script>
-     $ = document.querySelector.bind(document);
+    $ = document.querySelector.bind(document);
     $$ = document.querySelectorAll.bind(document);
+    const body      = document.querySelector('.export_para');
+    const error     = document.querySelector('.export_error');
+    let changeBtn   = true;
     const btnChange = document.querySelector('.change_btn');
-    const body = document.querySelector('.export_para');
-    const error = document.querySelector('.export_error');
-    let changeBtn = true;
+    
     const changeTable = () =>{
         if(btnChange.classList[1] === 'change'){
             body.style.display = 'block';
