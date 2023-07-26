@@ -271,3 +271,29 @@ td {
 .change_btn.change{
   transform: rotate(180deg);
 }
+
+/*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
+#div_Table_01 {
+  position: fixed; 
+  left: 80px; top: 155px; 
+  width: 90%; height: 75%;
+  overflow-y: scroll;
+  border-radius: 16px; /*bo góc*/
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+/*Table*/
+#table_01 {
+  position: absolute;  
+  width:100%;
+}
+#table_01 tr{
+  cursor: pointer;
+}
+#table_01 tr:hover{background-color: #ddd;}
+#table_01   { overflow: auto; }
+#table_01 thead th { position: sticky; top: 0; }
+/* Just common table stuff. Really. */
+#table_01  { border-collapse: collapse; width: 100%; }
+#table_01 th, td { padding: 8px 16px; }
+#table_01 th     { background:#75c0ef; }
+/*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/

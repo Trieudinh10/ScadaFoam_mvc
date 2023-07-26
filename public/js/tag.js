@@ -87,6 +87,6 @@ var tags_list = {
     Cai_nhiet_do_thap:'DB7,WORD144',
     Cai_nhiet_do_cao:'DB7,WORD146',
     Canh_bao_nhiet:'DB7,X148.0',
-    Trigger: 'DB7,X142.6'
+    Trigger: 'DB7,X148.1'
     
 };
