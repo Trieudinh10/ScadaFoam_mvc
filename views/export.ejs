@@ -122,27 +122,5 @@
     </div>
 
 </body>
-<script>
-    $ = document.querySelector.bind(document);
-    $$ = document.querySelectorAll.bind(document);
-    const body      = document.querySelector('.export_para');
-    const error     = document.querySelector('.export_error');
-    let changeBtn   = true;
-    const btnChange = document.querySelector('.change_btn');
-    
-    const changeTable = () =>{
-        if(btnChange.classList[1] === 'change'){
-            body.style.display = 'block';
-            error.style.display ='none';
-            btnChange.classList.remove('change');
-            changeBtn = true;
-        }
-        else{
-            changeBtn = false;
-            body.style.display = 'none';
-            error.style.display ='block';
-            btnChange.classList.add('change');
-        }
-    }
-</script>
+
 </html>
