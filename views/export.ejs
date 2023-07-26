@@ -29,8 +29,7 @@
                 <input id="dtpk_Search_End" type="datetime-local">
             </div>
            <div class="input_item_btn">
-            <button id="btt_Search" class="btn" onclick="changeData()
-            "></i> TÌM KIẾM</button>
+            <button id="btt_Search" class="btn"></i> TÌM KIẾM</button>
 
            </div>
            <div class="input_item_btn">
@@ -76,7 +75,6 @@
                  </div>
       </div>
 
-      
       <div class="export_error">
         <div id = "div_table_error">
             <h2>Bảng Báo Lỗi</h2>
@@ -105,14 +103,13 @@
 
 </body>
 <script>
-     $ = document.querySelector.bind(document);
+    $ = document.querySelector.bind(document);
     $$ = document.querySelectorAll.bind(document);
+    const body      = document.querySelector('.export_para');
+    const error     = document.querySelector('.export_error');
+    let changeBtn   = true;
     const btnChange = document.querySelector('.change_btn');
-    const body = document.querySelector('.export_para');
-    const error = document.querySelector('.export_error');
-    const dataTo = $('#dtpk_Search_Start')
-    const dataEnd = $('#dtpk_Search_End')
-    let changeBtn = true;
+    
     const changeTable = () =>{
         if(btnChange.classList[1] === 'change'){
             body.style.display = 'block';
