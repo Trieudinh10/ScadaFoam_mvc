@@ -13,26 +13,7 @@
     <script src="/js/FC4_du_lieu.js"></script>
 
     <title>Lưu Foam</title>
-    <script>
-        const body = document.querySelector(".export_para");
-        const error = document.querySelector(".export_error");
-        let changeBtn = true;
-        const btnChange = document.querySelector(".change_btn");
-    
-        const changeTable = () => {
-          if (btnChange.classList[1] === "change") {
-            body.style.display = "block";
-            error.style.display = "none";
-            btnChange.classList.remove("change");
-            changeBtn = true;
-          } else {
-            changeBtn = false;
-            body.style.display = "none";
-            error.style.display = "block";
-            btnChange.classList.add("change");
-          }
-        };
-      </script>
+
   </head>
   <body>
     <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
@@ -120,7 +101,25 @@
         </div>
       </div>
     </div>
+  </body>
+  <script>
+    const body = document.querySelector(".export_para");
+    const error = document.querySelector(".export_error");
+    let changeBtn = true;
+    const btnChange = document.querySelector(".change_btn");
 
-</body>
-
+    const changeTable = () => {
+      if (btnChange.classList[1] === "change") {
+        body.style.display = "block";
+        error.style.display = "none";
+        btnChange.classList.remove("change");
+        changeBtn = true;
+      } else {
+        changeBtn = false;
+        body.style.display = "none";
+        error.style.display = "block";
+        btnChange.classList.add("change");
+      }
+    };
+  </script>
 </html>
