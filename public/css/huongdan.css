@@ -1,53 +1,52 @@
-.manual_container{
-    width: 100%;
-    background-color: var(--color-body);
-    border-top:1px solid var(--color-border) ;
+.manual_container {
+  width: 100%;
+  background-color: var(--color-body);
+  border-top: 1px solid var(--color-border);
 }
 
-.menu_manual{
-    width: 100%;
-    height: 40px;
-    position: sticky;
-    background-color: var(--color-main);
-    top: 0;
+.menu_manual {
+  width: 100%;
+  height: 40px;
+  position: sticky;
+  background-color: var(--color-main);
+  top: 0;
 }
 
 .menu_manual ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40px;
 }
 
-.menu_manual ul li{
-    display: flex;
-    align-items: center;
-    background-color: var(--color-body);
-    border: 1px solid var(--color-border);
-    padding: 4px;
-    border-radius: 4px;
+.menu_manual ul li {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-body);
+  border: 1px solid var(--color-border);
+  padding: 4px;
+  border-radius: 4px;
 }
 
-.menu_manual ul li:hover{
-    cursor: pointer;
+.menu_manual ul li:hover {
+  cursor: pointer;
 }
 
-.manual_body{
-    width: 100%;
-    padding: 8px;
-
+.manual_body {
+  width: 100%;
+  padding: 8px;
 }
 
-.manual_body h2{
-    margin-bottom: 16px;
+.manual_body h2 {
+  margin-bottom: 16px;
 }
 
 .manual_body img {
-    width: 100%;
-    margin: 16px 0;
+  width: 100%;
+  margin: 16px 0;
 }
 
-.manual_body p{
-    line-height: 24px;
-  }
+.manual_body p {
+  line-height: 24px;
+}
