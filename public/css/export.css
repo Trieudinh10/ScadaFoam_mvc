@@ -1,8 +1,7 @@
 .export_container{
     width: 100%;
     min-height: calc(100vh - var(--height));
-    background-color: var(--color-body);
-    padding: 8px;
+    background-color: var(--color-item);
     border-top: 1px solid var(--color-border);
 }
 
@@ -54,22 +53,21 @@
 /*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
 #div_table_info,
 #div_table_error {
-  background-color: #234664;
-  top: 10%;
-  left: 40%;
+  background-color: var(--color-main);
   width: 100%;
   text-align: center;
   text-align: center;
   border: 1px solid #a3855f;
   overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
-  max-height: 700px;
+  max-height: calc(100vh - var(--height) - 65px);
+  min-height: calc(100vh - var(--height) - 65px);
   max-width: 100%;
 }
 
 #div_table_info h2,
 #div_table_error h2{
   font-size: 32px;
-  color: #fff;
+  color: var(--color-item);
   padding: 8px 0;
   text-transform: uppercase;
 }
@@ -138,7 +136,7 @@ td {
   border: 1px solid #a3855f;
 }
 #table_info td {
-  background: #03243f;
+  background: var(--color-item);
   color: #4b657b;
   width: 70px;
   border: 1px solid #a3855f;

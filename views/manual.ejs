@@ -20,9 +20,6 @@
   <body>
     <%- include('header.ejs'); -%>
     <div class="operate_container">
-      <div class="operate_container-title">
-        <h2>Chế độ thủ công</h2>
-      </div>
       <div class="block_start_stop">
         <div class="start_stop-btn-start">
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);" >START</button>
