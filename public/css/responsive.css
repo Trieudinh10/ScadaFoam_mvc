@@ -334,9 +334,7 @@
   .block_scroll_num {
     display: flex;
   }
-  .start_stop-btn-start {
-    /* flex: 1; */
-  }
+
   .start_stop-btn-save {
     justify-content: flex-end;
   }
