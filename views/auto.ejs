@@ -23,6 +23,22 @@
 
     <div class="operate_container">
       <div class="block_start_stop">
+        <div class="start_stop-btn-save">
+          <button
+            class="btt_sua_luu"
+            id="btt_Auto_Save"
+            onclick="fn_Auto_SaveBtt()"
+          >
+            LƯU
+          </button>
+          <button
+            class="btt_sua_luu"
+            id="btt_Auto_Edit"
+            onclick="fn_Auto_EditBtt()"
+          >
+            SỬA
+          </button>
+        </div>
         <div class="start_stop-btn-start">
           <button
             class="btn_on"
@@ -31,7 +47,7 @@
           >
             START
           </button>
-          <img id="Trang_thai_auto" class="den_cd" />
+          <img id="Trang_thai_auto" class="den_cd" alt="den trang thai" />
           <script>
             fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
           </script>
@@ -55,22 +71,7 @@
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
         </div>
-        <div class="start_stop-btn-save">
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Save"
-            onclick="fn_Auto_SaveBtt()"
-          >
-            LƯU
-          </button>
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Edit"
-            onclick="fn_Auto_EditBtt()"
-          >
-            SỬA
-          </button>
-        </div>
+
       </div>
 
       <div class="operate_row">
