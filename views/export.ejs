@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/export.css" />
+    <link rel="stylesheet" href="/css/home_style.css" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css" />
@@ -11,7 +12,9 @@
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC4_du_lieu.js"></script>
-
+    <script src="/js/chart_min.js"></script>
+    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/font.css" />
     <title>Lưu Foam</title>
   </head>
   <body>
@@ -37,7 +40,6 @@
             ">BÁO CÁO
           </button>
         </div>
-        <div class="change_btn" onclick="changeTable()"></div>
       </div>
       <div class="export_body">
         <div class="export_para">
@@ -92,6 +94,16 @@
                 </tr>
               </thead>
             </table>
+          </div>
+          <h2>Biểu Đồ Nhiệt Độ</h2>
+          <div class="home_chart-tem">
+            <canvas id="myChart"></canvas>
+            <script src="js/chart_tem.js"></script>
+          </div>
+          <h2>Thông Số Phòng Foam</h2>
+          <div class="home_chart-room">
+            <canvas id="chartRoom"></canvas>
+            <script src="js/chart_room.js"></script>
           </div>
         </div>
       </div>

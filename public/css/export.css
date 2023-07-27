@@ -8,21 +8,30 @@
 .export_body {
   width: 100%;
   display: flex;
+  height: calc(100vh - var(--height) - 130px);
 }
 
 .export_para,
 .export_error {
-  max-width: 100%;
-  max-height: 500px;
-  min-width: 100%;
+  /* max-height: 500px; */
 }
 
 .export_error {
-  display: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.export_error h2{
+  width: 100%;
+  text-align: center;
 }
 
 .export_para {
   margin-right: 8px;
+  flex: 1;
+  max-width: 50%;
+  height: 100%;
 }
 
 .container_chart {
@@ -36,6 +45,7 @@
   margin-bottom: 10px;
   align-items: center;
   overflow-x: scroll;
+  margin-top: 10px;
 }
 
 #Baocao::-webkit-scrollbar {
@@ -59,9 +69,10 @@
   text-align: center;
   border: 1px solid #a3855f;
   overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
-  max-height: calc(100vh - var(--height) - 65px);
-  min-height: calc(100vh - var(--height) - 65px);
   max-width: 100%;
+  height: calc(100% / 3);
+  min-height: calc(100% / 3);
+  max-height: calc(100% / 3);
 }
 
 #div_table_info h2,
@@ -270,23 +281,23 @@ td {
 
 /*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
 #div_Table_01 {
-  position: fixed;
-  left: 80px;
-  top: 155px;
-  width: 90%;
-  height: 75%;
-  overflow-y: scroll;
-  border-radius: 16px; /*bo góc*/
+  /* position: fixed; */
+  /* width: 90%; */
+  /* height: 75%; */
+  overflow: scroll;
+  /* border-radius: 16px; */ /*bo góc*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #div_Table_01 h2 {
   width: 100%;
   text-align: center;
+  font-size: 32px;
+  padding: 8px 0;
 }
 /*Table*/
 #table_01 {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
 }
 #table_01 tr {
@@ -301,6 +312,7 @@ td {
 #table_01 thead th {
   position: sticky;
   top: 0;
+  min-width: 200px;
 }
 /* Just common table stuff. Really. */
 #table_01 {

@@ -46,23 +46,30 @@
           <script>
             fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
           </script>
-
-          <div class="start_stop-btn-save">
-            <button
-              class="btt_sua_luu"
-              id="btt_Main_Save"
-              onclick="fn_Main_SaveBtt()"
-            >
-              LƯU
-            </button>
-            <button
-              class="btt_sua_luu"
-              id="btt_Main_Edit"
-              onclick="fn_Main_EditBtt()"
-            >
-              SỬA
-            </button>
-          </div>
+    
+        </div>
+        <div class="setting_input setting_input-mt">
+          <label for="" class="lable_tem-input">THỜI GIAN CẬP NHẬT</label>
+          <input id="cai_thoi_gian" isabled="disabled" type="number" />
+          <script>
+            fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
+          </script>
+        </div>
+        <div class="start_stop-btn-save">
+          <button
+            class="btt_sua_luu"
+            id="btt_Main_Save"
+            onclick="fn_Main_SaveBtt()"
+          >
+            LƯU
+          </button>
+          <button
+            class="btt_sua_luu"
+            id="btt_Main_Edit"
+            onclick="fn_Main_EditBtt()"
+          >
+            SỬA
+          </button>
         </div>
       </div>
 
@@ -334,4 +341,16 @@
     </div>
     <%- include('btn_scroll.ejs'); -%>
   </body>
+  <script>
+    var cookieValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('role=admin'));
+      if(!cookieValue){
+        const btnStart = document.getElementById('btn_on_tn1');
+        const btnSaveEdit = document.querySelector('.start_stop-btn-save')
+        btnStart.disabled = true;
+        btnStart.style.display = "none";
+        btnSaveEdit.style.display = "none"
+      }      
+  </script>
 </html>

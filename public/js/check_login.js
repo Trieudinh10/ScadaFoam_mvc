@@ -12,26 +12,20 @@ function deleteCookie(name) {
 function login() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-
-  fetch("https://636b1016c07d8f936dacfcc2.mockapi.io/user")
-    .then((response) => response.json())
-    .then((data) => {
       var found = false;
-      data.forEach((i) => {
-        if (username === i.user && password === i.pass) {
+        if (username === 'admin' && password === 'admin' || username === 'user' && password === 'user' ) {
           found = true;
           setCookie("loggedIn", "true", 15);
           window.location.href = "http://localhost:8080/auto";
+          if(username === 'admin'){
+            document.cookie = 'role' + '=' + 'admin';
+          }else{
+            document.cookie = 'role' + '=' + 'user';
+          }
         }
-      });
-
       if (!found) {
         alert("Sai tên đăng nhập hoặc mật khẩu.");
       }
-    })
-    .catch((error) => {
-      console.error("Lỗi:", error);
-    });
 }
 
 function getCookie(name) {
