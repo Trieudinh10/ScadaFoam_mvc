@@ -274,6 +274,9 @@ setInterval(() => {
 var insert_trigger = false;			// Trigger
 var old_insert_trigger = false;		// Trigger old
 
+// Mảng xuất dữ liệu report Excel
+var SQL_Excel = [];  // Dữ liệu nhập kho
+
 // KHỞI TẠO KẾT NỐI PLC
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
@@ -600,4 +603,233 @@ function fn_SQLSearch_ByTime(){
         });
     });
 }
+
+
+// /////////////////////////////// BÁO CÁO EXCEL ///////////////////////////////
+const Excel = require('exceljs');
+const { CONNREFUSED } = require('dns');
+function fn_excelExport(){
+// =====================CÁC THUỘC TÍNH CHUNG=====================
+	// Lấy ngày tháng hiện tại
+	let date_ob = new Date();
+	let date = ("0" + date_ob.getDate()).slice(-2);
+	let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+	let year = date_ob.getFullYear();
+	let hours = date_ob.getHours();
+	let minutes = date_ob.getMinutes();
+	let seconds = date_ob.getSeconds();
+	let day = date_ob.getDay();
+	var dayName = '';
+	if(day == 0){dayName = 'Chủ nhật,'}
+	else if(day == 1){dayName = 'Thứ hai,'}
+	else if(day == 2){dayName = 'Thứ ba,'}
+	else if(day == 3){dayName = 'Thứ tư,'}
+	else if(day == 4){dayName = 'Thứ năm,'}
+	else if(day == 5){dayName = 'Thứ sáu,'}
+	else if(day == 6){dayName = 'Thứ bảy,'}
+	else{};
+// Tạo và khai báo Excel
+let workbook = new Excel.Workbook()
+let worksheet =  workbook.addWorksheet('Báo cáo sản xuất', {
+  pageSetup:{paperSize: 9, orientation:'landscape'},
+  properties:{tabColor:{argb:'FFC0000'}},
+});
+// Page setup (cài đặt trang)
+worksheet.properties.defaultRowHeight = 20;
+worksheet.pageSetup.margins = {
+  left: 0.3, right: 0.25,
+  top: 0.75, bottom: 0.75,
+  header: 0.3, footer: 0.3
+};
+// =====================THẾT KẾ HEADER=====================
+// Logo công ty
+const imageId1 = workbook.addImage({
+	filename: 'public/images/Logo.png',
+	extension: 'png',
+  });
+worksheet.addImage(imageId1, 'A1:A3');
+worksheet.mergeCells('A1:A3');
+// Thông tin công ty
+worksheet.getCell('B1').value = 'Công Ty CP Tập đoàn Trường Hải (THACO)';
+worksheet.getCell('B1').style = { font:{bold: true,size: 14},alignment: {vertical: 'middle'}} ;
+worksheet.getCell('B2').value = 'Địa chỉ:  ';
+worksheet.getCell('B3').value = 'Hotline: ';
+// Tên báo cáo
+worksheet.getCell('A5').value = 'BÁO CÁO DỮ LIỆU VẬN HÀNH MÁY LẠNH HỆ THỐNG LƯU FOAM';
+worksheet.mergeCells('A5:O5');
+worksheet.getCell('A5').style = { font:{name: 'Arial', bold: true,size: 14},alignment: {horizontal:'center',vertical: 'middle'}} ;
+// Ngày in biểu
+worksheet.getCell('M4').value = "Ngày in biểu: " + dayName +" "+ date + "/" + month + "/" + year + " " + hours + ":" + minutes + ":" + seconds;
+worksheet.getCell('M4').style = { font:{bold: false, italic: true},alignment: {horizontal:'right',vertical: 'bottom',wrapText: false}} ;
+ 
+// Tên nhãn các cột
+var rowpos = 7;
+var collumName = ["STT","Thời gian", "Auto", "Manual", "Nhiệt độ phòng", "Độ ẩm", "Trạng thái máy lạnh 1", "Nhiệt độ máy lạnh 1","Nhiệt độ tham chiếu máy lạnh 1", "Trạng thái máy lạnh 2", "Nhiệt độ máy lạnh 2", "Nhiệt độ tham chiếu máy lạnh 2", "Trạng thái máy lạnh 3", "Nhiệt độ máy lạnh 3", "Nhiệt độ tham chiếu máy lạnh 3","Thời gian cập nhật nhiệt độ","Biên độ nhiệt thấp","Biên độ nhiệt cao","Cảnh báo nhiệt độ","Ghi chú"]
+worksheet.spliceRows(rowpos, 1, collumName);
+ 
+// =====================XUẤT DỮ LIỆU EXCEL SQL=====================
+// Dump all the data into Excel
+var rowIndex = 0;
+SQL_Excel.forEach((e, index) => {
+// row 1 is the header.
+rowIndex =  index + rowpos;
+// worksheet1 collum
+worksheet.columns = [
+      {key: 'STT'},
+      {key: 'date_time'},
+      {key: 'Den_auto'},
+      {key: 'Den_manual'},
+      {key: 'Nhiet_do'},
+      {key: 'Do_am'},
+      {key: 'Read_on_off_2'},
+      {key: 'Read_tem_set_2'},
+      {key: 'Read_tem_refer_2'},
+      {key: 'Read_on_off_3'},
+      {key: 'Read_tem_set_3'},
+      {key: 'Read_tem_refer_3'},
+      {key: 'Read_on_off_4'},
+      {key: 'Read_tem_set_4'},
+      {key: 'Read_tem_refer_4'},
+      {key: 'Time_delay_set_tem_auto'},
+      {key: 'Cai_nhiet_do_thap'},
+      {key: 'Cai_nhiet_do_cao'},
+      {key: 'Canh_bao_nhiet'},
+    ]
+worksheet.addRow({
+      STT: {
+        formula: index + 1
+      },
+      ...e
+    })
+})
+// Lấy tổng số hàng
+const totalNumberOfRows = worksheet.rowCount; 
+// Tính tổng
+worksheet.addRow([
+	'Trung Bình:',
+	'',
+	'',
+    '',
+{formula: `=average(E${rowpos + 1}:E${totalNumberOfRows})`},
+{formula: `=average(F${rowpos + 1}:F${totalNumberOfRows})`},
+	'',
+{formula: `=average(H${rowpos + 1}:H${totalNumberOfRows})`},
+{formula: `=average(I${rowpos + 1}:I${totalNumberOfRows})`},
+    '',
+{formula: `=average(K${rowpos + 1}:K${totalNumberOfRows})`},
+{formula: `=average(L${rowpos + 1}:L${totalNumberOfRows})`},
+  '',
+{formula: `=average(N${rowpos + 1}:N${totalNumberOfRows})`},
+{formula: `=average(O${rowpos + 1}:O${totalNumberOfRows})`},
+{formula: `=average(P${rowpos + 1}:P${totalNumberOfRows})`},
+{formula: `=average(Q${rowpos + 1}:Q${totalNumberOfRows})`},
+{formula: `=average(R${rowpos + 1}:R${totalNumberOfRows})`},
+    '',
+    '',
+    
+])
+// Style cho hàng total (Tổng cộng)
+worksheet.getCell(`A${totalNumberOfRows+1}`).style = { font:{bold: true,size: 12},alignment: {horizontal:'center',}} ;
+// Tô màu cho hàng total (Tổng cộng)
+const total_row = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+total_row.forEach((v) => {
+    worksheet.getCell(`${v}${totalNumberOfRows+1}`).fill = {type: 'pattern',pattern:'solid',fgColor:{ argb:'f2ff00' }}
+})
+ 
+ 
+// =====================STYLE CHO CÁC CỘT/HÀNG=====================
+// Style các cột nhãn
+const HeaderStyle = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+HeaderStyle.forEach((v) => {
+    worksheet.getCell(`${v}${rowpos}`).style = { font:{bold: true},alignment: {horizontal:'center',vertical: 'middle',wrapText: true}} ;
+    worksheet.getCell(`${v}${rowpos}`).border = {
+      top: {style:'thin'},
+      left: {style:'thin'},
+      bottom: {style:'thin'},
+      right: {style:'thin'}
+    }
+})
+// Cài đặt độ rộng cột
+worksheet.columns.forEach((column, index) => {
+    column.width = 8;
+})
+
+// Cài đặt độ cao hàng
+const row = worksheet.getRow(5);row.height = 40;
+            worksheet.getRow(7);row.height = 42.5;
+
+// Set width header
+worksheet.getColumn(1).width = 18;
+worksheet.getColumn(2).width = 20;
+worksheet.getColumn(20).width = 30;
+
+ 
+// ++++++++++++Style cho các hàng dữ liệu++++++++++++
+worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
+  var datastartrow = rowpos;
+  var rowindex = rowNumber + datastartrow;
+  const rowlength = datastartrow + SQL_Excel.length
+  if(rowindex >= rowlength+1){rowindex = rowlength+1}
+  const insideColumns = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+// Tạo border
+  insideColumns.forEach((v) => {
+	  // Border
+    worksheet.getCell(`${v}${rowindex}`).border = {
+      top: {style: 'thin'},
+      bottom: {style: 'thin'},
+      left: {style: 'thin'},
+      right: {style: 'thin'}
+    },
+    // Alignment
+    worksheet.getCell(`${v}${rowindex}`).alignment = {horizontal:'center',vertical: 'middle',wrapText: true}
+  })
+})
+ 
+ 
+// =====================THẾT KẾ FOOTER=====================
+worksheet.getCell(`M${totalNumberOfRows+2}`).value = 'Ngày …………tháng ……………năm 20………';
+worksheet.getCell(`M${totalNumberOfRows+2}`).style = { font:{bold: true, italic: false},alignment: {horizontal:'right',vertical: 'middle',wrapText: false}} ;
+ 
+worksheet.getCell(`B${totalNumberOfRows+3}`).value = 'Giám đốc';
+worksheet.getCell(`B${totalNumberOfRows+4}`).value = '(Ký, ghi rõ họ tên)';
+worksheet.getCell(`B${totalNumberOfRows+3}`).style = { font:{bold: true, italic: false},alignment: {horizontal:'center',vertical: 'bottom',wrapText: false}} ;
+worksheet.getCell(`B${totalNumberOfRows+4}`).style = { font:{bold: false, italic: true},alignment: {horizontal:'center',vertical: 'top',wrapText: false}} ;
+ 
+worksheet.getCell(`G${totalNumberOfRows+3}`).value = 'Trưởng ca';
+worksheet.getCell(`G${totalNumberOfRows+4}`).value = '(Ký, ghi rõ họ tên)';
+worksheet.getCell(`G${totalNumberOfRows+3}`).style = { font:{bold: true, italic: false},alignment: {horizontal:'center',vertical: 'bottom',wrapText: false}} ;
+worksheet.getCell(`G${totalNumberOfRows+4}`).style = { font:{bold: false, italic: true},alignment: {horizontal:'center',vertical: 'top',wrapText: false}} ;
+ 
+worksheet.getCell(`L${totalNumberOfRows+3}`).value = 'Người in biểu';
+worksheet.getCell(`L${totalNumberOfRows+4}`).value = '(Ký, ghi rõ họ tên)';
+worksheet.getCell(`L${totalNumberOfRows+3}`).style = { font:{bold: true, italic: false},alignment: {horizontal:'center',vertical: 'bottom',wrapText: false}} ;
+worksheet.getCell(`L${totalNumberOfRows+4}`).style = { font:{bold: false, italic: true},alignment: {horizontal:'center',vertical: 'top',wrapText: false}} ;
+
+// =====================THỰC HIỆN XUẤT DỮ LIỆU EXCEL=====================
+// Export Link
+var currentTime = year + "_" + month + "_" + date + "_" + hours + "h" + minutes + "m" + seconds + "s";
+var saveasDirect = "Report/Report_" + currentTime + ".xlsx";
+SaveAslink = saveasDirect; // Send to client
+var booknameLink = "public/" + saveasDirect;
+ 
+var Bookname = "Report_" + currentTime + ".xlsx";
+// Write book name
+workbook.xlsx.writeFile(booknameLink)
+ 
+// Return
+return [SaveAslink, Bookname]
+ 
+} // Đóng fn_excelExport
+
+
+// =====================TRUYỀN NHẬN DỮ LIỆU VỚI TRÌNH DUYỆT=====================
+// Hàm chức năng truyền nhận dữ liệu với trình duyệt
+    io.on("connection", function(socket){
+        socket.on("msg_Excel_Report", function(data)
+        {
+            const [SaveAslink1, Bookname] = fn_excelExport();
+            var data = [SaveAslink1, Bookname];
+            socket.emit('send_Excel_Report', data);
+        });
+    });
 
