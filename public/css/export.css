@@ -73,6 +73,7 @@
   height: calc(100% / 3);
   min-height: calc(100% / 3);
   max-height: calc(100% / 3);
+  border-radius: 10px;
 }
 
 #div_table_info h2,
@@ -294,6 +295,7 @@ td {
   text-align: center;
   font-size: 32px;
   padding: 8px 0;
+  color: var(--color-main);
 }
 /*Table*/
 #table_01 {
