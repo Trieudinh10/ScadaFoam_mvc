@@ -165,14 +165,16 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: var(--color-black_alpha);
   font-size: 32px;
   text-transform: uppercase;
+  box-shadow: 1px 1px 0px 0px #333, 2px 2px 0px 0px #333, 3px 3px 0px 0px #333, 4px 4px 0px 0px #333, 5px 5px 0px 0px #333;
+  font-family: Phantomsans, sans-serif;
+  position: relative;
 }
 .btn_on,
 .btn_start {
   background-color: var(--color-green);
-  border: 1px solid var(--color-main);
   margin-right: 8px;
 }
 
@@ -276,7 +278,7 @@ select:focus {
   position: absolute;
   align-items: center;
   border: 0;
-  border-radius: 18px;
+  border-radius: 12px;
   box-shadow: 1px 1px 0px 0px #333, 2px 2px 0px 0px #333, 3px 3px 0px 0px #333, 4px 4px 0px 0px #333, 5px 5px 0px 0px #333;
   box-sizing: border-box;
   color: #000;
@@ -296,7 +298,8 @@ select:focus {
   cursor: pointer;
   /* width: 100%; */
   /* margin-left: 20px; */
-  height: 40px;
+  height: 50px;
+  margin-left: 8px;
 }
 
 #btt_Auto_Save,#btt_Main_Save{
@@ -327,8 +330,8 @@ select:focus {
 }
 .btt_sua_luu:active {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
 }
+
 
 .den_cd {
   width: 50px;

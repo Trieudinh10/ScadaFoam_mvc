@@ -10,7 +10,7 @@ function checkLoggedIn() {
       var loggedIn = cookieValue.split('=')[1];
 
       if (loggedIn === 'true') {
-        console.log('Người dùng đã đăng nhập.');
+        
       } else {
         window.location.href = 'http://localhost:8080/login';
       }
