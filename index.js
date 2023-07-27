@@ -268,17 +268,17 @@ setInterval(() => {
 
 
 
-
+////////////////////////////////////GIAM SAT LANH VAM///////////////////////////////////////
 
 // triger ghi dữ liệu vào SQL
 var insert_trigger = false;			// Trigger
 var old_insert_trigger = false;		// Trigger old
-////////////////////////////////////GIAM SAT LANH VAM///////////////////////////////////////
+
 // KHỞI TẠO KẾT NỐI PLC
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '10.14.84.64', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.84.100', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
@@ -299,13 +299,13 @@ function PLC_connected(err) {
 
 // Đọc dữ liệu từ PLC và đưa vào array tags
 var arr_tag_value = []; // Tạo một mảng lưu giá trị tag đọc về
-//var obj_tag_value = []; // Tạo một mảng lưu giá trị tag đọc về
+var obj_tag_value = []; // Tạo một mảng lưu giá trị tag đọc về
 function valuesReady(anythingBad, values) {
     if (anythingBad) { console.log("Lỗi khi đọc dữ liệu tag"); } // Cảnh báo lỗi
     var lodash = require('lodash'); // Chuyển variable sang array
     arr_tag_value = lodash.map(values, (item) => item);
     console.log("Data S1", arr_tag_value); // Hiển thị giá trị để kiểm tra
-   // obj_tag_value = values;
+    obj_tag_value = values;
 }
 // Hàm chức năng scan giá trị
 function fn_read_data_scan(){
@@ -321,89 +321,92 @@ setInterval(
 
 // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
 function fn_tag(){
-    io.sockets.emit("Start_auto", arr_tag_value[0]);  //
-    io.sockets.emit("Start_manual", arr_tag_value[1]);//
-    io.sockets.emit("Den_auto", arr_tag_value[2]);  ////
-    io.sockets.emit("Den_manual", arr_tag_value[3]);  ////
-    io.sockets.emit("On_off_manu_2", arr_tag_value[4]);  
-    io.sockets.emit("Mode_manu_2", arr_tag_value[5]);//
-    io.sockets.emit("Fan_speed_manu_2", arr_tag_value[6]);//
-    io.sockets.emit("Van_position_manu_2", arr_tag_value[7]);  //
-    io.sockets.emit("Nhap_temp_manu_2", arr_tag_value[8]); //
-    io.sockets.emit("On_off_manu_3", arr_tag_value[9]);  
-    io.sockets.emit("Mode_manu_3", arr_tag_value[10]);  //
-    io.sockets.emit("Fan_speed_manu_3", arr_tag_value[11]);  //
-    io.sockets.emit("Van_position_manu_3", arr_tag_value[12]);  //
-    io.sockets.emit("Nhap_temp_manu_3", arr_tag_value[13]);//
-    io.sockets.emit("On_off_manu_4", arr_tag_value[14]);  
-    io.sockets.emit("Mode_manu_4", arr_tag_value[15]);  //
-    io.sockets.emit("Fan_speed_manu_4", arr_tag_value[16]);  //
-    io.sockets.emit("Van_position_manu_4", arr_tag_value[17]);  //
-    io.sockets.emit("Nhap_temp_manu_4", arr_tag_value[18]);//
-    io.sockets.emit("On_off_auto_2", arr_tag_value[19]);//
-    io.sockets.emit("Mode_auto_2", arr_tag_value[20]);//
-    io.sockets.emit("Fan_speed_auto_2", arr_tag_value[21]);//
-    io.sockets.emit("Van_position_auto_2", arr_tag_value[22]);//
-    io.sockets.emit("Tem_set_auto_2", arr_tag_value[23]);
-    io.sockets.emit("Nhap_temp_auto_2", arr_tag_value[24]);//
-    io.sockets.emit("On_off_auto_3", arr_tag_value[25]);//
-    io.sockets.emit("Mode_auto_3", arr_tag_value[26]);//
-    io.sockets.emit("Fan_speed_auto_3", arr_tag_value[27]);//
-    io.sockets.emit("Van_position_auto_3", arr_tag_value[28]);//
-    io.sockets.emit("Tem_set_auto_3", arr_tag_value[29]);
-    io.sockets.emit("Nhap_temp_auto_3", arr_tag_value[30]);//
-    io.sockets.emit("On_off_auto_4", arr_tag_value[31]);//
-    io.sockets.emit("Mode_auto_4", arr_tag_value[32]);//
-    io.sockets.emit("Fan_speed_auto_4", arr_tag_value[33]);//
-    io.sockets.emit("Van_position_auto_4", arr_tag_value[34]);//
-    io.sockets.emit("Tem_set_auto_4", arr_tag_value[35]);
-    io.sockets.emit("Nhap_temp_auto_4", arr_tag_value[36]);//
-    io.sockets.emit("On_off_data_2", arr_tag_value[37]);
-    io.sockets.emit("Mode_data_2", arr_tag_value[38]);
-    io.sockets.emit("Fan_speed_data_2", arr_tag_value[39]);
-    io.sockets.emit("Van_position_data_2", arr_tag_value[40]);
-    io.sockets.emit("Nhap_temp_data_2", arr_tag_value[41]);
-    io.sockets.emit("On_off_data_3", arr_tag_value[42]);
-    io.sockets.emit("Mode_data_3", arr_tag_value[43]);
-    io.sockets.emit("Fan_speed_data_3", arr_tag_value[44]);
-    io.sockets.emit("Van_position_data_3", arr_tag_value[45]);
-    io.sockets.emit("Nhap_temp_data_3", arr_tag_value[46]);
-    io.sockets.emit("On_off_data_4", arr_tag_value[47]);
-    io.sockets.emit("Mode_data_4", arr_tag_value[48]);
-    io.sockets.emit("Fan_speed_data_4", arr_tag_value[49]);
-    io.sockets.emit("Van_position_data_4", arr_tag_value[50]);
-    io.sockets.emit("Nhap_temp_data_4", arr_tag_value[51]);
-    io.sockets.emit("Nhiet_do", arr_tag_value[52]);////
-    io.sockets.emit("Do_am", arr_tag_value[53]);////
-    io.sockets.emit("Read_on_off_2", arr_tag_value[54]);////
-    io.sockets.emit("Read_mode_2", arr_tag_value[55]);//
-    io.sockets.emit("Read_speed_2", arr_tag_value[56]);//
-    io.sockets.emit("Read_position_2", arr_tag_value[57]);//
-    io.sockets.emit("Read_tem_set_2", arr_tag_value[58]);////
-    io.sockets.emit("Read_tem_refer_2", arr_tag_value[59]);////
-    io.sockets.emit("Read_on_off_3", arr_tag_value[60]);////
-    io.sockets.emit("Read_mode_3", arr_tag_value[61]);//
-    io.sockets.emit("Read_speed_3", arr_tag_value[62]);//
-    io.sockets.emit("Read_position_3", arr_tag_value[63]);//
-    io.sockets.emit("Read_tem_set_3", arr_tag_value[64]);////
-    io.sockets.emit("Read_tem_refer_3", arr_tag_value[65]);////
-    io.sockets.emit("Read_on_off_4", arr_tag_value[66]);////
-    io.sockets.emit("Read_mode_4", arr_tag_value[67]);//
-    io.sockets.emit("Read_speed_4", arr_tag_value[68]);//
-    io.sockets.emit("Read_position_4", arr_tag_value[69]);//
-    io.sockets.emit("Read_tem_set_4", arr_tag_value[70]);////
-    io.sockets.emit("Read_tem_refer_4", arr_tag_value[71]);////
-    io.sockets.emit("Time_delay_set_tem_auto", arr_tag_value[72]);////
-    io.sockets.emit("On_manu_2", arr_tag_value[73]);//
-    io.sockets.emit("Off_manu_2", arr_tag_value[74]);//
-    io.sockets.emit("On_manu_3", arr_tag_value[75]);//
-    io.sockets.emit("Off_manu_3", arr_tag_value[76]);//
-    io.sockets.emit("On_manu_4", arr_tag_value[77]);//
-    io.sockets.emit("Off_manu_4", arr_tag_value[78]);//
-    io.sockets.emit("Cai_nhiet_do_thap", arr_tag_value[79]);////
-    io.sockets.emit("Cai_nhiet_do_cao", arr_tag_value[80]);////
-    io.sockets.emit("Canh_bao_nhiet", arr_tag_value[81]);////
-    io.sockets.emit("Trigger", arr_tag_value[82]);//
+    // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
+function fn_tag(){
+    io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
+    io.sockets.emit("Start_manual", obj_tag_value["Start_manual"]);//
+    io.sockets.emit("Den_auto", obj_tag_value["Den_auto"]);  ////
+    io.sockets.emit("Den_manual", obj_tag_value["Den_manual"]);  ////
+    io.sockets.emit("On_off_manu_2", obj_tag_value["On_off_manu_2"]);  
+    io.sockets.emit("Mode_manu_2", obj_tag_value["Mode_manu_2"]);//
+    io.sockets.emit("Fan_speed_manu_2", obj_tag_value["Fan_speed_manu_2"]);//
+    io.sockets.emit("Van_position_manu_2", obj_tag_value["Van_position_manu_2"]);  //
+    io.sockets.emit("Nhap_temp_manu_2", obj_tag_value["Nhap_temp_manu_2"]); //
+    io.sockets.emit("On_off_manu_3", obj_tag_value["On_off_manu_3"]);  
+    io.sockets.emit("Mode_manu_3", obj_tag_value["Mode_manu_3"]);  //
+    io.sockets.emit("Fan_speed_manu_3", obj_tag_value["Fan_speed_manu_3"]);  //
+    io.sockets.emit("Van_position_manu_3", obj_tag_value["Van_position_manu_3"]);  //
+    io.sockets.emit("Nhap_temp_manu_3", obj_tag_value["Nhap_temp_manu_3"]);//
+    io.sockets.emit("On_off_manu_4", obj_tag_value["On_off_manu_4"]);  
+    io.sockets.emit("Mode_manu_4", obj_tag_value["Mode_manu_4"]);  //
+    io.sockets.emit("Fan_speed_manu_4", obj_tag_value["Fan_speed_manu_4"]);  //
+    io.sockets.emit("Van_position_manu_4", obj_tag_value["Van_position_manu_4"]);  //
+    io.sockets.emit("Nhap_temp_manu_4", obj_tag_value["Nhap_temp_manu_4"]);//
+    io.sockets.emit("On_off_auto_2", obj_tag_value["On_off_auto_2"]);//
+    io.sockets.emit("Mode_auto_2", obj_tag_value["Mode_auto_2"]);//
+    io.sockets.emit("Fan_speed_auto_2", obj_tag_value["Fan_speed_auto_2"]);//
+    io.sockets.emit("Van_position_auto_2", obj_tag_value["Van_position_auto_2"]);//
+    io.sockets.emit("Tem_set_auto_2", obj_tag_value["Tem_set_auto_2"]);
+    io.sockets.emit("Nhap_temp_auto_2", obj_tag_value["Nhap_temp_auto_2"]);//
+    io.sockets.emit("On_off_auto_3", obj_tag_value["On_off_auto_3"]);//
+    io.sockets.emit("Mode_auto_3", obj_tag_value["Mode_auto_3"]);//
+    io.sockets.emit("Fan_speed_auto_3", obj_tag_value["Fan_speed_auto_3"]);//
+    io.sockets.emit("Van_position_auto_3", obj_tag_value["Van_position_auto_3"]);//
+    io.sockets.emit("Tem_set_auto_3", obj_tag_value["Tem_set_auto_3"]);
+    io.sockets.emit("Nhap_temp_auto_3", obj_tag_value["Nhap_temp_auto_3"]);//
+    io.sockets.emit("On_off_auto_4", obj_tag_value["On_off_auto_4"]);//
+    io.sockets.emit("Mode_auto_4", obj_tag_value["Mode_auto_4"]);//
+    io.sockets.emit("Fan_speed_auto_4", obj_tag_value["Fan_speed_auto_4"]);//
+    io.sockets.emit("Van_position_auto_4", obj_tag_value["Van_position_auto_4"]);//
+    io.sockets.emit("Tem_set_auto_4", obj_tag_value["Tem_set_auto_4"]);
+    io.sockets.emit("Nhap_temp_auto_4", obj_tag_value["Nhap_temp_auto_4"]);//
+    io.sockets.emit("On_off_data_2", obj_tag_value["On_off_data_2"]);
+    io.sockets.emit("Mode_data_2", obj_tag_value["Mode_data_2"]);
+    io.sockets.emit("Fan_speed_data_2", obj_tag_value["Fan_speed_data_2"]);
+    io.sockets.emit("Van_position_data_2", obj_tag_value["Van_position_data_2"]);
+    io.sockets.emit("Nhap_temp_data_2", obj_tag_value["Nhap_temp_data_2"]);
+    io.sockets.emit("On_off_data_3", obj_tag_value["On_off_data_3"]);
+    io.sockets.emit("Mode_data_3", obj_tag_value["Mode_data_3"]);
+    io.sockets.emit("Fan_speed_data_3", obj_tag_value["Fan_speed_data_3"]);
+    io.sockets.emit("Van_position_data_3", obj_tag_value["Van_position_data_3"]);
+    io.sockets.emit("Nhap_temp_data_3", obj_tag_value["Nhap_temp_data_3"]);
+    io.sockets.emit("On_off_data_4", obj_tag_value["On_off_data_4"]);
+    io.sockets.emit("Mode_data_4", obj_tag_value["Mode_data_4"]);
+    io.sockets.emit("Fan_speed_data_4", obj_tag_value["Fan_speed_data_4"]);
+    io.sockets.emit("Van_position_data_4", obj_tag_value["Van_position_data_4"]);
+    io.sockets.emit("Nhap_temp_data_4", obj_tag_value["Nhap_temp_data_4"]);
+    io.sockets.emit("Nhiet_do", obj_tag_value["Nhiet_do"]);////
+    io.sockets.emit("Do_am", obj_tag_value["Do_am"]);////
+    io.sockets.emit("Read_on_off_2", obj_tag_value["Read_on_off_2"]);////
+    io.sockets.emit("Read_mode_2", obj_tag_value["Read_mode_2"]);//
+    io.sockets.emit("Read_speed_2", obj_tag_value["Read_speed_2"]);//
+    io.sockets.emit("Read_position_2", obj_tag_value["Read_position_2"]);//
+    io.sockets.emit("Read_tem_set_2", obj_tag_value["Read_tem_set_2"]);////
+    io.sockets.emit("Read_tem_refer_2", obj_tag_value["Read_tem_refer_2"]);////
+    io.sockets.emit("Read_on_off_3", obj_tag_value["Read_on_off_3"]);////
+    io.sockets.emit("Read_mode_3", obj_tag_value["Read_mode_3"]);//
+    io.sockets.emit("Read_speed_3", obj_tag_value["Read_speed_3"]);//
+    io.sockets.emit("Read_position_3", obj_tag_value["Read_position_3"]);//
+    io.sockets.emit("Read_tem_set_3", obj_tag_value["Read_tem_set_3"]);////
+    io.sockets.emit("Read_tem_refer_3", obj_tag_value["Read_tem_refer_3"]);////
+    io.sockets.emit("Read_on_off_4", obj_tag_value["Read_on_off_4"]);////
+    io.sockets.emit("Read_mode_4", obj_tag_value["Read_mode_4"]);//
+    io.sockets.emit("Read_speed_4", obj_tag_value["Read_speed_4"]);//
+    io.sockets.emit("Read_position_4", obj_tag_value["Read_position_4"]);//
+    io.sockets.emit("Read_tem_set_4", obj_tag_value["Read_tem_set_4"]);////
+    io.sockets.emit("Read_tem_refer_4", obj_tag_value["Read_tem_refer_4"]);////
+    io.sockets.emit("Time_delay_set_tem_auto", obj_tag_value["Time_delay_set_tem_auto"]);////
+    io.sockets.emit("On_manu_2", obj_tag_value["On_manu_2"]);//
+    io.sockets.emit("Off_manu_2", obj_tag_value["Off_manu_2"]);//
+    io.sockets.emit("On_manu_3", obj_tag_value["On_manu_3"]);//
+    io.sockets.emit("Off_manu_3", obj_tag_value["Off_manu_3"]);//
+    io.sockets.emit("On_manu_4", obj_tag_value["On_manu_4"]);//
+    io.sockets.emit("Off_manu_4", obj_tag_value["Off_manu_4"]);//
+    io.sockets.emit("Cai_nhiet_do_thap", obj_tag_value["Cai_nhiet_do_thap"]);////
+    io.sockets.emit("Cai_nhiet_do_cao", obj_tag_value["Cai_nhiet_do_cao"]);////
+    io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
+    io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
+}
 }
 
 // /////////// GỬI DỮ LIỆU BẢNG TAG ĐẾN CLIENT (TRÌNH DUYỆT) ///////////////
@@ -486,23 +489,23 @@ function fn_sql_insert(){
 
 
 // Dữ liệu đọc lên từ các tag
-var Den_auto = "'" + arr_tag_value[2] + "',";
-var Den_manual = "'" + arr_tag_value[3] + "',";
-var Nhiet_do = "'" + arr_tag_value[52] + "',";
-var Do_am = "'" + arr_tag_value[53] + "',";
-var Read_on_off_2 = "'" + arr_tag_value[54] + "',";
-var Read_tem_set_2 = "'" + arr_tag_value[58] + "',";
-var Read_tem_refer_2 = "'" + arr_tag_value[59] + "',";
-var Read_on_off_3 = "'" + arr_tag_value[60] + "',";
-var Read_tem_set_3 = "'" + arr_tag_value[64] + "',";
-var Read_tem_refer_3 = "'" + arr_tag_value[65] + "',";
-var Read_on_off_4 = "'" + arr_tag_value[66] + "',";
-var Read_tem_set_4 = "'" + arr_tag_value[70] + "',";
-var Read_tem_refer_4 = "'" + arr_tag_value[71] + "',";
-var Time_delay_set_tem_auto = "'" + arr_tag_value[72] + "',";
-var Cai_nhiet_do_thap = "'" + arr_tag_value[79] + "',";
-var Cai_nhiet_do_cao = "'" + arr_tag_value[80] + "',";
-var Canh_bao_nhiet = "'" + arr_tag_value[81] + "'";
+var Den_auto = "'" + obj_tag_value["Den_auto"] + "',";
+var Den_manual = "'" + obj_tag_value["Den_manual"] + "',";
+var Nhiet_do = "'" + obj_tag_value["Nhiet_do"] + "',";
+var Do_am = "'" + obj_tag_value["Do_am"] + "',";
+var Read_on_off_2 = "'" + obj_tag_value["Read_on_off_2"] + "',";
+var Read_tem_set_2 = "'" + obj_tag_value["Read_tem_set_2"] + "',";
+var Read_tem_refer_2 = "'" + obj_tag_value["Read_tem_refer_2"] + "',";
+var Read_on_off_3 = "'" + obj_tag_value["Read_on_off_3"] + "',";
+var Read_tem_set_3 = "'" + obj_tag_value["Read_tem_set_3"] + "',";
+var Read_tem_refer_3 = "'" + obj_tag_value["Read_tem_refer_3"] + "',";
+var Read_on_off_4 = "'" + obj_tag_value["Read_on_off_4"] + "',";
+var Read_tem_set_4 = "'" + obj_tag_value["Read_tem_set_4"] + "',";
+var Read_tem_refer_4 = "'" + obj_tag_value["Read_tem_refer_4"] + "',";
+var Time_delay_set_tem_auto = "'" + obj_tag_value["Time_delay_set_tem_auto"] + "',";
+var Cai_nhiet_do_thap = "'" + obj_tag_value["Cai_nhiet_do_thap"] + "',";
+var Cai_nhiet_do_cao = "'" + obj_tag_value["Cai_nhiet_do_cao"] + "',";
+var Canh_bao_nhiet = "'" + obj_tag_value["Canh_bao_nhiet"] + "'";
 // Ghi dữ liệu vào SQL
 if (insert_trigger && !old_insert_trigger && !isNaN(insert_trigger))
 {
