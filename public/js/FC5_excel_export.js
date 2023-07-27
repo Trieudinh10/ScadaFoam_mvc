@@ -1,13 +1,8 @@
 // Gửi yêu cầu xuất Excel qua index.js
 function fn_excel(){
-    
-    socket.emit("msg_Excel_Report", true);
-   
-}
-function fn_excel_Display()
-{
     var linktext = "";
     var bookname = "";
+    socket.emit("msg_Excel_Report", true);
     socket.on('send_Excel_Report',function(data){
         linktext = data[0];
         bookname = data[1];
