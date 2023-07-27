@@ -38,30 +38,18 @@
           </button>
         </div>
         <div class="start_stop-btn-start">
-          <button
-            class="btn_on"
-            id="btn_on_tn1"
-            onclick="socket.emit('cmd_start_manual', true);"
-          >
-            START
-          </button>
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">START</button>
           <img id="Trang_thai_manual" class="den_cd" />
-          <script>
-            fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
-          </script>
+          <script>fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual")</script>
         </div>
         <div class="setting_input">
-          <label for="" class="lable_tem-input">NHIỆT ĐỘ THẤP</label>
+          <label class="lable_tem-input">NHIỆT ĐỘ THẤP</label>
           <input id="nhiet_do_thap" isabled="disabled" type="number" />
-          <script>
-            fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
-          </script>
+          <script>fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0)</script>
 
-          <label for="" class="lable_tem-input">NHIỆT ĐỘ CAO</label>
+          <label class="lable_tem-input">NHIỆT ĐỘ CAO</label>
           <input id="nhiet_do_cao" isabled="disabled" type="number" />
-          <script>
-            fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
-          </script>
+          <script>fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);</script>
     
         </div>
         <div class="setting_input setting_input-mt">
@@ -75,32 +63,18 @@
       </div>
 
       <div class="operate_row">
+
+        <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml2', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml2', true);">START</button>
             </div>
-            <img id="Trang_thai_on_ml2" class="air_con" />
-            <script>
-              fn_SymbolStatus(
-                "Trang_thai_on_ml2",
-                "air_condition",
-                "On_off_manu_2"
-              );
-            </script>
+            <img id="Trang_thai_on_ml2" class="air_con"/>
+            <script>fn_SymbolStatus("Trang_thai_on_ml2","Den_xanh","On_off_manu_2")</script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml2', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml2', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -114,9 +88,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Mode_manu_2", "mode_man_2", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Mode_manu_2", "mode_man_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -129,9 +101,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Fan_speed_manu_2", "speed_manu_2", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Fan_speed_manu_2", "speed_manu_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -146,9 +116,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Van_position_manu_2", "position_manu_2", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Van_position_manu_2", "position_manu_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -156,39 +124,23 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_manu_2" disabled="disabled" type="number" />
-              <script>
-                fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);</script>
             </div>
           </div>
         </div>
 
+        <!--//////////////////////////////////////////MÁY LẠNH 2 SLAVE3 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml3', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml3', true);">START</button>
             </div>
             <img id="Trang_thai_on_ml3" class="air_con" />
-            <script>
-              fn_SymbolStatus(
-                "Trang_thai_on_ml3",
-                "air_condition",
-                "On_off_manu_3"
-              );
+            <script>fn_SymbolStatus("Trang_thai_on_ml3","Den_xanh","On_off_manu_3");
             </script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml3', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml3', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -202,9 +154,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Mode_manu_3", "mode_man_3", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Mode_manu_3", "mode_man_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -217,9 +167,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Fan_speed_manu_3", "speed_manu_3", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Fan_speed_manu_3", "speed_manu_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -234,9 +182,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Van_position_manu_3", "position_manu_3", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Van_position_manu_3", "position_manu_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -244,39 +190,23 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_manu_3" disabled="disabled" type="number" />
-              <script>
-                fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);</script>
             </div>
           </div>
         </div>
 
+        <!--//////////////////////////////////////////MÁY LẠNH 3 SLAVE4 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml4', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml4', true);">START</button>
             </div>
             <img id="Trang_thai_on_ml4" class="air_con" />
-            <script>
-              fn_SymbolStatus(
-                "Trang_thai_on_ml4",
-                "air_condition",
-                "On_off_manu_4"
-              );
+            <script>fn_SymbolStatus("Trang_thai_on_ml4","Den_xanh","On_off_manu_4");
             </script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml4', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml4', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -290,9 +220,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Mode_manu_4", "mode_man_4", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Mode_manu_4", "mode_man_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -305,9 +233,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Fan_speed_manu_4", "speed_manu_4", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Fan_speed_manu_4", "speed_manu_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -322,9 +248,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Main_IOField_IO("Van_position_manu_4", "position_manu_4", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Van_position_manu_4", "position_manu_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -332,9 +256,7 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_manu_4" disabled="disabled" type="number" />
-              <script>
-                fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);
-              </script>
+              <script>fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);</script>
             </div>
           </div>
         </div>
