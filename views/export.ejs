@@ -8,10 +8,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css" />
-    <script src="/js/jquery-3.6.0.min.js"></script>
+
+    <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC4_du_lieu.js"></script>
+    <script src ="/js/FileSaver.js"></script>
+    <script src="/js/FC5_excel_export.js"></script>
+
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css" />
@@ -24,27 +28,26 @@
       <div id="Baocao">
         <div class="input_item">
           <label id="lb_Search_Start">Từ:</label>
-          <input aria-label="input date" id="dtpk_Search_Start"type="datetime-local"/>
+          <input id="dtpk_Search_Start"type="datetime-local"/>
         </div>
         <div class="input_item">
           <label id="lb_Search_End">Đến:</label>
-          <input aria-label="input date" id="dtpk_Search_End" type="datetime-local"/>
+          <input id="dtpk_Search_End" type="datetime-local"/>
         </div>
         <div class="input_item_btn">
-          <button id="btt_Search" onclick="fn_Table01_SQL_Show();" class="btn">
-            TÌM KIẾM
-          </button>
+          <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
         </div>
         <div class="input_item_btn">
-          <button id="btt_Excel" class="btn" onclick="fn_excel();
-            ">BÁO CÁO
-          </button>
+          <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
+        </div>
+        <div class="input_item_btn">
+          <button id="btt_Search" onclick="fn_Table01_SQL_Show();">DỮ LIỆU</button>
         </div>
       </div>
       <div class="export_body">
         <div class="export_para">
           <div id="div_Table_01">
-            <h2>Bảng Thông Số</h2>
+            <h2>DỮ LIỆU</h2>
             <table id="table_01">
               <thead>
                 <tr>
@@ -109,7 +112,7 @@
       </div>
     </div>
   </body>
-  <script>
+ <!-- <script>
     const body = document.querySelector(".export_para");
     const error = document.querySelector(".export_error");
     let changeBtn = true;
@@ -128,5 +131,5 @@
         btnChange.classList.add("change");
       }
     };
-  </script>
+  </script>-->
 </html>

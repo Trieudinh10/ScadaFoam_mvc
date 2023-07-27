@@ -9,7 +9,7 @@ function fn_Table01_SQL_Show(){
 // Chương trình con hiển thị SQL ra bảng
 function fn_table_01(data){
     if(data){
-        $("#table_01 tbody").data();
+        $("#table_01 tbody").empty();
         var len = data.length;
         var txt = "<tbody>";
         if(len > 0){
@@ -40,4 +40,15 @@ function fn_table_01(data){
             }
         }
     }
+}
+
+// Tìm kiếm SQL theo khoảng thời gian
+function fn_SQL_By_Time()
+{
+    var val = [document.getElementById('dtpk_Search_Start').value,
+               document.getElementById('dtpk_Search_End').value];
+    socket.emit('msg_SQL_ByTime', val);
+    socket.on('SQL_ByTime', function(data){
+        fn_table_01(data); // Show sdata
+    });
 }
