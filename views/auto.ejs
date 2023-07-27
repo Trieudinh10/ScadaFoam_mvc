@@ -23,6 +23,22 @@
 
     <div class="operate_container">
       <div class="block_start_stop">
+        <div class="start_stop-btn-save">
+          <button
+            class="btt_sua_luu"
+            id="btt_Auto_Save"
+            onclick="fn_Auto_SaveBtt()"
+          >
+            LƯU
+          </button>
+          <button
+            class="btt_sua_luu"
+            id="btt_Auto_Edit"
+            onclick="fn_Auto_EditBtt()"
+          >
+            SỬA
+          </button>
+        </div>
         <div class="start_stop-btn-start">
           <button class="btn_on" id="btn_on_tn1"onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">START</button>
           <img id="Trang_thai_auto" class="den_cd" />
@@ -40,10 +56,6 @@
           <label for="" class="lable_tem-input">THỜI GIAN CẬP NHẬT</label>
           <input id="cai_thoi_gian" isabled="disabled" type="number" />
           <script>fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);</script>
-        </div>
-        <div class="start_stop-btn-save">
-          <button class="btt_sua_luu" id="btt_Auto_Save" onclick="fn_Auto_SaveBtt()">LƯU</button>
-          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()">SỬA</button>
         </div>
       </div>
 

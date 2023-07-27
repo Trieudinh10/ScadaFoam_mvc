@@ -21,6 +21,22 @@
     <%- include('header.ejs'); -%>
     <div class="operate_container">
       <div class="block_start_stop">
+        <div class="start_stop-btn-save">
+          <button
+            class="btt_sua_luu"
+            id="btt_Main_Save"
+            onclick="fn_Main_SaveBtt()"
+          >
+            LƯU
+          </button>
+          <button
+            class="btt_sua_luu"
+            id="btt_Main_Edit"
+            onclick="fn_Main_EditBtt()"
+          >
+            SỬA
+          </button>
+        </div>
         <div class="start_stop-btn-start">
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">START</button>
           <img id="Trang_thai_manual" class="den_cd" />
@@ -43,10 +59,7 @@
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
         </div>
-        <div class="start_stop-btn-save">
-          <button class="btt_sua_luu" id="btt_Main_Save" onclick="fn_Main_SaveBtt()">LƯU</button>
-          <button class="btt_sua_luu" d="btt_Main_Edit"onclick="fn_Main_EditBtt()">SỬA</button>
-        </div>
+        
       </div>
 
       <div class="operate_row">

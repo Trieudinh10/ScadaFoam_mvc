@@ -32,9 +32,10 @@
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 32px;
-  box-shadow: 1px 1px 0px 0px #07539d, 2px 2px 0px 0px #07539d, 3px 3px 0px 0px #07539d, 4px 4px 0px 0px #07539d, 5px 5px 0px 0px #07539d !important;
+  box-shadow: 1px 1px 0px 0px var(--color-grey), 2px 2px 0px 0px var(--color-grey), 3px 3px 0px 0px var(--color-grey), 4px 4px 0px 0px var(--color-grey), 5px 5px 0px 0px var(--color-grey) !important;
   margin: 16px 8px;
   flex: 1;
+  /* #07539d */
 }
 .setting_item-title {
   text-align: center;
@@ -109,7 +110,7 @@
   margin-right: 12px;
   font-size: 32px;
   font-weight: 300;
-  /* color: #000; */
+  color: #000;
 }
 
 .setting_input input,

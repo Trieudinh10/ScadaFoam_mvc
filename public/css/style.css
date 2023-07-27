@@ -21,11 +21,17 @@ body {
   --color-body: #fff; /* #fff*/
   --color-skyblue: #0b849a;
   --color-skyblue_alpha: #89dafd;
+  --color-skyblue_al:#66FCF1;
   --color-yellow: #fcde10;
   --color-orange: #ff5d1a;
   --color-red: #fd1900;
   --color-green: #00e478;
+  --color-green_black:#45A29E;
   --color-text: #000;
+  --color-black: #0B0C10;
+  --color-black_alpha:#1F2833;
+  --color-grey:#C5C6C7;
+
 }
 
 li {
