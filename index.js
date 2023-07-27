@@ -413,6 +413,7 @@ io.on("connection", function(socket){
         fn_tag();
     });
     fn_SQLSearch(); // Hàm tìm kiếm SQL
+    fn_SQLSearch_ByTime();  // Hàm tìm kiếm SQL theo thời gian
 });
 
 // HÀM GHI DỮ LIỆU XUỐNG PLC
@@ -545,23 +546,21 @@ function fn_SQLSearch() {
     io.on("connection", function(socket) {
       socket.on("msg_SQL_Show", function(data) {
         var sqltable_Name = "plc_data";
-        var queryy1 = "SELECT * FROM " + sqltable_Name + " WHERE date_time >= DATE_SUB(NOW(), INTERVAL 1 HOUR);";
+        var queryy1 = "SELECT * FROM " + sqltable_Name + " WHERE date_time >= DATE_SUB(NOW(), INTERVAL 1 HOUR) ORDER BY date_time DESC;";
         sqlcon.query(queryy1, function(err, results, fields) {
           if (err) {
             console.log(err);
           } else {
-            const objectifyRawPacket = row => ({ ...row });
-            const convertedResponse = results.map(objectifyRawPacket);
-            socket.emit("SQL_Show", convertedResponse);
-            console.log(convertedResponse);
+            const objectifyRawPacket = row => ({...row});
+                    const convertedResponse = results.map(objectifyRawPacket);
+                    socket.emit('SQL_Show', convertedResponse);
           }
         });
       });
     });
   }
 
-
-  // Đọc dữ liệu SQL theo thời gian
+// Đọc dữ liệu SQL theo thời gian
 function fn_SQLSearch_ByTime(){
     io.on("connection", function(socket){
         socket.on("msg_SQL_ByTime", function(data)
@@ -582,7 +581,7 @@ function fn_SQLSearch_ByTime(){
             var timeE1 = "'" + (new Date(timeE - tzoffset)).toISOString().slice(0, -1).replace("T"," ") + "'";
             var timeR = timeS1 + "AND" + timeE1; // Khoảng thời gian tìm kiếm (Time Range)
  
-            var sqltable_Name = "plc_dulieu"; // Tên bảng
+            var sqltable_Name = "plc_data"; // Tên bảng
             var dt_col_Name = "date_time";  // Tên cột thời gian
  
             var Query1 = "SELECT * FROM " + sqltable_Name + " WHERE "+ dt_col_Name + " BETWEEN ";
@@ -601,3 +600,4 @@ function fn_SQLSearch_ByTime(){
         });
     });
 }
+

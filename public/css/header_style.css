@@ -164,3 +164,6 @@
 .scroll_btn.btn_active {
   opacity: 1;
 }
+#btt_tx{
+  background-color: #ff4742;
+}

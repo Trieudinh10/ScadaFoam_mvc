@@ -283,7 +283,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-  /* height: 75%; */
+   height: 100%; 
   overflow: scroll;
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
