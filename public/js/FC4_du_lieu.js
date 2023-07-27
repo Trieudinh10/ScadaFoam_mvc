@@ -1,3 +1,4 @@
+fn_Table01_SQL_Show();
 // Chương trình con đọc dữ liệu SQL
 function fn_Table01_SQL_Show(){
     socket.emit("msg_SQL_Show", "true");
