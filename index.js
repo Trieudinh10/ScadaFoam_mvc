@@ -319,8 +319,7 @@ setInterval(
     1000 // 1s = 1000ms
 );
 
-// ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
-function fn_tag(){
+
     // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
 function fn_tag(){
     io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
@@ -406,7 +405,6 @@ function fn_tag(){
     io.sockets.emit("Cai_nhiet_do_cao", obj_tag_value["Cai_nhiet_do_cao"]);////
     io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
-}
 }
 
 // /////////// GỬI DỮ LIỆU BẢNG TAG ĐẾN CLIENT (TRÌNH DUYỆT) ///////////////

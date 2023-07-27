@@ -24,6 +24,8 @@
       <div class="home_system">
         <div class="system_item">
           <div class="system_item-air row_status">
+
+            <!--Bang thong so phong-->
             <div class="item_air-room">
               <div class="item_air-title">
                 <h2>THÔNG SỐ PHÒNG</h2>
@@ -32,530 +34,303 @@
                 <div>
                   <div class="item_data-room">
                     <h2>NHIỆT ĐỘ (&deg;C):</h2>
-                    <input
-                      aria-label="text"
-                      id="nhiet_do"
-                      disabled="disabled"
-                      type="text"
-                    />
-                    <script>
-                      fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);
-                    </script>
+                    <input id="nhiet_do" disabled="disabled" type="text"/>
+                    <script>fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0)</script>
                   </div>
                   <div class="item_data-room">
                     <h2>ĐỘ ẨM (%RH):</h2>
-                    <input
-                      aria-label="text"
-                      id="do_am"
-                      disabled="disabled"
-                      type="text"
-                    />
-                    <script>
-                      fn_IOFieldDataShow("Do_am", "do_am", 0);
-                    </script>
+                    <input id="do_am" disabled="disabled" type="text"/>
+                    <script>fn_IOFieldDataShow("Do_am", "do_am", 0)</script>
                   </div>
                 </div>
                 <div class="data_room-img">
-                  <img
-                    id="Trang_thai_cb"
-                    src="/images/Symbol/Den_do_0.png"
-                    class="den_cd"
-                    alt="den_bao"
-                  />
-                  <script>
-                    fn_SymbolStatus(
-                      "Trang_thai_cb",
-                      "Den_do",
-                      "Canh_bao_nhiet"
-                    );
-                  </script>
+                  <img id="Trang_thai_cb" class="den_cd"/>
+                  <script>fn_SymbolStatus("Trang_thai_cb","Den_do","Canh_bao_nhiet")</script>
                 </div>
               </div>
             </div>
 
+            <!--Bang che do hoat dong-->
             <div class="item_air-room">
               <div class="room_container block_status">
                 <div class="item_data-room item_data-status">
                   <h2>TỰ ĐỘNG</h2>
-                  <img id="Trang_thai_auto" class="den_cd" alt="den_bao" />
-                  <script>
-                    fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
-                  </script>
+                  <img id="Trang_thai_auto" class="den_cd" />
+                  <script>fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto")</script>
                 </div>
                 <div class="item_data-room item_data-status">
                   <h2>THỦ CÔNG</h2>
-                  <img id="Trang_thai_manual" class="den_cd" alt="den_bao" />
-                  <script>
-                    fn_SymbolStatus(
-                      "Trang_thai_manual",
-                      "Den_xanh",
-                      "Den_manual"
-                    );
-                  </script>
+                  <img id="Trang_thai_manual" class="den_cd" />
+                  <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual") </script>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="system_item">
           <div class="system_item-air">
             <div class="item_air-title">
               <h2>ĐIỀU HOÀ 1</h2>
             </div>
 
+            <!--Trang thai on off may lanh 1-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
-                <img
-                  id="Trang_thai_ml_2"
-                  class="status_mode den_ml"
-                  alt="den trang thai"
-                />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_2",
-                    "Den_xanh",
-                    "Read_on_off_2"
-                  );
-                </script>
+                <img id="Trang_thai_ml_2" class="status_mode den_ml"/>
+                <script>fn_SymbolStatus("Trang_thai_ml_2","air_condition","Read_on_off_2")</script>
               </div>
+
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
                 </div>
-
                 <div class="block_data-item">
                   <label for="">Cài đặt</label>
                 </div>
               </div>
             </div>
+
+            <!--Che do hoat dong 1-->
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="che_do_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);
-                  </script>
+                  <input id="che_do_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0)</script>
                 </div>
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_che_do_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);
-                  </script>
+                  <input id="cai_che_do_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Toc do may lanh 1-->
             <div class="item_air-tem">
               <h2>Tốc độ quạt (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="td_quat_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);
-                  </script>
+                  <input id="td_quat_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0)</script>
                 </div>
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_td_quat_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0);
-                  </script>
+                  <input id="cai_td_quat_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Goc mo may lanh 1-->
             <div class="item_air-tem">
               <h2>Góc mở (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="goc_mo_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);
-                  </script>
+                  <input id="goc_mo_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);</script>
                 </div>
 
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_goc_mo_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_2",
-                      "cai_goc_mo_2",
-                      0
-                    );
+                  <input id="cai_goc_mo_2" disabled="disabled" type="text"/>
+                  <script> fn_IOFieldDataShow("Van_position_data_2","cai_goc_mo_2",0);
                   </script>
                 </div>
               </div>
             </div>
 
+            <!--Nhiet do may lanh 1-->
             <div class="item_air-tem">
               <h2>Nhiệt Độ (&deg;C):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="nhiet_ml_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);
-                  </script>
+                  <input id="nhiet_ml_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0)</script>
                 </div>
 
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_nhiet_ml_2"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0);
-                  </script>
+                  <input id="cai_nhiet_ml_2" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0)</script>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!--//////////////////////////////////////////MÁY LẠNH 2 SLAVE3///////////////////////////////////-->
         <div class="system_item">
           <div class="system_item-air">
             <div class="item_air-title">
               <h2>ĐIỀU HOÀ 2</h2>
             </div>
 
+            <!--Trang thai on off may lanh 2-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
-                <img
-                  id="Trang_thai_ml_3"
-                  class="status_mode den_ml"
-                  alt="den_bao"
-                />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_3",
-                    "Den_xanh",
-                    "Read_on_off_3"
-                  );
-                </script>
+                <img id="Trang_thai_ml_3" class="status_mode den_ml"/>
+                <script>fn_SymbolStatus("Trang_thai_ml_3", "air_condition","Read_on_off_3")</script>
               </div>
+
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
                 </div>
-
                 <div class="block_data-item">
                   <label for="">Cài đặt</label>
                 </div>
               </div>
             </div>
+
+            <!--Che do hoat dong 2-->
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="che_do_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);
-                  </script>
+                  <input id="che_do_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_che_do_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);
-                  </script>
+                  <input id="cai_che_do_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Toc do may lanh 2-->
             <div class="item_air-tem">
               <h2>Tốc độ quạt (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="td_quat_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);
-                  </script>
+                  <input id="td_quat_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0)</script>
                 </div>
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_td_quat_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0);
-                  </script>
+                  <input id="cai_td_quat_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0)</script>
                 </div>
               </div>
             </div>
 
+             <!--Goc mo may lanh 2-->
             <div class="item_air-tem">
               <h2>Góc mở (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="goc_mo_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);
-                  </script>
+                  <input id="goc_mo_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_goc_mo_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_3",
-                      "cai_goc_mo_3",
-                      0
-                    );
-                  </script>
+                  <input id="cai_goc_mo_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Van_position_data_3","cai_goc_mo_3",0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Nhiet do may lanh 2-->
             <div class="item_air-tem">
               <h2>Nhiệt Độ (&deg;C):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="nhiet_ml_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);
-                  </script>
+                  <input id="nhiet_ml_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_nhiet_ml_3"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0);
-                  </script>
+                  <input id="cai_nhiet_ml_3" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0)</script>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+         <!--//////////////////////////////////////////MÁY LẠNH 3 SLAVE4///////////////////////////////////-->
         <div class="system_item">
           <div class="system_item-air">
             <div class="item_air-title">
               <h2>ĐIỀU HOÀ 3</h2>
             </div>
 
+            <!--Trang thai on off may lanh 3-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
-                <img
-                  id="Trang_thai_ml_4"
-                  class="status_mode den_ml"
-                  alt="den_bao"
-                />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_4",
-                    "Den_xanh",
-                    "Read_on_off_4"
-                  );
-                </script>
+                <img id="Trang_thai_ml_4" class="status_mode den_ml"/>
+                <script>fn_SymbolStatus("Trang_thai_ml_4","air_condition","Read_on_off_4")</script>
               </div>
+
               <div class="item_air-data">
                 <div class="block_data-item">
                   <label for="">Thực Tế</label>
                 </div>
-
                 <div class="block_data-item">
                   <label for="">Cài đặt</label>
                 </div>
               </div>
             </div>
+
+            <!--Che do hoat dong 3-->
             <div class="item_air-tem">
               <h2>Chế Độ (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="che_do_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);
-                  </script>
+                  <input id="che_do_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_che_do_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);
-                  </script>
+                  <input id="cai_che_do_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Toc do may lanh 3-->
             <div class="item_air-tem">
               <h2>Tốc độ quạt (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="td_quat_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);
-                  </script>
+                  <input id="td_quat_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0)</script>
                 </div>
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_td_quat_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0);
-                  </script>
+                  <input id="cai_td_quat_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Goc mo may lanh 3-->
             <div class="item_air-tem">
               <h2>Góc mở (mode):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="goc_mo_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);
-                  </script>
+                  <input id="goc_mo_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_goc_mo_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_4",
-                      "cai_goc_mo_4",
-                      0
-                    );
-                  </script>
+                  <input id="cai_goc_mo_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Van_position_data_4","cai_goc_mo_4",0)</script>
                 </div>
               </div>
             </div>
 
+            <!--Nhiet do may lanh 3-->
             <div class="item_air-tem">
               <h2>Nhiệt Độ (&deg;C):</h2>
               <div class="item_air-data">
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="nhiet_ml_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);
-                  </script>
+                  <input id="nhiet_ml_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0)</script>
                 </div>
-
                 <div class="block_data-item">
-                  <input
-                    aria-label="text"
-                    id="cai_nhiet_ml_4"
-                    disabled="disabled"
-                    type="text"
-                  />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0);
-                  </script>
+                  <input id="cai_nhiet_ml_4" disabled="disabled" type="text"/>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0)</script>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="home_chart">
-       
       </div>
     </div>
     <div class="btn_scroll">

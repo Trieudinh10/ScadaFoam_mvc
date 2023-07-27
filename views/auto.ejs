@@ -24,56 +24,32 @@
     <div class="operate_container">
       <div class="block_start_stop">
         <div class="start_stop-btn-start">
-          <button
-            class="btn_on"
-            id="btn_on_tn1"
-            onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();"
-          >
-            START
-          </button>
+          <button class="btn_on" id="btn_on_tn1"onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">START</button>
           <img id="Trang_thai_auto" class="den_cd" />
-          <script>
-            fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
-          </script>
+          <script>fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");</script>
         </div>
         <div class="setting_input">
           <label for="" class="lable_tem-input">NHIỆT ĐỘ THẤP</label>
           <input id="nhiet_do_thap" isabled="disabled" type="number" />
-          <script>
-            fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
-          </script>
+          <script>fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);</script>
           <label for="" class="lable_tem-input">NHIỆT ĐỘ CAO</label>
           <input id="nhiet_do_cao" isabled="disabled" type="number" />
-          <script>
-            fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
-          </script>
+          <script>fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);</script>
         </div>
         <div class="setting_input setting_input-mt">
           <label for="" class="lable_tem-input">THỜI GIAN CẬP NHẬT</label>
           <input id="cai_thoi_gian" isabled="disabled" type="number" />
-          <script>
-            fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
-          </script>
+          <script>fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);</script>
         </div>
         <div class="start_stop-btn-save">
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Save"
-            onclick="fn_Auto_SaveBtt()"
-          >
-            LƯU
-          </button>
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Edit"
-            onclick="fn_Auto_EditBtt()"
-          >
-            SỬA
-          </button>
+          <button class="btt_sua_luu" id="btt_Auto_Save" onclick="fn_Auto_SaveBtt()">LƯU</button>
+          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()">SỬA</button>
         </div>
       </div>
 
       <div class="operate_row">
+
+        <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item">
@@ -84,9 +60,7 @@
                 <option value="0">0</option>
                 <option value="1">1</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("On_off_auto_2", "on_off_aut_2", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("On_off_auto_2", "on_off_aut_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -100,9 +74,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Mode_auto_2", "mode_aut_2", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Mode_auto_2", "mode_aut_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -115,9 +87,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Fan_speed_auto_2", "speed_auto_2", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Fan_speed_auto_2", "speed_auto_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -132,9 +102,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Van_position_auto_2", "position_auto_2", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Van_position_auto_2", "position_auto_2", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -142,13 +110,12 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_auto_2" disabled="disabled" type="number" />
-              <script>
-                fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);</script>
             </div>
           </div>
         </div>
 
+        <!--//////////////////////////////////////////MÁY LẠNH 2 SLAVE3 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item">
@@ -159,9 +126,7 @@
                 <option value="0">0</option>
                 <option value="1">1</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("On_off_auto_3", "on_off_aut_3", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("On_off_auto_3", "on_off_aut_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -175,9 +140,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Mode_auto_3", "mode_aut_3", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Mode_auto_3", "mode_aut_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -190,9 +153,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Fan_speed_auto_3", "speed_auto_3", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Fan_speed_auto_3", "speed_auto_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -207,9 +168,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Van_position_auto_3", "position_auto_3", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Van_position_auto_3", "position_auto_3", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -217,13 +176,12 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_auto_3" disabled="disabled" type="number" />
-              <script>
-                fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);</script>
             </div>
           </div>
         </div>
 
+        <!--//////////////////////////////////////////MÁY LẠNH 3 SLAVE4 ///////////////////////////////////-->
         <div class="setting_item">
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
           <div class="setting_content-item">
@@ -234,8 +192,7 @@
                 <option value="0">0</option>
                 <option value="1">1</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("On_off_auto_4", "on_off_aut_4", 0);
+              <script>fn_Auto_IOField_IO("On_off_auto_4", "on_off_aut_4", 0);
               </script>
             </div>
           </div>
@@ -250,9 +207,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Mode_auto_4", "mode_aut_4", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Mode_auto_4", "mode_aut_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -265,9 +220,7 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Fan_speed_auto_4", "speed_auto_4", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Fan_speed_auto_4", "speed_auto_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -282,9 +235,7 @@
                 <option value="5">5</option>
                 <option value="10">10</option>
               </select>
-              <script>
-                fn_Auto_IOField_IO("Van_position_auto_4", "position_auto_4", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Van_position_auto_4", "position_auto_4", 0);</script>
             </div>
           </div>
           <div class="setting_content-item">
@@ -292,9 +243,7 @@
             <div class="setting_input">
               <label for="">Cài đặt</label>
               <input id="temp_auto_4" disabled="disabled" type="number" />
-              <script>
-                fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);
-              </script>
+              <script>fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);</script>
             </div>
           </div>
         </div>
