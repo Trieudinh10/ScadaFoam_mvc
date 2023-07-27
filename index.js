@@ -559,3 +559,45 @@ function fn_SQLSearch() {
       });
     });
   }
+
+
+  // Đọc dữ liệu SQL theo thời gian
+function fn_SQLSearch_ByTime(){
+    io.on("connection", function(socket){
+        socket.on("msg_SQL_ByTime", function(data)
+        {
+            var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset time Việt Nam (GMT7+)
+            // Lấy thời gian tìm kiếm từ date time piker
+            var timeS = new Date(data[0]); // Thời gian bắt đầu
+            var timeE = new Date(data[1]); // Thời gian kết thúc
+
+            // Kiểm tra giá trị thời gian hợp lệ
+            if (isNaN(timeS.getTime()) || isNaN(timeE.getTime())) { 
+                console.log("Chưa chọn thời gian");
+                return;
+            }
+
+            // Quy đổi thời gian ra định dạng cua MySQL
+            var timeS1 = "'" + (new Date(timeS - tzoffset)).toISOString().slice(0, -1).replace("T"," ")	+ "'";
+            var timeE1 = "'" + (new Date(timeE - tzoffset)).toISOString().slice(0, -1).replace("T"," ") + "'";
+            var timeR = timeS1 + "AND" + timeE1; // Khoảng thời gian tìm kiếm (Time Range)
+ 
+            var sqltable_Name = "plc_dulieu"; // Tên bảng
+            var dt_col_Name = "date_time";  // Tên cột thời gian
+ 
+            var Query1 = "SELECT * FROM " + sqltable_Name + " WHERE "+ dt_col_Name + " BETWEEN ";
+            var Query = Query1 + timeR + ";";
+            
+            sqlcon.query(Query, function(err, results, fields) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    const objectifyRawPacket = row => ({...row});
+                    const convertedResponse = results.map(objectifyRawPacket);
+                    SQL_Excel = convertedResponse; // Xuất báo cáo Excel
+                    socket.emit('SQL_ByTime', convertedResponse);
+                } 
+            });
+        });
+    });
+}
