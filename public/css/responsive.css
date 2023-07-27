@@ -356,6 +356,12 @@
     display: flex;
     justify-content: center;
   }
+  .export_body{
+    flex-wrap: wrap;
+  }
+  .export_para{
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {

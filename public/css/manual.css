@@ -1,7 +1,7 @@
 .operate_container {
   width: 100%;
   min-height: calc(100vh - var(--height));
-  background-color: var(--color-item);
+  background-color: var(--color-sub);
   border: 1px solid var(--color-border);
 }
 
@@ -274,18 +274,38 @@ select:focus {
 
 .btt_sua_luu {
   position: absolute;
-  border-radius: 20px;
+  align-items: center;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 1px 1px 0px 0px #333, 2px 2px 0px 0px #333, 3px 3px 0px 0px #333, 4px 4px 0px 0px #333, 5px 5px 0px 0px #333;
+  box-sizing: border-box;
+  color: #000;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  /* max-width: 100%; */
+  min-width: 110px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
   cursor: pointer;
-  font-size: 17px;
-  display: inline-block;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183));
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  width: 120px;
-  height: 50px;
+  /* width: 100%; */
+  margin-left: 20px;
+  height: 40px;
 }
 
+#btt_Auto_Save,#btt_Main_Save{
+  background-image: linear-gradient(144deg,var(--color-green), #fff);
+
+}
+#btt_Auto_Edit,#btt_Main_Edit{
+  background-image: linear-gradient(144deg,#FF4742, #fff);
+}
 .start_stop-btn-start {
   display: flex;
 }
@@ -298,18 +318,16 @@ select:focus {
   flex: 1;
   /* position: absolute; */
   width: 100%;
+  margin-right: 8px;
 }
 
 .btt_sua_luu:hover {
-  background-image: linear-gradient(
-    180deg,
-    rgb(45, 63, 106),
-    rgb(228, 216, 110)
-  );
-  color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
 }
 .btt_sua_luu:active {
-  background-image: linear-gradient(0deg, rgb(45, 63, 106), rgb(228, 216, 110));
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
 }
 
 .den_cd {
@@ -335,26 +353,38 @@ select:focus {
 }
 
 .setting_on-btn {
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 17px;
-  display: inline-block;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183));
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  width: 120px;
-  height: 50px;
+	align-items: center;
+	border: 0;
+	border-radius: 18px;
+	box-shadow: 1px 1px 0px 0px #07539d, 2px 2px 0px 0px #07539d, 3px 3px 0px 0px #07539d, 4px 4px 0px 0px #07539d, 5px 5px 0px 0px #07539d;
+	box-sizing: border-box;
+	color: #000;
+	display: flex;
+	font-family: Phantomsans, sans-serif;
+	font-size: 20px;
+	justify-content: center;
+	line-height: 1em;
+	/* max-width: 100%; */
+	min-width: 110px;
+	padding: 3px;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	cursor: pointer;
+	/* width: 100%; */
+	margin-left: 20px;
+	height: 40px;
 }
 
 .setting_on-btn:hover {
-  background-image: linear-gradient(
-    180deg,
-    rgb(45, 63, 106),
-    rgb(228, 216, 110)
-  );
-  color: rgb(255, 255, 255);
+
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  opacity: 0.7;
 }
 .setting_on-btn:active {
-  background-image: linear-gradient(0deg, rgb(45, 63, 106), rgb(228, 216, 110));
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+ 
 }
+

@@ -302,4 +302,16 @@
     </div>
     <%- include('btn_scroll.ejs'); -%>
   </body>
+  <script>
+    var cookieValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('role=admin'));
+      if(!cookieValue){
+        const btnStart = document.getElementById('btn_on_tn1');
+        const btnSaveEdit = document.querySelector('.start_stop-btn-save')
+        btnStart.disabled = true;
+        btnStart.style.display = "none";
+        btnSaveEdit.style.display = "none"
+      }      
+  </script>
 </html>
