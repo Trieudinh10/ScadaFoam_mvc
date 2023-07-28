@@ -241,6 +241,21 @@
     justify-content: center;
     margin-top: 8px;
   }
+  .home_block-item{
+    flex-wrap: wrap;
+  }
+  .item_air-status{
+    flex-direction: column;
+  }
+  .system_item{
+    margin-right: none;
+  }
+  .home_block-item .system_item:not(:last-child){
+    margin-right:0 ;
+  }
+  .row_status{
+    width: 100%;
+  }
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -250,10 +265,12 @@
     border-radius: 10px;
     margin: 0;
     flex-wrap: wrap;
+    margin-right: 8px;
   }
   .system_item {
     width: 50%;
-    padding: 4px 0 0 8px;
+    margin-top: 8px;
+    flex: 1;
   }
   .home_chart {
     width: 50%;
@@ -308,9 +325,6 @@
     display: flex;
     justify-content: center;
   }
-  .item_air-room + .item_air-room {
-    margin: 8px 0 0 0;
-  }
   .item_data-room.item_data-status {
     justify-content: center;
   }
@@ -322,7 +336,8 @@
     margin: 0;
   }
   .item_air-status {
-    margin: 0 0 0 4px;
+    display: flex;
+    flex-direction: column;
   }
   .item_air-title {
     margin: 0;
@@ -371,6 +386,20 @@
   }
   .btt_sua_luu{
     margin-left:0 ;
+  }
+  .home_block-item{
+    flex-wrap: wrap;
+  }
+  .system_item-air_block{
+    flex-direction: row;
+  }
+
+  .row_status{
+    width: 100%;
+    flex-direction: row;
+  }
+  .home_block-item .system_item{
+    margin-right: 8px;
   }
 }
 
