@@ -256,6 +256,7 @@
   .row_status{
     width: 100%;
   }
+
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -269,9 +270,14 @@
   }
   .system_item {
     width: 50%;
-    margin-top: 8px;
-    flex: 1;
+    order: 2;
   }
+
+  .container_chart{
+    order: 3;
+    width: 100%;
+  }
+
   .home_chart {
     width: 50%;
     margin: 0;
@@ -390,16 +396,18 @@
   .home_block-item{
     flex-wrap: wrap;
   }
-  .system_item-air_block{
-    flex-direction: row;
+  .system_item-air_block:first-child{
+    margin-bottom: 8px;
   }
 
   .row_status{
-    width: 100%;
-    flex-direction: row;
+    width: 50%;
   }
   .home_block-item .system_item{
     margin-right: 8px;
+  }
+  .den_ml{
+    height: 125px;
   }
 }
 

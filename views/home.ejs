@@ -21,7 +21,6 @@
   <body>
     <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
     <div class="home_container">
-      <div class="home_system">
         <div class="row_status">
           <!--Bang thong so phong-->
           <div class="item_air-room">
@@ -78,7 +77,7 @@
             </div>
           </div>
         </div>
-        <div class="system_item">
+        <div class="container_chart">
           <div id="tem">
             <script>
               var data_trend_dh1 = 0;
@@ -92,7 +91,7 @@
               var yData_nd = [];
               var cnt = 0;
               var layout = {
-                title: "Biểu đồ hệ thống nhiệt",
+                title: "Biểu đồ thông số phòng Foam",
                 xaxis: {
                   range: [0, 10],
                   showticklabels: true,
@@ -201,9 +200,7 @@
             </script>
           </div>
         </div>
-      </div>
 
-      <div class="home_block-item">
         <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="system_item">
           <div class="system_item-air">
@@ -561,7 +558,7 @@
             </div>
           </div>
         </div>
-      </div>
+
     </div>
     <div class="btn_scroll">
       <li  onclick="window.scrollTo(0, 0)"><div class="scroll_top"></div></li>

@@ -6,17 +6,14 @@
   display: flex;
   padding: 8px 8px 0 8px;
   border-top: 1px solid var(--color-border);
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 .home_system {
   width: 100%;
-  background-color: #fff;
   margin-right: 8px;
   border-radius: 10px;
   display: flex;
   margin-bottom: 16px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   height: 40%;
 }
 
@@ -31,8 +28,9 @@
 }
 
 .system_item {
-  width: 100%;
+  width: calc(100% / 3);
   display: flex;
+  order: 3;
 }
 
 #tem{
@@ -56,7 +54,13 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  padding: 8px;
+  margin: 0 8px;
+}
+
+.container_chart{
+  width: 66.5%;
+  display: flex;
+  order: 2;
 }
 
 .system_item-air_block{
@@ -65,14 +69,14 @@
 }
 
 .row_status {
-  width: 100%;
   background-color: var(--color-body);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   border: none;
-  width: 40%;
+  width: calc(100% / 3);
   background-color: #fff;
+  order: 1;
 }
 
 .item_air-title {
@@ -292,7 +296,7 @@
 
 .den_ml {
   width: 300px;
-  height: 125px;
+  height: 200px;
   margin-left: 8px;
 }
 .den_cd {
