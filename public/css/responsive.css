@@ -273,6 +273,10 @@
     order: 2;
   }
 
+  .system_item.system_item-fisrt{
+    margin-bottom: 8px;
+  }
+
   .container_chart{
     order: 3;
     width: 100%;

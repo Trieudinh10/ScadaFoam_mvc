@@ -833,3 +833,48 @@ return [SaveAslink, Bookname]
         });
     });
 
+
+//chương trình con thêm cảnh báo mới
+function fn_sql_alarm_insert(ID, AlarmName){
+    var sqltable_Name = "alarm";
+    // Lấy thời gian hiện tại
+	var tzoffset = (new Date()).getTimezoneOffset() * 60000; // Vùng Việt Nam (GMT7+)
+	var temp_datenow = new Date();
+	var timeNow = (new Date(temp_datenow - tzoffset)).toISOString().slice(0, -1).replace("T"," ");
+	var timeNow_toSQL = "'" + timeNow + "',";
+ 
+    // Dữ liệu trạng thái báo cáo
+    var data_1 = "'" + ID + "',";
+    var data_2 = "'Đang Lỗi',";
+    var data_3 = "'" + AlarmName + "'";
+    // Thêm cảnh báo vào SQL
+    var str1 = "INSERT INTO " + sqltable_Name + " (date_time, ID, Status, AlarmName) VALUES (";
+    var str2 = timeNow_toSQL 
+                + data_1 
+                + data_2
+                + data_3
+                ;
+    var str = str1 + str2 + ");";
+    // Ghi dữ liệu cảnh báo vào SQL
+	sqlcon.query(str, function (err, result) {
+        if (err) {console.log(err);} else {}
+    });
+}
+
+// Hàm tự động xác nhận cảnh báo
+function fn_sql_alarm_ack(ID){
+    var sqltable_Name = "alarm";
+ 
+    // Dữ liệu trạng thái cảnh báo
+    var data_1 = " Status = 'Đã Kết Thúc'";
+ 
+    var str1 = "UPDATE " + sqltable_Name + " SET";
+    var str2 = " WHERE ID='" + ID + "'";
+ 
+    var str = str1 + data_1 + str2 + ";";
+    // Ghi dữ liệu cảnh báo vào SQL
+	sqlcon.query(str, function (err, result) {
+        if (err) {console.log(err);} else {}
+    });
+}
+
