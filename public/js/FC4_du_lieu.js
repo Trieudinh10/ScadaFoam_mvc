@@ -7,8 +7,20 @@ function fn_Table01_SQL_Show(){
     });
 }
 
+   var nhiet_do_ml1=[];
+   var nhiet_do_ml2=[];
+   var nhiet_do_ml3=[];
+   var nhiet_do_cb=[];
+   var date_time=[];
+
 // Chương trình con hiển thị SQL ra bảng
 function fn_table_01(data){
+    nhiet_do_ml1.length=0;
+    nhiet_do_ml2.length=0;
+    nhiet_do_ml3.length=0;
+    nhiet_do_cb.length=0;
+    date_time.length=0;
+
     if(data){
         $("#table_01 tbody").empty();
         var len = data.length;
@@ -34,6 +46,13 @@ function fn_table_01(data){
                         +"</td><td>"+data[i].Cai_nhiet_do_cao
                         +"</td><td>"+data[i].Canh_bao_nhiet
                         +"</td></tr>";
+
+                        nhiet_do_ml1.push(data[i].Read_tem_refer_2)
+                        nhiet_do_ml2.push(data[i].Read_tem_refer_3)
+                        nhiet_do_ml3.push(data[i].Read_tem_refer_4)
+                        nhiet_do_cb.push(data[i].Nhiet_do)
+                        date_time.push(data[i].date_time)
+
                     }
             if(txt != ""){
             txt +="</tbody>";
@@ -41,6 +60,8 @@ function fn_table_01(data){
             }
         }
     }
+
+    Draw_Chart();
 }
 
 // Tìm kiếm SQL theo khoảng thời gian
@@ -52,4 +73,58 @@ function fn_SQL_By_Time()
     socket.on('SQL_ByTime', function(data){
         fn_table_01(data); // Show sdata
     });
+}
+
+
+function Draw_Chart()
+{
+
+        var x1Values = [];
+        var y1Values = [];
+        var y2Values = [];
+        var y3Values = [];
+        var y4Values = [];
+       
+
+        x1Values.push(...date_time);
+        y1Values.push(...nhiet_do_ml1);
+        y2Values.push(...nhiet_do_ml2);
+        y3Values.push(...nhiet_do_ml3);
+        y4Values.push(...nhiet_do_cb);
+        
+ 
+
+        // Define Data
+        var data = [
+        {x: x1Values, y: y1Values,mode:'lines', name: 'Read_tem_refer_2',hoverinfo:'x+y', nticks: 10,fixedrange: true },
+        {x: x1Values, y: y2Values, mode:"lines", name: 'Read_tem_refer_3',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+        {x: x1Values, y: y3Values, mode:"lines", name: 'Read_tem_refer_4',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+        {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiet_do',hoverinfo:'x+y', nticks: 10 ,fixedrange: true},
+        
+        ];
+
+
+       var layout = {
+        title: "Biểu đồ hệ thống nhiệt",
+        paper_bgcolor : 'rgb(22, 56, 83)',
+        plot_bgcolor: 'rgb(22, 56, 83)',
+        borderRadius: '10px',
+        font: {
+          color: 'white' // Màu chữ trên biểu đồ
+        },
+        yaxis:
+     {
+       
+        // showline: true,
+        // fixedrange: true,
+        range: [0, 100],
+        autotick: false,
+        tick0: 0,
+        dtick:100,
+    },
+      };
+
+        // Display using Plotly
+        Plotly.newPlot("chart_detail", data, layout);
+         
 }
