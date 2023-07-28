@@ -151,6 +151,5 @@ select:focus {
   justify-content: flex-start;
   align-items: center;
   /* border-radius: 10px; */
-  cursor: pointer;
   flex-wrap: wrap;
 }
