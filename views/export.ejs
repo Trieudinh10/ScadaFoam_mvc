@@ -101,8 +101,7 @@
               </thead>
             </table>
           </div>
-          <h2>Biểu Đồ Nhiệt Độ</h2>
-          <div class="home_chart-tem" id="temm">
+          <div class="home_chart-tem" id="tem">
             <script>
                 var data_trend_dh1 = 0;
                 var data_trend_dh2 = 0;
@@ -115,12 +114,14 @@
                 var yData_nd = [];
                 var cnt = 0;
                 var layout = {
+                  title: "Biểu đồ hệ thống nhiệt",
                     xaxis: {
                         range: [0, 10],
                         showticklabels: true,
                         tickformat: '%H:%M:%S/%d-%m-%y'
                     },
                     yaxis: {
+                       showline: true,
                         range: [0, 120]
                     },
                     margin: {
@@ -141,7 +142,7 @@
                     data_trend_nd = data;
                 });
         
-                Plotly.newPlot('temm', [{
+                Plotly.newPlot('tem', [{
                     y: [data_trend_dh1],
                     type: 'line',
                     mode: 'lines',
@@ -206,7 +207,7 @@
                         yData_dh3.shift();
                         yData_nd.shift();
                     }
-                    Plotly.update('temm', {
+                    Plotly.update('tem', {
                         x: [xData],
                         y: [yData_dh1, yData_dh2, yData_dh3, yData_nd]
                     });
@@ -216,8 +217,7 @@
 
 
 
-        <h2>Thông Số Phòng Foam</h2>
-        <div class="home_chart-room" id="tem">
+        <div class="home_chart-room">
           <div id="chart_detail" class="chart"></div>
           <script>Draw_Chart();  </script>
         </div>

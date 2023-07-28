@@ -96,10 +96,10 @@ function Draw_Chart()
 
         // Define Data
         var data = [
-        {x: x1Values, y: y1Values,mode:'lines', name: 'Read_tem_refer_2',hoverinfo:'x+y', nticks: 10,fixedrange: true },
-        {x: x1Values, y: y2Values, mode:"lines", name: 'Read_tem_refer_3',hoverinfo:'x+y', nticks: 10,fixedrange: true},
-        {x: x1Values, y: y3Values, mode:"lines", name: 'Read_tem_refer_4',hoverinfo:'x+y', nticks: 10,fixedrange: true},
-        {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiet_do',hoverinfo:'x+y', nticks: 10 ,fixedrange: true},
+        {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, color: 'black' },
+        {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+        {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+        {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true},
         
         ];
 
@@ -113,8 +113,8 @@ function Draw_Chart()
         yaxis:
      {
        
-        // showline: true,
-        // fixedrange: true,
+        showline: true,
+        fixedrange: true,
         range: [0, 100],
         autotick: false,
         tick0: 0,
