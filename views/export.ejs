@@ -101,25 +101,27 @@
               </thead>
             </table>
           </div>
-          <div class="home_chart-tem" >
-            <h2>Biểu Đồ Nhiệt Độ</h2>
-            <div id="temm">
+          <div class="home_chart-tem" id="tem">
             <script>
                 var data_trend_dh1 = 0;
                 var data_trend_dh2 = 0;
                 var data_trend_dh3 = 0;
+                var data_trend_nd = 0;
                 var xData = [];
                 var yData_dh1 = [];
                 var yData_dh2 = [];
                 var yData_dh3 = [];
+                var yData_nd = [];
                 var cnt = 0;
                 var layout = {
+                  title: "Biểu đồ hệ thống nhiệt",
                     xaxis: {
                         range: [0, 10],
                         showticklabels: true,
                         tickformat: '%H:%M:%S/%d-%m-%y'
                     },
                     yaxis: {
+                       showline: true,
                         range: [0, 120]
                     },
                     margin: {
@@ -136,8 +138,11 @@
                 socket.on("Read_tem_refer_4", function(data) {
                     data_trend_dh3 = data;
                 });
-                var config = {responsive: true}
-                Plotly.newPlot('temm', [{
+                socket.on("Nhiet_do", function(data) {
+                    data_trend_nd = data;
+                });
+        
+                Plotly.newPlot('tem', [{
                     y: [data_trend_dh1],
                     type: 'line',
                     mode: 'lines',
@@ -152,7 +157,7 @@
                     type: 'line',
                     mode: 'lines',
                     line: {
-                        color: 'red',
+                        color: 'green',
                         width: 2
                     },
                     name: 'Điều hoà 2' // Đặt tên cho dữ liệu nhiệt độ
@@ -162,10 +167,20 @@
                     type: 'line',
                     mode: 'lines',
                     line: {
-                        color: 'green',
+                        color: 'yellow',
                         width: 2
                     },
                     name: 'Điều hoà 3' // Đặt tên cho dữ liệu nhiệt độ
+                },
+                {
+                    y: [data_trend_nd],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'red',
+                        width: 2
+                    },
+                    name: 'Nhiệt độ' // Đặt tên cho dữ liệu nhiệt độ
                 }], layout,config);
         
                 setInterval(function() {
@@ -183,107 +198,94 @@
                     yData_dh1.push(data_trend_dh1);
                     yData_dh2.push(data_trend_dh2);
                     yData_dh3.push(data_trend_dh3);
+                    yData_nd.push(data_trend_nd);
                     cnt++;
-                    if (cnt > 38) {
+                    if (cnt > 15) {
                         xData.shift();
                         yData_dh1.shift();
                         yData_dh2.shift();
                         yData_dh3.shift();
-                    }
-                    Plotly.update('temm', {
-                        x: [xData],
-                        y: [yData_dh1, yData_dh2, yData_dh3]
-                    });
-                }, 1000);
-            </script>
-            </div>
-        </div>
-
-
-
-      
-        <div class="home_chart-room" >
-          <h2>Thông Số Phòng Foam</h2>
-          <div id="tem">
-</div>
-            <script>
-                var data_trend_nd = 0;
-                var data_trend_da = 0;
-                var xData = [];
-                var yData_nd = [];
-                var yData_da = [];
-                var cnt = 0;
-                var layout = {
-                    xaxis: {
-                        range: [0, 10],
-                        showticklabels: true,
-                        tickformat: '%H:%M:%S/%d-%m-%y'
-                    },
-                    yaxis: {
-                        range: [0, 120]
-                    },
-                    margin: {
-                        t: 10
-                    }
-                };
-        
-                socket.on("Nhiet_do", function(data) {
-                    data_trend_nd = data;
-                });
-                socket.on("Do_am", function(data) {
-                    data_trend_da = data;
-                });
-        
-                Plotly.newPlot('tem', [{
-                    y: [data_trend_nd],
-                    type: 'line',
-                    mode: 'lines',
-                    line: {
-                        color: 'blue',
-                        width: 2
-                    },
-                    name: 'Nhiệt độ' // Đặt tên cho dữ liệu nhiệt độ
-                }, {
-                    y: [data_trend_da],
-                    type: 'line',
-                    mode: 'lines',
-                    line: {
-                        color: 'green',
-                        width: 2
-                    },
-                    name: 'Độ ẩm' // Đặt tên cho dữ liệu độ ẩm
-                }], layout,config);
-        
-                setInterval(function() {
-                    var currentDate = new Date();
-                    var hours = currentDate.getUTCHours() + 7;
-                    var minutes = currentDate.getUTCMinutes();
-                    var seconds = currentDate.getUTCSeconds();
-                    var date = currentDate.getUTCDate();
-                    var month = currentDate.getUTCMonth() + 1;
-                    var year = currentDate.getUTCFullYear();
-                    var timeString = hours + ":" + minutes + ":" + seconds;
-                    var dateString = date + "/" + month +"/"+year;
-                    var formattedDateString = timeString + "<br>" + dateString;
-                    xData.push(formattedDateString);
-                    yData_nd.push(data_trend_nd);
-                    yData_da.push(data_trend_da);
-                    cnt++;
-                    if (cnt > 39) {
-                        xData.shift();
                         yData_nd.shift();
-                        yData_da.shift();
                     }
                     Plotly.update('tem', {
                         x: [xData],
-                        y: [yData_nd, yData_da]
+                        y: [yData_dh1, yData_dh2, yData_dh3, yData_nd]
                     });
                 }, 1000);
             </script>
         </div>
+
+
+
+        <div class="home_chart-room">
+          <div id="chart_detail" class="chart">
+            <script>
+              
+            var nhiet_do_ml1=[];
+            var nhiet_do_ml2=[];
+            var nhiet_do_ml3=[];
+            var nhiet_do_cb=[];
+            var date_time=[];
+
+            function Draw_Chart() {
+                
+            var x1Values = [];
+            var y1Values = [];
+            var y2Values = [];
+            var y3Values = [];
+            var y4Values = [];
+            x1Values.push(...date_time);
+            y1Values.push(...nhiet_do_ml1);
+            y2Values.push(...nhiet_do_ml2);
+            y3Values.push(...nhiet_do_ml3);
+            y4Values.push(...nhiet_do_cb);
+            
+            var data = [
+            {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, line: { color: 'orange' } },
+            {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'green' } },
+            {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'yellow' } },
+            {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true,line: { color: 'red' } },
+            
+            ];
+    
+    
+           var layout = {
+
+            
+            title: {
+                text: "Biểu đồ hệ thống nhiệt",
+                x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
+                y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
+                xanchor: 'center', // Giữ title ở giữa theo chiều ngang
+                yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
+            },
+            height: 350, // Đặt chiều cao của biểu đồ (theo pixel)
+            borderRadius: '10px',
+            font: {
+                  color: 'black' // Màu chữ trên biểu đồ
+                  },
+            yaxis:{
+           
+                  showline: true,
+                  fixedrange: true,
+                  range: [0, 100],
+                  autotick: false,
+                  tick0: 0,
+                  dtick:100,
+              },
+                };
+                Plotly.newPlot("chart_detail", data, layout);
+              }
+            
+              // Gọi hàm Draw_Chart() để tạo biểu đồ
+              Draw_Chart();
+            </script>
+          </div>
+        </div>
         
         
-        
+
+            </div>
           </div>
         </div>
       </div>
