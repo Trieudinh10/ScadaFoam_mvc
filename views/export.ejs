@@ -218,9 +218,55 @@
 
 
         <div class="home_chart-room">
-          <div id="chart_detail" class="chart"></div>
-          <script>Draw_Chart();  </script>
+          <div id="chart_detail" class="chart">
+            <script>
+              function Draw_Chart() {
+                var x1Values = [];
+            var y1Values = [];
+            var y2Values = [];
+            var y3Values = [];
+            var y4Values = [];
+            x1Values.push(...date_time);
+            y1Values.push(...nhiet_do_ml1);
+            y2Values.push(...nhiet_do_ml2);
+            y3Values.push(...nhiet_do_ml3);
+            y4Values.push(...nhiet_do_cb);
+            
+            var data = [
+            {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, color: 'black' },
+            {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+            {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true},
+            {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true},
+            
+            ];
+    
+    
+           var layout = {
+            title: "Biểu đồ hệ thống nhiệt",
+            borderRadius: '10px',
+            font: {
+              color: 'black' // Màu chữ trên biểu đồ
+            },
+            yaxis:
+         {
+           
+            showline: true,
+            fixedrange: true,
+            range: [0, 100],
+            autotick: false,
+            tick0: 0,
+            dtick:100,
+        },
+          };
+                Plotly.newPlot("chart_detail", data, layout);
+              }
+            
+              // Gọi hàm Draw_Chart() để tạo biểu đồ
+              Draw_Chart();
+            </script>
         </div>
+        
+        
 
             </div>
           </div>
