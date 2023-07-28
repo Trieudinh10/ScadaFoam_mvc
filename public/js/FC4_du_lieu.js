@@ -106,11 +106,9 @@ function Draw_Chart()
 
        var layout = {
         title: "Biểu đồ hệ thống nhiệt",
-        paper_bgcolor : 'rgb(22, 56, 83)',
-        plot_bgcolor: 'rgb(22, 56, 83)',
         borderRadius: '10px',
         font: {
-          color: 'white' // Màu chữ trên biểu đồ
+          color: 'black' // Màu chữ trên biểu đồ
         },
         yaxis:
      {
