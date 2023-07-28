@@ -92,7 +92,13 @@
               var yData_nd = [];
               var cnt = 0;
               var layout = {
-                title: "Biểu đồ hệ thống nhiệt",
+                title: {
+                text: "BIỂU ĐỒ NHIỆT",
+                x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
+                y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
+                xanchor: 'center', // Giữ title ở giữa theo chiều ngang
+                yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
+            },
                 xaxis: {
                   range: [0, 10],
                   showticklabels: true,
@@ -215,7 +221,7 @@
               <!--Trang thai on off may lanh 1-->
             <div class="item_air-status-block">
               <div class="item_air-status">
-                <h2>Trạng thái</h2>
+                
                 <img id="Trang_thai_ml_2" class="status_mode den_ml" />
                 <script>
                   fn_SymbolStatus(
@@ -335,7 +341,7 @@
               <!--Trang thai on off may lanh 2-->
             <div class="item_air-status-block">
               <div class="item_air-status">
-                <h2>Trạng thái</h2>
+                
                 <img id="Trang_thai_ml_3" class="status_mode den_ml" />
                 <script>
                   fn_SymbolStatus(
@@ -453,7 +459,7 @@
               <!--Trang thai on off may lanh 3-->
             <div class="item_air-status-block">
               <div class="item_air-status">
-                <h2>Trạng thái</h2>
+                
                 <img id="Trang_thai_ml_4" class="status_mode den_ml" />
                 <script>
                   fn_SymbolStatus(
