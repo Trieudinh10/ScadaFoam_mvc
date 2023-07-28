@@ -8,7 +8,7 @@
 .export_body {
   width: 100%;
   display: flex;
-  height: calc(100vh - var(--height) - 130px);
+  height: calc(100vh - var(--height) - 90px);
 }
 
 .export_para,

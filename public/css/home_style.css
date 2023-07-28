@@ -135,20 +135,20 @@
 }
 
 .home_chart-tem {
-  width: 100%;
+  max-width: 100%;
   height: calc(100% / 3);
   background-color: var(--color-body);
   border: 1px solid var(--color-border);
-  margin-bottom: 8px;
+  margin: 8px 0;
   border-radius: 10px;
   overflow-y: scroll;
   height: calc(100% / 3);
-  min-height:calc(100% / 3) ;
+  min-height:calc(100% / 3);
   max-height: calc(100% / 3);
 }
 
 .home_chart-tem::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 .home_chart-tem::-webkit-scrollbar-thumb {
   background: var(--color-border);
@@ -161,14 +161,14 @@
 }
 
 .home_chart-room {
-  width: 100%;
+  max-width: 100%;
   height: calc(100% / 3);
   background-color: var(--color-body);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   overflow-y: scroll;
   height: calc(100% / 3);
-  min-height:calc(100% / 3) ;
+  min-height:calc(100% / 3);
   max-height: calc(100% / 3);
 }
 

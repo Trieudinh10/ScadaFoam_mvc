@@ -101,8 +101,9 @@
               </thead>
             </table>
           </div>
-          <h2>Biểu Đồ Nhiệt Độ</h2>
-          <div class="home_chart-tem" id="temm">
+          <div class="home_chart-tem" >
+            <h2>Biểu Đồ Nhiệt Độ</h2>
+            <div id="temm">
             <script>
                 var data_trend_dh1 = 0;
                 var data_trend_dh2 = 0;
@@ -135,7 +136,7 @@
                 socket.on("Read_tem_refer_4", function(data) {
                     data_trend_dh3 = data;
                 });
-        
+                var config = {responsive: true}
                 Plotly.newPlot('temm', [{
                     y: [data_trend_dh1],
                     type: 'line',
@@ -165,7 +166,7 @@
                         width: 2
                     },
                     name: 'Điều hoà 3' // Đặt tên cho dữ liệu nhiệt độ
-                }], layout);
+                }], layout,config);
         
                 setInterval(function() {
                     var currentDate = new Date();
@@ -195,12 +196,16 @@
                     });
                 }, 1000);
             </script>
+            </div>
         </div>
 
 
 
-        <h2>Thông Số Phòng Foam</h2>
-        <div class="home_chart-room" id="tem">
+      
+        <div class="home_chart-room" >
+          <h2>Thông Số Phòng Foam</h2>
+          <div id="tem">
+</div>
             <script>
                 var data_trend_nd = 0;
                 var data_trend_da = 0;
@@ -247,7 +252,7 @@
                         width: 2
                     },
                     name: 'Độ ẩm' // Đặt tên cho dữ liệu độ ẩm
-                }], layout);
+                }], layout,config);
         
                 setInterval(function() {
                     var currentDate = new Date();
