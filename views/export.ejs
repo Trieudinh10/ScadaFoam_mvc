@@ -136,13 +136,13 @@
     
            var layout = {
             title: {
-                text: "Biểu đồ hệ thống nhiệt",
+                text: "BIỂU ĐỒ NHIỆT",
                 x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
                 y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
                 xanchor: 'center', // Giữ title ở giữa theo chiều ngang
                 yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
             },
-            height: 320, // Đặt chiều cao của biểu đồ (theo pixel)
+            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
             borderRadius: '10px',
             font: {
                   color: 'black' // Màu chữ trên biểu đồ
@@ -151,10 +151,10 @@
            
                   showline: true,
                   fixedrange: true,
-                  range: [0, 100],
+                  range: [0, 40],
                   autotick: false,
                   tick0: 0,
-                  dtick:100,
+                  dtick:40,
               },
                 };
                 Plotly.newPlot("chart_detail", data, layout,config);
