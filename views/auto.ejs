@@ -27,7 +27,7 @@
           <button
             class="btt_sua_luu"
             id="btt_Auto_Save"
-            onclick="fn_Auto_SaveBtt()"
+            
           >
             LƯU
           </button>
@@ -146,8 +146,7 @@
                 id="temp_auto_2"
                 disabled="disabled"
                 type="number"
-                min="16"
-                max="31"
+             
               />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);
@@ -228,8 +227,7 @@
                 id="temp_auto_3"
                 disabled="disabled"
                 type="number"
-                min="16"
-                max="31"
+             
               />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);
@@ -310,8 +308,7 @@
                 id="temp_auto_4"
                 disabled="disabled"
                 type="number"
-                min="16"
-                max="31"
+             
               />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);
@@ -335,6 +332,36 @@
       btnSaveEdit.style.display = "none";
     }
 
+    const inputElement = document.querySelectorAll(".setting_input input");
+    const selectElement = document.querySelectorAll(".setting_input select");
+    const btnSave = document.getElementById("btt_Auto_Save");
 
+    let checkChange = false;
+    function fn_checkChange() {
+      if (!checkChange) {
+        window.onbeforeunload = null;
+      } else {
+        window.onbeforeunload = () => true;
+      }
+    }
+    inputElement.forEach((e) => {
+      e.onchange = function () {
+        checkChange = true;
+        fn_checkChange();
+      };
+    });
+
+    selectElement.forEach((e) => {
+      e.onchange = function () {
+        checkChange = true;
+        fn_checkChange();
+      };
+    });
+
+    btnSave.onclick = function () {
+      checkChange = false;
+      fn_checkChange();
+      fn_Auto_SaveBtt();
+    };
   </script>
 </html>
