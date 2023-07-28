@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/css/home_style.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
     <script src="socket.io/socket.io.js"></script>
+    <script src="js/plotly-2.8.3.min.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC4_du_lieu.js"></script>
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font.css" />
-
     <title>Lưu Foam</title>
   </head>
   <script>
@@ -22,52 +22,188 @@
     <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
     <div class="home_container">
       <div class="home_system">
-        <div class="system_item">
-          <div class="system_item-air row_status">
-
-            <!--Bang thong so phong-->
-            <div class="item_air-room">
-              <div class="item_air-title">
-                <h2>THÔNG SỐ PHÒNG</h2>
+        <div class="row_status">
+          <!--Bang thong so phong-->
+          <div class="item_air-room">
+            <div class="item_air-title">
+              <h2>THÔNG SỐ PHÒNG</h2>
+            </div>
+            <div class="room_container">
+              <div class="data_room-img">
+                <div class="item_data-room">
+                  <h2>NHIỆT ĐỘ (&deg;C):</h2>
+                  <input id="nhiet_do" disabled="disabled" type="text" />
+                  <script>
+                    fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);
+                  </script>
+                </div>
+                <div class="item_data-room">
+                  <h2>ĐỘ ẨM (%RH):</h2>
+                  <input id="do_am" disabled="disabled" type="text" />
+                  <script>
+                    fn_IOFieldDataShow("Do_am", "do_am", 0);
+                  </script>
+                </div>
               </div>
-              <div class="room_container">
-                <div>
-                  <div class="item_data-room">
-                    <h2>NHIỆT ĐỘ (&deg;C):</h2>
-                    <input id="nhiet_do" disabled="disabled" type="text" />
-                    <script>fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);</script>
-                  </div>
-                  <div class="item_data-room">
-                    <h2>ĐỘ ẨM (%RH):</h2>
-                    <input id="do_am" disabled="disabled" type="text" />
-                    <script>fn_IOFieldDataShow("Do_am", "do_am", 0);</script>
-                  </div>
-                </div>
-                <div class="data_room-img">
-                  <img id="Trang_thai_cb" class="den_cd" />
-                  <script>fn_SymbolStatus("Trang_thai_cb","Den_do","Canh_bao_nhiet");</script>
-                </div>
+              <div class="data_room-img">
+                <img id="Trang_thai_cb" class="den_cd" />
+                <script>
+                  fn_SymbolStatus("Trang_thai_cb", "Den_do", "Canh_bao_nhiet");
+                </script>
               </div>
             </div>
+          </div>
 
-            <!--Bang che do hoat dong-->
-            <div class="item_air-room">
-              <div class="room_container block_status">
-                <div class="item_data-room item_data-status">
-                  <h2>TỰ ĐỘNG</h2>
-                  <img id="Trang_thai_auto" class="den_cd" />
-                  <script>fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");</script>
-                </div>
-                <div class="item_data-room item_data-status">
-                  <h2>THỦ CÔNG</h2>
-                  <img id="Trang_thai_manual" class="den_cd" />
-                  <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual");</script>
-                </div>
+          <!--Bang che do hoat dong-->
+          <div class="item_air-room">
+            <div class="room_container block_status">
+              <div class="item_data-room item_data-status">
+                <h2>TỰ ĐỘNG</h2>
+                <img id="Trang_thai_auto" class="den_cd" />
+                <script>
+                  fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+                </script>
+              </div>
+              <div class="item_data-room item_data-status">
+                <h2>THỦ CÔNG</h2>
+                <img id="Trang_thai_manual" class="den_cd" />
+                <script>
+                  fn_SymbolStatus(
+                    "Trang_thai_manual",
+                    "Den_xanh",
+                    "Den_manual"
+                  );
+                </script>
               </div>
             </div>
           </div>
         </div>
+        <div class="system_item">
+          <div id="tem">
+            <script>
+              var data_trend_dh1 = 0;
+              var data_trend_dh2 = 0;
+              var data_trend_dh3 = 0;
+              var data_trend_nd = 0;
+              var xData = [];
+              var yData_dh1 = [];
+              var yData_dh2 = [];
+              var yData_dh3 = [];
+              var yData_nd = [];
+              var cnt = 0;
+              var layout = {
+                title: "Biểu đồ hệ thống nhiệt",
+                xaxis: {
+                  range: [0, 10],
+                  showticklabels: true,
+                  tickformat: "%H:%M:%S/%d-%m-%y",
+                },
+                yaxis: {
+                  showline: true,
+                  range: [0, 40],
+                },
+                margin: {
+                  t: 20,
+                },
+              };
 
+              socket.on("Read_tem_refer_2", function (data) {
+                data_trend_dh1 = data;
+              });
+              socket.on("Read_tem_refer_3", function (data) {
+                data_trend_dh2 = data;
+              });
+              socket.on("Read_tem_refer_4", function (data) {
+                data_trend_dh3 = data;
+              });
+              socket.on("Nhiet_do", function (data) {
+                data_trend_nd = data;
+              });
+
+              var config = { responsive: true };
+              Plotly.newPlot(
+                "tem",
+                [
+                  {
+                    y: [data_trend_dh1],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "orange",
+                      width: 2,
+                    },
+                    name: "Điều hoà 1", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_dh2],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "green",
+                      width: 2,
+                    },
+                    name: "Điều hoà 2", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_dh3],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "yellow",
+                      width: 2,
+                    },
+                    name: "Điều hoà 3", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_nd],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "red",
+                      width: 2,
+                    },
+                    name: "Nhiệt độ", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                ],
+                layout,
+                config
+              );
+
+              setInterval(function () {
+                var currentDate = new Date();
+                var hours = currentDate.getUTCHours() + 7;
+                var minutes = currentDate.getUTCMinutes();
+                var seconds = currentDate.getUTCSeconds();
+                var date = currentDate.getUTCDate();
+                var month = currentDate.getUTCMonth() + 1;
+                var year = currentDate.getUTCFullYear();
+                var timeString = hours + ":" + minutes + ":" + seconds;
+                var dateString = date + "/" + month + "/" + year;
+                var formattedDateString = timeString + "<br>" + dateString;
+                xData.push(formattedDateString);
+                yData_dh1.push(data_trend_dh1);
+                yData_dh2.push(data_trend_dh2);
+                yData_dh3.push(data_trend_dh3);
+                yData_nd.push(data_trend_nd);
+                cnt++;
+                if (cnt > 15) {
+                  xData.shift();
+                  yData_dh1.shift();
+                  yData_dh2.shift();
+                  yData_dh3.shift();
+                  yData_nd.shift();
+                }
+                Plotly.update("tem", {
+                  x: [xData],
+                  y: [yData_dh1, yData_dh2, yData_dh3, yData_nd],
+                });
+              }, 1000);
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="home_block-item">
         <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="system_item">
           <div class="system_item-air">
@@ -75,85 +211,115 @@
               <h2>ĐIỀU HOÀ 1</h2>
             </div>
 
-            <!--Trang thai on off may lanh 1-->
+            <div class="system_item-air_block">
+              <!--Trang thai on off may lanh 1-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_2" class="status_mode den_ml" />
-                <script>fn_SymbolStatus("Trang_thai_ml_2","air_condition","Read_on_off_2");</script>
+                <script>
+                  fn_SymbolStatus(
+                    "Trang_thai_ml_2",
+                    "air_condition",
+                    "Read_on_off_2"
+                  );
+                </script>
               </div>
             </div>
-            <div class="item_air-tem">
-              <h2></h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <label for="">Thực Tế</label>
+            <div class="block_data-real_setting">
+              <div class="item_air-tem">
+                <h2></h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <label for="">Thực Tế</label>
+                  </div>
+                  <div class="block_data-item">
+                    <label for="">Cài đặt</label>
+                  </div>
                 </div>
-                <div class="block_data-item">
-                  <label for="">Cài đặt</label>
+              </div>
+              <!--Che do hoat dong 1-->
+              <div class="item_air-tem">
+                <h2>Chế Độ (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="che_do_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_che_do_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Toc do may lanh 1-->
+              <div class="item_air-tem">
+                <h2>Tốc độ quạt (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="td_quat_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_td_quat_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Goc mo may lanh 1-->
+              <div class="item_air-tem">
+                <h2>Góc mở (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="goc_mo_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);
+                    </script>
+                  </div>
+  
+                  <div class="block_data-item">
+                    <input id="cai_goc_mo_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow(
+                        "Van_position_data_2",
+                        "cai_goc_mo_2",
+                        0
+                      );
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Nhiet do may lanh 1-->
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ (&deg;C):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="nhiet_ml_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);
+                    </script>
+                  </div>
+  
+                  <div class="block_data-item">
+                    <input id="cai_nhiet_ml_2" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0);
+                    </script>
+                  </div>
                 </div>
               </div>
             </div>
-            <!--Che do hoat dong 1-->
-            <div class="item_air-tem">
-              <h2>Chế Độ (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="che_do_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_che_do_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Toc do may lanh 1-->
-            <div class="item_air-tem">
-              <h2>Tốc độ quạt (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="td_quat_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_td_quat_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Goc mo may lanh 1-->
-            <div class="item_air-tem">
-              <h2>Góc mở (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="goc_mo_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);</script>
-                </div>
-
-                <div class="block_data-item">
-                  <input id="cai_goc_mo_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Van_position_data_2","cai_goc_mo_2",0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Nhiet do may lanh 1-->
-            <div class="item_air-tem">
-              <h2>Nhiệt Độ (&deg;C):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="nhiet_ml_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);</script>
-                </div>
-
-                <div class="block_data-item">
-                  <input id="cai_nhiet_ml_2" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0);</script>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -165,83 +331,113 @@
               <h2>ĐIỀU HOÀ 2</h2>
             </div>
 
-            <!--Trang thai on off may lanh 2-->
+            <div class="system_item-air_block">
+              <!--Trang thai on off may lanh 2-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_3" class="status_mode den_ml" />
-                <script>fn_SymbolStatus("Trang_thai_ml_3","air_condition","Read_on_off_3");</script>
+                <script>
+                  fn_SymbolStatus(
+                    "Trang_thai_ml_3",
+                    "air_condition",
+                    "Read_on_off_3"
+                  );
+                </script>
               </div>
             </div>
-            <div class="item_air-tem">
-              <h2></h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <label for="">Thực Tế</label>
+            <div class="block_data-real_setting">
+              <div class="item_air-tem">
+                <h2></h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <label for="">Thực Tế</label>
+                  </div>
+                  <div class="block_data-item">
+                    <label for="">Cài đặt</label>
+                  </div>
                 </div>
-                <div class="block_data-item">
-                  <label for="">Cài đặt</label>
+              </div>
+              <!--Che do hoat dong 2-->
+              <div class="item_air-tem">
+                <h2>Chế Độ (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="che_do_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_che_do_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Toc do may lanh 2-->
+              <div class="item_air-tem">
+                <h2>Tốc độ quạt (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="td_quat_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_td_quat_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Goc mo may lanh 2-->
+              <div class="item_air-tem">
+                <h2>Góc mở (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="goc_mo_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_goc_mo_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow(
+                        "Van_position_data_3",
+                        "cai_goc_mo_3",
+                        0
+                      );
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Nhiet do may lanh 2-->
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ (&deg;C):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="nhiet_ml_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_nhiet_ml_3" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0);
+                    </script>
+                  </div>
                 </div>
               </div>
             </div>
-            <!--Che do hoat dong 2-->
-            <div class="item_air-tem">
-              <h2>Chế Độ (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="che_do_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_che_do_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Toc do may lanh 2-->
-            <div class="item_air-tem">
-              <h2>Tốc độ quạt (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="td_quat_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_td_quat_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Goc mo may lanh 2-->
-            <div class="item_air-tem">
-              <h2>Góc mở (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="goc_mo_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_goc_mo_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Van_position_data_3","cai_goc_mo_3",0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Nhiet do may lanh 2-->
-            <div class="item_air-tem">
-              <h2>Nhiệt Độ (&deg;C):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="nhiet_ml_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_nhiet_ml_3" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0);</script>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -253,111 +449,146 @@
               <h2>ĐIỀU HOÀ 3</h2>
             </div>
 
-            <!--Trang thai on off may lanh 3-->
+            <div class="system_item-air_block">
+              <!--Trang thai on off may lanh 3-->
             <div class="item_air-status-block">
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_4" class="status_mode den_ml" />
-                <script>fn_SymbolStatus("Trang_thai_ml_4","air_condition","Read_on_off_4");</script>
+                <script>
+                  fn_SymbolStatus(
+                    "Trang_thai_ml_4",
+                    "air_condition",
+                    "Read_on_off_4"
+                  );
+                </script>
               </div>
             </div>
-
-            <div class="item_air-tem">
-              <h2></h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <label for="">Thực Tế</label>
+          
+            <div class="block_data-real_setting">
+              <div class="item_air-tem">
+                <h2></h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <label for="">Thực Tế</label>
+                  </div>
+                  <div class="block_data-item">
+                    <label for="">Cài đặt</label>
+                  </div>
                 </div>
-                <div class="block_data-item">
-                  <label for="">Cài đặt</label>
+              </div>
+  
+              <!--Che do hoat dong 3-->
+              <div class="item_air-tem">
+                <h2>Chế Độ (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="che_do_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_che_do_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Toc do may lanh 3-->
+              <div class="item_air-tem">
+                <h2>Tốc độ quạt (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="td_quat_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_td_quat_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0);
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Goc mo may lanh 3-->
+              <div class="item_air-tem">
+                <h2>Góc mở (mode):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="goc_mo_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_goc_mo_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow(
+                        "Van_position_data_4",
+                        "cai_goc_mo_4",
+                        0
+                      );
+                    </script>
+                  </div>
+                </div>
+              </div>
+  
+              <!--Nhiet do may lanh 3-->
+              <div class="item_air-tem">
+                <h2>Nhiệt Độ (&deg;C):</h2>
+                <div class="item_air-data">
+                  <div class="block_data-item">
+                    <input id="nhiet_ml_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);
+                    </script>
+                  </div>
+                  <div class="block_data-item">
+                    <input id="cai_nhiet_ml_4" disabled="disabled" type="text" />
+                    <script>
+                      fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0);
+                    </script>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!--Che do hoat dong 3-->
-            <div class="item_air-tem">
-              <h2>Chế Độ (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="che_do_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_che_do_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Toc do may lanh 3-->
-            <div class="item_air-tem">
-              <h2>Tốc độ quạt (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="td_quat_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_td_quat_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0)</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Goc mo may lanh 3-->
-            <div class="item_air-tem">
-              <h2>Góc mở (mode):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="goc_mo_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_goc_mo_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Van_position_data_4","cai_goc_mo_4",0);</script>
-                </div>
-              </div>
-            </div>
-
-            <!--Nhiet do may lanh 3-->
-            <div class="item_air-tem">
-              <h2>Nhiệt Độ (&deg;C):</h2>
-              <div class="item_air-data">
-                <div class="block_data-item">
-                  <input id="nhiet_ml_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);</script>
-                </div>
-                <div class="block_data-item">
-                  <input id="cai_nhiet_ml_4" disabled="disabled" type="text" />
-                  <script>fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0);</script>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="btn_scroll">
-      <a href="#top_header"><div class="scroll_top"></div></a>
-      <a href="#myChart"><div class="scroll_bottom"></div></a>
+      <li  onclick="window.scrollTo(0, 0)"><div class="scroll_top"></div></li>
+      <li  onclick="window.scrollTo(0, scrollMax)" ><div class="scroll_bottom"></div></li>
     </div>
   </body>
   <script>
-    var btn_scroll = document.querySelectorAll(".btn_scroll a div");
+    var btn_scroll = document.querySelectorAll(".btn_scroll li div");
     const local_url = window.location.href;
-    const split_local = local_url.split("/");
+
     const autoCheckLink_bottom = document.querySelector(".scroll_bottom");
     const autoCheckLink_top = document.querySelector(".scroll_top");
-    const check_href = () => {
-      btn_scroll.forEach((el) => el.classList.remove("btn_active"));
-      if (split_local[3] === "#myChart") {
-        autoCheckLink_top.classList.add("btn_active");
-      } else {
-        autoCheckLink_bottom.classList.add("btn_active");
-      }
-    };
-    window.onload = check_href();
-    btn_scroll.forEach((e, index) => {
+    const scrollMax = document.documentElement.scrollHeight - window.innerHeight - 10;
+
+const check_href = () => {
+  btn_scroll.forEach((el) => el.classList.remove("btn_active"));
+  const scroll_load = window.scrollY;
+  if (scroll_load >= 0 && scroll_load < 400) {
+    autoCheckLink_bottom.classList.add("btn_active");
+  } else{
+    autoCheckLink_top.classList.add("btn_active");
+  }
+};
+
+window.onload = check_href();
+
+btn_scroll.forEach((e, index) => {
       e.onclick = function () {
         btn_scroll.forEach((el) => el.classList.remove("btn_active"));
         if (index === 1) {

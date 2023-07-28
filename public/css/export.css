@@ -70,10 +70,9 @@
   border: 1px solid #a3855f;
   overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
   max-width: 100%;
-  height: calc(100% / 3);
-  min-height: calc(100% / 3);
-  max-height: calc(100% / 3);
-  border-radius: 10px;
+  height: calc(100% / 2);
+  min-height: calc(100% / 2);
+  max-height: calc(100% / 2);
 }
 
 #div_table_info h2,
