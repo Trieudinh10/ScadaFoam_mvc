@@ -192,6 +192,12 @@ select {
   opacity: 0.8;
 }
 
+.btn_on:active{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    top: 5px;
+    left: 5px;
+}
+
 .btn_on.active_btn,
 .btn_off.active_btn,
 .btn_start.active_btn,
@@ -378,15 +384,20 @@ select:focus {
 	/* width: 100%; */
 	margin-left: 20px;
 	height: 40px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
 }
 
 .setting_on-btn:hover {
-
-	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .setting_on-btn:active {
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  top: 5px;
+  left: 5px;
  
 }
+
 

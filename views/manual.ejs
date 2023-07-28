@@ -25,7 +25,7 @@
           <button
             class="btt_sua_luu"
             id="btt_Main_Save"
-            onclick="fn_Main_SaveBtt()"
+            
           >
             LƯU
           </button>
@@ -275,5 +275,38 @@
         btnStart.style.display = "none";
         btnSaveEdit.style.display = "none"
       }      
+
+
+    const inputElement = document.querySelectorAll(".setting_input input");
+    const selectElement = document.querySelectorAll(".setting_input select");
+    const btnSave = document.getElementById("btt_Main_Save");
+
+    let checkChange = false;
+    function fn_checkChange() {
+      if (!checkChange) {
+        window.onbeforeunload = null;
+      } else {
+        window.onbeforeunload = () => true;
+      }
+    }
+    inputElement.forEach((e) => {
+      e.onchange = function () {
+        checkChange = true;
+        fn_checkChange();
+      };
+    });
+
+    selectElement.forEach((e) => {
+      e.onchange = function () {
+        checkChange = true;
+        fn_checkChange();
+      };
+    });
+
+    btnSave.onclick = function () {
+      checkChange = false;
+      fn_checkChange();
+      fn_Main_SaveBtt()
+    };
   </script>
 </html>
