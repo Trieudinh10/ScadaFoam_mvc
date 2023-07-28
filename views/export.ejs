@@ -220,8 +220,16 @@
         <div class="home_chart-room">
           <div id="chart_detail" class="chart">
             <script>
-              function Draw_Chart() {
-                var x1Values = [];
+              
+            var nhiet_do_ml1=[];
+            var nhiet_do_ml2=[];
+            var nhiet_do_ml3=[];
+            var nhiet_do_cb=[];
+            var date_time=[];
+
+            function Draw_Chart() {
+                
+            var x1Values = [];
             var y1Values = [];
             var y2Values = [];
             var y3Values = [];
@@ -233,37 +241,46 @@
             y4Values.push(...nhiet_do_cb);
             
             var data = [
-            {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, color: 'black' },
-            {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true},
-            {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true},
-            {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true},
+            {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, line: { color: 'orange' } },
+            {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'green' } },
+            {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'yellow' } },
+            {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true,line: { color: 'red' } },
             
             ];
     
     
            var layout = {
-            title: "Biểu đồ hệ thống nhiệt",
+
+            
+            title: {
+                text: "Biểu đồ hệ thống nhiệt",
+                x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
+                y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
+                xanchor: 'center', // Giữ title ở giữa theo chiều ngang
+                yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
+            },
+            height: 350, // Đặt chiều cao của biểu đồ (theo pixel)
             borderRadius: '10px',
             font: {
-              color: 'black' // Màu chữ trên biểu đồ
-            },
-            yaxis:
-         {
+                  color: 'black' // Màu chữ trên biểu đồ
+                  },
+            yaxis:{
            
-            showline: true,
-            fixedrange: true,
-            range: [0, 100],
-            autotick: false,
-            tick0: 0,
-            dtick:100,
-        },
-          };
+                  showline: true,
+                  fixedrange: true,
+                  range: [0, 100],
+                  autotick: false,
+                  tick0: 0,
+                  dtick:100,
+              },
+                };
                 Plotly.newPlot("chart_detail", data, layout);
               }
             
               // Gọi hàm Draw_Chart() để tạo biểu đồ
               Draw_Chart();
             </script>
+          </div>
         </div>
         
         

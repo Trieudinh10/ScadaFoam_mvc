@@ -7,11 +7,6 @@ function fn_Table01_SQL_Show(){
     });
 }
 
-   var nhiet_do_ml1=[];
-   var nhiet_do_ml2=[];
-   var nhiet_do_ml3=[];
-   var nhiet_do_cb=[];
-   var date_time=[];
 
 // Chương trình con hiển thị SQL ra bảng
 function fn_table_01(data){
