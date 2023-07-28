@@ -139,9 +139,10 @@
                     data_trend_dh3 = data;
                 });
                 socket.on("Nhiet_do", function(data) {
-                    data_trend_nd = data;
+                  data_trend_nd = data;
                 });
-        
+                
+                var config = {responsive: true}
                 Plotly.newPlot('tem', [{
                     y: [data_trend_dh1],
                     type: 'line',
@@ -274,7 +275,7 @@
                   dtick:100,
               },
                 };
-                Plotly.newPlot("chart_detail", data, layout);
+                Plotly.newPlot("chart_detail", data, layout,config);
               }
             
               // Gọi hàm Draw_Chart() để tạo biểu đồ
