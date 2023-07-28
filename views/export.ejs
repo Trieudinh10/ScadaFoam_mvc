@@ -11,6 +11,7 @@
 
     <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
     <script src="socket.io/socket.io.js"></script>
+    <script src = "js/plotly-2.8.3.min.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC4_du_lieu.js"></script>
     <script src ="/js/FileSaver.js"></script>
@@ -18,6 +19,8 @@
 
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+    
+
     <link rel="stylesheet" href="css/font.css" />
     <title>Lưu Foam</title>
   </head>
@@ -40,9 +43,9 @@
         <div class="input_item_btn">
           <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
         </div>
-        <div class="input_item_btn">
+        <!--<div class="input_item_btn">
           <button id="btt_Search" onclick="fn_Table01_SQL_Show();">DỮ LIỆU</button>
-        </div>
+        </div>-->
       </div>
       <div class="export_body">
         <div class="export_para">
@@ -99,14 +102,183 @@
             </table>
           </div>
           <h2>Biểu Đồ Nhiệt Độ</h2>
-          <div class="home_chart-tem">
-            <canvas id="myChart"></canvas>
-            <script src="js/chart_tem.js"></script>
-          </div>
-          <h2>Thông Số Phòng Foam</h2>
-          <div class="home_chart-room">
-            <canvas id="chartRoom"></canvas>
-            <script src="js/chart_room.js"></script>
+          <div class="home_chart-tem" id="temm">
+            <script>
+                var data_trend_dh1 = 0;
+                var data_trend_dh2 = 0;
+                var data_trend_dh3 = 0;
+                var xData = [];
+                var yData_dh1 = [];
+                var yData_dh2 = [];
+                var yData_dh3 = [];
+                var cnt = 0;
+                var layout = {
+                    xaxis: {
+                        range: [0, 10],
+                        showticklabels: true,
+                        tickformat: '%H:%M:%S/%d-%m-%y'
+                    },
+                    yaxis: {
+                        range: [0, 120]
+                    },
+                    margin: {
+                        t: 20
+                    }
+                };
+        
+                socket.on("Read_tem_refer_2", function(data) {
+                    data_trend_dh1 = data;
+                });
+                socket.on("Read_tem_refer_3", function(data) {
+                    data_trend_dh2 = data;
+                });
+                socket.on("Read_tem_refer_4", function(data) {
+                    data_trend_dh3 = data;
+                });
+        
+                Plotly.newPlot('temm', [{
+                    y: [data_trend_dh1],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'orange',
+                        width: 2
+                    },
+                    name: 'Điều hoà 1' // Đặt tên cho dữ liệu nhiệt độ
+                },
+                {
+                    y: [data_trend_dh2],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'red',
+                        width: 2
+                    },
+                    name: 'Điều hoà 2' // Đặt tên cho dữ liệu nhiệt độ
+                },
+                {
+                    y: [data_trend_dh3],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'green',
+                        width: 2
+                    },
+                    name: 'Điều hoà 3' // Đặt tên cho dữ liệu nhiệt độ
+                }], layout);
+        
+                setInterval(function() {
+                    var currentDate = new Date();
+                    var hours = currentDate.getUTCHours() + 7;
+                    var minutes = currentDate.getUTCMinutes();
+                    var seconds = currentDate.getUTCSeconds();
+                    var date = currentDate.getUTCDate();
+                    var month = currentDate.getUTCMonth() + 1;
+                    var year = currentDate.getUTCFullYear();
+                    var timeString = hours + ":" + minutes + ":" + seconds;
+                    var dateString = date + "/" + month +"/"+year;
+                    var formattedDateString = timeString + "<br>" + dateString;
+                    xData.push(formattedDateString);
+                    yData_dh1.push(data_trend_dh1);
+                    yData_dh2.push(data_trend_dh2);
+                    yData_dh3.push(data_trend_dh3);
+                    cnt++;
+                    if (cnt > 38) {
+                        xData.shift();
+                        yData_dh1.shift();
+                        yData_dh2.shift();
+                        yData_dh3.shift();
+                    }
+                    Plotly.update('temm', {
+                        x: [xData],
+                        y: [yData_dh1, yData_dh2, yData_dh3]
+                    });
+                }, 1000);
+            </script>
+        </div>
+
+
+
+        <h2>Thông Số Phòng Foam</h2>
+        <div class="home_chart-room" id="tem">
+            <script>
+                var data_trend_nd = 0;
+                var data_trend_da = 0;
+                var xData = [];
+                var yData_nd = [];
+                var yData_da = [];
+                var cnt = 0;
+                var layout = {
+                    xaxis: {
+                        range: [0, 10],
+                        showticklabels: true,
+                        tickformat: '%H:%M:%S/%d-%m-%y'
+                    },
+                    yaxis: {
+                        range: [0, 120]
+                    },
+                    margin: {
+                        t: 10
+                    }
+                };
+        
+                socket.on("Nhiet_do", function(data) {
+                    data_trend_nd = data;
+                });
+                socket.on("Do_am", function(data) {
+                    data_trend_da = data;
+                });
+        
+                Plotly.newPlot('tem', [{
+                    y: [data_trend_nd],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'blue',
+                        width: 2
+                    },
+                    name: 'Nhiệt độ' // Đặt tên cho dữ liệu nhiệt độ
+                }, {
+                    y: [data_trend_da],
+                    type: 'line',
+                    mode: 'lines',
+                    line: {
+                        color: 'green',
+                        width: 2
+                    },
+                    name: 'Độ ẩm' // Đặt tên cho dữ liệu độ ẩm
+                }], layout);
+        
+                setInterval(function() {
+                    var currentDate = new Date();
+                    var hours = currentDate.getUTCHours() + 7;
+                    var minutes = currentDate.getUTCMinutes();
+                    var seconds = currentDate.getUTCSeconds();
+                    var date = currentDate.getUTCDate();
+                    var month = currentDate.getUTCMonth() + 1;
+                    var year = currentDate.getUTCFullYear();
+                    var timeString = hours + ":" + minutes + ":" + seconds;
+                    var dateString = date + "/" + month +"/"+year;
+                    var formattedDateString = timeString + "<br>" + dateString;
+                    xData.push(formattedDateString);
+                    yData_nd.push(data_trend_nd);
+                    yData_da.push(data_trend_da);
+                    cnt++;
+                    if (cnt > 39) {
+                        xData.shift();
+                        yData_nd.shift();
+                        yData_da.shift();
+                    }
+                    Plotly.update('tem', {
+                        x: [xData],
+                        y: [yData_nd, yData_da]
+                    });
+                }, 1000);
+            </script>
+        </div>
+        
+        
+        
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@
       <div class="home_system">
         <div class="system_item">
           <div class="system_item-air row_status">
+
             <!--Bang thong so phong-->
             <div class="item_air-room">
               <div class="item_air-title">
@@ -34,27 +35,17 @@
                   <div class="item_data-room">
                     <h2>NHIỆT ĐỘ (&deg;C):</h2>
                     <input id="nhiet_do" disabled="disabled" type="text" />
-                    <script>
-                      fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);
-                    </script>
+                    <script>fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);</script>
                   </div>
                   <div class="item_data-room">
                     <h2>ĐỘ ẨM (%RH):</h2>
                     <input id="do_am" disabled="disabled" type="text" />
-                    <script>
-                      fn_IOFieldDataShow("Do_am", "do_am", 0);
-                    </script>
+                    <script>fn_IOFieldDataShow("Do_am", "do_am", 0);</script>
                   </div>
                 </div>
                 <div class="data_room-img">
                   <img id="Trang_thai_cb" class="den_cd" />
-                  <script>
-                    fn_SymbolStatus(
-                      "Trang_thai_cb",
-                      "Den_do",
-                      "Canh_bao_nhiet"
-                    );
-                  </script>
+                  <script>fn_SymbolStatus("Trang_thai_cb","Den_do","Canh_bao_nhiet");</script>
                 </div>
               </div>
             </div>
@@ -65,20 +56,12 @@
                 <div class="item_data-room item_data-status">
                   <h2>TỰ ĐỘNG</h2>
                   <img id="Trang_thai_auto" class="den_cd" />
-                  <script>
-                    fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
-                  </script>
+                  <script>fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");</script>
                 </div>
                 <div class="item_data-room item_data-status">
                   <h2>THỦ CÔNG</h2>
                   <img id="Trang_thai_manual" class="den_cd" />
-                  <script>
-                    fn_SymbolStatus(
-                      "Trang_thai_manual",
-                      "Den_xanh",
-                      "Den_manual"
-                    );
-                  </script>
+                  <script>fn_SymbolStatus("Trang_thai_manual","Den_xanh","Den_manual");</script>
                 </div>
               </div>
             </div>
@@ -97,13 +80,7 @@
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_2" class="status_mode den_ml" />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_2",
-                    "air_condition",
-                    "Read_on_off_2"
-                  );
-                </script>
+                <script>fn_SymbolStatus("Trang_thai_ml_2","air_condition","Read_on_off_2");</script>
               </div>
             </div>
             <div class="item_air-tem">
@@ -123,15 +100,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="che_do_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_che_do_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);</script>
                 </div>
               </div>
             </div>
@@ -142,15 +115,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="td_quat_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_td_quat_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_2", "cai_td_quat_2", 0);</script>
                 </div>
               </div>
             </div>
@@ -161,20 +130,12 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="goc_mo_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);</script>
                 </div>
 
                 <div class="block_data-item">
                   <input id="cai_goc_mo_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_2",
-                      "cai_goc_mo_2",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_2","cai_goc_mo_2",0);</script>
                 </div>
               </div>
             </div>
@@ -185,16 +146,12 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="nhiet_ml_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);</script>
                 </div>
 
                 <div class="block_data-item">
                   <input id="cai_nhiet_ml_2" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_2", "cai_nhiet_ml_2", 0);</script>
                 </div>
               </div>
             </div>
@@ -213,13 +170,7 @@
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_3" class="status_mode den_ml" />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_3",
-                    "air_condition",
-                    "Read_on_off_3"
-                  );
-                </script>
+                <script>fn_SymbolStatus("Trang_thai_ml_3","air_condition","Read_on_off_3");</script>
               </div>
             </div>
             <div class="item_air-tem">
@@ -239,15 +190,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="che_do_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_che_do_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);</script>
                 </div>
               </div>
             </div>
@@ -258,15 +205,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="td_quat_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_td_quat_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_3", "cai_td_quat_3", 0);</script>
                 </div>
               </div>
             </div>
@@ -277,19 +220,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="goc_mo_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_goc_mo_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_3",
-                      "cai_goc_mo_3",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_3","cai_goc_mo_3",0);</script>
                 </div>
               </div>
             </div>
@@ -300,15 +235,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="nhiet_ml_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_nhiet_ml_3" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_3", "cai_nhiet_ml_3", 0);</script>
                 </div>
               </div>
             </div>
@@ -327,13 +258,7 @@
               <div class="item_air-status">
                 <h2>Trạng thái</h2>
                 <img id="Trang_thai_ml_4" class="status_mode den_ml" />
-                <script>
-                  fn_SymbolStatus(
-                    "Trang_thai_ml_4",
-                    "air_condition",
-                    "Read_on_off_4"
-                  );
-                </script>
+                <script>fn_SymbolStatus("Trang_thai_ml_4","air_condition","Read_on_off_4");</script>
               </div>
             </div>
 
@@ -355,15 +280,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="che_do_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_che_do_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);</script>
                 </div>
               </div>
             </div>
@@ -374,15 +295,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="td_quat_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_td_quat_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Fan_speed_data_4", "cai_td_quat_4", 0)</script>
                 </div>
               </div>
             </div>
@@ -393,19 +310,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="goc_mo_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_goc_mo_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow(
-                      "Van_position_data_4",
-                      "cai_goc_mo_4",
-                      0
-                    );
-                  </script>
+                  <script>fn_IOFieldDataShow("Van_position_data_4","cai_goc_mo_4",0);</script>
                 </div>
               </div>
             </div>
@@ -416,15 +325,11 @@
               <div class="item_air-data">
                 <div class="block_data-item">
                   <input id="nhiet_ml_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);</script>
                 </div>
                 <div class="block_data-item">
                   <input id="cai_nhiet_ml_4" disabled="disabled" type="text" />
-                  <script>
-                    fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0);
-                  </script>
+                  <script>fn_IOFieldDataShow("Nhap_temp_data_4", "cai_nhiet_ml_4", 0);</script>
                 </div>
               </div>
             </div>
