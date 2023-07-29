@@ -1,12 +1,11 @@
 .home_container {
   width: 100%;
-  /* max-height: calc(100vh - var(--height)); */
-  min-height: calc(100vh - var(--height));
-  background-color: var(--color-item);
+  /* background-color: var(--color-item); */
   display: flex;
   padding: 8px 8px 0 8px;
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
+  height: var(100vh - var(--height));
 }
 .home_system {
   width: 100%;
@@ -28,19 +27,22 @@
 }
 
 .system_item {
-  width: calc(100% / 3);
+  width: calc(100% / 3 - 8px);
   display: flex;
   order: 3;
+  margin-right: 8px;
 }
+
 
 #tem{
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin: 8px;
+  margin: 8px 8px 8px 0;
   overflow: hidden;
   border-radius: 10px;
-  min-height: 370px;
+  min-height: 400px;
+  max-height: 400px;
   flex: 1;
 }
 
@@ -54,7 +56,7 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin: 0 8px;
+  padding: 8px;
 }
 
 .container_chart{
@@ -127,7 +129,6 @@
   display: flex;
   margin: 0px 0 0px 8px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .item_air-status-block {
@@ -135,6 +136,7 @@
   justify-content: space-around;
   margin: 0px 0 0px 8px;
   align-items: center;
+  /* display: none; */
 }
 
 .item_air-tem input,
@@ -239,7 +241,7 @@
   margin-right: 0px;
   display: inline-block;
   font-size: 20px;
-  min-width: 73.5px;
+  min-width: 100px;
   text-align: center;
 }
 
@@ -249,12 +251,11 @@
 }
 
 .item_air-room {
-  /* border: 1px solid var(--color-border); */
   border-radius: 10px;
   flex: 1;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin: 8px;
+  margin: 8px 8px 8px 0;
   background-color: #fff;
 }
 .item_air-room h2 {
@@ -290,6 +291,7 @@
 .room_container.block_status {
   flex-direction: row;
   height: 100%;
+  align-items: center;
 }
 
 .item_air-room input {
