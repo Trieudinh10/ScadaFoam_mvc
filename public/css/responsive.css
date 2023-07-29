@@ -365,6 +365,7 @@
   }
   .item_data-room.item_data-status {
     justify-content: center;
+    flex: 1;
   }
   .item_air-tem input,
   .item_air-room input {
@@ -454,6 +455,9 @@
   .item_air-title h2{
     display: flex;
     align-items: center;
+  }
+  .h2_responsive{
+    width: 100%;
   }
 }
 
