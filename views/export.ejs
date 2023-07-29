@@ -135,6 +135,8 @@
     
     
            var layout = {
+            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
+            borderRadius: '10px',
             title: {
                 text: "BIỂU ĐỒ NHIỆT",
                 x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
@@ -142,20 +144,22 @@
                 xanchor: 'center', // Giữ title ở giữa theo chiều ngang
                 yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
             },
-            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
-            borderRadius: '10px',
             font: {
                   color: 'black' // Màu chữ trên biểu đồ
-                  },
+            },
+            xaxis: {
+              gridcolor: '#ccc', // Màu lưới ngang
+            },
             yaxis:{
-           
-                  showline: true,
-                  fixedrange: true,
-                  range: [0, 40],
-                  autotick: false,
-                  tick0: 0,
-                  dtick:40,
-              },
+                      showline: true, // Hiển thị đường kẻ ngang trục y
+                      fixedrange: true, // Không cho phép người dùng zoom hoặc di chuyển trục y
+                      showgrid: true, // Hiển thị lưới ngang trục y
+                      range: [0, 40],
+                      gridcolor: '#ccc', // Màu lưới ngang
+                      autotick: false,
+                      tick0: 0,
+                      dtick: 5,
+                  },
                 };
                 Plotly.newPlot("chart_detail", data, layout,config);
               }
