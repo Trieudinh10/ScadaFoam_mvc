@@ -102,7 +102,8 @@
     width: 100%;
   }
   .item_air-data label {
-    min-width: none;
+    /* min-width: 60px; */
+    margin-right: 4px;
   }
   .system_item-air {
     border-radius: 0;
@@ -114,6 +115,8 @@
   }
   .item_air-tem input {
     margin: 0;
+    /* width: 60px; */
+    /* margin-right: 4px; */
   }
 
   /* mobile auto */
@@ -193,7 +196,7 @@
     display: unset;
   }
   .item_data-room {
-    justify-content: flex-start;
+    flex: 1;
   }
   .item_air-room h2 {
     min-width: 150px;
@@ -248,13 +251,26 @@
     flex-direction: column;
   }
   .system_item{
-    margin-right: none;
+    margin-right: 0;
+    margin-top: 8px;
+    justify-content: sp;
   }
   .home_block-item .system_item:not(:last-child){
     margin-right:0 ;
   }
   .row_status{
     width: 100%;
+  }
+  .container_chart{
+    width: 100%;
+    order: 4;
+  }
+  .item_air-tem{
+    flex-wrap: wrap;
+  }
+
+  .room_container{
+    align-items: flex-start;
   }
 
 }
@@ -268,10 +284,20 @@
     flex-wrap: wrap;
     margin-right: 8px;
   }
+  .item_air-data label{
+    min-width: 50px;
+  }
   .system_item {
     width: 50%;
     order: 2;
+    margin-right: 0;
   }
+
+  .system_item.system_item-second{
+    margin-right: 8px;
+    width: calc(50% - 8px);
+  }
+  
 
   .system_item.system_item-fisrt{
     margin-bottom: 8px;
@@ -325,6 +351,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 0;
+    margin-top: 0;
   }
   .item_air-room + .item_air-room {
     display: flex;
@@ -344,6 +372,7 @@
   }
   .item_air-tem {
     margin: 0;
+    /* flex-wrap: wrap; */
   }
   .item_air-status {
     display: flex;
@@ -351,6 +380,7 @@
   }
   .item_air-title {
     margin: 0;
+    width: 50%;
   }
   .btn_scroll {
     display: block;
@@ -411,7 +441,19 @@
     margin-right: 8px;
   }
   .den_ml{
-    height: 125px;
+    height: 68px;
+  }
+  .system_item-air{
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .item_air-status-block{
+    width: 47%;
+    margin: 0;
+  }
+  .item_air-title h2{
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -426,9 +468,6 @@
     margin: 0;
     flex-wrap: nowrap;
   }
-  .system_item {
-    width: 50%;
-  }
   .home_chart {
     width: 50%;
     margin: 0;
@@ -436,6 +475,9 @@
   }
   .header_title {
     width: 30%;
+  }
+  .item_air-tem{
+    flex-wrap: wrap;
   }
 }
 
