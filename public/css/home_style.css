@@ -257,6 +257,9 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin: 8px 8px 8px 0;
   background-color: #fff;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
 }
 .item_air-room h2 {
   display: flex;
@@ -266,10 +269,11 @@
 .item_data-room {
   display: flex;
   flex: 1;
-  margin-left: 8px;
+  /* margin-left: 8px; */
   margin-bottom: 4px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .item_data-room h2 {
@@ -286,12 +290,15 @@
   display: flex;
   height: 100%;
   align-items: center;
+  width: 100%;
 }
 
 .room_container.block_status {
   flex-direction: row;
   height: 100%;
   align-items: center;
+  display: flex;
+  width: 100%;
 }
 
 .item_air-room input {
