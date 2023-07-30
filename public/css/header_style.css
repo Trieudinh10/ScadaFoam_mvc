@@ -51,9 +51,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
+  /* background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: #00C0FF;
+  text-shadow: -1px 1px 0 #41ba45,
+    1px 1px 0 #c63d2b,
+    1px -1px 0 #42afac,
+    -1px -1px 0 #c6c23f;
+
 }
 
 .active {
@@ -62,10 +68,10 @@
 
 @keyframes animation_link {
   from {
-    color: var(--color-border);
+    color:#4218B8;
   }
   to {
-    color: var(--color-yellow);
+    color:    #00C0FF ;
   }
 }
 

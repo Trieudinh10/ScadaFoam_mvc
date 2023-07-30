@@ -19,8 +19,14 @@
     var socket = io(document.location.host);
   </script>
   <body>
-    <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
+    <%- include('header.ejs'); -%>
+    <!-- header  -->
+
+    <%- include('loadding.ejs'); -%><!-- loading test chưa áp dụng -->
+
+    <!-- begin content  -->
     <div class="home_container">
+      <!-- begin content data room  -->
       <div class="row_status">
         <!--Bang thong so phong-->
         <div class="item_air-room">
@@ -31,27 +37,38 @@
             <div class="data_room-img">
               <div class="item_data-room">
                 <h2>NHIỆT ĐỘ (&deg;C):</h2>
-                <input id="nhiet_do" disabled="disabled" type="text" aria-label="text" />
+                <input
+                  id="nhiet_do"
+                  disabled="disabled"
+                  type="text"
+                  aria-label="text"
+                />
                 <script>
                   fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);
                 </script>
               </div>
               <div class="item_data-room">
                 <h2>ĐỘ ẨM (%RH):</h2>
-                <input id="do_am" disabled="disabled" type="text" aria-label="text" />
+                <input
+                  id="do_am"
+                  disabled="disabled"
+                  type="text"
+                  aria-label="text"
+                />
                 <script>
                   fn_IOFieldDataShow("Do_am", "do_am", 0);
                 </script>
               </div>
             </div>
             <div class="data_room-img">
-              <img id="Trang_thai_cb" class="den_cd"  alt="den canh bao"/>
+              <img id="Trang_thai_cb" class="den_cd" alt="den canh bao" />
               <script>
                 fn_SymbolStatus("Trang_thai_cb", "Den_do", "Canh_bao_nhiet");
               </script>
             </div>
           </div>
         </div>
+        <!-- end bang thong so phong  -->
 
         <!--Bang che do hoat dong-->
         <div class="item_air-room">
@@ -65,143 +82,161 @@
             </div>
             <div class="item_data-room item_data-status">
               <h2>THỦ CÔNG</h2>
-              <img id="Trang_thai_manual" class="den_cd" alt="den bao thu cong" />
+              <img
+                id="Trang_thai_manual"
+                class="den_cd"
+                alt="den bao thu cong"
+              />
               <script>
                 fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
               </script>
             </div>
           </div>
         </div>
+        <!-- end bang che do hoat dong  -->
       </div>
+      <!-- end content content data room  -->
+
+      <!-- begin content chart  -->
       <div class="container_chart">
+        <!-- begin chart -->
         <div id="tem">
           <script>
-            var data_trend_dh1 = 0;
-            var data_trend_dh2 = 0;
-            var data_trend_dh3 = 0;
-            var data_trend_nd = 0;
-            var xData = [];
-            var yData_dh1 = [];
-            var yData_dh2 = [];
-            var yData_dh3 = [];
-            var yData_nd = [];
-            var cnt = 0;
-            var layout = {
-              title: {
-                text: "BIỂU ĐỒ NHIỆT",
-                x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
-                y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
-                xanchor: "center", // Giữ title ở giữa theo chiều ngang
-                yanchor: "top", // Đặt yanchor là 'top' để title gần biểu đồ
-              },
-              xaxis: {
-                range: [0, 10],
-                showticklabels: true,
-                tickformat: "%H:%M:%S/%d-%m-%y",
-              },
-              yaxis: {
-                showline: true,
-                range: [0, 40],
-              },
-              margin: {
-                t: 20,
-              },
-            };
+            function chart() {
+              var data_trend_dh1 = 0;
+              var data_trend_dh2 = 0;
+              var data_trend_dh3 = 0;
+              var data_trend_nd = 0;
+              var xData = [];
+              var yData_dh1 = [];
+              var yData_dh2 = [];
+              var yData_dh3 = [];
+              var yData_nd = [];
+              var cnt = 0;
+              var layout = {
+                title: {
+                  text: "BIỂU ĐỒ NHIỆT",
+                  x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
+                  y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
+                  xanchor: "center", // Giữ title ở giữa theo chiều ngang
+                  yanchor: "top", // Đặt yanchor là 'top' để title gần biểu đồ
+                },
+                xaxis: {
+                  range: [0, 10],
+                  showticklabels: true,
+                  tickformat: "%H:%M:%S/%d-%m-%y",
+                },
+                yaxis: {
+                  showline: true,
+                  range: [0, 40],
+                },
+                margin: {
+                  t: 20,
+                },
+              };
 
-            socket.on("Read_tem_refer_2", function (data) {
-              data_trend_dh1 = data;
-            });
-            socket.on("Read_tem_refer_3", function (data) {
-              data_trend_dh2 = data;
-            });
-            socket.on("Read_tem_refer_4", function (data) {
-              data_trend_dh3 = data;
-            });
-            socket.on("Nhiet_do", function (data) {
-              data_trend_nd = data;
-            });
-
-            var config = { responsive: true };
-            Plotly.newPlot(
-              "tem",
-              [
-                {
-                  y: [data_trend_dh1],
-                  type: "line",
-                  mode: "lines",
-                  line: {
-                    color: "orange",
-                    width: 2,
-                  },
-                  name: "Điều hoà 1", // Đặt tên cho dữ liệu nhiệt độ
-                },
-                {
-                  y: [data_trend_dh2],
-                  type: "line",
-                  mode: "lines",
-                  line: {
-                    color: "green",
-                    width: 2,
-                  },
-                  name: "Điều hoà 2", // Đặt tên cho dữ liệu nhiệt độ
-                },
-                {
-                  y: [data_trend_dh3],
-                  type: "line",
-                  mode: "lines",
-                  line: {
-                    color: "yellow",
-                    width: 2,
-                  },
-                  name: "Điều hoà 3", // Đặt tên cho dữ liệu nhiệt độ
-                },
-                {
-                  y: [data_trend_nd],
-                  type: "line",
-                  mode: "lines",
-                  line: {
-                    color: "red",
-                    width: 2,
-                  },
-                  name: "Nhiệt độ", // Đặt tên cho dữ liệu nhiệt độ
-                },
-              ],
-              layout,
-              config
-            );
-
-            setInterval(function () {
-              var currentDate = new Date();
-              var hours = currentDate.getUTCHours() + 7;
-              var minutes = currentDate.getUTCMinutes();
-              var seconds = currentDate.getUTCSeconds();
-              var date = currentDate.getUTCDate();
-              var month = currentDate.getUTCMonth() + 1;
-              var year = currentDate.getUTCFullYear();
-              var timeString = hours + ":" + minutes + ":" + seconds;
-              var dateString = date + "/" + month + "/" + year;
-              var formattedDateString = timeString + "<br>" + dateString;
-              xData.push(formattedDateString);
-              yData_dh1.push(data_trend_dh1);
-              yData_dh2.push(data_trend_dh2);
-              yData_dh3.push(data_trend_dh3);
-              yData_nd.push(data_trend_nd);
-              cnt++;
-              if (cnt > 15) {
-                xData.shift();
-                yData_dh1.shift();
-                yData_dh2.shift();
-                yData_dh3.shift();
-                yData_nd.shift();
-              }
-              Plotly.update("tem", {
-                x: [xData],
-                y: [yData_dh1, yData_dh2, yData_dh3, yData_nd],
+              socket.on("Read_tem_refer_2", function (data) {
+                data_trend_dh1 = data;
               });
-            }, 1000);
+              socket.on("Read_tem_refer_3", function (data) {
+                data_trend_dh2 = data;
+              });
+              socket.on("Read_tem_refer_4", function (data) {
+                data_trend_dh3 = data;
+              });
+              socket.on("Nhiet_do", function (data) {
+                data_trend_nd = data;
+              });
+
+              var config = { responsive: true };
+              Plotly.newPlot(
+                "tem",
+                [
+                  {
+                    y: [data_trend_dh1],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "orange",
+                      width: 2,
+                    },
+                    name: "Điều hoà 1", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_dh2],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "green",
+                      width: 2,
+                    },
+                    name: "Điều hoà 2", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_dh3],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "yellow",
+                      width: 2,
+                    },
+                    name: "Điều hoà 3", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                  {
+                    y: [data_trend_nd],
+                    type: "line",
+                    mode: "lines",
+                    line: {
+                      color: "red",
+                      width: 2,
+                    },
+                    name: "Nhiệt độ", // Đặt tên cho dữ liệu nhiệt độ
+                  },
+                ],
+                layout,
+                config
+              );
+
+              setInterval(function () {
+                var currentDate = new Date();
+                var hours = currentDate.getUTCHours() + 7;
+                var minutes = currentDate.getUTCMinutes();
+                var seconds = currentDate.getUTCSeconds();
+                var date = currentDate.getUTCDate();
+                var month = currentDate.getUTCMonth() + 1;
+                var year = currentDate.getUTCFullYear();
+                var timeString = hours + ":" + minutes + ":" + seconds;
+                var dateString = date + "/" + month + "/" + year;
+                var formattedDateString = timeString + "<br>" + dateString;
+                xData.push(formattedDateString);
+                yData_dh1.push(data_trend_dh1);
+                yData_dh2.push(data_trend_dh2);
+                yData_dh3.push(data_trend_dh3);
+                yData_nd.push(data_trend_nd);
+                cnt++;
+                if (cnt > 15) {
+                  xData.shift();
+                  yData_dh1.shift();
+                  yData_dh2.shift();
+                  yData_dh3.shift();
+                  yData_nd.shift();
+                }
+                Plotly.update("tem", {
+                  x: [xData],
+                  y: [yData_dh1, yData_dh2, yData_dh3, yData_nd],
+                });
+              }, 1000);
+            }
+
+            chart(); // tạo biểu đồ
+
+            // khi kích thước trình duyệt thay đổi thì sẽ load lại biểu đồ
+            window.addEventListener("resize", chart);
           </script>
         </div>
+        <!-- end chart  -->
       </div>
+      <!-- end content chart -->
 
       <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
       <div class="system_item system_item-fisrt">
@@ -212,7 +247,11 @@
 
           <!--Trang thai on off may lanh 1-->
           <div class="item_air-status-block">
-            <img id="Trang_thai_ml_2" class="status_mode den_ml" alt="may lanh"/>
+            <img
+              id="Trang_thai_ml_2"
+              class="status_mode den_ml"
+              alt="may lanh"
+            />
             <script>
               fn_SymbolStatus(
                 "Trang_thai_ml_2",
@@ -240,13 +279,23 @@
                 <h2>Chế Độ (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="che_do_2" disabled="disabled" type="text"  aria-label="text"/>
+                    <input
+                      id="che_do_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_mode_2", "che_do_2", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_che_do_2" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_che_do_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Mode_data_2", "cai_che_do_2", 0);
                     </script>
@@ -259,13 +308,23 @@
                 <h2>Tốc độ quạt (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="td_quat_2" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="td_quat_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_speed_2", "td_quat_2", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_td_quat_2" disabled="disabled" type="text"  aria-label="text"/>
+                    <input
+                      id="cai_td_quat_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Fan_speed_data_2",
@@ -282,14 +341,24 @@
                 <h2>Góc mở (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="goc_mo_2" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="goc_mo_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_position_2", "goc_mo_2", 0);
                     </script>
                   </div>
 
                   <div class="block_data-item">
-                    <input id="cai_goc_mo_2" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_goc_mo_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Van_position_data_2",
@@ -306,7 +375,12 @@
                 <h2>Nhiệt Độ (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="nhiet_ml_2" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="nhiet_ml_2"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_tem_refer_2", "nhiet_ml_2", 0);
                     </script>
@@ -342,7 +416,11 @@
           </div>
           <!--Trang thai on off may lanh 2-->
           <div class="item_air-status-block">
-            <img id="Trang_thai_ml_3" class="status_mode den_ml" alt="may lanh" />
+            <img
+              id="Trang_thai_ml_3"
+              class="status_mode den_ml"
+              alt="may lanh"
+            />
             <script>
               fn_SymbolStatus(
                 "Trang_thai_ml_3",
@@ -369,13 +447,23 @@
                 <h2>Chế Độ (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="che_do_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="che_do_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_mode_3", "che_do_3", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_che_do_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_che_do_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Mode_data_3", "cai_che_do_3", 0);
                     </script>
@@ -388,13 +476,23 @@
                 <h2>Tốc độ quạt (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="td_quat_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="td_quat_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_speed_3", "td_quat_3", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_td_quat_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_td_quat_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Fan_speed_data_3",
@@ -411,13 +509,23 @@
                 <h2>Góc mở (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="goc_mo_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="goc_mo_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_position_3", "goc_mo_3", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_goc_mo_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_goc_mo_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Van_position_data_3",
@@ -434,7 +542,12 @@
                 <h2>Nhiệt Độ (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="nhiet_ml_3" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="nhiet_ml_3"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_tem_refer_3", "nhiet_ml_3", 0);
                     </script>
@@ -470,7 +583,11 @@
 
           <!--Trang thai on off may lanh 3-->
           <div class="item_air-status-block">
-            <img id="Trang_thai_ml_4" class="status_mode den_ml" alt="may lanh" />
+            <img
+              id="Trang_thai_ml_4"
+              class="status_mode den_ml"
+              alt="may lanh"
+            />
             <script>
               fn_SymbolStatus(
                 "Trang_thai_ml_4",
@@ -499,13 +616,23 @@
                 <h2>Chế Độ (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="che_do_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="che_do_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_mode_4", "che_do_4", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_che_do_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_che_do_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Mode_data_4", "cai_che_do_4", 0);
                     </script>
@@ -518,13 +645,23 @@
                 <h2>Tốc độ quạt (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="td_quat_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="td_quat_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_speed_4", "td_quat_4", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_td_quat_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="cai_td_quat_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Fan_speed_data_4",
@@ -541,13 +678,23 @@
                 <h2>Góc mở (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="goc_mo_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="goc_mo_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_position_4", "goc_mo_4", 0);
                     </script>
                   </div>
                   <div class="block_data-item">
-                    <input id="cai_goc_mo_4" disabled="disabled" type="text"  aria-label="text"/>
+                    <input
+                      id="cai_goc_mo_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow(
                         "Van_position_data_4",
@@ -564,7 +711,12 @@
                 <h2>Nhiệt Độ (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <input id="nhiet_ml_4" disabled="disabled" type="text" aria-label="text" />
+                    <input
+                      id="nhiet_ml_4"
+                      disabled="disabled"
+                      type="text"
+                      aria-label="text"
+                    />
                     <script>
                       fn_IOFieldDataShow("Read_tem_refer_4", "nhiet_ml_4", 0);
                     </script>
@@ -591,12 +743,15 @@
         </div>
       </div>
     </div>
+
+    <!-- begin button width 795.5px - 1310px -->
     <div class="btn_scroll">
       <li onclick="window.scrollTo(0, 0)"><div class="scroll_top"></div></li>
       <li onclick="window.scrollTo(0, scrollMax)">
         <div class="scroll_bottom"></div>
       </li>
     </div>
+    <!-- end button width 795.5px - 1310px  -->
   </body>
   <script>
     var btn_scroll = document.querySelectorAll(".btn_scroll li div");
