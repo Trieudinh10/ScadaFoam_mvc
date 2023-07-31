@@ -334,3 +334,23 @@ td {
   background: #75c0ef;
 }
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
+
+
+/*Table*/
+#table_Alarm {
+  width:100%;
+  background-color: rgba(255, 30, 0, 0.5);
+  color: rgb(0, 0, 0); 
+}
+#table_Alarm tr{
+  cursor: pointer;
+}
+
+#table_Alarm tr:hover{background-color: rgb(245, 10, 10);}
+#table_Alarm   { overflow: auto; }
+#table_Alarm thead th { position: sticky; top: 0; }
+/* Just common table stuff. Really. */
+#table_Alarm  { border-collapse: collapse; width: 100%; }
+#table_Alarm th, td { padding: 8px 16px; }
+#table_Alarm th     {background:#53baf9;}
+/*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/

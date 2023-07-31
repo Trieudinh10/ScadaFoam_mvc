@@ -72,13 +72,13 @@
 }
 
 .row_status {
-  background-color: var(--color-body);
+  /*background-color: var(--color-body);*/
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   border: none;
   width: calc(100% / 3);
-  background-color: #fff;
+  /*background-color: #fff;*/
   order: 1;
 }
 
