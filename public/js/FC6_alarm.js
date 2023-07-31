@@ -28,3 +28,15 @@ function fn_table_Alarm(data){
         }
     }
 }
+
+// Tìm kiếm cảnh báo theo thời gian
+function fn_Alarm_By_Time()
+{
+    var val = [document.getElementById('dtpk_AL_Search_Start').value,
+               document.getElementById('dtpk_AL_Search_End').value];
+    socket.emit('msg_Alarm_ByTime', val);
+    socket.on('Alarm_ByTime', function(data){
+        fn_table_Alarm(data); // Show alarm
+    });
+}
+

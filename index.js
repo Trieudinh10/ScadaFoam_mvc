@@ -420,6 +420,7 @@ io.on("connection", function(socket){
     socket.on("Client-send-data", function(data){
         fn_tag();
         fn_Alarm_Show();
+        fn_Alarm_Search_ByTime();
     });
     fn_SQLSearch(); // Hàm tìm kiếm SQL
     fn_SQLSearch_ByTime();  // Hàm tìm kiếm SQL theo thời gian
@@ -891,9 +892,10 @@ function fn_Alarm_Manage(){
     // Cảnh báo động cơ 1
     if (Alarm_ID1 && !Alarm_ID1_old){
         fn_sql_alarm_insert(1, "Cảnh báo nhiệt độ")
-    } if(Alarm_ID1 == false & Alarm_ID1 != Alarm_ID1_old) {
+    }  if(Alarm_ID1 == false & Alarm_ID1 != Alarm_ID1_old) {
         fn_sql_alarm_ack(1);
     }
+    Alarm_ID1_old = Alarm_ID1;
 }
 
 // Đọc dữ liệu Cảnh báo
@@ -910,6 +912,48 @@ function fn_Alarm_Show(){
                     const objectifyRawPacket = row => ({...row});
                     const convertedResponse = results.map(objectifyRawPacket);
                     socket.emit('Alarm_Show', convertedResponse);
+                } 
+            });
+        });
+    });
+}
+
+
+// Tìm kiếm báo cáo theo khoảng thời gian
+function fn_Alarm_Search_ByTime(){
+    io.on("connection", function(socket){
+        socket.on("msg_Alarm_ByTime", function(data)
+        {
+            var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset time Việt Nam (GMT7+)
+            // Lấy thời gian tìm kiếm từ date time piker
+            var timeS = new Date(data[0]); // Thời gian bắt đầu
+            var timeE = new Date(data[1]); // Thời gian kết thúc
+
+             // Kiểm tra giá trị thời gian hợp lệ
+             if (isNaN(timeS.getTime()) || isNaN(timeE.getTime())) { 
+                console.log("Chưa chọn thời gian");
+                return;
+            }
+
+            // Quy đổi thời gian ra định dạng cua MySQL
+            var timeS1 = "'" + (new Date(timeS - tzoffset)).toISOString().slice(0, -1).replace("T"," ")	+ "'";
+            var timeE1 = "'" + (new Date(timeE - tzoffset)).toISOString().slice(0, -1).replace("T"," ") + "'";
+            var timeR = timeS1 + "AND" + timeE1; // Khoảng thời gian tìm kiếm (Time Range)
+ 
+            var sqltable_Name = "alarm"; // Tên bảng
+            var dt_col_Name = "date_time";  // Tên cột thời gian
+ 
+            var Query1 = "SELECT * FROM " + sqltable_Name + " WHERE "+ dt_col_Name + " BETWEEN ";
+            var Query = Query1 + timeR + ";";
+            
+            sqlcon.query(Query, function(err, results, fields) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    const objectifyRawPacket = row => ({...row});
+                    const convertedResponse = results.map(objectifyRawPacket);
+                    SQL_Excel = convertedResponse; // Xuất báo cáo Excel
+                    socket.emit('Alarm_ByTime', convertedResponse);
                 } 
             });
         });

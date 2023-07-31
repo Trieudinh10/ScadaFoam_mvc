@@ -63,7 +63,7 @@
 /*//////////////Hiển thị dữ liệu bảng 1 - Start/////////////////*/
 #div_table_info,
 #div_table_error {
-  background-color: var(--color-main);
+  /*background-color: var(--color-main);*/
   width: 100%;
   text-align: center;
   text-align: center;
@@ -78,7 +78,7 @@
 #div_table_info h2,
 #div_table_error h2 {
   font-size: 32px;
-  color: var(--color-item);
+  /*color: var(--color-item);*/
   padding: 8px 0;
   text-transform: uppercase;
 }
