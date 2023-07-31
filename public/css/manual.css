@@ -1,7 +1,8 @@
 .operate_container {
   width: 100%;
   min-height: calc(100vh - var(--height));
-  background-color: var(--color-main);
+  background-image: linear-gradient( var(--color-body),var(--color-main));
+
   border: 1px solid var(--color-border);
 }
 
@@ -264,7 +265,43 @@ select:focus {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: #a2c0eb;
+  padding: 32px;
+  position: relative;
 }
+.block_pesido{
+  position: absolute;
+  background-color: #a2c0eb;
+  width: 192px;
+  height: 100px;
+  top: -80px;
+  right: 0;
+  border-radius: 50px 0 0 0;
+  /* z-index: 1; */
+}
+
+
+.block_pesido::after{
+  content: '';
+  border: 69px solid;
+  border-color:  transparent  transparent #a2c0eb  transparent;
+  position: absolute;
+  top: -50%;
+  right: 111px;
+}
+
+.block_pesido::before{
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #a2c0eb;
+  bottom: 8px;
+  left: -53px;
+  z-index: 3;
+  }
+
 
 .operate_container-title {
   width: 100%;
@@ -285,11 +322,11 @@ select:focus {
   align-items: center;
   border: 0;
   border-radius: 12px;
-  box-shadow: 1px 1px 0px 0px #333, 2px 2px 0px 0px #333, 3px 3px 0px 0px #333, 4px 4px 0px 0px #333, 5px 5px 0px 0px #333;
   box-sizing: border-box;
   color: #000;
   display: flex;
   font-family: Phantomsans, sans-serif;
+  box-shadow: 1px 1px 0px 0px #333, 2px 2px 0px 0px #333, 3px 3px 0px 0px #333, 4px 4px 0px 0px #333, 5px 5px 0px 0px #333;
   font-size: 20px;
   justify-content: center;
   line-height: 1em;
@@ -306,36 +343,38 @@ select:focus {
   /* margin-left: 20px; */
   height: 50px;
   margin-left: 8px;
+  z-index: 2;
 }
 
 #btt_Auto_Save,#btt_Main_Save{
   background-image: linear-gradient(144deg,var(--color-green), #fff);
-
 }
 #btt_Auto_Edit,#btt_Main_Edit{
   background-image: linear-gradient(144deg,#FF4742, #fff);
 }
 .start_stop-btn-start {
   display: flex;
+  /* width: 100%; */
 }
 
 .start_stop-btn-save {
   height: 100%;
   align-items: center;
   display: flex;
-  /* justify-content: flex-end; */
-  /* flex: 1; */
-  /* position: absolute; */
+  justify-content: flex-end;
+  flex: 1;
+  position: relative;
   width: 6%;
-  margin-right: 8px;
+  margin-right: 20px;
+  order: 1;
 }
 
 .btt_sua_luu:hover {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  opacity: 0.8;
 
 }
 .btt_sua_luu:active {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  opacity: 0.8;
 }
 
 
