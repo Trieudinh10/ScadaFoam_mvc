@@ -110,7 +110,7 @@
   margin-right: 12px;
   font-size: 32px;
   font-weight: 300;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .setting_input input,
@@ -126,7 +126,7 @@ select {
 }
 
 .lable_tem-input {
-  color: #fff;
+  /* color: #fff; */
   /* margin-left: 32px; */
   font-size: 26px !important;
 }
@@ -146,10 +146,11 @@ select:focus {
 
 .block_start_stop {
   width: auto;
-  height: 70px;
+  min-height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   /* border-radius: 10px; */
   flex-wrap: wrap;
 }
+

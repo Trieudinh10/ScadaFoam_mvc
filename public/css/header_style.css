@@ -54,11 +54,16 @@
   /* background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: #00C0FF;
+  /* color: #00C0FF;
   text-shadow: -1px 1px 0 #41ba45,
     1px 1px 0 #c63d2b,
     1px -1px 0 #42afac,
-    -1px -1px 0 #c6c23f;
+    -1px -1px 0 #c6c23f; */
+    color: #09E3E1;
+    text-shadow: -1px 1px 0 #47777C,
+      1px 1px 0 #BF3233,
+      1px -1px 0 #47ADAD,
+      -1px -1px 0 #C5777D;
 
 }
 

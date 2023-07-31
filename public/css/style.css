@@ -14,7 +14,7 @@ body {
 :root {
   --height: 80px;
   /* --color-main: #031c31; */
-  --color-sub: #031c31;
+  --color-sub: rgba(3,28,49);
   --color-main: #00529c;
   --color-border: #2bb892;
   --color-item: #fffcd5; /* #fff*/
@@ -24,6 +24,7 @@ body {
   --color-skyblue_al:#66FCF1;
   --color-yellow: #fcde10;
   --color-orange: #ff5d1a;
+  --color-orange-b:#FF9900;
   --color-red: #fd1900;
   --color-green: #00e478;
   --color-green_black:#45A29E;
@@ -59,4 +60,19 @@ html {
 iframe {
   width: 300px;
   height: 300px;
+}
+
+input[type="number"]:enabled,
+select[type="text"]:enabled{
+  background-color: #00e478;
+  border-color: #000;
+
+}
+
+select[type="text"]:disabled{
+  appearance: none;
+  -webkit-appearance: none;
+}
+input[type="number"]:disabled{
+  opacity: 0.7;
 }

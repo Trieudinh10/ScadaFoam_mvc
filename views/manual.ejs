@@ -42,8 +42,8 @@
           <img id="Trang_thai_manual" class="den_cd" />
           <script>fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual")</script>
         </div>
-        <div class="setting_input">
-          <label class="lable_tem-input">NHIỆT ĐỘ THẤP</label>
+        <div class="setting_input tem_res">
+          <label class="lable_tem-input ">NHIỆT ĐỘ THẤP</label>
           <input id="nhiet_do_thap" isabled="disabled" type="number" />
           <script>fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0)</script>
 
@@ -63,6 +63,7 @@
       </div>
 
       <div class="operate_row">
+        <div class="block_pesido"></div>
 
         <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="setting_item">
@@ -270,10 +271,14 @@
       .find(row => row.startsWith('role=admin'));
       if(!cookieValue){
         const btnStart = document.getElementById('btn_on_tn1');
-        const btnSaveEdit = document.querySelector('.start_stop-btn-save')
+        const btnSaveEdit = document.querySelector('.start_stop-btn-save');
+        const block_pesido = document.querySelector('.block_pesido');
         btnStart.disabled = true;
         btnStart.style.display = "none";
-        btnSaveEdit.style.display = "none"
+        btnSaveEdit.style.display = "none";
+        btnSaveEdit.remove();
+        btnStart.remove();
+        block_pesido.remove();
       }      
 
 
