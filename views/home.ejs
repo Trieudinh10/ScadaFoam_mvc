@@ -56,9 +56,9 @@
               </div>
             </div>
             <div class="data_room-img">
-              <img id="Trang_thai_cb" class="den_cd" alt="den canh bao" />
+              <img id="Trang_thai_cb" class="den_cd_n"/>
               <script>
-                fn_SymbolStatus("Trang_thai_cb", "Den_do", "Canh_bao_nhiet");
+                fn_SymbolStatus("Trang_thai_cb", "Den_tsp", "Canh_bao_nhiet");
               </script>
             </div>
           </div>
@@ -70,9 +70,9 @@
           <div class="room_container block_status">
             <div class="item_data-room item_data-status">
               <h2>TỰ ĐỘNG</h2>
-              <img id="Trang_thai_auto" class="den_cd" alt="den bao tu dong" />
+              <img id="Trang_thai_auto" class="den_cd"/>
               <script>
-                fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+                fn_SymbolStatus("Trang_thai_auto", "Den_td", "Den_auto");
               </script>
             </div>
             <div class="item_data-room item_data-status">
@@ -83,7 +83,7 @@
                 alt="den bao thu cong"
               />
               <script>
-                fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
+                fn_SymbolStatus("Trang_thai_manual", "Den_tc", "Den_manual");
               </script>
             </div>
           </div>
@@ -220,7 +220,7 @@
                   x: [xData],
                   y: [yData_dh1, yData_dh2, yData_dh3, yData_nd],
                 });
-              }, 1000);
+              }, 30000);
             }
 
             chart(); // tạo biểu đồ

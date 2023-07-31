@@ -488,7 +488,7 @@ var sqlcon = mysql.createConnection({
 });
 
 function fn_sql_insert(){
-    insert_trigger = arr_tag_value[82];		// Read trigger from PLC
+    insert_trigger = obj_tag_value["Trigger"];		// Read trigger from PLC
     var sqltable_Name = "plc_data";
     // Lấy thời gian hiện tại
 	var tzoffset = (new Date()).getTimezoneOffset() * 60000; //Vùng Việt Nam (GMT7+)
@@ -852,7 +852,7 @@ function fn_sql_alarm_insert(ID, AlarmName){
  
     // Dữ liệu trạng thái báo cáo
     var data_1 = "'" + ID + "',";
-    var data_2 = "'Đang lỗi',";
+    var data_2 = "'Đang xảy ra',";
     var data_3 = "'" + AlarmName + "'";
     // Thêm cảnh báo vào SQL
     var str1 = "INSERT INTO " + sqltable_Name + " (date_time, ID, Status, AlarmName) VALUES (";
@@ -904,7 +904,7 @@ function fn_Alarm_Show(){
         socket.on("msg_Alarm_Show", function(data)
         {
             var sqltable_Name = "alarm";
-            var query = "SELECT * FROM " + sqltable_Name + " WHERE Status = 'Đang lỗi' ORDER BY date_time DESC;"; 
+            var query = "SELECT * FROM " + sqltable_Name + " WHERE Status = 'Đang xảy ra' ORDER BY date_time DESC;"; 
             sqlcon.query(query, function(err, results, fields) {
                 if (err) {
                     console.log(err);
