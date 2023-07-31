@@ -5,7 +5,7 @@
   padding: 8px 8px 0 8px;
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
-  height: var(100vh - var(--height));
+  /* height: var(100vh - var(--height)); */
 }
 .home_system {
   width: 100%;
