@@ -16,6 +16,7 @@
     <script src="/js/FC4_du_lieu.js"></script>
     <script src ="/js/FileSaver.js"></script>
     <script src="/js/FC5_excel_export.js"></script>
+    <script src="/js/FC6_alarm.js"></script>
 
     <script src="/js/chart_min.js"></script>
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
@@ -46,6 +47,26 @@
         <!--<div class="input_item_btn">
           <button id="btt_Search" onclick="fn_Table01_SQL_Show();">DỮ LIỆU</button>
         </div>-->
+        <!--Date time piker-->
+        <div class="input_item">
+        <label id="lb_AL_Search_Start">Từ:</label>
+        <input id="dtpk_AL_Search_Start" type="datetime-local">
+        </div>
+
+        <div class="input_item">
+        <label id="lb_AL_Search_End">Đến:</label>
+        <input id="dtpk_AL_Search_End" type="datetime-local">
+        </div>
+        <!--Nút tìm kiếm-->
+        <div class="input_item_btn">
+        <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();
+        "></i> TÌM KIẾM</button>
+        </div>
+
+        <!--<div class="input_item_btn">
+          <button id="btt_Search" onclick="fn_Alarm_Show();">DỮ LIỆU</button>
+        </div>-->
+
       </div>
       <div class="export_body">
         <div class="export_para">
@@ -82,24 +103,19 @@
         <div class="export_error">
           <div id="div_table_error">
             <h2>Bảng Báo Lỗi</h2>
-            <table id="table_error">
-              <thead>
-                <tr>
-                  <th class="th_time">Thời gian</th>
-
-                  <th>Trạng Thái</th>
-
-                  <th>Nhiệt Độ</th>
-
-                  <th>Độ ẨM</th>
-
-                  <th>Góc Mở</th>
-
-                  <th>Tốc Độ Quạt</th>
-                  <th>Thông Tin Lỗi/Cảnh Báo</th>
-                </tr>
-              </thead>
-            </table>
+            <!--Table Cảnh báo Alarm-->
+              <div id = "div_table_Alarm">
+                <table id="table_Alarm" >
+                    <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>ID cảnh báo</th>
+                        <th>Trạng thái</th>
+                        <th>Nội dung cảnh báo</th>
+                    </tr>
+                    </thead>
+                </table>
+              </div>
           </div>
 
         <div class="home_chart-room">
@@ -135,6 +151,8 @@
     
     
            var layout = {
+            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
+            borderRadius: '10px',
             title: {
                 text: "BIỂU ĐỒ NHIỆT",
                 x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
@@ -142,20 +160,22 @@
                 xanchor: 'center', // Giữ title ở giữa theo chiều ngang
                 yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
             },
-            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
-            borderRadius: '10px',
             font: {
                   color: 'black' // Màu chữ trên biểu đồ
-                  },
+            },
+            xaxis: {
+              gridcolor: '#ccc', // Màu lưới ngang
+            },
             yaxis:{
-           
-                  showline: true,
-                  fixedrange: true,
-                  range: [0, 40],
-                  autotick: false,
-                  tick0: 0,
-                  dtick:40,
-              },
+                      showline: true, // Hiển thị đường kẻ ngang trục y
+                      fixedrange: true, // Không cho phép người dùng zoom hoặc di chuyển trục y
+                      showgrid: true, // Hiển thị lưới ngang trục y
+                      range: [0, 40],
+                      gridcolor: '#ccc', // Màu lưới ngang
+                      autotick: false,
+                      tick0: 0,
+                      dtick: 5,
+                  },
                 };
                 Plotly.newPlot("chart_detail", data, layout,config);
               }

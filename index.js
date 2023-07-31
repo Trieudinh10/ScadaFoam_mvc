@@ -274,6 +274,10 @@ setInterval(() => {
 var insert_trigger = false;			// Trigger
 var old_insert_trigger = false;		// Trigger old
 
+// triger ghi dữ liệu cảnh báo vào SQL
+var Alarm_ID1 = false;			// Trigger Alarm add ID1
+var Alarm_ID1_old = false;		// Trigger alarm old ID1
+
 // Mảng xuất dữ liệu report Excel
 var SQL_Excel = [];  // Dữ liệu nhập kho
 
@@ -315,6 +319,7 @@ function fn_read_data_scan(){
     conn_plc.readAllItems(valuesReady);
     fn_tag();
     fn_sql_insert();
+    fn_Alarm_Manage();
 }
 // Time cập nhật mỗi 1s
 setInterval(
@@ -414,6 +419,8 @@ function fn_tag(){
 io.on("connection", function(socket){
     socket.on("Client-send-data", function(data){
         fn_tag();
+        fn_Alarm_Show();
+        fn_Alarm_Search_ByTime();
     });
     fn_SQLSearch(); // Hàm tìm kiếm SQL
     fn_SQLSearch_ByTime();  // Hàm tìm kiếm SQL theo thời gian
@@ -845,7 +852,7 @@ function fn_sql_alarm_insert(ID, AlarmName){
  
     // Dữ liệu trạng thái báo cáo
     var data_1 = "'" + ID + "',";
-    var data_2 = "'Đang Lỗi',";
+    var data_2 = "'Đang lỗi',";
     var data_3 = "'" + AlarmName + "'";
     // Thêm cảnh báo vào SQL
     var str1 = "INSERT INTO " + sqltable_Name + " (date_time, ID, Status, AlarmName) VALUES (";
@@ -875,6 +882,81 @@ function fn_sql_alarm_ack(ID){
     // Ghi dữ liệu cảnh báo vào SQL
 	sqlcon.query(str, function (err, result) {
         if (err) {console.log(err);} else {}
+    });
+}
+
+// Hàm chức năng insert Alarm
+function fn_Alarm_Manage(){
+    Alarm_ID1 = obj_tag_value["Canh_bao_nhiet"];		// Read trigger alarm ID1
+
+    // Cảnh báo động cơ 1
+    if (Alarm_ID1 && !Alarm_ID1_old){
+        fn_sql_alarm_insert(1, "Cảnh báo nhiệt độ")
+    }  if(Alarm_ID1 == false & Alarm_ID1 != Alarm_ID1_old) {
+        fn_sql_alarm_ack(1);
+    }
+    Alarm_ID1_old = Alarm_ID1;
+}
+
+// Đọc dữ liệu Cảnh báo
+function fn_Alarm_Show(){
+    io.on("connection", function(socket){
+        socket.on("msg_Alarm_Show", function(data)
+        {
+            var sqltable_Name = "alarm";
+            var query = "SELECT * FROM " + sqltable_Name + " WHERE Status = 'Đang lỗi' ORDER BY date_time DESC;"; 
+            sqlcon.query(query, function(err, results, fields) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    const objectifyRawPacket = row => ({...row});
+                    const convertedResponse = results.map(objectifyRawPacket);
+                    socket.emit('Alarm_Show', convertedResponse);
+                } 
+            });
+        });
+    });
+}
+
+
+// Tìm kiếm báo cáo theo khoảng thời gian
+function fn_Alarm_Search_ByTime(){
+    io.on("connection", function(socket){
+        socket.on("msg_Alarm_ByTime", function(data)
+        {
+            var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset time Việt Nam (GMT7+)
+            // Lấy thời gian tìm kiếm từ date time piker
+            var timeS = new Date(data[0]); // Thời gian bắt đầu
+            var timeE = new Date(data[1]); // Thời gian kết thúc
+
+             // Kiểm tra giá trị thời gian hợp lệ
+             if (isNaN(timeS.getTime()) || isNaN(timeE.getTime())) { 
+                console.log("Chưa chọn thời gian");
+                return;
+            }
+
+            // Quy đổi thời gian ra định dạng cua MySQL
+            var timeS1 = "'" + (new Date(timeS - tzoffset)).toISOString().slice(0, -1).replace("T"," ")	+ "'";
+            var timeE1 = "'" + (new Date(timeE - tzoffset)).toISOString().slice(0, -1).replace("T"," ") + "'";
+            var timeR = timeS1 + "AND" + timeE1; // Khoảng thời gian tìm kiếm (Time Range)
+ 
+            var sqltable_Name = "alarm"; // Tên bảng
+            var dt_col_Name = "date_time";  // Tên cột thời gian
+ 
+            var Query1 = "SELECT * FROM " + sqltable_Name + " WHERE "+ dt_col_Name + " BETWEEN ";
+            var Query = Query1 + timeR + ";";
+            
+            sqlcon.query(Query, function(err, results, fields) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    const objectifyRawPacket = row => ({...row});
+                    const convertedResponse = results.map(objectifyRawPacket);
+                    SQL_Excel = convertedResponse; // Xuất báo cáo Excel
+                    socket.emit('Alarm_ByTime', convertedResponse);
+                } 
+            });
+        });
     });
 }
 
