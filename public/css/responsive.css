@@ -481,6 +481,8 @@
   }
   .operate_row{
     background-color: transparent;
+    padding: 0;
+    margin-top: 8px;
   }
 }
 
