@@ -284,6 +284,20 @@
   .room_container{
     align-items: flex-start;
   }
+
+  
+  /* export  */
+  .export_body{
+    flex-direction: column;
+    height: unset;
+  }
+
+  .export_para{
+    width: 100%;
+    flex: unset;
+    max-width: unset;
+  }
+  /* end export */
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -481,7 +495,15 @@
   }
   .operate_row{
     background-color: transparent;
+    padding: 0;
+    margin-top: 8px;
   }
+  .den_cd_n{
+    width: 120px;
+    height: 120px;
+  }
+
+
 }
 
 @media (min-width: 1113px) and (max-width: 1615px) {
