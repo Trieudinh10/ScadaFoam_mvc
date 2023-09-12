@@ -285,7 +285,7 @@ var SQL_Excel = [];  // Dữ liệu nhập kho
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '10.14.84.100', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.84.193', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
@@ -554,6 +554,7 @@ old_insert_trigger = insert_trigger;
 // Đọc dữ liệu từ SQL
 function fn_SQLSearch() {
     io.on("connection", function(socket) {
+        socket.removeAllListeners("msg_SQL_Show");
       socket.on("msg_SQL_Show", function(data) {
         var sqltable_Name = "plc_data";
         var queryy1 = "SELECT * FROM " + sqltable_Name + " WHERE date_time >= DATE_SUB(NOW(), INTERVAL 1 HOUR) ORDER BY date_time DESC;";
@@ -573,6 +574,7 @@ function fn_SQLSearch() {
 // Đọc dữ liệu SQL theo thời gian
 function fn_SQLSearch_ByTime(){
     io.on("connection", function(socket){
+        socket.removeAllListeners("msg_SQL_ByTime");
         socket.on("msg_SQL_ByTime", function(data)
         {
             var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset time Việt Nam (GMT7+)
@@ -777,7 +779,7 @@ worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
   var rowindex = rowNumber + datastartrow;
   const rowlength = datastartrow + SQL_Excel.length
   if(rowindex >= rowlength+1){rowindex = rowlength+1}
-  const insideColumns = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+  const insideColumns = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
 // Tạo border
   insideColumns.forEach((v) => {
 	  // Border
@@ -901,6 +903,7 @@ function fn_Alarm_Manage(){
 // Đọc dữ liệu Cảnh báo
 function fn_Alarm_Show(){
     io.on("connection", function(socket){
+        socket.removeAllListeners("msg_Alarm_Show");
         socket.on("msg_Alarm_Show", function(data)
         {
             var sqltable_Name = "alarm";
@@ -922,6 +925,7 @@ function fn_Alarm_Show(){
 // Tìm kiếm báo cáo theo khoảng thời gian
 function fn_Alarm_Search_ByTime(){
     io.on("connection", function(socket){
+        socket.removeAllListeners("msg_Alarm_ByTime");
         socket.on("msg_Alarm_ByTime", function(data)
         {
             var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset time Việt Nam (GMT7+)
