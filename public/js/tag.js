@@ -5,6 +5,8 @@ module.exports = {
 };
 // Bảng tag trong Visual studio code
 var tags_list = { 
+    On_k_may_lanh: 'M22.1',
+    Off_k_may_lanh: 'M22.2',
     Start_auto: 'DB7,X0.0',  
     Start_manual: 'DB7,X0.1',  
     Den_auto: 'DB7,X0.2',  
@@ -87,6 +89,7 @@ var tags_list = {
     Cai_nhiet_do_thap:'DB7,WORD144',
     Cai_nhiet_do_cao:'DB7,WORD146',
     Canh_bao_nhiet:'DB7,X148.0',
-    Trigger: 'DB7,X148.1'
+    Trigger: 'DB7,X148.1',
+    Dung_khan_cap: 'DB7,X148.2'
     
 };

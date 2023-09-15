@@ -1,7 +1,7 @@
 ////////////// YÊU CẦU DỮ LIỆU TỪ SERVER- REQUEST DATA //////////////
 // Khai báo socket.io và kết nối tới server
 var socket = io();
-var myVar = setInterval(myTimer, 100);
+var myVar = setInterval(myTimer, 500);
 function myTimer()
 {
     socket.emit("Client-send-data", "Request data client");

@@ -276,7 +276,9 @@ var old_insert_trigger = false;		// Trigger old
 
 // triger ghi dữ liệu cảnh báo vào SQL
 var Alarm_ID1 = false;			// Trigger Alarm add ID1
+var Alarm_ID2 = false;			// Trigger Alarm add ID1
 var Alarm_ID1_old = false;		// Trigger alarm old ID1
+var Alarm_ID2_old = false;		// Trigger alarm old ID1
 
 // Mảng xuất dữ liệu report Excel
 var SQL_Excel = [];  // Dữ liệu nhập kho
@@ -330,6 +332,8 @@ setInterval(
 
     // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
 function fn_tag(){
+    io.sockets.emit("On_k_may_lanh", obj_tag_value["On_k_may_lanh"]);  //
+    io.sockets.emit("Off_k_may_lanh", obj_tag_value["Off_k_may_lanh"]);//
     io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
     io.sockets.emit("Start_manual", obj_tag_value["Start_manual"]);//
     io.sockets.emit("Den_auto", obj_tag_value["Den_auto"]);  ////
@@ -413,6 +417,7 @@ function fn_tag(){
     io.sockets.emit("Cai_nhiet_do_cao", obj_tag_value["Cai_nhiet_do_cao"]);////
     io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
+    io.sockets.emit("Dung_khan_cap", obj_tag_value["Dung_khan_cap"]);//
 }
 
 // /////////// GỬI DỮ LIỆU BẢNG TAG ĐẾN CLIENT (TRÌNH DUYỆT) ///////////////
@@ -890,14 +895,23 @@ function fn_sql_alarm_ack(ID){
 // Hàm chức năng insert Alarm
 function fn_Alarm_Manage(){
     Alarm_ID1 = obj_tag_value["Canh_bao_nhiet"];		// Read trigger alarm ID1
+    Alarm_ID2 = obj_tag_value["Dung_khan_cap"];		// Read trigger alarm ID1
 
-    // Cảnh báo động cơ 1
+    // Cảnh báo 1
     if (Alarm_ID1 && !Alarm_ID1_old){
         fn_sql_alarm_insert(1, "Cảnh báo nhiệt độ")
     }  if(Alarm_ID1 == false & Alarm_ID1 != Alarm_ID1_old) {
         fn_sql_alarm_ack(1);
     }
     Alarm_ID1_old = Alarm_ID1;
+
+    // Cảnh báo 2
+    if (Alarm_ID2 && !Alarm_ID2_old){
+        fn_sql_alarm_insert(2, "Dừng khẩn cấp")
+    }  if(Alarm_ID2 == false & Alarm_ID2 != Alarm_ID2_old) {
+        fn_sql_alarm_ack(2);
+    }
+    Alarm_ID2_old = Alarm_ID2;
 }
 
 // Đọc dữ liệu Cảnh báo
