@@ -12,10 +12,10 @@ function checkLoggedIn() {
       if (loggedIn === 'true') {
         
       } else {
-        window.location.href = 'http://10.14.84.193:8080/login';
+        window.location.href = '/login';
       }
     } else {
-        window.location.href = 'http://10.14.84.193:8080/login';
+        window.location.href = '/login';
     }
   }
   

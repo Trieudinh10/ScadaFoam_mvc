@@ -48,12 +48,10 @@
   margin-top: 10px;
 }
 
-#Baocao .baocao-container_select, .baocao-container_error{
+.baocao-container_select, .baocao-container_error{
   flex: 1;
   display: flex;
-}
-.baocao-container_error{
-  justify-content: flex-end;
+  margin-bottom:8px;
 }
 #Baocao::-webkit-scrollbar {
   width: 4px;
@@ -74,7 +72,6 @@
   width: 100%;
   text-align: center;
   text-align: center;
-  border: 1px solid #a3855f;
   overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
   max-width: 100%;
   height: calc(100% / 2);
@@ -195,7 +192,7 @@ td {
 }
 
 /*Lable tìm kiếm từ*/
-#lb_Search_Start {
+#lb_Search_Start,#lb_AL_Search_Start {
   color: #3de36f;
   font-size: 24px;
   font-weight: normal;
@@ -216,7 +213,7 @@ td {
 }
 
 /*Lable tìm kiếm đến*/
-#lb_Search_End{
+#lb_Search_End,#lb_AL_Search_End{
   color: #d96464;
   font-size: 24px;
   font-weight: normal;
@@ -328,6 +325,10 @@ td {
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   overflow-x: scroll;
+}
+
+#div_table_Alarm{
+  border: 1px solid #a3855f;
 }
 
 .export_para h2 {

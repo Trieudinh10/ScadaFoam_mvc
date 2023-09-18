@@ -16,7 +16,7 @@ function login() {
         if (username === 'admin' && password === 'admin' || username === 'user' && password === 'user' ) {
           found = true;
           setCookie("loggedIn", "true", 15);
-          window.location.href = "http://10.14.84.193:8080/auto";
+          window.location.href = "/auto";
           if(username === 'admin'){
             document.cookie = 'role' + '=' + 'admin';
           }else{

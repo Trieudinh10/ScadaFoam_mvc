@@ -25,21 +25,21 @@
       </div>
       <div class="header_menu">
         <ul>
-          <a href="http://10.14.84.193:8080"><li>Foam</li></a>
+          <a href="/"><li>Foam</li></a>
 
-          <a href="http://10.14.84.193:8080/export" id="exportLink">
+          <a href="/export" id="exportLink">
             <li>Trích xuất</li>
           </a>
-          <a href="http://10.14.84.193:8080/energy">
+          <a href="/energy">
             <li>điện năng</li>
           </a>
-          <a href="http://10.14.84.193:8080/auto">
+          <a href="/auto">
             <li>tự động</li>
           </a>
-          <a href="http://10.14.84.193:8080/manual">
+          <a href="/manual">
             <li>thủ công</li>
           </a>
-          <a href="http://10.14.84.193:8080/huongdan">
+          <a href="/huongdan">
             <li>Hướng Dẫn</li>
           </a>
           <li class="icon_logout" title="Đăng xuất"></li>
@@ -82,7 +82,7 @@
     logoutBtn.addEventListener("click", function () {
       document.cookie =
         "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      window.location.href = "http://10.14.84.193:8080/login";
+      window.location.href = "/login";
     });
     function checkLoggedIn() {
       var cookieValue = document.cookie
