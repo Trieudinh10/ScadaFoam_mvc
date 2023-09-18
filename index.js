@@ -332,6 +332,7 @@ setInterval(
 
     // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
 function fn_tag(){
+    io.sockets.emit("Relay_contactor", obj_tag_value["Relay_contactor"]);  //
     io.sockets.emit("On_k_may_lanh", obj_tag_value["On_k_may_lanh"]);  //
     io.sockets.emit("Off_k_may_lanh", obj_tag_value["Off_k_may_lanh"]);//
     io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
@@ -452,6 +453,9 @@ io.on("connection", function(socket){
     // on_off may lanh 1 che do manual
         socket.on("cmd_start_ml4", function(data){conn_plc.writeItems('On_manu_4', data, valuesWritten);});
         socket.on("cmd_stop_ml4", function(data){conn_plc.writeItems('Off_manu_4', data, valuesWritten);});
+    // on_off contactor cap nguon cho may lanh
+        socket.on("cmd_start_k", function(data){conn_plc.writeItems('On_k_may_lanh', data, valuesWritten);});
+        socket.on("cmd_stop_k", function(data){conn_plc.writeItems('Off_k_may_lanh', data, valuesWritten);});
 
 });
 

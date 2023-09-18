@@ -5,6 +5,7 @@ module.exports = {
 };
 // Bảng tag trong Visual studio code
 var tags_list = { 
+    Relay_contactor: 'Q0.1',
     On_k_may_lanh: 'M22.1',
     Off_k_may_lanh: 'M22.2',
     Start_auto: 'DB7,X0.0',  

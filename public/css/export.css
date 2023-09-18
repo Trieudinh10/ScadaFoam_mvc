@@ -85,9 +85,9 @@
 #div_table_info h2,
 #div_table_error h2 {
   font-size: 32px;
-  /*color: var(--color-item);*/
   padding: 8px 0;
   text-transform: uppercase;
+  color: var(--color-main);
 }
 
 #div_table_info::-webkit-scrollbar,
@@ -226,7 +226,7 @@ td {
 
 #btt_AL_Search{
   border-radius: 4px;
-  background-color: rgb(14, 199, 153);
+  background-color: #12cff3;
   color: #03243f;
   text-align: center;
   display: inline-block;
@@ -282,7 +282,7 @@ td {
 /*Nút Xuaast Excel*/
 #btt_Excel {
   border-radius: 4px;
-  background-color: rgb(14, 199, 153);
+  background-color: #12cff3;
   color: #03243f;
   text-align: center;
   display: inline-block;
@@ -370,7 +370,7 @@ td {
   text-align: center;
 }
 #table_01 th {
-  background: #75c0ef;
+  background: #53baf9;
 }
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
 
@@ -395,7 +395,7 @@ tr:nth-child(odd) {
 background-color: #ffffff;
 }
 
-#table_Alarm tr:hover{background-color: rgb(245, 10, 10);}
+#table_Alarm tr:hover{background-color: rgba(250, 8, 8, 0.363);}
 #table_Alarm   { overflow: auto; }
 #table_Alarm thead th { position: sticky; top: 0; }
 /* Just common table stuff. Really. */
