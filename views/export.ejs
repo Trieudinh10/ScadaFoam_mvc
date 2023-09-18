@@ -30,36 +30,39 @@
 
     <div class="export_container">
       <div id="Baocao">
-        <div class="input_item">
-          <label id="lb_Search_Start">Từ:</label>
-          <input id="dtpk_Search_Start"type="datetime-local"/>
-        </div>
-        <div class="input_item">
-          <label id="lb_Search_End">Đến:</label>
-          <input id="dtpk_Search_End" type="datetime-local"/>
-        </div>
-        <div class="input_item_btn">
-          <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
-        </div>
-        <div class="input_item_btn">
-          <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
-        </div>
-        <!--Date time piker-->
-        <div class="input_item">
-        <label id="lb_AL_Search_Start">Từ:</label>
-        <input id="dtpk_AL_Search_Start" type="datetime-local">
+        <div class="baocao-container_select">
+          <div class="input_item">
+            <label id="lb_Search_Start">Từ:</label>
+            <input id="dtpk_Search_Start"type="datetime-local"/>
+          </div>
+          <div class="input_item">
+            <label id="lb_Search_End">Đến:</label>
+            <input id="dtpk_Search_End" type="datetime-local"/>
+          </div>
+          <div class="input_item_btn">
+            <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
+          </div>
+          <div class="input_item_btn">
+            <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
+          </div>
         </div>
 
-        <div class="input_item">
-        <label id="lb_AL_Search_End">Đến:</label>
-        <input id="dtpk_AL_Search_End" type="datetime-local">
+        <div class="baocao-container_error">
+          <!--Date time piker-->
+          <div class="input_item">
+          <label id="lb_AL_Search_Start">Từ:</label>
+          <input id="dtpk_AL_Search_Start" type="datetime-local">
+          </div>
+          <div class="input_item">
+          <label id="lb_AL_Search_End">Đến:</label>
+          <input id="dtpk_AL_Search_End" type="datetime-local">
+          </div>
+          <!--Nút tìm kiếm-->
+          <div class="input_item_btn">
+          <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();
+          "></i> TÌM KIẾM</button>
+          </div>
         </div>
-        <!--Nút tìm kiếm-->
-        <div class="input_item_btn">
-        <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();
-        "></i> TÌM KIẾM</button>
-        </div>
-
       </div>
       <div class="export_body">
         <div class="export_para">
