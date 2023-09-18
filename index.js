@@ -332,6 +332,7 @@ setInterval(
 
     // ///////////LẬP BẢNG TAG ĐỂ GỬI QUA CLIENT (TRÌNH DUYỆT)///////////
 function fn_tag(){
+    io.sockets.emit("Relay_contactor", obj_tag_value["Relay_contactor"]);  //
     io.sockets.emit("On_k_may_lanh", obj_tag_value["On_k_may_lanh"]);  //
     io.sockets.emit("Off_k_may_lanh", obj_tag_value["Off_k_may_lanh"]);//
     io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //

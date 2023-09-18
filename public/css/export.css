@@ -78,9 +78,9 @@
 #div_table_info h2,
 #div_table_error h2 {
   font-size: 32px;
-  /*color: var(--color-item);*/
   padding: 8px 0;
   text-transform: uppercase;
+  color: var(--color-main);
 }
 
 #div_table_info::-webkit-scrollbar,
@@ -219,7 +219,7 @@ td {
 
 #btt_AL_Search{
   border-radius: 4px;
-  background-color: rgb(14, 199, 153);
+  background-color: #12cff3;
   color: #03243f;
   text-align: center;
   display: inline-block;
@@ -275,7 +275,7 @@ td {
 /*Nút Xuaast Excel*/
 #btt_Excel {
   border-radius: 4px;
-  background-color: rgb(14, 199, 153);
+  background-color: #12cff3;
   color: #03243f;
   text-align: center;
   display: inline-block;
@@ -363,7 +363,7 @@ td {
   text-align: center;
 }
 #table_01 th {
-  background: #75c0ef;
+  background: #53baf9;
 }
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
 
