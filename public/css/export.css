@@ -48,6 +48,13 @@
   margin-top: 10px;
 }
 
+#Baocao .baocao-container_select, .baocao-container_error{
+  flex: 1;
+  display: flex;
+}
+.baocao-container_error{
+  justify-content: flex-end;
+}
 #Baocao::-webkit-scrollbar {
   width: 4px;
   height: 4px;
