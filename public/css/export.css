@@ -388,7 +388,7 @@ tr:nth-child(odd) {
 background-color: #ffffff;
 }
 
-#table_Alarm tr:hover{background-color: rgb(245, 10, 10);}
+#table_Alarm tr:hover{background-color: rgba(250, 8, 8, 0.363);}
 #table_Alarm   { overflow: auto; }
 #table_Alarm thead th { position: sticky; top: 0; }
 /* Just common table stuff. Really. */

@@ -453,6 +453,9 @@ io.on("connection", function(socket){
     // on_off may lanh 1 che do manual
         socket.on("cmd_start_ml4", function(data){conn_plc.writeItems('On_manu_4', data, valuesWritten);});
         socket.on("cmd_stop_ml4", function(data){conn_plc.writeItems('Off_manu_4', data, valuesWritten);});
+    // on_off contactor cap nguon cho may lanh
+        socket.on("cmd_start_k", function(data){conn_plc.writeItems('On_k_may_lanh', data, valuesWritten);});
+        socket.on("cmd_stop_k", function(data){conn_plc.writeItems('Off_k_may_lanh', data, valuesWritten);});
 
 });
 
