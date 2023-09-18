@@ -310,7 +310,9 @@
     margin-right: 8px;
   }
   .item_air-data label{
+    font-size: 18px;
     min-width: 50px;
+    margin-right: 5px;
   }
   .system_item {
     width: 50%;
@@ -346,6 +348,7 @@
     width: 25%;
   }
   .item_air-tem h2 {
+    font-size: 18px;
     border: none;
   }
 
@@ -387,6 +390,7 @@
     min-width: 150px;
     display: flex;
     justify-content: center;
+    font-size: inherit;
   }
   .item_data-room.item_data-status {
     justify-content: center;
@@ -394,6 +398,7 @@
   }
   .item_air-tem input,
   .item_air-room input {
+    height: 28px;
     width: 50px;
   }
   .item_air-tem {
@@ -470,7 +475,7 @@
     margin-right: 8px;
   }
   .den_ml{
-    height: 68px;
+    height: 90px;
   }
   .system_item-air{
     flex-wrap: wrap;
@@ -486,6 +491,7 @@
   }
   .h2_responsive{
     width: 100%;
+    padding-top: 2px;
   }
 
   .block_pesido{
@@ -500,7 +506,7 @@
   }
   .den_cd_n{
     width: 120px;
-    height: 120px;
+    height: 105px;
   }
 
 
