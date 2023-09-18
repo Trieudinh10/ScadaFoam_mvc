@@ -2,6 +2,9 @@
   .home_container {
     flex-wrap: wrap;
   }
+  #lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
+    margin: 0;
+  }
   .home_system {
     width: 100%;
     display: flex;
@@ -301,6 +304,9 @@
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
+  #lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
+    margin: 0;
+  }
   .home_system {
     width: 100%;
     display: flex;

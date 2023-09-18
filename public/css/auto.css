@@ -107,10 +107,14 @@
 }
 
 .setting_input label {
-  margin-right: 12px;
+  margin-right: 8px;
   font-size: 32px;
   font-weight: 300;
   /* color: #fff; */
+}
+
+#lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
+  margin-left: 32px;
 }
 
 .setting_input input,
