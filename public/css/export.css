@@ -72,11 +72,10 @@
   width: 100%;
   text-align: center;
   text-align: center;
-  overflow: scroll; /* Hiển thị thanh cuộn ngang khi nội dung vượt quá kích thước của bảng */
   max-width: 100%;
-  height: calc(100% / 2);
-  min-height: calc(100% / 2);
-  max-height: calc(100% / 2);
+  height: calc(110% / 2);
+  min-height: calc(110% / 2);
+  max-height: calc(110% / 2);
 }
 
 #div_table_info h2,
@@ -329,6 +328,7 @@ td {
 
 #div_table_Alarm{
   border: 1px solid #a3855f;
+  overflow-y: scroll;
 }
 
 .export_para h2 {
