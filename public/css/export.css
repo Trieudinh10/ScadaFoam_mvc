@@ -73,9 +73,9 @@
   text-align: center;
   text-align: center;
   max-width: 100%;
-  height: calc(110% / 2);
-  min-height: calc(110% / 2);
-  max-height: calc(110% / 2);
+  height: calc(100% / 2);
+  min-height: calc(100% / 2);
+  max-height: calc(100% / 2);
 }
 
 #div_table_info h2,
