@@ -3,7 +3,7 @@
   padding: 0px;
   margin: 0px;
   border: none;
-  color: var(--color-text);
+  color: var(--color-black);
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 :root {
-  --height: 80px;
+  --height: 75px;
   /* --color-main: #031c31; */
   --color-sub: rgba(3,28,49);
   --color-main: #00529c;
