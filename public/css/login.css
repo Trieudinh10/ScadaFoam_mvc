@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 1px 0 #ccc, 
+ /* text-shadow: 0 1px 0 #ccc, 
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
                0 4px 0 #b9b9b9,
@@ -35,7 +35,7 @@
                0 3px 5px rgba(0,0,0,.2),
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+               0 20px 20px rgba(0,0,0,.15);*/
                   
 }
 
@@ -86,14 +86,14 @@
 }
 
 .login_user label {
-  font-size: 32px;
+  font-size: 20px;
   margin-right: 20px;
   min-width: 150px;
   display: inline-block;
 }
 
 .login_user input {
-  width: 50%;
+  width: 40%;
   height: 35px;
   border: 1px solid var(--color-border);
   border-radius: 10px;
@@ -109,14 +109,14 @@
 }
 
 .login_password label {
-  font-size: 32px;
+  font-size: 20px;
   margin-right: 20px;
   min-width: 150px;
   display: inline-block;
 }
 
 .login_password input {
-  width: 50%;
+  width: 40%;
   height: 35px;
   border: 1px solid var(--color-border);
   border-radius: 10px;
@@ -136,7 +136,27 @@
   width: 30%;
 }
 
+
 #submitBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation; /* Đặt giá trị touch-action theo yêu cầu */
+}
+
+#submitBtn:hover {
+  background-color: #0056b3;
+}
+
+#submitBtn:active {
+  transform: scale(0.85); /* Thu nhỏ nút khi được nhấn */
+}
+
+/*#submitBtn {
     appearance: button;
     background-color: #000;
     background-image: none;
@@ -181,5 +201,5 @@
 #submitBtn:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
-}
+}*/
 
