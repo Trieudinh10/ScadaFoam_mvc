@@ -1,191 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/export.css" />
-    <link rel="stylesheet" href="/css/home_style.css" />
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/font.css" />
 
-    <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
-    <script src="socket.io/socket.io.js"></script>
-    <script src = "js/plotly-2.8.3.min.js"></script>
-    <script src="/js/FC1_Common.js"></script>
-    <script src="/js/FC4_du_lieu.js"></script>
-    <script src ="/js/FileSaver.js"></script>
-    <script src="/js/FC5_excel_export.js"></script>
-    <script src="/js/FC6_alarm.js"></script>
-    <link rel="stylesheet" href="/css/responsive.css">
-    <script src="/js/chart_min.js"></script>
-    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/export.css" />
+  <link rel="stylesheet" href="/css/home_style.css" />
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+  <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/font.css" />
 
-    <link rel="stylesheet" href="css/font.css" />
-    <title>Scada Foam</title>
-  </head>
-  <body>
-    <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
+  <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/plotly-2.8.3.min.js"></script>
+  <script src="/js/FC1_Common.js"></script>
+  <script src="/js/FC4_du_lieu.js"></script>
+  <script src="/js/FileSaver.js"></script>
+  <script src="/js/FC5_excel_export.js"></script>
+  <script src="/js/FC6_alarm.js"></script>
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="/js/chart_min.js"></script>
+  <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
 
-    <div class="export_container">
-      <div id="Baocao">
-      </div>
-      <div class="export_body">
-        <div class="export_para">
-          <h2>DỮ LIỆU</h2>
-          <div class="baocao-container_select">
-            <div class="input_item">
-              <label id="lb_Search_Start">Từ:</label>
-              <input id="dtpk_Search_Start"type="datetime-local"/>
-            </div>
-            <div class="input_item">
-              <label id="lb_Search_End">Đến:</label>
-              <input id="dtpk_Search_End" type="datetime-local"/>
-            </div>
-            <div class="input_item_btn">
-              <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
-            </div>
-            <div class="input_item_btn">
-              <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
-            </div>
-          </div>
-          <div id="div_Table_01">
-            <table id="table_01">
-              <thead class="table_data-thead">
-                <tr>
-                  <th class="th_time">Thời gian</th>
-                  <th>Auto</th>
-                  <th>Manual</th>
-                  <th>Nhiệt độ phòng</th>
-                  <th>Độ ẩm</th>
-                  <th>Trạng thái máy lạnh 1</th>
-                  <th>Nhiệt độ máy lạnh 1</th>
-                  <th>Nhiệt độ tham chiếu máy lạnh 1</th>
-                  <th>Trạng thái máy lạnh 2</th>
-                  <th>Nhiệt độ máy lạnh 2</th>
-                  <th>Nhiệt độ tham chiếu máy lạnh 2</th>
-                  <th>Trạng thái máy lạnh 3</th>
-                  <th>Nhiệt độ máy lạnh 3</th>
-                  <th>Nhiệt độ tham chiếu máy lạnh 3</th>
-                  <th>Thời gian cập nhật nhiệt độ</th>
-                  <th>Biên độ nhiệt thấp</th>
-                  <th>Biên độ nhiệt cao</th>
-                  <th>Cảnh báo nhiệt độ</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
+
+  <link rel="stylesheet" href="css/font.css" />
+  <title>Scada Foam</title>
+</head>
+
+<body>
+  <%- include('header.ejs'); -%> <%- include('loadding.ejs'); -%>
+
+      <div class="export_container">
+        <div id="Baocao">
         </div>
-
-        <div class="export_error">
-          <div id="div_table_error">
-            <h2>Bảng Báo Lỗi</h2>
-            <div class="baocao-container_error">
-              <!--Date time piker-->
+        <div class="export_body">
+          <div class="export_para">
+            <h2>DỮ LIỆU</h2>
+            <div class="baocao-container_select">
               <div class="input_item">
-              <label id="lb_AL_Search_Start">Từ:</label>
-              <input id="dtpk_AL_Search_Start" type="datetime-local">
+                <label id="lb_Search_Start">Từ:</label>
+                <input id="dtpk_Search_Start" type="datetime-local" />
               </div>
               <div class="input_item">
-              <label id="lb_AL_Search_End">Đến:</label>
-              <input id="dtpk_AL_Search_End" type="datetime-local">
+                <label id="lb_Search_End">Đến:</label>
+                <input id="dtpk_Search_End" type="datetime-local" />
               </div>
-              <!--Nút tìm kiếm-->
               <div class="input_item_btn">
-              <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();
-              "></i> TÌM KIẾM</button>
+                <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
+              </div>
+              <div class="input_item_btn">
+                <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
               </div>
             </div>
-            <!--Table Cảnh báo Alarm-->
-              <div id = "div_table_Alarm">
-                <table id="table_Alarm" >
-                    <thead>
+            <div id="div_Table_01">
+              <table id="table_01">
+                <thead class="table_data-thead">
+                  <tr>
+                    <th class="th_time">Thời gian</th>
+                    <th>Auto</th>
+                    <th>Manual</th>
+                    <th>Nhiệt độ phòng</th>
+                    <th>Độ ẩm</th>
+                    <th>Trạng thái máy lạnh 1</th>
+                    <th>Nhiệt độ máy lạnh 1</th>
+                    <th>Nhiệt độ tham chiếu máy lạnh 1</th>
+                    <th>Trạng thái máy lạnh 2</th>
+                    <th>Nhiệt độ máy lạnh 2</th>
+                    <th>Nhiệt độ tham chiếu máy lạnh 2</th>
+                    <th>Trạng thái máy lạnh 3</th>
+                    <th>Nhiệt độ máy lạnh 3</th>
+                    <th>Nhiệt độ tham chiếu máy lạnh 3</th>
+                    <th>Thời gian cập nhật nhiệt độ</th>
+                    <th>Biên độ nhiệt thấp</th>
+                    <th>Biên độ nhiệt cao</th>
+                    <th>Cảnh báo nhiệt độ</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="export_error">
+            <div id="div_table_error">
+              <h2>Bảng Báo Lỗi</h2>
+              <div class="baocao-container_error">
+                <!--Date time piker-->
+                <div class="input_item">
+                  <label id="lb_AL_Search_Start">Từ:</label>
+                  <input id="dtpk_AL_Search_Start" type="datetime-local">
+                </div>
+                <div class="input_item">
+                  <label id="lb_AL_Search_End">Đến:</label>
+                  <input id="dtpk_AL_Search_End" type="datetime-local">
+                </div>
+                <!--Nút tìm kiếm-->
+                <div class="input_item_btn">
+                  <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();
+              "></i> TÌM KIẾM</button>
+                </div>
+              </div>
+              <!--Table Cảnh báo Alarm-->
+              <div id="div_table_Alarm">
+                <table id="table_Alarm">
+                  <thead>
                     <tr>
-                        <th>Thời gian</th>
-                        <th>ID cảnh báo</th>
-                        <th>Trạng thái</th>
-                        <th>Nội dung cảnh báo</th>
+                      <th>Thời gian</th>
+                      <th>ID cảnh báo</th>
+                      <th>Trạng thái</th>
+                      <th>Nội dung cảnh báo</th>
                     </tr>
-                    </thead>
+                  </thead>
                 </table>
               </div>
-          </div>
-
-        <div class="home_chart-room">
-          <div id="chart_detail" class="chart">
-            <script>
-            
-            var nhiet_do_ml1=[];
-            var nhiet_do_ml2=[];
-            var nhiet_do_ml3=[];
-            var nhiet_do_cb=[];
-            var date_time=[];
-            var config = true;
-            function Draw_Chart() {
-                
-            var x1Values = [];
-            var y1Values = [];
-            var y2Values = [];
-            var y3Values = [];
-            var y4Values = [];
-            x1Values.push(...date_time);
-            y1Values.push(...nhiet_do_ml1);
-            y2Values.push(...nhiet_do_ml2);
-            y3Values.push(...nhiet_do_ml3);
-            y4Values.push(...nhiet_do_cb);
-            
-            var data = [
-            {x: x1Values, y: y1Values,mode:'lines', name: 'Điều hoà 1',hoverinfo:'x+y', nticks: 10,fixedrange: true, line: { color: 'blue' } },
-            {x: x1Values, y: y2Values, mode:"lines", name: 'Điều hoà 2',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'green' } },
-            {x: x1Values, y: y3Values, mode:"lines", name: 'Điều hoà 3',hoverinfo:'x+y', nticks: 10,fixedrange: true,line: { color: 'orange' } },
-            {x: x1Values, y: y4Values,mode:'lines', name: 'Nhiệt độ',hoverinfo:'x+y', nticks: 10 ,fixedrange: true,line: { color: 'red' } },
-            
-            ];
-    
-    
-           var layout = {
-            height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
-            borderRadius: '10px',
-            title: {
-                text: "BIỂU ĐỒ NHIỆT",
-                x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
-                y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
-                xanchor: 'center', // Giữ title ở giữa theo chiều ngang
-                yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
-            },
-            font: {
-                  color: 'black' // Màu chữ trên biểu đồ
-            },
-            xaxis: {
-              gridcolor: '#ccc', // Màu lưới ngang
-            },
-            yaxis:{
-                      showline: true, // Hiển thị đường kẻ ngang trục y
-                      fixedrange: true, // Không cho phép người dùng zoom hoặc di chuyển trục y
-                      showgrid: true, // Hiển thị lưới ngang trục y
-                      range: [0, 40],
-                      gridcolor: '#ccc', // Màu lưới ngang
-                      autotick: false,
-                      tick0: 0,
-                      dtick: 5,
-                  },
-                };
-                Plotly.newPlot("chart_detail", data, layout,config);
-              }
-              // Gọi hàm Draw_Chart() để tạo biểu đồ
-              Draw_Chart();
-            </script>
-          </div>
-        </div>
-        
-        
-
             </div>
+
+            <div class="home_chart-room">
+              <div id="chart_detail" class="chart">
+                <script>
+
+                  var nhiet_do_ml1 = [];
+                  var nhiet_do_ml2 = [];
+                  var nhiet_do_ml3 = [];
+                  var nhiet_do_cb = [];
+                  var date_time = [];
+                  var config = true;
+                  function Draw_Chart() {
+
+                    var x1Values = [];
+                    var y1Values = [];
+                    var y2Values = [];
+                    var y3Values = [];
+                    var y4Values = [];
+                    x1Values.push(...date_time);
+                    y1Values.push(...nhiet_do_ml1);
+                    y2Values.push(...nhiet_do_ml2);
+                    y3Values.push(...nhiet_do_ml3);
+                    y4Values.push(...nhiet_do_cb);
+
+                    var data = [
+                      { x: x1Values, y: y1Values, mode: 'lines', name: 'Điều hoà 1', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'blue' } },
+                      { x: x1Values, y: y2Values, mode: "lines", name: 'Điều hoà 2', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'green' } },
+                      { x: x1Values, y: y3Values, mode: "lines", name: 'Điều hoà 3', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'orange' } },
+                      { x: x1Values, y: y4Values, mode: 'lines', name: 'Nhiệt độ', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'red' } },
+
+                    ];
+
+
+                    var layout = {
+                      height: 390, // Đặt chiều cao của biểu đồ (theo pixel)
+                      borderRadius: '10px',
+                      title: {
+                        text: "BIỂU ĐỒ NHIỆT",
+                        x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
+                        y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
+                        xanchor: 'center', // Giữ title ở giữa theo chiều ngang
+                        yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
+                      },
+                      font: {
+                        color: 'black' // Màu chữ trên biểu đồ
+                      },
+                      xaxis: {
+                        gridcolor: '#ccc', // Màu lưới ngang
+                      },
+                      yaxis: {
+                        showline: true, // Hiển thị đường kẻ ngang trục y
+                        fixedrange: true, // Không cho phép người dùng zoom hoặc di chuyển trục y
+                        showgrid: true, // Hiển thị lưới ngang trục y
+                        range: [0, 40],
+                        gridcolor: '#ccc', // Màu lưới ngang
+                        autotick: false,
+                        tick0: 0,
+                        dtick: 5,
+                      },
+                    };
+                    Plotly.newPlot("chart_detail", data, layout, config);
+                  }
+                  // Gọi hàm Draw_Chart() để tạo biểu đồ
+                  Draw_Chart();
+                </script>
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </div>
-    </div>
-  </body>
+      </div>
+      </div>
+</body>
+
 </html>

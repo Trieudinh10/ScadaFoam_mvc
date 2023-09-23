@@ -260,7 +260,26 @@ td {
 }
 
 /*Nút tìm kiếm*/
+
 #btt_Search {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation; /* Đặt giá trị touch-action theo yêu cầu */
+}
+
+#btt_Search:hover {
+  background-color: #0056b3;
+}
+
+#btt_Search:active {
+  transform: scale(0.85); /* Thu nhỏ nút khi được nhấn */
+}
+/*#btt_Search {
   background-color: #12cff3;
   color: #03243f;
   text-align: center;
@@ -273,7 +292,7 @@ td {
   left: 77%;
   top: 4.2%;
   border-radius: 4px;
-}
+}*/
 
 .input_item {
   display: flex;
