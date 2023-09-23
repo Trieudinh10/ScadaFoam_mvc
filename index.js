@@ -7,9 +7,6 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 server.listen(8080)
 
-
-
-
 app.get('/', function(req,res)
 {
     res.render('home');
@@ -19,6 +16,7 @@ app.get('/export', function(req,res)
 {
     res.render('export');
 })
+
 app.get('/auto', function(req,res)
 {
     res.render('auto');
@@ -276,7 +274,7 @@ var old_insert_trigger = false;		// Trigger old
 
 // triger ghi dữ liệu cảnh báo vào SQL
 var Alarm_ID1 = false;			// Trigger Alarm add ID1
-var Alarm_ID2 = false;			// Trigger Alarm add ID1
+var Alarm_ID2 = false;			// Trigger Alarm add ID2
 var Alarm_ID1_old = false;		// Trigger alarm old ID1
 var Alarm_ID2_old = false;		// Trigger alarm old ID1
 
