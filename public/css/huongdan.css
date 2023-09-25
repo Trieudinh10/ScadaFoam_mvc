@@ -9,7 +9,7 @@
   height: 40px;
   position: sticky;
   background-color: var(--color-main);
-  top: 0;
+  top: 75px;
 }
 
 .menu_manual ul {

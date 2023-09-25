@@ -4,6 +4,9 @@
   background-color: var(--color-item);
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   /*border-bottom: 1px solid var(--color-border);*/
 }
 
@@ -52,6 +55,8 @@
   align-items: center;
   justify-content: flex-end;
   color: #079ffb;
+  position: fixed;
+  top: 0;
   /* background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -88,6 +93,7 @@
   display: none;
   height: 100%;
   position: relative;
+
 }
 
 .menu_mobile::before {
