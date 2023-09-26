@@ -35,7 +35,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   /*box-shadow: 1px 1px 0px 0px var(--color-grey), 2px 2px 0px 0px var(--color-grey), 3px 3px 0px 0px var(--color-grey), 4px 4px 0px 0px var(--color-grey), 5px 5px 0px 0px var(--color-grey) !important;*/
   margin: 16px 8px;
-  flex: 1;
+  /* flex: 1; */
   /* #07539d */
 }
 .setting_item-title {
@@ -109,8 +109,8 @@
 
 .setting_input label {
   margin-right: 8px;
-  font-size: 32px;
-  font-weight: 300;
+  font-size: 24px;
+  font-weight: 400;
   /* color: #fff; */
 }
 

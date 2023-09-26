@@ -47,8 +47,11 @@
           </script>
         </div>
         <div class="setting_input">
-          <div>
-            <label for="" class="lable_tem-input" id="lable_tem-input-low"
+          <div class="setting_input-block-tem">
+            <label
+              for=""
+              class="lable_tem-input setting_input-block-tem-respon"
+              id="lable_tem-input-low"
               >NHIỆT ĐỘ THẤP</label
             >
             <input
@@ -61,11 +64,14 @@
               fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
             </script>
           </div>
-          <div>
-            <label for="" class="lable_tem-input" id="lable_tem-input-max"
+          <div style="margin-left: 16px" class="setting_input-block-tem2">
+            <label
+              for=""
+              class="lable_tem-input setting_input-block-tem-respon2"
+              id="lable_tem-input-max"
               >NHIỆT ĐỘ CAO</label
             >
-            <input
+            <input  
               id="nhiet_do_cao"
               isabled="disabled"
               disabled
@@ -77,10 +83,19 @@
           </div>
         </div>
         <div class="setting_input setting_input-mt">
-          <label for="" class="lable_tem-input" id="lable_title-time-update"
-            >THỜI GIAN CẬP NHẬT</label
+          <label
+            for=""
+            class="lable_tem-input setting_input-block-tem-respon3"
+            id="lable_title-time-update"
+            style="margin-right: 8px"
+            >THỜI GIAN C/N</label
           >
-          <input id="cai_thoi_gian" disabled="disabled" type="number" />
+          <input
+            id="cai_thoi_gian"
+            class="setting_input-block-tem-respon4"
+            disabled="disabled"
+            type="number"
+          />
           <script>
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
@@ -94,7 +109,7 @@
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="on_off_aut_2" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -107,7 +122,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="mode_aut_2" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -123,7 +138,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Tốc độ Quạt (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="speed_auto_2" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -138,7 +153,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Góc mở (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="position_auto_2" disabled="disabled" type="text">
                 <option value="1">1</option>
@@ -155,7 +170,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Nhiệt độ (&deg;C)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <input id="temp_auto_2" disabled="disabled" type="number" />
               <script>
@@ -170,7 +185,7 @@
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="on_off_aut_3" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -183,7 +198,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="mode_aut_3" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -199,7 +214,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Tốc độ Quạt (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="speed_auto_3" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -214,7 +229,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Góc mở (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="position_auto_3" disabled="disabled" type="text">
                 <option value="1">1</option>
@@ -231,7 +246,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Nhiệt độ (&deg;C)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <input id="temp_auto_3" disabled="disabled" type="number" />
               <script>
@@ -246,7 +261,7 @@
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="on_off_aut_4" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -259,7 +274,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Chế độ (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="mode_aut_4" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -275,7 +290,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Tốc độ Quạt (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="speed_auto_4" disabled="disabled" type="text">
                 <option value="0">0</option>
@@ -290,7 +305,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Góc mở (mod)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="position_auto_4" disabled="disabled" type="text">
                 <option value="1">1</option>
@@ -307,7 +322,7 @@
           </div>
           <div class="setting_content-item">
             <h2>Nhiệt độ (&deg;C)</h2>
-            <div class="setting_input">
+            <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <input id="temp_auto_4" disabled="disabled" type="number" />
               <script>
