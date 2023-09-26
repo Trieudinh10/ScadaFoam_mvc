@@ -309,7 +309,7 @@
     max-width: 130px !important;
   }
   .setting_input.tem_res label {
-    width: 50%;
+    width: 80%;
   }
   .setting_input.tem_res {
     justify-content: flex-start;

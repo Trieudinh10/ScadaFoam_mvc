@@ -45,8 +45,10 @@
           </script>
         </div>
         <div class="setting_input tem_res">
-          <div>
-            <label class="lable_tem-input" id="lable_tem-input-low"
+          <div class="setting_input-block-tem">
+            <label
+              class="lable_tem-input setting_input-block-tem-respon"
+              id="lable_tem-input-low"
               >NHIỆT ĐỘ THẤP</label
             >
             <input id="nhiet_do_thap" disabled="disabled" type="number" />
@@ -55,11 +57,10 @@
             </script>
           </div>
 
-          <div>
+          <div style="margin-left: 16px" class="setting_input-block-tem2">
             <label
-              class="lable_tem-input"
+              class="lable_tem-input setting_input-block-tem-respon2"
               id="lable_tem-input-max"
-              style="margin-left: 16px"
               >NHIỆT ĐỘ CAO</label
             >
             <input id="nhiet_do_cao" disabled="disabled" type="number" />
@@ -71,12 +72,17 @@
         <div class="setting_input setting_input-mt">
           <label
             for=""
-            class="lable_tem-input"
+            class="lable_tem-input setting_input-block-tem-respon3"
             id="lable_title-time-update"
             style="margin-right: 15px"
             >THỜI GIAN C/N</label
           >
-          <input id="cai_thoi_gian" disabled="disabled" type="number" />
+          <input
+            id="cai_thoi_gian"
+            class="setting_input-block-tem-respon4"
+            disabled="disabled"
+            type="number"
+          />
           <script>
             fn_Main_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
@@ -143,7 +149,7 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2> 
+            <h2>Góc mở (mod)</h2>
             <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
               <select id="position_manu_2" disabled="disabled" type="text">
