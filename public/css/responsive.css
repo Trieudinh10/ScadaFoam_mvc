@@ -504,7 +504,10 @@
     width: 70%;
     justify-content: flex-end;
   }
-
+  .setting_input-primary{
+    width: 35%;
+    justify-content: flex-end;
+  }
   .block_start_stop {
     position: sticky;
     top: 75px;
@@ -638,6 +641,7 @@
   .setting_content-item h2{
     font-size:23px;
     min-width: 400px;
+    padding-left: 102px;
   }
 }
 
