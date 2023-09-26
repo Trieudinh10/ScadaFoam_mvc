@@ -167,16 +167,15 @@ select {
   align-items: center;
   justify-content: center;
   color: var(--color-black_alpha);
-  font-size: 16px;
+  font-size: 20px;
   background: transparent;
   border: 2px solid #1FB0E6;
   color: #1FB0E6;
   transition: 0.3s all;
   transform: scale(1);
   text-transform: uppercase;
-  font-family: 'Roboto Bold';
+  font-family: 'Roboto';
   position: relative;
-  
 }
 .btn_on,
 .btn_start {
@@ -336,17 +335,19 @@ select:focus {
   margin-left: 8px;
   z-index: 2;
 }
-
 #btt_Auto_Save,#btt_Main_Save{
   margin-right: 20px;
-  background-color: #fff;
-  border-color: #fff;
+  background-color:#0F6EB8;
+  border-color:#fff ;
+  color:#fff;
 }
+
 #btt_Auto_Edit,#btt_Main_Edit{
   margin-right: 20px;
-  color: #333;
-  border-color: #fff;
-  background-color: #fff;
+  color: #000;
+  border-color: #000;
+  background-color: #FFD311;
+  cursor: pointer;
 }
 .start_stop-btn-start {
   display: flex;
@@ -366,7 +367,6 @@ select:focus {
 }
 
 .btt_sua_luu:hover {
-  opacity: 0.8;
 
 }
 .btt_sua_luu:active {
