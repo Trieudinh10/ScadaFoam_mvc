@@ -154,16 +154,15 @@
   }
   .setting_input label {
     margin-right: 4px;
+    font-size: 18px;
   }
   .setting_container-title {
     font-size: 22px;
   }
 
-  .setting_content-item h2 {
-    font-size: 32px;
-  }
+
   .setting_content-item {
-    display: unset;
+    display: flex;
   }
 
   /*end mobile auto */
@@ -233,13 +232,35 @@
   .block_start_stop {
     height: unset;
     margin-top: 8px;
+    justify-content: unset;
+    align-items: unset;
   }
   .start_stop-btn-save {
     /* top: -103px; */
     /* position: absolute; */
-    width: 30%;
+    /* width: 30%;
+    order: unset;
+    flex: unset; */
+    height: unset;
+    display: unset;
+    position: unset;
+    width: unset;
+    margin-right: unset;
     order: unset;
     flex: unset;
+  }
+
+  .btt_sua_luu{
+    width: unset;
+    margin-left: unset;
+    top: 145px;
+  }
+
+  .start_stop-btn-start{
+    width: unset;
+  }
+  .btn_on, .btn_start,.den_cd{
+    margin-left: 0;
   }
   .lable_tem-input {
     font-size: 17px !important;
@@ -248,10 +269,44 @@
     display: none;
   }
   .setting_input {
-    flex: unset;
-    justify-content: center;
-    margin-top: 8px;
+    /* flex: unset;
+    justify-content: center; */
+    /* margin-top: 8px; */
     flex-wrap: wrap;
+    flex: 1;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 8px;
+  }
+  .setting_input-block-tem{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .setting_input-block-tem-respon{
+    margin-right: 4px;
+  }
+  .setting_input-block-tem2{
+    margin-left: 0 !important;
+    display: flex;
+    width: 100%;
+    margin-top: 3px;
+  }
+  #nhiet_do_cao{
+    margin-left: 10px;
+  }
+  .setting_input-block-tem-respon2{
+    align-items: center;
+    display: flex;
+    margin-right: 12px;
+  }
+  .setting_input-block-tem-respon3{
+    margin-left: 55px !important;
+    order: 2;
+  }
+  .setting_input-block-tem-respon4{
+    min-width: 81px !important;
+    max-width: 130px !important;
   }
   .setting_input.tem_res label {
     width: 50%;
@@ -576,5 +631,19 @@
 @media (min-width: 890px) and (max-width: 1310px){
   .setting_item{
     flex: unset;
+  }
+}
+
+@media (min-width: 767.5px) and (max-width: 1310px){
+  .setting_content-item h2{
+    font-size:23px;
+    min-width: 400px;
+  }
+}
+
+@media (max-width:767px) {
+  .setting_content-item h2 {
+    font-size: 23px;
+    min-width: 200px;
   }
 }
