@@ -484,6 +484,13 @@
   .den_ml{
     height: 94px;
   }
+
+  #btt_Auto_Save, #btt_Main_Save,#btt_Auto_Edit, #btt_Main_Edit{
+    margin-right: 0;
+  }
+  .btn_on, .btn_start{
+    margin-left: 0;
+  }
   .system_item-air{
     flex-wrap: wrap;
     display: flex;

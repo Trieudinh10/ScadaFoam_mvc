@@ -24,13 +24,7 @@
     <div class="operate_container">
       <div class="block_start_stop">
         <div class="start_stop-btn-save">
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Save"
-            
-          >
-            LƯU
-          </button>
+          <button class="btt_sua_luu" id="btt_Auto_Save">LƯU</button>
           <button
             class="btt_sua_luu"
             id="btt_Auto_Edit"
@@ -53,21 +47,43 @@
           </script>
         </div>
         <div class="setting_input">
-          <label for="" class="lable_tem-input " id="lable_tem-input-low">NHIỆT ĐỘ THẤP</label>
-          <input id="nhiet_do_thap" isabled="disabled" type="number" disabled />
-          <script>
-            fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
-          </script>
-          <label for="" class="lable_tem-input " id="lable_tem-input-max">NHIỆT ĐỘ CAO</label>
-          <input id="nhiet_do_cao" isabled="disabled" disabled type="number" />
-          <script>
-            fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
-          </script>
+          <div>
+            <label for="" class="lable_tem-input" id="lable_tem-input-low"
+              >NHIỆT ĐỘ THẤP</label
+            >
+            <input
+              id="nhiet_do_thap"
+              isabled="disabled"
+              type="number"
+              disabled
+            />
+            <script>
+              fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
+            </script>
+          </div>
+          <div>
+            <label for="" class="lable_tem-input" id="lable_tem-input-max"
+              >NHIỆT ĐỘ CAO</label
+            >
+            <input
+              id="nhiet_do_cao"
+              isabled="disabled"
+              disabled
+              type="number"
+            />
+            <script>
+              fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
+            </script>
+          </div>
         </div>
         <div class="setting_input setting_input-mt">
-          <label for="" class="lable_tem-input" id="lable_title-time-update">THỜI GIAN CẬP NHẬT</label>
+          <label for="" class="lable_tem-input" id="lable_title-time-update"
+            >THỜI GIAN CẬP NHẬT</label
+          >
           <input id="cai_thoi_gian" disabled="disabled" type="number" />
-          <script>fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);</script>
+          <script>
+            fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
+          </script>
         </div>
       </div>
 
@@ -141,12 +157,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_auto_2"
-                disabled="disabled"
-                type="number"
-             
-              />
+              <input id="temp_auto_2" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);
               </script>
@@ -222,12 +233,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_auto_3"
-                disabled="disabled"
-                type="number"
-             
-              />
+              <input id="temp_auto_3" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);
               </script>
@@ -303,12 +309,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_auto_4"
-                disabled="disabled"
-                type="number"
-             
-              />
+              <input id="temp_auto_4" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);
               </script>
@@ -325,7 +326,7 @@
       .find((row) => row.startsWith("role=admin"));
     if (!cookieValue) {
       const btnStart = document.getElementById("btn_on_tn1");
-      const block_pesido = document.querySelector('.block_pesido');
+      const block_pesido = document.querySelector(".block_pesido");
       const btnSaveEdit = document.querySelector(".start_stop-btn-save");
       btnStart.disabled = true;
       btnStart.style.display = "none";
