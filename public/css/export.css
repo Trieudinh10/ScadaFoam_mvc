@@ -82,6 +82,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 #div_table_info h2,
@@ -432,3 +433,89 @@ background-color: #ffffff;
 #table_Alarm th, td { padding: 8px 16px; }
 #table_Alarm th     {background:#53baf9;}
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
+
+
+#btt_SearchS1{
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 17px; 
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
+  color: rgb(0, 0, 0); 
+  font-weight: bold;
+  width: 50px; height: 40px;
+  top: 105px; left: 570px;
+}
+
+
+#btt_SearchS2{
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 17px; 
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
+  color: rgb(0, 0, 0); 
+  font-weight: bold;
+  width: 50px; height: 40px;
+  top: 105px; left: 650px;
+}
+#btt_SearchS3{
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 17px; 
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
+  color: rgb(0, 0, 0); 
+  font-weight: bold;
+  width: 50px; height: 40px;
+  top: 105px; left: 730px;
+}
+
+#btt_SearchS4{
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 17px; 
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
+  color: rgb(0, 0, 0); 
+  font-weight: bold;
+  width: 50px; height: 40px;
+  top: 105px; left: 850px;
+}
+
+
+#loadingImage{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; height: 50px;
+  border-radius: 20px;
+  z-index: 9999;
+}
+
+/* Định nghĩa animation */
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+/* Áp dụng animation cho phần tử với id là "loadingImage" */
+#loadingImage {
+  animation: spin 2s linear infinite; /* Quay trong vòng 2 giây với tốc độ đều */
+}

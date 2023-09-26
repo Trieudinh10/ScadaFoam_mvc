@@ -26,6 +26,10 @@
 
   <link rel="stylesheet" href="css/font.css" />
   <title>Scada Foam</title>
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -47,11 +51,20 @@
                 <input id="dtpk_Search_End" type="datetime-local" />
               </div>
               <div class="input_item_btn">
-                <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time();">TÌM KIẾM</button>
+                <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time(); fn_SQL_1_By_Time();">TÌM KIẾM</button>
               </div>
               <div class="input_item_btn">
                 <button id="btt_Excel" class="btn" onclick="fn_excel();">BÁO CÁO</button>
               </div>
+
+              <!--   phân trang    -->
+              <button class=" btn-page prev" id="btt_SearchS1" onclick="funct()"><i style="font-size: 20px; border: 1px; " class='bx bxs-chevron-left'></i></button>
+              <input  style="width: 60px;border: 1px;" id="btt_SearchS2" value="1">
+              <button class="btn-page next" id="btt_SearchS3" onclick="funcs()" ><i style="font-size: 20px;" class='bx bxs-chevron-right'></i></button>
+              <input  style="width: 60px;border: 1px;" id="btt_SearchS4" value="1" >
+              <!--   nút loading    -->
+              <img id="loadingImage" src="images/loading.png" style="display: none;" />
+
             </div>
             <div id="div_Table_01">
               <table id="table_01">
@@ -182,9 +195,6 @@
                 </script>
               </div>
             </div>
-
-
-
           </div>
         </div>
       </div>
