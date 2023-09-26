@@ -28,11 +28,18 @@ body {
   --color-red: #fd1900;
   --color-green: #00e478;
   --color-green_black:#45A29E;
-  --color-text: rgba(0,0,0,0.65);
+  --color-text: #000;
   --color-black: #0B0C10;
   --color-black_alpha:#1F2833;
   --color-grey:#C5C6C7;
 
+}
+
+body , input {
+  font-weight: 300;
+}
+h2 ,label, th ,td{
+  font-weight: 400;
 }
 
 li {

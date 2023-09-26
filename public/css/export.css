@@ -1,7 +1,7 @@
 .export_container {
   width: 100%;
   min-height: calc(100vh - var(--height));
-  background-color: var(--color-item);
+  background-image: linear-gradient(var(--color-main), var(--color-body));
   border-top: 1px solid var(--color-border);
 }
 
@@ -32,6 +32,8 @@
   flex: 1;
   max-width: 50%;
   height: calc(100% + 6px);
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .container_chart {
@@ -73,9 +75,13 @@
   text-align: center;
   text-align: center;
   max-width: 100%;
-  height: calc(100% / 2);
-  min-height: calc(100% / 2);
-  max-height: calc(100% / 2);
+  height: calc(110% / 2);
+  min-height: calc(110% / 2);
+  max-height: calc(110% / 2);
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
 }
 
 #div_table_info h2,
@@ -341,8 +347,10 @@ td {
   /* width: 90%; */
    height: 93.3%; 
   /* border-radius: 16px; */ /*bo góc*/
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   overflow-x: scroll;
+  border-radius: 10px;
 }
 
 #div_table_Alarm{
