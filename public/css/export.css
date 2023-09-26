@@ -227,19 +227,6 @@ td {
   margin: 0 10px;
 }
 
-#btt_AL_Search{
-  border-radius: 4px;
-  background-color: #12cff3;
-  color: #03243f;
-  text-align: center;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 130px;
-  height: 37px;
-}
-
 /*Chọn ngày tháng kết thúc*/
 #dtpk_Search_End {
   text-align: left;
@@ -260,9 +247,18 @@ td {
   margin-left: 16px;
 }
 
-/*Nút tìm kiếm*/
+.input_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-#btt_Search {
+/*Nút tìm kiếm cảnh báo*/
+/*Nút tìm kiếm*/
+/*Nút xuất Excel*/
+#btt_AL_Search,
+#btt_Search,
+#btt_Excel {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -270,51 +266,19 @@ td {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  touch-action: manipulation; /* Đặt giá trị touch-action theo yêu cầu */
-}
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
 
-#btt_Search:hover {
+}
+#btt_AL_Search:hover,
+#btt_Search:hover,
+#btt_Excel:hover {
   background-color: #0056b3;
 }
-
-#btt_Search:active {
+#btt_AL_Search:active,
+#btt_Search:active,
+#btt_Excel:active {
   transform: scale(0.85); /* Thu nhỏ nút khi được nhấn */
-}
-/*#btt_Search {
-  background-color: #12cff3;
-  color: #03243f;
-  text-align: center;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 130px;
-  height: 37px;
-  left: 77%;
-  top: 4.2%;
-  border-radius: 4px;
-}*/
-
-.input_item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/*Nút Xuaast Excel*/
-#btt_Excel {
-  border-radius: 4px;
-  background-color: #12cff3;
-  color: #03243f;
-  text-align: center;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 130px;
-  height: 37px;
-  left: 84%;
-  top: 4.2%;
 }
 
 .change_btn {

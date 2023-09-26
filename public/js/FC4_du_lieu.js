@@ -5,7 +5,6 @@ var totalSegments = 0; // Tạo một biến để lưu tổng số trang, Mặc
 // Khởi tạo các mảng dữ liệu
 
 
-var chartData = null; // Biến toàn cục để lưu trữ dữ liệu biểu đồ
 
 function updateTotalSegments(len) {
     totalSegments = Math.ceil(len / rowsPerPage); // Tính tổng số trang dựa trên độ dài của dữ liệu và số dòng trên mỗi trang
