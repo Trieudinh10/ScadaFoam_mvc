@@ -1,5 +1,6 @@
 // Gửi yêu cầu xuất Excel qua index.js
 function fn_excel(){
+    document.getElementById('loadingImage').style.display = 'block';
     var linktext = "";
     var bookname = "";
     socket.emit("msg_Excel_Report", true);
@@ -10,6 +11,7 @@ function fn_excel(){
         var delayInMilliseconds = 1000; //Delay 1 second
         setTimeout(function() {
             saveAs(linktext, bookname);
-        }, delayInMilliseconds);          
+        }, delayInMilliseconds);   
+        document.getElementById('loadingImage').style.display = 'none';
     }); 
 }
