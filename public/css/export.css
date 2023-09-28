@@ -310,7 +310,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: 93.3%; 
+   height: 87.8%; 
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -399,71 +399,31 @@ background-color: #ffffff;
 /*//////////////Hiển thị dữ liệu bảng 1 - end/////////////////*/
 
 
-#btt_SearchS1{
-  position: absolute;
-  border-radius: 20px;
+#btt_SearchS1,#btt_SearchS2,#btt_SearchS3,#btt_SearchS4{
   border: none;
   cursor: pointer;
   font-size: 17px; 
   display: inline-block;
   text-align: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
-  color: rgb(0, 0, 0); 
-  font-weight: bold;
-  width: 50px; height: 40px;
-  top: 105px; left: 570px;
+  color: #fff;
+  min-width: 40px;
+  max-width: 40px;
+  border: 1px solid #fff;
+  height: 38px;
+  background-color: #0d6efd;
 }
-
-
-#btt_SearchS2{
-  position: absolute;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 17px; 
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
-  color: rgb(0, 0, 0); 
-  font-weight: bold;
-  width: 50px; height: 40px;
-  top: 105px; left: 650px;
+#btt_SearchS4{
+  border-radius: 8px;
+}
+#btt_SearchS1,#btt_SearchS3{
+  min-width: 50px;
+}
+#btt_SearchS1{
+  border-radius: 8px 0 0 8px;
 }
 #btt_SearchS3{
-  position: absolute;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 17px; 
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
-  color: rgb(0, 0, 0); 
-  font-weight: bold;
-  width: 50px; height: 40px;
-  top: 105px; left: 730px;
+  border-radius: 0 8px 8px 0;
 }
-
-#btt_SearchS4{
-  position: absolute;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 17px; 
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(0deg, rgb(84, 91, 106), rgb(230, 225, 183)); 
-  color: rgb(0, 0, 0); 
-  font-weight: bold;
-  width: 50px; height: 40px;
-  top: 105px; left: 850px;
-}
-
-
 #loadingImage{
   position: absolute;
   top: 50%;
@@ -482,4 +442,13 @@ background-color: #ffffff;
 /* Áp dụng animation cho phần tử với id là "loadingImage" */
 #loadingImage {
   animation: spin 2s linear infinite; /* Quay trong vòng 2 giây với tốc độ đều */
+}
+
+#btt_SearchS3:focus{
+  outline: #fff;
+}
+
+#btt_SearchS1:disabled,#btt_SearchS3:disabled{
+  background-color: #dee2e6;
+  cursor: initial;
 }
