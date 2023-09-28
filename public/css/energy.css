@@ -1,7 +1,7 @@
 .energy_container {
   width: 100%;
   min-height: calc(100vh - var(--height));
-  background-color: var(--color-main);
+  background-image: linear-gradient(var(--color-main), var(--color-body));
   display: flex;
   padding: 8px;
   border-top: 1px solid var(--color-border);
@@ -15,7 +15,7 @@
 .energy_watch-item {
   width: 100%;
   height: calc(100% / 3 - 5px);
-  background-color: var(--color-item);
+  /*background-color: var(--color-item);*/
   border-radius: 10px;
   margin-bottom: 8px;
   display: flex;
@@ -39,7 +39,7 @@
 .energy_chart {
   width: 50%;
   min-height: 100%;
-  background-color: var(--color-item);
+  /*background-color: var(--color-item);*/
   border-radius: 10px;
   padding: 8px 8px 0 8px;
   display: flex;
