@@ -55,7 +55,6 @@ else{
 }
 
 
-
 var dataArrip = [];
 var dataArrip2 = [];
 var data_total_4byte;
@@ -666,7 +665,7 @@ const imageId1 = workbook.addImage({
 worksheet.addImage(imageId1, 'A1:A3');
 worksheet.mergeCells('A1:A3');
 // Thông tin công ty
-worksheet.getCell('B1').value = 'Công Ty CP Tập đoàn Trường Hải (THACO)';
+worksheet.getCell('B1').value = 'Công Ty TNHH Tập đoàn công nghiệp Trường Hải (THACO)';
 worksheet.getCell('B1').style = { font:{bold: true,size: 14},alignment: {vertical: 'middle'}} ;
 worksheet.getCell('B2').value = 'Địa chỉ:  ';
 worksheet.getCell('B3').value = 'Hotline: ';
