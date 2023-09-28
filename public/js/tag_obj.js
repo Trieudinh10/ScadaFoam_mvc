@@ -1,7 +1,4 @@
-const io = require('socket.io');
-const socket = io(); // Tạo kết nối Socket.IO với cùng máy chủ và cổng
 function fn_tag(io, obj_tag_value) {
-    if (socket) {
         io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
     io.sockets.emit("Start_manual", obj_tag_value["Start_manual"]);//
     io.sockets.emit("Den_auto", obj_tag_value["Den_auto"]);  ////
@@ -85,8 +82,5 @@ function fn_tag(io, obj_tag_value) {
     io.sockets.emit("Cai_nhiet_do_cao", obj_tag_value["Cai_nhiet_do_cao"]);////
     io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
-} else {
-    console.error("Socket is not available.");
-    }
 }
-module.exports = fn_tag;
+    module.exports = fn_tag;

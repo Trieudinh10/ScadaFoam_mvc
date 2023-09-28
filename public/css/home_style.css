@@ -382,3 +382,13 @@
   display: flex;
   /* flex: 1; */
 }
+
+/* Định nghĩa animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Áp dụng animation cho phần tử với id là "Trang_thai_auto" */
+#Trang_thai_auto {
+  animation: spin 5s linear infinite; /* Quay trong vòng 5 giây với tốc độ đều */
+}

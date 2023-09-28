@@ -156,7 +156,7 @@ io.on("connection", function(socket){
     socket.emit("Total_Energy",data_total_4byte*0.001);
     var a =dataArrip[21]+dataArrip[23]+dataArrip[25];
     socket.emit("Total_power",a);
-    console.log("giá trị la:" +data);      
+    /*console.log("giá trị la:" +data);     */ 
 });});
 
 var mysql = require("mysql");

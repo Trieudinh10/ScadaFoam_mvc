@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/energy.css" />
-    <title>Scada Foam</title>
-    <script src="js/home.js"></script>
-    <script src="socket.io/socket.io.js"></script>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/code.jscharting.com_latest_jscharting.js"></script>
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-    <script
-      type="text/javascript"
-      src="https://code.jscharting.com/latest/modules/types.js"
-    ></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="/js/canvasjs.min.js"></script>
-    <script src="/js/chart_min.js"></script>
-    <script src="js/chart_line.js"></script>
-    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/font.css" />
-  </head>
-  <script>
-    var socket = io(document.location.host);
-  </script>
-  <body>
-    <%- include('header.ejs'); -%>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/energy.css" />
+  <title>Scada Foam</title>
+  <script src="js/home.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/gauge.min.js"></script>
+  <script src="js/code.jscharting.com_latest_jscharting.js"></script>
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+  <script type="text/javascript" src="https://code.jscharting.com/latest/modules/types.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="/js/canvasjs.min.js"></script>
+  <script src="/js/chart_min.js"></script>
+  <script src="js/chart_line.js"></script>
+  <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/font.css" />
+</head>
+<script>
+  var socket = io(document.location.host);
+</script>
+
+<body>
+  <%- include('header.ejs'); -%>
     <div class="energy_container">
       <div class="energy_watch">
         <div class="energy_watch-item">
@@ -123,5 +122,6 @@
         </div>
       </div>
     </div>
-  </body>
+</body>
+
 </html>
