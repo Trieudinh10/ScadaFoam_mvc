@@ -361,6 +361,7 @@
     flex: unset;
     max-width: unset;
   }
+
   /* end export */
 }
 
@@ -645,6 +646,9 @@
     font-size:23px;
     min-width: 400px;
     padding-left: 102px;
+  }
+  .export_error{
+    height: 200%;
   }
 }
 
