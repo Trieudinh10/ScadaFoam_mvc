@@ -25,6 +25,7 @@
 
 
   <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <title>Scada Foam</title>
 
   <!-- Boxicons CSS -->
@@ -201,31 +202,5 @@
       </div>
       </div>
 </body>
-<script>
-  const btnSearchS1 = document.getElementById("btt_SearchS1"); 
-  const btnSearchS2 = document.getElementById("btt_SearchS2"); 
-  const btnSearchS3 = document.getElementById("btt_SearchS3"); 
-  const btnSearchS4 = document.getElementById("btt_SearchS4"); 
-  function checkButtonPage(){
-  if(btnSearchS2.value >= btnSearchS4.value){
-    btnSearchS3.disabled = true
-  }else{
-    btnSearchS3.disabled = false
-  }
-  }
-  function checkButtonPage1(){
-    if(btnSearchS2.value <= 1){
-    btnSearchS1.disabled = true;
-  }else{
-    btnSearchS1.disabled = false;
-  }
-  }
-  checkButtonPage();
-  checkButtonPage1();
-  btnSearchS2.addEventListener('change', function(){
-    checkButtonPage();
-    checkButtonPage1();
-  });
 
-</script>
 </html>

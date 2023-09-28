@@ -54,7 +54,8 @@
   flex: 1;
   display: flex;
   margin-bottom:8px;
-  overflow: scroll;
+  overflow-x: scroll;
+  max-width: 100%;
   padding: 8px 0;
 }
 
@@ -323,7 +324,7 @@ td {
 #div_table_Alarm{
   /*border: 1px solid #a3855f;*/
   overflow-y: scroll;
-  max-height: calc(100% - 36px - 70px);
+  max-height: calc(100% - 36px - 105px);
 }
 
 .export_para h2 {
