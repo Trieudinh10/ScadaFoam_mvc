@@ -320,7 +320,7 @@ td {
 #div_table_Alarm{
   border: 1px solid #a3855f;
   overflow-y: scroll;
-  max-height: calc(100% - 36px - 54px);
+  max-height: calc(100% - 36px - 70px);
 }
 
 .export_para h2 {
