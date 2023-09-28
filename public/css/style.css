@@ -35,10 +35,10 @@ body {
 
 }
 
-body , input {
+body , input,td {
   font-weight: 300;
 }
-h2 ,label, th ,td{
+h2 ,label, th {
   font-weight: 400;
 }
 

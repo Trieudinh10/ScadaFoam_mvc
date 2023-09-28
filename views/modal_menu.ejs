@@ -42,5 +42,31 @@
         "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       window.location.href = "/login";
     });
+
+    const url = window.location.pathname; // lấy đường dẫn đầy đủ
+    const tachchuoi = url.split("/"); // tách đường dẫn thành các đoạn
+    const value = tachchuoi[1]; // lấy giá trị ở đoạn thứ 2
+    const href = document.querySelectorAll(".modal ul a li");
+    const hrefDiv = document.querySelectorAll(".modal ul a");
+    const logout = document.querySelector(".icon_logout");
+    if (value == "") {
+      href[0].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    } else if (value == "export") {
+      href[1].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    } else if (value == "auto") {
+      href[3].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    } else if (value === "energy") {
+      href[2].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    } else if (value === "manual") {
+      href[4].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    } else {
+      href[5].classList.add("active");
+      hrefDiv.style.backgroundColor = "#333"
+    }
   </script>
 </html>

@@ -268,6 +268,9 @@
   .air_con {
     display: none;
   }
+  .air_con.img_mobile_manual{
+    display: block;
+  }
   .setting_input {
     /* flex: unset;
     justify-content: center; */
@@ -527,7 +530,7 @@
     justify-content: center;
     width: 100%;
     /* flex: 1; */
-    margin-left: 30px;
+    margin-left: 100px;
   }
   .export_body{
     flex-wrap: wrap;

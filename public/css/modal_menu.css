@@ -27,12 +27,15 @@
   display: flex;
   align-items: center;
   padding-left: 8px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .icon_logout-modal {
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: #fff;
 }
 
 .icon_modal {
@@ -49,4 +52,5 @@
   left: 50%;
   top: 50%;
   transform: translateY(-50%);
+  color: #fff;
 }

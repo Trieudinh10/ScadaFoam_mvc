@@ -54,7 +54,10 @@
   flex: 1;
   display: flex;
   margin-bottom:8px;
+  overflow: scroll;
+  padding: 8px 0;
 }
+
 #Baocao::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -267,6 +270,7 @@ td {
   transition: transform 0.2s ease;
   touch-action: manipulation;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100px;
 
 }
 #btt_AL_Search:hover,
@@ -309,7 +313,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: 87.8%; 
+   height: 84.2%; 
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
