@@ -2,17 +2,11 @@ var currentSegment = 0;
 var rowsPerPage = 1000; // Số dòng hiển thị mỗi trang
 var totalSegments = 0; // Tạo một biến để lưu tổng số trang, Mặc định có ít nhất một trang
 
-// Khởi tạo các mảng dữ liệu
-
-
-var chartData = null; // Biến toàn cục để lưu trữ dữ liệu biểu đồ
-
 function updateTotalSegments(len) {
     totalSegments = Math.ceil(len / rowsPerPage); // Tính tổng số trang dựa trên độ dài của dữ liệu và số dòng trên mỗi trang
 }
 
 fn_Table01_SQL_Show();
-
 // Chương trình con đọc dữ liệu SQL
 function fn_Table01_SQL_Show() {
     socket.emit("msg_SQL_Show", "true");
@@ -69,10 +63,10 @@ function fn_table_01(data) {
 
 // Tìm kiếm SQL theo khoảng thời gian
 function fn_SQL_By_Time() {
-    // Ẩn nút tìm kiếm và hiển thị hình ảnh loading
-    document.getElementById('btt_SearchS1').disabled = true;
-    document.getElementById('btt_SearchS3').disabled = true;
-    document.getElementById('loadingImage').style.display = 'block';
+        // Ẩn nút tìm kiếm và hiển thị hình ảnh loading
+        document.getElementById('btt_SearchS1').disabled = true;
+        document.getElementById('btt_SearchS3').disabled = true;
+        document.getElementById('loadingImage').style.display = 'block';
 
     var start = new Date(document.getElementById('dtpk_Search_Start').value);
     var end = new Date(document.getElementById('dtpk_Search_End').value);

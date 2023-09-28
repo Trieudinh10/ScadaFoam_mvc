@@ -82,7 +82,7 @@
   position: absolute;
   font-family: "fontawesome";
   font-size: 32px;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--color-item);
