@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/manual.css" />
-    <link rel="stylesheet" href="/css/auto.css" />
-    <link rel="stylesheet" href="/css/responsive.css" />
-
+    
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC2_set_manu.js"></script>
-
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/manual.css" />
+    <link rel="stylesheet" href="/css/auto.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
     <link rel="stylesheet" href="css/font.css" />
     <title>Scada Foam</title>
   </head>
@@ -23,22 +23,10 @@
       <div class="block_start_stop">
         <div class="start_stop-btn-save">
           <button class="btt_sua_luu" id="btt_Main_Save">LƯU</button>
-          <button
-            class="btt_sua_luu"
-            id="btt_Main_Edit"
-            onclick="fn_Main_EditBtt()"
-          >
-            SỬA
-          </button>
+          <button class="btt_sua_luu" id="btt_Main_Edit" onclick="fn_Main_EditBtt()">SỬA</button>
         </div>
         <div class="start_stop-btn-start">
-          <button
-            class="btn_on"
-            id="btn_on_tn1"
-            onclick="socket.emit('cmd_start_manual', true);"
-          >
-            START
-          </button>
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">START</button>
           <img id="Trang_thai_manual" class="den_cd" />
           <script>
             fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
@@ -46,11 +34,7 @@
         </div>
         <div class="setting_input tem_res">
           <div class="setting_input-block-tem">
-            <label
-              class="lable_tem-input setting_input-block-tem-respon"
-              id="lable_tem-input-low"
-              >NHIỆT ĐỘ THẤP</label
-            >
+            <label class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low">NHIỆT ĐỘ THẤP</label>
             <input id="nhiet_do_thap" disabled="disabled" type="number" />
             <script>
               fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
@@ -58,11 +42,7 @@
           </div>
 
           <div style="margin-left: 16px" class="setting_input-block-tem2">
-            <label
-              class="lable_tem-input setting_input-block-tem-respon2"
-              id="lable_tem-input-max"
-              >NHIỆT ĐỘ CAO</label
-            >
+            <label class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max">NHIỆT ĐỘ CAO</label>
             <input id="nhiet_do_cao" disabled="disabled" type="number" />
             <script>
               fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
@@ -70,19 +50,8 @@
           </div>
         </div>
         <div class="setting_input setting_input-mt">
-          <label
-            for=""
-            class="lable_tem-input setting_input-block-tem-respon3"
-            id="lable_title-time-update"
-            style="margin-right: 15px"
-            >THỜI GIAN C/N (giây)</label
-          >
-          <input
-            id="cai_thoi_gian"
-            class="setting_input-block-tem-respon4"
-            disabled="disabled"
-            type="number"
-          />
+          <label for="" class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 15px">THỜI GIAN C/N (giây)</label>
+          <input id="cai_thoi_gian" class="setting_input-block-tem-respon4" disabled="disabled" type="number"/>
           <script>
             fn_Main_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
@@ -97,24 +66,14 @@
           <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml2', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml2', true);">START</button>
             </div>
             <img id="Trang_thai_on_ml2" class="air_con" />
             <script>
               fn_SymbolStatus("Trang_thai_on_ml2", "Den_xanh", "On_off_manu_2");
             </script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml2', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml2', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -169,13 +128,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_manu_2"
-                disabled="disabled"
-                type="number"
-                min="16"
-                max="31"
-              />
+              <input id="temp_manu_2" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);
               </script>
@@ -188,24 +141,14 @@
           <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml3', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml3', true);">START</button>
             </div>
             <img id="Trang_thai_on_ml3" class="air_con" />
             <script>
               fn_SymbolStatus("Trang_thai_on_ml3", "Den_xanh", "On_off_manu_3");
             </script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml3', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml3', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -260,13 +203,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_manu_3"
-                disabled="disabled"
-                type="number"
-                min="16"
-                max="31"
-              />
+              <input id="temp_manu_3" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);
               </script>
@@ -279,24 +216,14 @@
           <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_start_ml4', true);"
-              >
-                START
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml4', true);">START</button>
             </div>
             <img id="Trang_thai_on_ml4" class="air_con" />
             <script>
               fn_SymbolStatus("Trang_thai_on_ml4", "Den_xanh", "On_off_manu_4");
             </script>
             <div class="setting_off">
-              <button
-                class="setting_on-btn"
-                onclick="socket.emit('cmd_stop_ml4', true);"
-              >
-                STOP
-              </button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_ml4', true);">STOP</button>
             </div>
           </div>
           <div class="setting_content-item">
@@ -351,13 +278,7 @@
             <h2>Nhiệt độ (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
               <label for="">Cài đặt</label>
-              <input
-                id="temp_manu_4"
-                disabled="disabled"
-                type="number"
-                min="16"
-                max="31"
-              />
+              <input id="temp_manu_4" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);
               </script>
@@ -368,12 +289,7 @@
 
       <div class="setting_content-item_btn">
         <div class="setting_on">
-          <button
-            class="setting_on-btn"
-            onclick="socket.emit('cmd_start_k', true);"
-          >
-            START
-          </button>
+          <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);">START</button>
         </div>
         <img id="Trang_thai_k" class="air_con img_mobile_manual" />
         <script>
@@ -384,12 +300,7 @@
           fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
         </script>
         <div class="setting_off">
-          <button
-            class="setting_on-btn"
-            onclick="socket.emit('cmd_stop_k', true);"
-          >
-            STOP
-          </button>
+          <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);">STOP</button>
         </div>
       </div>
     </div>

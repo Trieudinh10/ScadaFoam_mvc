@@ -324,7 +324,7 @@ td {
 #div_table_Alarm{
   /*border: 1px solid #a3855f;*/
   overflow-y: scroll;
-  max-height: calc(100% - 36px - 105px);
+  max-height: calc(100% - 36px - 90px);
 }
 
 .export_para h2 {
@@ -437,9 +437,8 @@ background-color: #ffffff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px; height: 50px;
-  border-radius: 20px;
-  z-index: 9999;
+  width: 40px; height: 40px;
+  /*z-index: 9999;*/
 }
 
 /* Định nghĩa animation */

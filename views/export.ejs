@@ -4,12 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/export.css" />
-  <link rel="stylesheet" href="/css/home_style.css" />
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-  <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/font.css" />
-
+  
   <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
   <script src="socket.io/socket.io.js"></script>
   <script src="js/plotly-2.8.3.min.js"></script>
@@ -19,17 +15,16 @@
   <script src="/js/FC5_excel_export.js"></script>
   <script src="/js/FC6_alarm.js"></script>
   <script src="/js/FC7_chart.js"></script>
-  <link rel="stylesheet" href="/css/responsive.css">
   <script src="/js/chart_min.js"></script>
   <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
 
-
+  <link rel="stylesheet" href="css/export.css" />
+  <link rel="stylesheet" href="/css/home_style.css" />
+  <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="/css/responsive.css">
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <title>Scada Foam</title>
-
-  <!-- Boxicons CSS -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -63,9 +58,9 @@
             </div>
               <!--   phân trang    -->
               <div style="margin-bottom: 8px;display: flex;">
-                <button class=" btn-page prev" id="btt_SearchS1" onclick="funct()"><i style="font-size: 20px; border: 1px; " class='bx bxs-chevron-left'></i></button>
+              <button  id="btt_SearchS1" onclick="funct()"><i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i></button>
               <input   id="btt_SearchS2" value="1">
-              <button class="btn-page next" id="btt_SearchS3" onclick="funcs()" ><i style="font-size: 20px;" class='bx bxs-chevron-right'></i></button>
+              <button  id="btt_SearchS3" onclick="funcs()"><i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></button>
               <input   id="btt_SearchS4" value="1" >
               </div>
             <div id="div_Table_01">
