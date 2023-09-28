@@ -207,23 +207,29 @@
   const btnSearchS3 = document.getElementById("btt_SearchS3"); 
   const btnSearchS4 = document.getElementById("btt_SearchS4"); 
   function checkButtonPage(){
-    if(btnSearchS2.value <= 1){
-    btnSearchS1.disabled = true;
-    btnSearchS1.classList.add("active");
-  }else{
-    btnSearchS1.disabled = false;
-    btnSearchS1.classList.remove("active");
-  }
-
-
   if(btnSearchS2.value >= btnSearchS4.value){
+    console.log('btn3 + 1')
     btnSearchS3.disabled = true
   }else{
     btnSearchS3.disabled = false
+    console.log('btn3 +  2')
+  }
+  }
+  function checkButtonPage1(){
+    if(btnSearchS2.value <= 1){
+      console.log(1)
+    btnSearchS1.disabled = true;
+  }else{
+    console.log(2)
+    btnSearchS1.disabled = false;
   }
   }
   checkButtonPage();
-  btnSearchS2.addEventListener('change', checkButtonPage);
+  checkButtonPage1();
+  btnSearchS2.addEventListener('change', function(){
+    checkButtonPage();
+    checkButtonPage1();
+  });
 
 </script>
 </html>
