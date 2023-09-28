@@ -82,7 +82,6 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 10px;
-  overflow: scroll;
 }
 
 #div_table_info h2,
@@ -412,6 +411,11 @@ background-color: #ffffff;
   height: 38px;
   background-color: #0d6efd;
 }
+
+#btt_SearchS1 i, #btt_SearchS3 i{
+  color: #fff;
+}
+
 #btt_SearchS4{
   border-radius: 8px;
 }
