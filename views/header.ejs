@@ -42,6 +42,17 @@
           <a href="/huongdan">
             <li>Hướng Dẫn</li>
           </a>
+          <li class="textUlLi flagLi">
+            <div class="blockFlagVn">
+              <img src="/images/vi.png" alt="flagVN" />
+              <a href="/change-lang/vi"><button class="buttonChanggeLang">VN</button></a>
+              <DownOutlined class="textIcon" />
+            </div>
+            <div class="divChangge">
+              <img src="/images/en.png" alt="FlagEN" />
+              <a href="/change-lang/en"><button class="buttonChangge">ENG</button></a>
+            </div>
+          </li>
           <li class="icon_logout" title="Đăng xuất"></li>
         </ul>
       </div>
@@ -100,5 +111,27 @@
       }
     }
     checkLoggedIn();
+
+    var cookieValue = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lang="));
+
+    const lang_cookie = cookieValue.split("=")[1];
+
+    const blockFlagVn_img = document.querySelector(".blockFlagVn img");
+    const blockFlagVn_btn = document.querySelector(".buttonChanggeLang");
+    const divChangge_img = document.querySelector(".divChangge img");
+    const divChangge_btn = document.querySelector(".buttonChangge");
+    const blockFlagVn_link = document.querySelector(".blockFlagVn a");
+    const divChangge_link = document.querySelector(".divChangge a");
+
+    if (lang_cookie == "en") {
+      blockFlagVn_img.src = "/images/en.png";
+      divChangge_img.src = "/images/vi.png";
+      blockFlagVn_btn.innerHTML = "ENG";
+      divChangge_btn.innerHTML = "VN";
+      blockFlagVn_link.href = "/change-lang/en";
+      divChangge_link.href = "/change-lang/vi";
+    }
   </script>
 </html>

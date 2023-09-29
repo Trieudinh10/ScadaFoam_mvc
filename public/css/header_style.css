@@ -178,3 +178,31 @@
 #btt_tx{
   background-color: #ff4742;
 }
+
+.textUlLi {
+	display: flex;
+	margin: 0 5px;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	align-items: center;
+	justify-content: center;
+}
+
+.buttonChanggeLang,.buttonChangge {
+	border: none;
+	background-color: #fffcd5;
+	color: #333;
+	font-size: 18px;
+}
+.flagLi:hover .divChangge {
+	display: block;
+}
+.divChangge {
+	display: none;
+	position: absolute;
+	top: 80%;
+  padding: 10px;
+  border-top:1px solid #333 ;
+	background-color: #fffcd5;
+	z-index: 99;
+}
