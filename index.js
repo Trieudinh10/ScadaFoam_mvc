@@ -1,12 +1,27 @@
 var express = require('express');
+const cookieParser = require('cookie-parser');
+const i18n = require("i18n");
 var app = express();
 app.use(express.static("public"));
+app.use(cookieParser());
+app.use(i18n.init);
+
 app.set('view engine', 'ejs');
 app.set("views","./views")
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
 server.listen(8080)
+i18n.configure({
+    locales: ['vi', 'en'],
+    directory: __dirname + '/locales',
+    defaultLocale: 'vi',
+    cookie: 'lang',
+});
 
+app.use('/change-lang/:lang', (req, res) => {
+    res.cookie('lang', req.params.lang, { maxAge: 900000 });
+    res.redirect('back');
+});
 app.get('/', function(req,res)
 {
     res.render('home');

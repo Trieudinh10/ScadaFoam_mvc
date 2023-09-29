@@ -73,6 +73,7 @@
 
 .active {
   animation: animation_link 1s linear infinite;
+  border-bottom:2px solid #333 ;
 }
 
 @keyframes animation_link {
@@ -186,6 +187,7 @@
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
 	justify-content: center;
+  cursor: pointer;
 }
 
 .buttonChanggeLang,.buttonChangge {
@@ -205,4 +207,7 @@
   border-top:1px solid #333 ;
 	background-color: #fffcd5;
 	z-index: 99;
+}
+.buttonChanggeLang:hover,.buttonChangge:hover{
+  cursor: pointer;
 }

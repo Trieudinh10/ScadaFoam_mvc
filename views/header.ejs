@@ -28,16 +28,16 @@
           <a href="/"><li>Foam</li></a>
 
           <a href="/export" id="exportLink">
-            <li>Trích xuất</li>
+            <li><%= __('Export') %></li>
           </a>
           <a href="/energy">
-            <li>điện năng</li>
+            <li><%= __('Energy') %></li>
           </a>
           <a href="/auto">
-            <li>tự động</li>
+            <li><%= __('Auto') %></li>
           </a>
           <a href="/manual">
-            <li>thủ công</li>
+            <li><%= __('Manual') %></li>
           </a>
           <a href="/huongdan">
             <li>Hướng Dẫn</li>
@@ -63,23 +63,23 @@
     </div>
   </body>
   <script>
-    const url = window.location.pathname; // lấy đường dẫn đầy đủ
-    const tachchuoi = url.split("/"); // tách đường dẫn thành các đoạn
-    const value = tachchuoi[1]; // lấy giá trị ở đoạn thứ 2
-    const href = document.querySelectorAll(".header_menu a li");
-    const logout = document.querySelector(".icon_logout");
-    if (value == "") {
-      href[0].classList.add("active");
-    } else if (value == "export") {
-      href[1].classList.add("active");
-    } else if (value == "auto") {
-      href[3].classList.add("active");
-    } else if (value === "energy") {
-      href[2].classList.add("active");
-    } else if (value === "manual") {
-      href[4].classList.add("active");
+    const newUrl = window.location.pathname; // lấy đường dẫn đầy đủ
+    const tachchuoiHeader = newUrl.split("/"); // tách đường dẫn thành các đoạn
+    const valueHeader = tachchuoiHeader[1]; // lấy giá trị ở đoạn thứ 2
+    const hrefHeader = document.querySelectorAll(".header_menu a li");
+    const logoutHeader = document.querySelector(".icon_logout");
+    if (valueHeader == "") {
+      hrefHeader[0].classList.add("active");
+    } else if (valueHeader == "export") {
+      hrefHeader[1].classList.add("active");
+    } else if (valueHeader == "auto") {
+      hrefHeader[3].classList.add("active");
+    } else if (valueHeader === "energy") {
+      hrefHeader[2].classList.add("active");
+    } else if (valueHeader === "manual") {
+      hrefHeader[4].classList.add("active");
     } else {
-      href[5].classList.add("active");
+      hrefHeader[5].classList.add("active");
     }
     const screen = () => {
       const screenWidth = document.documentElement.clientWidth;
@@ -104,10 +104,10 @@
         if (loggedIn === "true") {
           console.log("Người dùng đã đăng nhập.");
         } else {
-          logout.style.display = "none";
+          logoutHeader.style.display = "none";
         }
       } else {
-        logout.style.display = "none";
+        logoutHeader.style.display = "none";
       }
     }
     checkLoggedIn();
