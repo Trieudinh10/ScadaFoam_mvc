@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/auto.css" />
-    <link rel="stylesheet" href="css/manual.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/font.css" />
 
     <script src="socket.io/socket.io.js"></script>
     <script src="/js/FC1_Common.js"></script>
     <script src="/js/FC3_set_auto.js"></script>
     <script src="/js/FC4_du_lieu.js"></script>
-
     <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/auto.css" />
+    <link rel="stylesheet" href="css/manual.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/font.css" />
     <title>Scada Foam</title>
   </head>
   <body>
@@ -25,21 +25,10 @@
       <div class="block_start_stop">
         <div class="start_stop-btn-save">
           <button class="btt_sua_luu" id="btt_Auto_Save">LƯU</button>
-          <button
-            class="btt_sua_luu"
-            id="btt_Auto_Edit"
-            onclick="fn_Auto_EditBtt()"
-          >
-            SỬA
-          </button>
+          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()">SỬA</button>
         </div>
         <div class="start_stop-btn-start">
-          <button
-            class="btn_on"
-            id="btn_on_tn1"
-            onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();"
-          >
-            START
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">START
           </button>
           <img id="Trang_thai_auto" class="den_cd" alt="den trang thai" />
           <script>
@@ -48,54 +37,23 @@
         </div>
         <div class="setting_input">
           <div class="setting_input-block-tem">
-            <label
-              for=""
-              class="lable_tem-input setting_input-block-tem-respon"
-              id="lable_tem-input-low"
-              >NHIỆT ĐỘ THẤP</label
-            >
-            <input
-              id="nhiet_do_thap"
-              isabled="disabled"
-              type="number"
-              disabled
-            />
+            <label for="" class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low">NHIỆT ĐỘ THẤP</label>
+            <input id="nhiet_do_thap" isabled="disabled" type="number" disabled/>
             <script>
               fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
             </script>
           </div>
           <div style="margin-left: 16px" class="setting_input-block-tem2">
-            <label
-              for=""
-              class="lable_tem-input setting_input-block-tem-respon2"
-              id="lable_tem-input-max"
-              >NHIỆT ĐỘ CAO</label
-            >
-            <input  
-              id="nhiet_do_cao"
-              isabled="disabled"
-              disabled
-              type="number"
-            />
+            <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max">NHIỆT ĐỘ CAO</label>
+            <input id="nhiet_do_cao" isabled="disabled" disabled type="number"/>
             <script>
               fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
             </script>
           </div>
         </div>
         <div class="setting_input setting_input-mt">
-          <label
-            for=""
-            class="lable_tem-input setting_input-block-tem-respon3"
-            id="lable_title-time-update"
-            style="margin-right: 8px"
-            >THỜI GIAN C/N (giây)</label
-          >
-          <input
-            id="cai_thoi_gian"
-            class="setting_input-block-tem-respon4"
-            disabled="disabled"
-            type="number"
-          />
+          <label for="" class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 8px">THỜI GIAN C/N (giây)</label>
+          <input id="cai_thoi_gian" class="setting_input-block-tem-respon4" disabled="disabled" type="number"/>
           <script>
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>

@@ -36,7 +36,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #000000;
 }
 
 .icon_modal {
@@ -53,5 +53,5 @@
   left: 50%;
   top: 50%;
   transform: translateY(-50%);
-  color: #fff;
+  color: #000000;
 }
