@@ -44,13 +44,11 @@
           </a>
           <li class="textUlLi flagLi">
             <div class="blockFlagVn">
-              <img src="/images/vi.png" alt="flagVN" />
-              <a href="/change-lang/vi"><button class="buttonChanggeLang">VN</button></a>
+              <a href="/change-lang/vi">
+                <img src="/images/vi.png" alt="flagVN" style="width: 30px" />
+                <button class="buttonChanggeLang"></button
+              ></a>
               <DownOutlined class="textIcon" />
-            </div>
-            <div class="divChangge">
-              <img src="/images/en.png" alt="FlagEN" />
-              <a href="/change-lang/en"><button class="buttonChangge">ENG</button></a>
             </div>
           </li>
           <li class="icon_logout" title="Đăng xuất"></li>
@@ -124,14 +122,19 @@
     const divChangge_btn = document.querySelector(".buttonChangge");
     const blockFlagVn_link = document.querySelector(".blockFlagVn a");
     const divChangge_link = document.querySelector(".divChangge a");
+    const changeLangBlock = document.querySelector(".blockFlagVn");
 
-    if (lang_cookie == "en") {
-      blockFlagVn_img.src = "/images/en.png";
-      divChangge_img.src = "/images/vi.png";
-      blockFlagVn_btn.innerHTML = "ENG";
-      divChangge_btn.innerHTML = "VN";
-      blockFlagVn_link.href = "/change-lang/en";
-      divChangge_link.href = "/change-lang/vi";
+
+    changeLangBlock.addEventListener("click", changeLang());
+    function changeLang() {
+      if (lang_cookie == "en") {
+        blockFlagVn_link.href = "/change-lang/vi";
+        blockFlagVn_img.src = "/images/vi.png";
+      } else {
+        blockFlagVn_img.src = "/images/en.png";
+        blockFlagVn_link.href = "/change-lang/en";
+      }
     }
+    changeLang();
   </script>
 </html>

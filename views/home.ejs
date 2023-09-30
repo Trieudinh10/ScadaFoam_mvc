@@ -33,19 +33,19 @@
         <!--Bang thong so phong-->
         <div class="item_air-room">
           <div class="item_air-title h2_responsive">
-            <h2>THÔNG SỐ PHÒNG</h2>
+            <h2 style="text-transform: uppercase;"><%= __('Parameters to room') %></h2>
           </div>
           <div class="room_container">
             <div class="data_room-img">
               <div class="item_data-room">
-                <h2>NHIỆT ĐỘ (&deg;C):</h2>
+                <h2 style="text-transform: uppercase;"><%= __('Temperature') %> (&deg;C):</h2>
                 <input id="nhiet_do" disabled="disabled" type="text" aria-label="text"/>
                 <script>
                   fn_IOFieldDataShow("Nhiet_do", "nhiet_do", 0);
                 </script>
               </div>
               <div class="item_data-room">
-                <h2>ĐỘ ẨM (%RH) :</h2>
+                <h2 style="text-transform: uppercase;"><%= __('Humidity') %> (%RH) :</h2>
                 <input id="do_am" disabled="disabled" type="text" aria-label="text" />
                 <script>
                   fn_IOFieldDataShow("Do_am", "do_am", 0);
@@ -148,7 +148,7 @@
                       color: "blue",
                       width: 2,
                     },
-                    name: "Điều hoà 1", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 1", // Đặt tên cho dữ liệu nhiệt độ
                   },
                   {
                     y: [data_trend_dh2],
@@ -158,7 +158,7 @@
                       color: "green",
                       width: 2,
                     },
-                    name: "Điều hoà 2", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 2", // Đặt tên cho dữ liệu nhiệt độ
                   },
                   {
                     y: [data_trend_dh3],
@@ -168,7 +168,7 @@
                       color: "orange",
                       width: 2,
                     },
-                    name: "Điều hoà 3", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 3", // Đặt tên cho dữ liệu nhiệt độ
                   },
                   {
                     y: [data_trend_nd],
@@ -230,7 +230,7 @@
       <div class="system_item system_item-fisrt">
         <div class="system_item-air">
           <div class="item_air-title">
-            <h2>ĐIỀU HOÀ 1</h2>
+            <h2><%= __('Air-conditioner') %> 1</h2>
           </div>
 
           <!--Trang thai on off may lanh 1-->
@@ -340,7 +340,7 @@
       <div class="system_item system_item-second">
         <div class="system_item-air">
           <div class="item_air-title">
-            <h2>ĐIỀU HOÀ 2</h2>
+            <h2><%= __('Air-conditioner') %> 2</h2>
           </div>
           <!--Trang thai on off may lanh 2-->
           <div class="item_air-status-block">
@@ -446,7 +446,7 @@
       <div class="system_item">
         <div class="system_item-air">
           <div class="item_air-title">
-            <h2>ĐIỀU HOÀ 3</h2>
+            <h2><%= __('Air-conditioner') %> 3</h2>
           </div>
 
           <!--Trang thai on off may lanh 3-->

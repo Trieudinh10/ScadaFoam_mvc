@@ -2,5 +2,9 @@
 	"Export": "Export",
 	"Energy": "Energy",
 	"Auto": "Auto",
-	"Manual": "Manual"
+	"Manual": "Manual",
+	"Parameters to room": "Parameters to room",
+	"Temperature": "Temperature",
+	"Humidity":"Humidity",
+	"Air-conditioner":"Air-conditioner"
 }
