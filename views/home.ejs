@@ -103,7 +103,7 @@
               var cnt = 0;
               var layout = {
                 title: {
-                  text: "BIỂU ĐỒ NHIỆT",
+                  text: "<%= __('Chart Temperature') %>",
                   x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
                   y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
                   xanchor: "center", // Giữ title ở giữa theo chiều ngang
@@ -148,7 +148,7 @@
                       color: "blue",
                       width: 2,
                     },
-                    name: "<%= __('Air-conditioner') %> 1", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 1", // Đặt tên cho dữ liệu <%= __('Temperature') %>
                   },
                   {
                     y: [data_trend_dh2],
@@ -158,7 +158,7 @@
                       color: "green",
                       width: 2,
                     },
-                    name: "<%= __('Air-conditioner') %> 2", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 2", // Đặt tên cho dữ liệu <%= __('Temperature') %>
                   },
                   {
                     y: [data_trend_dh3],
@@ -168,7 +168,7 @@
                       color: "orange",
                       width: 2,
                     },
-                    name: "<%= __('Air-conditioner') %> 3", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Air-conditioner') %> 3", // Đặt tên cho dữ liệu <%= __('Temperature') %>
                   },
                   {
                     y: [data_trend_nd],
@@ -178,7 +178,7 @@
                       color: "red",
                       width: 2,
                     },
-                    name: "Nhiệt độ", // Đặt tên cho dữ liệu nhiệt độ
+                    name: "<%= __('Temperature') %>", // Đặt tên cho dữ liệu <%= __('Temperature') %>
                   },
                 ],
                 layout,
@@ -247,16 +247,16 @@
                 <h2></h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <label for="">Thực tế</label>
+                    <label for=""><%= __('Reality') %></label>
                   </div>
                   <div class="block_data-item">
-                    <label for="">Cài đặt</label>
+                    <label for=""><%= __('Setting') %></label>
                   </div>
                 </div>
               </div>
               <!--Che do hoat dong 1-->
               <div class="item_air-tem">
-                <h2>Chế Độ (mode):</h2>
+                <h2><%= __('Operating mode') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="che_do_2" disabled="disabled" type="text" aria-label="text"/>
@@ -275,7 +275,7 @@
 
               <!--Toc do may lanh 1-->
               <div class="item_air-tem">
-                <h2>Tốc độ quạt (mode):</h2>
+                <h2><%= __('Fan speed') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="td_quat_2" disabled="disabled" type="text" aria-label="text"/>
@@ -294,7 +294,7 @@
 
               <!--Goc mo may lanh 1-->
               <div class="item_air-tem">
-                <h2>Góc mở (mode):</h2>
+                <h2><%= __('Angles of the louvers') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="goc_mo_2" disabled="disabled" type="text" aria-label="text"/>
@@ -314,7 +314,7 @@
 
               <!--Nhiet do may lanh 1-->
               <div class="item_air-tem">
-                <h2>Nhiệt Độ (&deg;C):</h2>
+                <h2><%= __('Temperature') %> (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="nhiet_ml_2" disabled="disabled" type="text" aria-label="text"/>
@@ -355,16 +355,16 @@
                 <h2></h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <label for="">Thực tế</label>
+                    <label for=""><%= __('Reality') %></label>
                   </div>
                   <div class="block_data-item">
-                    <label for="">Cài đặt</label>
+                    <label for=""><%= __('Setting') %></label>
                   </div>
                 </div>
               </div>
               <!--Che do hoat dong 2-->
               <div class="item_air-tem">
-                <h2>Chế Độ (mode):</h2>
+                <h2><%= __('Operating mode') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="che_do_3" disabled="disabled" type="text" aria-label="text"/>
@@ -383,7 +383,7 @@
 
               <!--Toc do may lanh 2-->
               <div class="item_air-tem">
-                <h2>Tốc độ quạt (mode):</h2>
+                <h2><%= __('Fan speed') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="td_quat_3" disabled="disabled" type="text" aria-label="text"/>
@@ -402,7 +402,7 @@
 
               <!--Goc mo may lanh 2-->
               <div class="item_air-tem">
-                <h2>Góc mở (mode):</h2>
+                <h2><%= __('Angles of the louvers') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="goc_mo_3" disabled="disabled" type="text" aria-label="text"/>
@@ -421,7 +421,7 @@
 
               <!--Nhiet do may lanh 2-->
               <div class="item_air-tem">
-                <h2>Nhiệt Độ (&deg;C):</h2>
+                <h2><%= __('Temperature') %> (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="nhiet_ml_3" disabled="disabled" type="text" aria-label="text"/>
@@ -463,17 +463,17 @@
                 <h2></h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
-                    <label for="">Thực tế</label>
+                    <label for=""><%= __('Reality') %></label>
                   </div>
                   <div class="block_data-item">
-                    <label for="">Cài đặt</label>
+                    <label for=""><%= __('Setting') %></label>
                   </div>
                 </div>
               </div>
 
               <!--Che do hoat dong 3-->
               <div class="item_air-tem">
-                <h2>Chế Độ (mode):</h2>
+                <h2><%= __('Operating mode') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="che_do_4" disabled="disabled" type="text" aria-label="text"/>
@@ -492,7 +492,7 @@
 
               <!--Toc do may lanh 3-->
               <div class="item_air-tem">
-                <h2>Tốc độ quạt (mode):</h2>
+                <h2><%= __('Fan speed') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="td_quat_4" disabled="disabled" type="text" aria-label="text"/>
@@ -511,7 +511,7 @@
 
               <!--Goc mo may lanh 3-->
               <div class="item_air-tem">
-                <h2>Góc mở (mode):</h2>
+                <h2><%= __('Angles of the louvers') %> (mode):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="goc_mo_4" disabled="disabled" type="text" aria-label="text"/>
@@ -530,7 +530,7 @@
 
               <!--Nhiet do may lanh 3-->
               <div class="item_air-tem">
-                <h2>Nhiệt Độ (&deg;C):</h2>
+                <h2><%= __('Temperature') %> (&deg;C):</h2>
                 <div class="item_air-data">
                   <div class="block_data-item">
                     <input id="nhiet_ml_4" disabled="disabled" type="text" aria-label="text"/>

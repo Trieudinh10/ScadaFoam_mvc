@@ -424,6 +424,7 @@
   .item_air-tem h2 {
     font-size: 18px;
     border: none;
+    min-width: 243px;
   }
 
   .setting_item {

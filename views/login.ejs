@@ -17,17 +17,17 @@
         <img src="/images/cropped-logo-thaco-industries.png" alt="logo" />
         <div class="login_block">
           <div class="login_btn">
-            <h2>Đăng nhập <a href="/" class="btn_home"></a></h2>
+            <h2><%= __('Login') %> <a href="/" class="btn_home"></a></h2>
             <div class="login_user">
-              <label>Tài Khoản</label
-              ><input id="username" type="text" placeholder="tài khoản" />
+              <label><%= __('User Name') %></label
+              ><input id="username" type="text" placeholder="<%= __('User Name') %>" />
             </div>
             <div class="login_password">
-              <label>Mật Khẩu</label
-              ><input id="password" type="password" placeholder="mật khẩu" />
+              <label><%= __('Password') %></label
+              ><input id="password" type="password" placeholder="<%= __('Password') %>" />
             </div>
             <div class="btn_submit">
-              <button id="submitBtn">Đăng Nhập</button>
+              <button id="submitBtn"><%= __('Login') %></button>
             </div>
           </div>
         </div>
