@@ -341,6 +341,12 @@
     width: 100%;
     order: 4;
   }
+
+  #tem{
+    min-height: 400px;
+    max-height: 400px;
+  }
+
   .item_air-tem{
     flex-wrap: wrap;
   }
@@ -603,6 +609,8 @@
 
   #tem {
     margin: 8px 8px 8px 8px;
+    min-height: 400px;
+    max-height: 400px;
 }
 
 
