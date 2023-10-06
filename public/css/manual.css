@@ -339,6 +339,7 @@ select:focus {
   background-color:#0F6EB8;
   border-color:#fff ;
   color:#fff;
+  cursor: pointer;
 }
 
 #btt_Auto_Edit,#btt_Main_Edit{

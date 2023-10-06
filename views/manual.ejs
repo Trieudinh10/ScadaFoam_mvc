@@ -22,8 +22,8 @@
     <div class="operate_container">
       <div class="block_start_stop">
         <div class="start_stop-btn-save">
-          <button class="btt_sua_luu" id="btt_Main_Save">LƯU</button>
-          <button class="btt_sua_luu" id="btt_Main_Edit" onclick="fn_Main_EditBtt()">SỬA</button>
+          <button class="btt_sua_luu" id="btt_Main_Save"><%= __('Save') %></button>
+          <button class="btt_sua_luu" id="btt_Main_Edit" onclick="fn_Main_EditBtt()"><%= __('Edit') %></button>
         </div>
         <div class="start_stop-btn-start">
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">ON MANUAL</button>
@@ -34,7 +34,7 @@
         </div>
         <div class="setting_input tem_res">
           <div class="setting_input-block-tem">
-            <label class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low">NHIỆT ĐỘ THẤP</label>
+            <label class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low"><%= __('Low Temperature') %></label>
             <input id="nhiet_do_thap" disabled="disabled" type="number" />
             <script>
               fn_Main_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
@@ -42,7 +42,7 @@
           </div>
 
           <div style="margin-left: 16px" class="setting_input-block-tem2">
-            <label class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max">NHIỆT ĐỘ CAO</label>
+            <label class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('High Temperature') %></label>
             <input id="nhiet_do_cao" disabled="disabled" type="number" />
             <script>
               fn_Main_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="setting_input setting_input-mt">
-          <label class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 15px">THỜI GIAN C/N (giây)</label>
+          <label class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 15px"><%= __('Update Time') %> (<%= __('Second') %>)</label>
           <input id="cai_thoi_gian" class="setting_input-block-tem-respon4" disabled="disabled" type="number"/>
           <script>
             fn_Main_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
@@ -63,7 +63,7 @@
 
         <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
+          <h2 id="dieuhoa1" class="setting_item-title"><%= __('Air-conditioner') %> 1</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml2', true);">START</button>
@@ -77,9 +77,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_man_2" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -93,9 +93,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_manu_2" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -108,9 +108,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_manu_2" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -125,9 +125,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_manu_2" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_2", "temp_manu_2", 0);
@@ -138,7 +138,7 @@
 
         <!--//////////////////////////////////////////MÁY LẠNH 2 SLAVE3 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
+          <h2 id="dieuhoa2" class="setting_item-title"><%= __('Air-conditioner') %> 2</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml3', true);">START</button>
@@ -152,9 +152,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_man_3" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -168,9 +168,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_manu_3" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -183,9 +183,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_manu_3" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -200,9 +200,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_manu_3" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_3", "temp_manu_3", 0);
@@ -213,7 +213,7 @@
 
         <!--//////////////////////////////////////////MÁY LẠNH 3 SLAVE4 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
+          <h2 id="dieuhoa3" class="setting_item-title"><%= __('Air-conditioner') %> 3</h2>
           <div class="setting_content-item_btn">
             <div class="setting_on">
               <button class="setting_on-btn" onclick="socket.emit('cmd_start_ml4', true);">START</button>
@@ -227,9 +227,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_man_4" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -243,9 +243,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_manu_4" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -258,9 +258,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_manu_4" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -275,9 +275,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_manu_4" disabled="disabled" type="number" min="16" max="31"/>
               <script>
                 fn_Main_IOField_IO("Nhap_temp_manu_4", "temp_manu_4", 0);

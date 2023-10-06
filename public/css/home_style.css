@@ -4,7 +4,7 @@
   padding: 8px 8px 0 8px;
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
-  /* min-height: calc(100vh - var(--height)); */
+  min-height: calc(100vh - var(--height));
   background-image: linear-gradient(var(--color-main), var(--color-body));
 }
 .home_system {
@@ -41,8 +41,7 @@
   margin: 8px 8px 8px 0;
   overflow: hidden;
   border-radius: 10px;
-  min-height: 400px;
-  max-height: 400px;
+
   flex: 1;
 }
 
@@ -116,7 +115,7 @@
 }
 
 .item_air-tem h2 {
-  min-width: 228px;
+  min-width: 300px;
   background-color: var(--color-body);
   border-radius: 10px;
   padding: 4px;
