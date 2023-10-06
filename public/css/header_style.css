@@ -73,7 +73,7 @@
 
 .active {
   animation: animation_link 1s linear infinite;
-  border-bottom:2px solid #333 ;
+  /*border-bottom:2px solid #333 ;*/
 }
 
 @keyframes animation_link {
