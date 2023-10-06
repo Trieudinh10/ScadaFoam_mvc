@@ -59,10 +59,10 @@
 
             </div>
               <!--   phân trang    -->
-              <div style="margin-bottom: 8px;display: flex;margin-left: 16px;">
-              <button  id="btt_SearchS1" onclick="funct()"><i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i></button>
+              <div style="margin-bottom: 8px;display: flex;">
+              <button  id="btt_SearchS1" onclick="fn_t()"><i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i></button>
               <input   id="btt_SearchS2" value="1">
-              <button  id="btt_SearchS3" onclick="funcs()"><i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></button>
+              <button  id="btt_SearchS3" onclick="fn_s()"><i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></button>
               <input   id="btt_SearchS4" value="1" >
               </div>
             <div id="div_Table_01">
@@ -150,13 +150,37 @@
                     y3Values.push(...nhiet_do_ml3);
                     y4Values.push(...nhiet_do_cb);
 
-                    var data = [
-                      { x: x1Values, y: y1Values, mode: 'lines', name: '<%= __("Air-conditioner") %> 1', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'blue' } },
-                      { x: x1Values, y: y2Values, mode: "lines", name: '<%= __("Air-conditioner") %> 2', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'green' } },
-                      { x: x1Values, y: y3Values, mode: "lines", name: '<%= __("Air-conditioner") %> 3', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'orange' } },
-                      { x: x1Values, y: y4Values, mode: 'lines', name: '<%= __("Temperature") %>', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'red' } },
 
-                    ];
+                    var data;
+                      if (x1Values.length === 0) {
+                        data = [
+                          { x: [0], y: [0], mode: 'lines', name: 'Điều hoà 1', showlegend: true, hoverinfo: 'none', line: { color: 'green' } },
+                          { x: [1], y: [1], mode: 'lines', name: 'Điều hoà 2', showlegend: true, hoverinfo: 'none', line: { color: 'blue' } },
+                          { x: [2], y: [2], mode: 'lines', name: 'Điều hoà 3', showlegend: true, hoverinfo: 'none', line: { color: 'orange' } },
+                          { x: [3], y: [3], mode: 'lines', name: 'Nhiệt độ', showlegend: true, hoverinfo: 'none', line: { color: 'red' } },
+                        ];
+                      } else {
+                        data = [
+                          { x: x1Values, y: y1Values, mode: 'lines', name: 'Điều hoà 1', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'blue' } },
+                          { x: x1Values, y: y2Values, mode: 'lines', name: 'Điều hoà 2', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'green' } },
+                          { x: x1Values, y: y3Values, mode: 'lines', name: 'Điều hoà 3', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'orange' } },
+                          { x: x1Values, y: y4Values, mode: 'lines', name: 'Nhiệt độ', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'red' } },
+                        ];
+                      }
+
+
+
+                    // var data = [
+                    //   { x: x1Values, y: y1Values, mode: 'lines', name: 'Điều hoà 1', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'blue' } },
+                    //   { x: x1Values, y: y2Values, mode: "lines", name: 'Điều hoà 2', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'green' } },
+                    //   { x: x1Values, y: y3Values, mode: "lines", name: 'Điều hoà 3', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'orange' } },
+                    //   { x: x1Values, y: y4Values, mode: 'lines', name: 'Nhiệt độ', hoverinfo: 'x+y', nticks: 10, fixedrange: true, line: { color: 'red' } },
+                    // // Dòng dữ liệu giả để hiển thị chú thích mặc định
+                    //   { x: [0], y: [0], mode: 'lines', name: 'Điều hoà 1', showlegend: x1Values.length === 0, hoverinfo: 'none', line: { color: 'green' } },
+                    //   { x: [1], y: [1], mode: 'lines', name: 'Điều hoà 2', showlegend: x1Values.length === 0, hoverinfo: 'none', line: { color: 'blue' } },
+                    //   { x: [2], y: [2], mode: 'lines', name: 'Điều hoà 3', showlegend: x1Values.length === 0, hoverinfo: 'none', line: { color: 'orange' } },
+                    //   { x: [3], y: [3], mode: 'lines', name: 'Nhiệt độ', showlegend: x1Values.length === 0, hoverinfo: 'none', line: { color: 'red' } },
+                    // ];
 
 
                     var layout = {
