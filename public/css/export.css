@@ -91,7 +91,7 @@
 
 #div_table_info h2,
 #div_table_error h2 {
-  font-size: 32px;
+  font-size: 24px;
   padding: 8px 0;
   text-transform: uppercase;
   color: var(--color-main);
@@ -100,14 +100,15 @@
 #div_table_info::-webkit-scrollbar,
 #div_Table_01::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
 }
 #div_table_info::-webkit-scrollbar-thumb,
 #div_Table_01::-webkit-scrollbar-thumb,
 #div_table_error::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 10px;
+  
 }
 
 .input_item_btn {
@@ -255,6 +256,7 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 16px;
 }
 
 /*Nút tìm kiếm cảnh báo*/
@@ -315,7 +317,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: 84.2%; 
+   height: 85.2%; 
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -331,7 +333,7 @@ td {
 .export_para h2 {
   width: 100%;
   text-align: center;
-  font-size: 32px;
+  font-size: 24px;
   padding: 8px 0;
   color: var(--color-main);
 }
@@ -459,4 +461,10 @@ background-color: #ffffff;
 #btt_SearchS1:disabled,#btt_SearchS3:disabled{
   background-color: #dee2e6;
   cursor: initial;
+}
+
+.block_btn-export{
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 }
