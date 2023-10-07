@@ -40,8 +40,3 @@ function getCookie(name) {
 }
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", login);
-
-// Xóa cookie sau 15 phút
-setTimeout(function() {
-  deleteCookie("loggedIn");
-}, 15 * 60 * 1000);

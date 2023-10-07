@@ -87,10 +87,11 @@
       }
     };
     setInterval(screen, 100);
+    
     var logoutBtn = document.querySelector(".icon_logout");
     logoutBtn.addEventListener("click", function () {
       document.cookie =
-        "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        "loggedIn=false;";
       window.location.href = "/login";
     });
     function checkLoggedIn() {
