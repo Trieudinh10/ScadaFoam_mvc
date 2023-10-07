@@ -37,5 +37,7 @@
 	"FOAM PRODUCTION AND STORAGE ROOM":"FOAM PRODUCTION AND STORAGE ROOM",
 	"Login":"Login",
 	"User Name":"User Name",
-	"Password":"Password"
+	"Password":"Password",
+	"Start":"START",
+	"Stop":"STOP"
 }
