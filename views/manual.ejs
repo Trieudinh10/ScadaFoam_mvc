@@ -56,6 +56,22 @@
             fn_Main_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
         </div>
+        <div class="setting_content-item_btn">
+          <div class="setting_on">
+            <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);">START</button>
+          </div>
+          <img id="Trang_thai_k" class="air_con img_mobile_manual" />
+          <script>
+            fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
+          </script>
+          <img id="Trang_thai_k1" class="air_con img_mobile_manual" />
+          <script>
+            fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
+          </script>
+          <div class="setting_off">
+            <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);">STOP</button>
+          </div>
+        </div>
       </div>
 
       <div class="operate_row">
@@ -284,23 +300,6 @@
               </script>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="setting_content-item_btn">
-        <div class="setting_on">
-          <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);">START</button>
-        </div>
-        <img id="Trang_thai_k" class="air_con img_mobile_manual" />
-        <script>
-          fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-        </script>
-        <img id="Trang_thai_k1" class="air_con img_mobile_manual" />
-        <script>
-          fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
-        </script>
-        <div class="setting_off">
-          <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);">STOP</button>
         </div>
       </div>
     </div>

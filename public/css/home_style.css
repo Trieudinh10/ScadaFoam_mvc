@@ -63,6 +63,7 @@
   width: 66.5%;
   display: flex;
   order: 2;
+  height: 100%;
 }
 
 .system_item-air_block{

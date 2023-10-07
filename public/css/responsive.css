@@ -538,7 +538,7 @@
     justify-content: center;
     width: 100%;
     /* flex: 1; */
-    margin-left: 100px;
+    margin-left: 230px;
   }
   .export_body{
     flex-wrap: wrap;
@@ -654,7 +654,7 @@
   .setting_content-item h2{
     font-size:23px;
     min-width: 400px;
-    padding-left: 102px;
+    padding-left: 95px;
   }
   .export_error{
     height: 200%;

@@ -46,11 +46,13 @@
                 <label id="lb_Search_End"><%= __('To') %>:</label>
                 <input id="dtpk_Search_End" type="datetime-local" />
               </div>
-              <div class="input_item_btn">
-                <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time(); fn_SQL_1_By_Time();"><%= __('Search') %></button>
-              </div>
-              <div class="input_item_btn">
-                <button id="btt_Excel" class="btn" onclick="fn_excel();"><%= __('Export') %></button>
+              <div class="block_btn-export">
+                <div class="input_item_btn">
+                  <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time(); fn_SQL_1_By_Time();"><%= __('Search') %></button>
+                </div>
+                <div class="input_item_btn">
+                  <button id="btt_Excel" class="btn" onclick="fn_excel();"><%= __('Export') %></button>
+                </div>
               </div>
               <!--   nút loading    -->
               <img id="loadingImage" src="images/loading.png" style="display: none;" />
@@ -67,7 +69,7 @@
               <table id="table_01">
                 <thead class="table_data-thead">
                   <tr>
-                    <th class="th_time"><%= __('Time') %></th>
+                    <th class="th_time" style="position: sticky;left: 0;z-index: 10;"><%= __('Time') %></th>
                     <th><%= __('Auto') %></th>
                     <th><%= __('Manual') %></th>
                     <th><%= __('Temperature to room') %></th>
@@ -106,7 +108,7 @@
                   <input id="dtpk_AL_Search_End" type="datetime-local">
                 </div>
                 <!--Nút tìm kiếm-->
-                <div class="input_item_btn">
+                <div class="input_item_btn" style="flex: 1;justify-content: flex-end;display: flex;">
                   <button id="btt_AL_Search" class="btn" onclick="fn_Alarm_By_Time();"></i><%= __('Search') %></button>
                 </div>
               </div>
@@ -174,7 +176,7 @@
                         x: 0.5, // Đặt vị trí title ngang giữa biểu đồ
                         y: -0.1, // Thiết lập giá trị âm để làm tiêu đề gần hơn biểu đồ
                         xanchor: 'center', // Giữ title ở giữa theo chiều ngang
-                        yanchor: 'top' // Đặt yanchor là 'top' để title gần biểu đồ
+                        yanchor: 'top', // Đặt yanchor là 'top' để title gần biểu đồ
                       },
                       font: {
                         color: 'black' // Màu chữ trên biểu đồ
