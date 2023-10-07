@@ -103,9 +103,19 @@
   width: 16px;
   height: 16px;
 }
+
+#div_table_Alarm::-webkit-scrollbar,
+.baocao-container_select::-webkit-scrollbar,
+.baocao-container_error::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
 #div_table_info::-webkit-scrollbar-thumb,
 #div_Table_01::-webkit-scrollbar-thumb,
-#div_table_error::-webkit-scrollbar-thumb {
+#div_table_error::-webkit-scrollbar-thumb,
+#div_table_Alarm::-webkit-scrollbar-thumb,
+.baocao-container_select::-webkit-scrollbar-thumb,
+.baocao-container_error::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 10px;
   
@@ -317,7 +327,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: 85.2%; 
+   height: calc(100% - 115px); 
   /* border-radius: 16px; */ /*bo góc*/
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
