@@ -37,5 +37,7 @@
 	"FOAM PRODUCTION AND STORAGE ROOM": "PHÒNG SẢN XUẤT VÀ LƯU TRỮ FOAM",
 	"Login": "Đăng nhập",
 	"User Name": "Tài Khoản",
-	"Password": "Mật Khẩu"
+	"Password": "Mật Khẩu",
+	"Start":"Khởi Động",
+	"Stop":"Dừng"
 }

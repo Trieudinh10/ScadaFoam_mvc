@@ -27,7 +27,7 @@ function fn_table_01(data) {
             var startIndex = currentSegment * rowsPerPage;
             var endIndex = Math.min(startIndex + rowsPerPage, len);
             for (var i = startIndex; i < endIndex; i++) {
-                    txt += "<tr style='position: sticky;left: 0;z-index: 10;'><td>"+data[i].date_time
+                    txt += "<tr><td style='position: sticky;left: 0;z-index: 10;background-color:#fff'>"+data[i].date_time
                         +"</td><td>"+data[i].Den_auto
                         +"</td><td>"+data[i].Den_manual
                         +"</td><td>"+data[i].Nhiet_do
