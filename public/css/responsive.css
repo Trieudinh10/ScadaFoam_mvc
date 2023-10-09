@@ -375,7 +375,11 @@
   #lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
     margin: 0;
     color: #fff;
-
+    display: inline-block;
+    min-width: 120px;
+  }
+  .lable_tem-input{
+    font-size: 18px !important;
   }
   #lable_title-time-update{
     margin-left: 20px;
@@ -530,7 +534,7 @@
     margin-bottom: 8px;
   }
  #lable_tem-input-max{
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
   .start_stop-btn-start{
     height: 100px;
