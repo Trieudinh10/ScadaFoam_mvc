@@ -431,6 +431,7 @@
     width: 55%;
     margin: 0 8px 8px 8px;
     flex: 1;
+    padding: 8px;
   }
   .setting_item:first-child {
     margin-top: 8px;
