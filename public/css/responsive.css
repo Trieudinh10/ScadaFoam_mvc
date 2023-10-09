@@ -374,6 +374,11 @@
 @media (min-width: 795.5px) and (max-width: 1310px) {
   #lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
     margin: 0;
+    color: #fff;
+
+  }
+  #lable_title-time-update{
+    margin-left: 20px;
   }
   .home_system {
     width: 100%;
@@ -510,11 +515,25 @@
     flex: unset;
     width: unset;
     margin:0;
-    top: 45px;
+    top: 65px;
   }
   .setting_input{
-    width: 70%;
-    justify-content: flex-end;
+    display: flex;
+    margin-left: 10px;
+  }
+  .setting_input-header{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .setting_input-block-tem{
+    margin-bottom: 8px;
+  }
+ #lable_tem-input-max{
+    margin-right: 10px;
+  }
+  .start_stop-btn-start{
+    height: 100px;
   }
   .setting_input-primary{
     width: 35%;
@@ -528,18 +547,17 @@
     /* margin-top: 16px; */
     height: unset;
     padding: 8px;
+    display: flex;
+    align-items: flex-start;
   }
   .setting_off {
     justify-content: center;
     margin-right: -10px;
   }
   .setting_input-mt {
-    margin-top: 16px;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    /* flex: 1; */
-    margin-left: 230px;
+    flex-direction: inherit;
+    flex: 1;
   }
   .export_body{
     flex-wrap: wrap;
@@ -548,7 +566,7 @@
     max-width: 100%;
     margin-bottom: 60px;
   }
-  .block_start_stop .setting_input label{
+  .block_start_stop .setting_input label ,.block_start_stop .setting_input-header lable {
     color: #fff;
   }
   .btt_sua_luu{

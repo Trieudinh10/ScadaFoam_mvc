@@ -99,7 +99,7 @@
   align-items: center;
 }
 
-.setting_input {
+.setting_input,.setting_input-header {
   /* flex: 1; */
   display: flex;
   align-items: center;
@@ -108,7 +108,7 @@
   position: relative;
 }
 
-.setting_input label {
+.setting_input label,.setting_input-header label {
   margin-right: 8px;
   font-size: 24px;
   font-weight: 400;
@@ -120,7 +120,7 @@
 }
 
 .setting_input input,
-select {
+select , .setting_input-header input{
   height: 55px;
   border-radius: 5px;
   border: 2px solid var(--color-border);
@@ -144,7 +144,7 @@ select {
 }
 
 .setting_input input:focus,
-select:focus {
+select:focus, .setting_input-header input:focu{
   outline: none !important;
   border-color: var(--color-red);
   position: relative;
