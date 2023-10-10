@@ -378,6 +378,13 @@
     display: inline-block;
     min-width: 120px;
   }
+  #top_header{
+    position: fixed;
+    z-index: 9999;
+  }
+  .export_container{
+    margin-top: 75px;
+  }
   .lable_tem-input{
     font-size: 18px !important;
   }
@@ -460,6 +467,7 @@
   .home_container {
     max-height: unset;
     flex-wrap: wrap;
+    margin-top: 80px;
   }
   .item_air-room {
     display: flex;
@@ -503,6 +511,7 @@
     display: block;
   }
   .energy_container {
+    margin-top: 75px;
     max-height: calc(100vh - var(--height));
   }
   .block_scroll_num {
@@ -615,7 +624,9 @@
     width: 100%;
     padding-top: 2px;
   }
-
+  .manual_body{
+    margin-top: 80px;
+  }
   .block_pesido{
     width: 24%;
     display: none;
@@ -624,7 +635,7 @@
   .operate_row{
     background-color: transparent;
     padding: 0;
-    margin-top: 8px;
+    margin-top: 80px;
   }
   .den_cd_n{
     width: 105px;
