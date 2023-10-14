@@ -1,12 +1,6 @@
-function setCookie(name, value, minutes) {
-  var d = new Date();
-  d.setTime(d.getTime() + (minutes * 60 * 1000));
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-function deleteCookie(name) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+function setCookie(name, value) {
+  var expires = "expires=";
+  document.cookie = name + "=" + value + ";" + expires;
 }
 
 function login() {
@@ -15,7 +9,7 @@ function login() {
       var found = false;
         if (username === 'admin' && password === 'admin' || username === 'user' && password === 'user' ) {
           found = true;
-          setCookie("loggedIn", "true", 15);
+          setCookie("loggedIn", "true");
           window.location.href = "/auto";
           if(username === 'admin'){
             document.cookie = 'role' + '=' + 'admin';
@@ -40,8 +34,3 @@ function getCookie(name) {
 }
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", login);
-
-// Xóa cookie sau 15 phút
-setTimeout(function() {
-  deleteCookie("loggedIn");
-}, 15 * 60 * 1000);

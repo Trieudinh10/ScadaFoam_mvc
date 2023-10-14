@@ -32,7 +32,7 @@
             fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
           </script>
         </div>
-        <div class="setting_input tem_res">
+        <div class="setting_input-header tem_res">
           <div class="setting_input-block-tem">
             <label class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low"><%= __('Low Temperature') %></label>
             <input id="nhiet_do_thap" disabled="disabled" type="number" />
@@ -41,7 +41,7 @@
             </script>
           </div>
 
-          <div style="margin-left: 16px" class="setting_input-block-tem2">
+          <div class="setting_input-block-tem2">
             <label class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('High Temperature') %></label>
             <input id="nhiet_do_cao" disabled="disabled" type="number" />
             <script>
@@ -55,23 +55,24 @@
           <script>
             fn_Main_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
-        </div>
-        <div class="setting_content-item_btn">
-          <div class="setting_on">
-            <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Start') %></button>
+          <div class="setting_content-item_btn">
+            <div class="setting_on">
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Start') %></button>
+            </div>
+            <img id="Trang_thai_k" class="air_con img_mobile_manual" />
+            <script>
+              fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
+            </script>
+            <img id="Trang_thai_k1" class="air_con img_mobile_manual" />
+            <script>
+              fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
+            </script>
+            <div class="setting_off">
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Stop') %></button>
+            </div>
           </div>
-          <img id="Trang_thai_k" class="air_con img_mobile_manual" />
-          <script>
-            fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-          </script>
-          <img id="Trang_thai_k1" class="air_con img_mobile_manual" />
-          <script>
-            fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
-          </script>
-          <div class="setting_off">
-            <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Stop') %></button>
-          </div>
         </div>
+        
       </div>
 
       <div class="operate_row">

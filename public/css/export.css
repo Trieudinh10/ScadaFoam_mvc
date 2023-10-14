@@ -32,9 +32,12 @@
   margin-right: 8px;
   flex: 1;
   max-width: 50%;
-  height: calc(100% + 6px);
+  height: calc(100vh - 110px);
   background-color: #fff;
   border-radius: 10px;
+  padding: 3px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .container_chart {
@@ -100,8 +103,8 @@
 #div_table_info::-webkit-scrollbar,
 #div_Table_01::-webkit-scrollbar,
 #div_table_error::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 #div_table_Alarm::-webkit-scrollbar,
@@ -327,10 +330,8 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: calc(100% - 115px); 
+   height: calc(100% - 160px); 
   /* border-radius: 16px; */ /*bo góc*/
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   overflow-x: scroll;
 }
 

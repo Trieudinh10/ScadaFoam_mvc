@@ -44,7 +44,7 @@
           </a>
           <li class="textUlLi flagLi">
             <div class="blockFlagVn">
-              <a href="/change-lang/vi">
+              <a href="/change-lang/en">
                 <img src="/images/vi.png" alt="flagVN" style="width: 30px" />
                 <button class="buttonChanggeLang"></button
               ></a>
@@ -87,10 +87,11 @@
       }
     };
     setInterval(screen, 100);
+    
     var logoutBtn = document.querySelector(".icon_logout");
     logoutBtn.addEventListener("click", function () {
       document.cookie =
-        "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        "loggedIn=false;";
       window.location.href = "/login";
     });
     function checkLoggedIn() {
