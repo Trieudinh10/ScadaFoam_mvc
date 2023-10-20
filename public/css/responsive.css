@@ -736,4 +736,9 @@
   .setting_content-item_btn{
     order: 2;
   }
+  #div_table_Alarm{
+    height: (100vh / 2);
+    overflow-y: scroll;
+    display: flex;
+  }
 }
