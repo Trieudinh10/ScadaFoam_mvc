@@ -29,7 +29,15 @@
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_manual', true);">ON MANUAL</button>
           <img id="Trang_thai_manual" class="den_cd" />
           <script>
-            fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
+            //fn_SymbolStatus("Trang_thai_manual", "Den_xanh", "Den_manual");
+            socket.removeAllListeners("Den_manual");
+            socket.on('Den_manual', function(data){
+            if (data == 0) {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "gray";
+            } else {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "#00ff05"; // Change to the desired color
+            }
+          });
           </script>
         </div>
         <div class="setting_input-header tem_res">
@@ -57,7 +65,7 @@
           </script>
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Start') %></button>
+              <button class="setting_on-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>
             </div>
             <img id="Trang_thai_k" class="air_con img_mobile_manual" />
             <script>
@@ -68,7 +76,7 @@
               fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
             </script>
             <div class="setting_off">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Stop') %></button>
+              <button class="setting_on-btn" id="change_off_btt_power" onclick="socket.emit('cmd_stop_k', true);fn_change_on_btt_power()"><%= __('Power off') %></button>
             </div>
           </div>
         </div>

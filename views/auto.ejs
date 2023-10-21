@@ -28,11 +28,18 @@
           <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()"><%= __('Edit') %></button>
         </div>
         <div class="start_stop-btn-start">
-          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">ON AUTO
-          </button>
-          <img id="Trang_thai_auto" class="den_cd" alt="den trang thai" />
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">ON AUTO</button>
+          <img id="Trang_thai_auto" class="den_cd" />
           <script>
-            fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+            //fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+            socket.removeAllListeners("Den_auto");
+            socket.on('Den_auto', function(data){
+            if (data == 0) {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "gray";
+            } else {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "#00ff05"; // Change to the desired color
+            }
+          });
           </script>
         </div>
         <div class="setting_input-header">
@@ -60,7 +67,7 @@
 
           <div class="setting_content-item_btn">
             <div class="setting_on">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Start') %></button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Power on') %></button>
             </div>
             <img id="Trang_thai_k" class="air_con img_mobile_manual" />
             <script>
@@ -71,7 +78,7 @@
               fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
             </script>
             <div class="setting_off">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Stop') %></button>
+              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Power off') %></button>
             </div>
           </div>
 

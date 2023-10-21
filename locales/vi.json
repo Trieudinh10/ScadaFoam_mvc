@@ -38,6 +38,8 @@
 	"Login": "Đăng nhập",
 	"User Name": "Tài Khoản",
 	"Password": "Mật Khẩu",
-	"Start":"Khởi Động",
-	"Stop":"Dừng"
+	"Start": "Khởi Động",
+	"Stop": "Dừng",
+	"Power on": "Cấp nguồn",
+	"Power off": "Ngắt nguồn"
 }

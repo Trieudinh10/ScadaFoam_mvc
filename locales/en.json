@@ -34,10 +34,12 @@
 	"Update Time": "Update Time",
 	"Edit": "Edit",
 	"Save": "Save",
-	"FOAM PRODUCTION AND STORAGE ROOM":"FOAM PRODUCTION AND STORAGE ROOM",
-	"Login":"Login",
-	"User Name":"User Name",
-	"Password":"Password",
-	"Start":"START",
-	"Stop":"STOP"
+	"FOAM PRODUCTION AND STORAGE ROOM": "FOAM PRODUCTION AND STORAGE ROOM",
+	"Login": "Login",
+	"User Name": "User Name",
+	"Password": "Password",
+	"Start": "START",
+	"Stop": "STOP",
+	"Power on": "Power on",
+	"Power off": "Power off"
 }

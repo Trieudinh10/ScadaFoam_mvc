@@ -265,9 +265,9 @@
   .lable_tem-input {
     font-size: 17px !important;
   }
-  .air_con {
+  /*.air_con {
     display: none;
-  }
+  }*/
   .air_con.img_mobile_manual{
     display: block;
   }
