@@ -737,7 +737,7 @@
     order: 2;
   }
   #div_table_Alarm{
-    height: (100vh / 2);
+    max-height:calc(100vh / 2);
     overflow-y: scroll;
     display: flex;
   }
