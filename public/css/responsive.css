@@ -741,4 +741,8 @@
     overflow-y: scroll;
     display: flex;
   }
+  .btn_export-table-error{
+  justify-content: flex-start;
+
+  }
 }
