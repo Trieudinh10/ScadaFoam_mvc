@@ -65,12 +65,12 @@ fn_DataEdit('btt_Main_Edit','btt_Main_Save');
     document.getElementById("cai_thoi_gian").disabled = true;
 }
 
-function fn_change_on_btt_power(){
-    fn_DataEdit('change_off_btt_power','change_on_btt_power');
-}
-function fn_change_off_btt_power(){
-    fn_DataEdit('change_on_btt_power','change_off_btt_power');
-}
+// function fn_change_on_btt_power(){
+//     fn_DataEdit('change_off_btt_power','change_on_btt_power');
+// }
+// function fn_change_off_btt_power(){
+//     fn_DataEdit('change_on_btt_power','change_off_btt_power');
+// }
 
 // Chương trình con đọc dữ liệu lên IO Field
 function fn_Main_IOField_IO(tag, IOField, tofix)
