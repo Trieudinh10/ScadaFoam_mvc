@@ -438,11 +438,13 @@ select:focus {
   /*z-index: 1;*/
   position: absolute;
   left: 0;
+  color: black;
 }
 #change_on_btt_power{
  /* z-index: 0;*/
   position: absolute;
   left: 0;
+  color: black;
 }
 
 .setting_on-btn:hover {

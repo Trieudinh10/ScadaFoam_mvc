@@ -76,14 +76,16 @@
             <img id="Trang_thai_k" class="air_con img_mobile_manual" />
             <script>
               fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-                socket.removeAllListeners("Den_auto");
-            socket.on('Relay_contactor', function(data){
+                // socket.removeAllListeners("Relay_contactor");
+                socket.on('Relay_contactor', function(data){
                 if (data == 0) {
-                    document.getElementById("change_off_btt_power").style.display = "none";
                     document.getElementById("change_on_btt_power").style.display = "block";
+                    document.getElementById("change_off_btt_power").style.display = "none";
+                    document.getElementById('change_on_btt_power').style.backgroundColor = "gray";
                 } else {
                     document.getElementById("change_off_btt_power").style.display = "block";
                     document.getElementById("change_on_btt_power").style.display = "none";
+                    document.getElementById('change_off_btt_power').style.backgroundColor = "#00ff05";
                 }});
             </script>
         </div>
