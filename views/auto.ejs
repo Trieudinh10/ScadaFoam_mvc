@@ -66,8 +66,13 @@
           </script>
 
           <div class="setting_content-item_btn">
-            <div class="setting_on">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_start_k', true);"><%= __('Power on') %></button>
+            <div class="block_btn-power">  
+              <div class="setting_on">
+                <button class="setting_on-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);"><%= __('Power on') %></button>
+              </div>
+              <div class="setting_off">
+                <button class="setting_on-btn" id="change_off_btt_power" onclick="socket.emit('cmd_stop_k', true);"><%= __('Power off') %></button>
+              </div>
             </div>
             <img id="Trang_thai_k" class="air_con img_mobile_manual" />
             <script>
@@ -77,9 +82,7 @@
             <script>
               fn_SymbolStatus("Trang_thai_k1", "coil_k", "Relay_contactor");
             </script>
-            <div class="setting_off">
-              <button class="setting_on-btn" onclick="socket.emit('cmd_stop_k', true);"><%= __('Power off') %></button>
-            </div>
+
           </div>
         </div>
       </div>
@@ -314,7 +317,11 @@
           </div>
         </div>
       </div>
+      <div class="container-img-background">
+
+      </div>
     </div>
+
     <%- include('btn_scroll.ejs'); -%>
   </body>
   <script>
