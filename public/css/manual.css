@@ -452,7 +452,6 @@ select:focus {
 }
 .setting_on-btn:active {
 	transform: scale(0.85); /* Thu nhỏ nút khi được nhấn */
- 
 }
 
 

@@ -64,33 +64,31 @@
           <script>
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
-          <div class="setting_content-item_btn">
-            <div class="block_btn-power">
-                <div class="setting_on">
-                    <button class="setting_on-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>
-                </div>
-                <div class="setting_off">
-                    <button class="setting_on-btn" id="change_off_btt_power" onclick="socket.emit('cmd_stop_k', true);fn_change_off_btt_power()"><%= __('Power off') %></button>
-                </div>
-            </div>
-            <img id="Trang_thai_k" class="air_con img_mobile_manual" />
-            <script>
-              fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-                // socket.removeAllListeners("Relay_contactor");
-                socket.on('Relay_contactor', function(data){
-                if (data == 0) {
-                    document.getElementById("change_on_btt_power").style.display = "block";
-                    document.getElementById("change_off_btt_power").style.display = "none";
-                    document.getElementById('change_on_btt_power').style.backgroundColor = "gray";
-                } else {
-                    document.getElementById("change_off_btt_power").style.display = "block";
-                    document.getElementById("change_on_btt_power").style.display = "none";
-                    document.getElementById('change_off_btt_power').style.backgroundColor = "#00ff05";
-                }});
-            </script>
-        </div>
-        
-
+            <div class="setting_content-item_btn">
+              <div class="block_btn-power">
+                  <div class="setting_on">
+                      <button class="setting_on-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>
+                  </div>
+                  <div class="setting_off">
+                      <button class="setting_on-btn" id="change_off_btt_power" onclick="socket.emit('cmd_stop_k', true);fn_change_off_btt_power()"><%= __('Power off') %></button>
+                  </div>
+              </div>
+              <img id="Trang_thai_k" class="img_mobile_manual" />
+              <script>
+                //fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
+                  socket.removeAllListeners("Relay_contactor");
+                  socket.on('Relay_contactor', function(data){
+                  if (data == 0) {
+                      document.getElementById("change_on_btt_power").style.display = "block";
+                      document.getElementById("change_off_btt_power").style.display = "none";
+                      document.getElementById('change_on_btt_power').style.backgroundColor = "gray";
+                  } else {
+                      document.getElementById("change_off_btt_power").style.display = "block";
+                      document.getElementById("change_on_btt_power").style.display = "none";
+                      document.getElementById('change_off_btt_power').style.backgroundColor = "#00ff05";
+                  }});
+              </script>
+          </div>
         </div>
       </div>
 
