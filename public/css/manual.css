@@ -161,7 +161,7 @@ select {
 /*.btn_start,*/
 /*.btn_stop,*/
 .btn_on,
-.btt_sua_luu {
+.btt_sua_luu,.setting_power-btn {
   position: relative;
   min-width: 130px;
   height: 50px;   width: 120px;
@@ -171,7 +171,6 @@ select {
   font-size: 20px;
   background: transparent;
   text-transform: uppercase;
-  padding: 10px 20px;
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -420,21 +419,11 @@ select:focus {
 }
 
 /*Nút nhấn cấp nguồn và ngắt nguồn*/
-.setting_power-btn {
-	padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  touch-action: manipulation;
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
-  width: 120px;
-}
 
 .block_btn-power{
   position: relative;
   display: flex;
-  width: 120px;
+  width: 100px;
   height: 36px;
   margin: 0 30px;
 }
