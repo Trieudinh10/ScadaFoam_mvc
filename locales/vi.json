@@ -41,5 +41,7 @@
 	"Start": "Khởi Động",
 	"Stop": "Dừng",
 	"Power on": "Cấp nguồn",
-	"Power off": "Ngắt nguồn"
+	"Power off": "Ngắt nguồn",
+	"Power supply": "Cấp nguồn",
+	"Emergency": "Dừng khẩn cấp"
 }

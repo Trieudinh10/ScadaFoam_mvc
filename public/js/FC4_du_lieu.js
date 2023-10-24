@@ -44,6 +44,8 @@ function fn_table_01(data) {
                         +"</td><td>"+data[i].Time_delay_set_tem_auto
                         +"</td><td>"+data[i].Cai_nhiet_do_thap
                         +"</td><td>"+data[i].Cai_nhiet_do_cao
+                        +"</td><td>"+data[i].Relay_contactor
+                        +"</td><td>"+data[i].Dung_khan_cap
                         +"</td><td>"+data[i].Canh_bao_nhiet
                         +"</td></tr>";
 
