@@ -306,7 +306,7 @@ select:focus {
   height: 15px;
   border-radius: 50%;
   background-color: #a2c0eb;
-  bottom: 1px;
+  bottom: 7px;
   left: -53px;
   z-index: 3; 
   }
@@ -424,7 +424,7 @@ select:focus {
   position: relative;
   display: flex;
   width: 100px;
-  height: 36px;
+  height: 50px;
   margin: 0 30px;
 }
 #change_off_btt_power{

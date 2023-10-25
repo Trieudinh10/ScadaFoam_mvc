@@ -553,6 +553,7 @@
     width: unset;
     margin:0;
     top: 65px;
+    left: 30px;
   }
   .setting_input{
     display: flex;
@@ -571,6 +572,7 @@
   }
   .start_stop-btn-start{
     height: 100px;
+    margin-left: 10px;
   }
   .setting_input-primary{
     width: 35%;
