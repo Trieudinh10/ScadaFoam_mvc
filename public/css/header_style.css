@@ -28,6 +28,21 @@
 .header_menu a:active {
   opacity: 0.8;
 }
+/* .header_menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.header_menu ul li {
+  font-size: 24px;
+  text-transform: uppercase;
+  height: 100%;
+  /* color: #fff;
+  font-weight: 400;
+} */
+
 .header_menu ul {
   display: flex;
   align-items: center;
@@ -39,8 +54,31 @@
   font-size: 24px;
   text-transform: uppercase;
   height: 100%;
-  /* color: #fff; */
   font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s; /* Hiệu ứng thay đổi màu chữ */
+}
+
+.header_menu ul li::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 0, 0); /* Màu của gạch chân */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s; /* Hiệu ứng chuyển động từ trái sang phải */
+  opacity: 0; /* Ẩn ban đầu */
+}
+
+.header_menu ul li:hover::before {
+  width: 100%;
+  opacity: 1; /* Hiện gạch chân */
+}
+
+.header_menu ul li:hover {
+  color: rgb(0, 0, 0); /* Thay đổi màu chữ khi hover */
 }
 
 .header_title {
@@ -56,18 +94,6 @@
   align-items: center;
   justify-content: flex-end;
   color: #079ffb;
-  /* background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  /*text-shadow: -1px 1px 0 #41ba45,
-    1px 1px 0 #c63d2b,
-    1px -1px 0 #42afac,
-    -1px -1px 0 #c6c23f; */
-   /* color: #09E3E1;*/
-   /* text-shadow: -1px 1px 0 #47777C,
-      1px 1px 0 #BF3233,
-      1px -1px 0 #47ADAD,
-      -1px -1px 0 #C5777D;*/
 
 }
 
