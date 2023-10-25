@@ -698,7 +698,7 @@ worksheet.getCell('M4').style = { font:{bold: false, italic: true},alignment: {h
  
 // Tên nhãn các cột
 var rowpos = 7;
-var collumName = ["STT","Thời gian", "Auto", "Manual", "Nhiệt độ phòng", "Độ ẩm", "Trạng thái máy lạnh 1", "Nhiệt độ máy lạnh 1","Nhiệt độ tham chiếu máy lạnh 1", "Trạng thái máy lạnh 2", "Nhiệt độ máy lạnh 2", "Nhiệt độ tham chiếu máy lạnh 2", "Trạng thái máy lạnh 3", "Nhiệt độ máy lạnh 3", "Nhiệt độ tham chiếu máy lạnh 3","Thời gian cập nhật nhiệt độ","Biên độ nhiệt thấp","Biên độ nhiệt cao","Biên độ nhiệt cao","Cấp nguồn","Dừng khẩn cấp","Ghi chú"]
+var collumName = ["STT","Thời gian", "Auto", "Manual", "Nhiệt độ phòng", "Độ ẩm", "Trạng thái máy lạnh 1", "Nhiệt độ máy lạnh 1","Nhiệt độ tham chiếu máy lạnh 1", "Trạng thái máy lạnh 2", "Nhiệt độ máy lạnh 2", "Nhiệt độ tham chiếu máy lạnh 2", "Trạng thái máy lạnh 3", "Nhiệt độ máy lạnh 3", "Nhiệt độ tham chiếu máy lạnh 3","Thời gian cập nhật nhiệt độ","Biên độ nhiệt thấp","Biên độ nhiệt cao","Cấp nguồn","Dừng khẩn cấp","Cảnh báo nhiệt","Ghi chú"]
 worksheet.spliceRows(rowpos, 1, collumName);
  
 // =====================XUẤT DỮ LIỆU EXCEL SQL=====================
