@@ -38,19 +38,19 @@
           <div class="export_para">
             <h2><%= __('DATA') %></h2>
             <div class="baocao-container_select">
-              <div class="input_item">
+              <div class="input_item input_item-responsive">
                 <label id="lb_Search_Start"><%= __('From') %>:</label>
                 <input id="dtpk_Search_Start" type="datetime-local" />
               </div>
-              <div class="input_item">
+              <div class="input_item input_item-responsive">
                 <label id="lb_Search_End"><%= __('To') %>:</label>
                 <input id="dtpk_Search_End" type="datetime-local" />
               </div>
               <div class="block_btn-export">
-                <div class="input_item_btn">
+                <div class="input_item_btn input_item_btn-responsive">
                   <button id="btt_Search" class="btn" onclick="fn_SQL_By_Time(); fn_SQL_1_By_Time();"><%= __('Search') %></button>
                 </div>
-                <div class="input_item_btn">
+                <div class="input_item_btn input_item_btn-responsive">
                   <button id="btt_Excel" class="btn" onclick="fn_excel();"><%= __('Export') %></button>
                 </div>
               </div>
