@@ -299,7 +299,7 @@ select:focus {
   right: 111px;
 }
 
-.block_pesido::before{
+/* .block_pesido::before{
   content: "";
   position: absolute;
   width: 15px;
@@ -309,7 +309,7 @@ select:focus {
   bottom: 7px;
   left: -53px;
   z-index: 3; 
-  }
+  } */
 
 .operate_container-title {
   width: 100%;
