@@ -431,7 +431,6 @@ function fn_tag(){
     io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
     io.sockets.emit("Dung_khan_cap", obj_tag_value["Dung_khan_cap"]);//
-    console.log('sdjkn',obj_tag_value["Dung_khan_cap"] );
 }
 
 // /////////// GỬI DỮ LIỆU BẢNG TAG ĐẾN CLIENT (TRÌNH DUYỆT) ///////////////

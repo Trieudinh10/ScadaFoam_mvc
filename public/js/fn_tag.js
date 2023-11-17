@@ -1,5 +1,6 @@
+exports.fn_tag= fn_tag;
 function fn_tag(io, obj_tag_value) {
-        io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
+    io.sockets.emit("Start_auto", obj_tag_value["Start_auto"]);  //
     io.sockets.emit("Start_manual", obj_tag_value["Start_manual"]);//
     io.sockets.emit("Den_auto", obj_tag_value["Den_auto"]);  ////
     io.sockets.emit("Den_manual", obj_tag_value["Den_manual"]);  ////
@@ -83,4 +84,3 @@ function fn_tag(io, obj_tag_value) {
     io.sockets.emit("Canh_bao_nhiet", obj_tag_value["Canh_bao_nhiet"]);////
     io.sockets.emit("Trigger", obj_tag_value["Trigger"]);//
 }
-    module.exports = fn_tag;

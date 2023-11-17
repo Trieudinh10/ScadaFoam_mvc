@@ -43,7 +43,7 @@
           <img id="Trang_thai_k" class="img_mobile_manual" />
           <script>
             //fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-              socket.removeAllListeners("Relay_contactor");
+             // socket.removeAllListeners("Relay_contactor");
               socket.on('Relay_contactor', function(data){
               if (data == 0) {
                   document.getElementById("change_on_btt_power").style.display = "block";
