@@ -50,8 +50,8 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
-  background-color: rgb(0, 162, 255); /* Màu của gạch chân */
+  height: 1px;
+  background-color: rgb(0, 153, 255); /* Màu của gạch chân */
   bottom: 0;
   left: 0;
   transition: width 0.3s; /* Hiệu ứng chuyển động từ trái sang phải */
@@ -90,10 +90,10 @@
 
 @keyframes animation_link {
   from {
-    color:#4218B8;
+    color:#188bb8;
   }
   to {
-    color:    #00C0FF ;
+    color:    #006eff ;
   }
 }
 

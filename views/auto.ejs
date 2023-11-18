@@ -23,11 +23,14 @@
 
     <div class="operate_container">
       <div class="block_start_stop">
+
+          <!--Nút nhấn sửa lưu dữ liệu-->
         <div class="start_stop-btn-save">
           <button class="btt_sua_luu" id="btt_Auto_Save"><%= __('Save') %></button>
           <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()"><%= __('Edit') %></button>
         </div>
 
+          <!--Nút nhấn cấp nguồn và ngắt nguồn-->
         <div class="setting_content-item_btn">
           <div class="block_btn-power block_btn-powerrs">
               <div class="setting_on">
@@ -40,7 +43,7 @@
           <img id="Trang_thai_k" class="img_mobile_manual" />
           <script>
             //fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
-              socket.removeAllListeners("Relay_contactor");
+             // socket.removeAllListeners("Relay_contactor");
               socket.on('Relay_contactor', function(data){
               if (data == 0) {
                   document.getElementById("change_on_btt_power").style.display = "block";
@@ -52,10 +55,9 @@
                   document.getElementById('change_off_btt_power').style.backgroundColor = "#00ff05";
               }});
           </script>
-      </div>
+        </div>
 
-      
-
+          <!--Nút nhấn khởi động chế độ auto-->
         <div class="start_stop-btn-start">
           <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">ON AUTO</button>
           <img id="Trang_thai_auto" class="den_cd" />
@@ -71,8 +73,15 @@
           });
           </script>
         </div>
+<<<<<<< HEAD
         <div class="setting_input-header setting_input-header_res">
           <div class="setting_input-block-tem setting_input-block-temRS">
+=======
+
+          <!--Thẻ điền nhiệt độ thấp và nhiệt độ cao-->
+        <div class="setting_input-header">
+          <div class="setting_input-block-tem">
+>>>>>>> 28cb4bceafe56e6ea1adfd3a98ca3e5b7e4016e2
             <label for="" class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low"><%= __('Low Temperature') %></label>
             <input id="nhiet_do_thap" isabled="disabled" type="number" disabled/>
             <script>
@@ -87,6 +96,8 @@
             </script>
           </div>
         </div>
+
+          <!--Thẻ điền thời gian cập nhật nhiệt độ-->
         <div class="setting_input setting_input-mt">
           <label for="" class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 8px"><%= __('Update Time') %> (<%= __('Second') %>)</label>
           <input id="cai_thoi_gian" class="setting_input-block-tem-respon4" disabled="disabled" type="number"/>

@@ -161,14 +161,14 @@ select {
 /*.btn_start,*/
 /*.btn_stop,*/
 .btn_on,
-.btt_sua_luu,.setting_power-btn {
+.btt_sua_luu/*,.setting_power-btn*/ {
   position: relative;
   min-width: 130px;
   height: 50px;   width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 15px;
   background: transparent;
   text-transform: uppercase;
   color: #000000;
@@ -262,7 +262,7 @@ select {
   height: 55px;
   border-radius: 5px;
   background-color: var(--color-body);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .auto_value-item input:focus,
@@ -299,7 +299,7 @@ select:focus {
   right: 111px;
 }
 
-.block_pesido::before{
+/* .block_pesido::before{
   content: "";
   position: absolute;
   width: 15px;
@@ -309,7 +309,7 @@ select:focus {
   bottom: 7px;
   left: -53px;
   z-index: 3; 
-  }
+  } */
 
 .operate_container-title {
   width: 100%;
@@ -354,6 +354,7 @@ select:focus {
 }
 #btt_Auto_Edit,#btt_Main_Edit{
   margin-right: 20px;
+  font-size: 15px;
   color: #000;
   background-color: #FFD311;
   cursor: pointer;
@@ -419,6 +420,23 @@ select:focus {
 }
 
 /*Nút nhấn cấp nguồn và ngắt nguồn*/
+.setting_power-btn {
+  min-width: 130px;
+  height: 50px;
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 120px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
 
 .block_btn-power{
   position: relative;

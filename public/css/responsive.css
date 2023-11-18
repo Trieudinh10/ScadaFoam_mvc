@@ -96,7 +96,7 @@
     margin-top: var(--height);
   }
   .login_body {
-    width: 100%;
+    width: 90%;
     height: 100%;
     border-radius: 0;
   }

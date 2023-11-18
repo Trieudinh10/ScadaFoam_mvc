@@ -299,7 +299,7 @@ var SQL_Excel = [];  // Dữ liệu nhập kho
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '10.14.84.92', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.84.228', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
