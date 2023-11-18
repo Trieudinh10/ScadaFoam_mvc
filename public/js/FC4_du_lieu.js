@@ -83,7 +83,7 @@ function fn_SQL_By_Time() {
     });
 }
 
-function funcs() {
+function fn_s() {
     if (currentSegment < totalSegments - 1) {
         currentSegment++; // Tăng biến currentSegment để chuyển sang trang tiếp theo
         fn_table_01([]); // Xóa dữ liệu cũ
@@ -92,7 +92,7 @@ function funcs() {
     }
 }
 
-function funct() {
+function fn_t() {
     if (currentSegment > 0) {
         currentSegment--; // Giảm biến currentSegment để chuyển sang trang trước
         fn_table_01([]); // Xóa dữ liệu cũ
