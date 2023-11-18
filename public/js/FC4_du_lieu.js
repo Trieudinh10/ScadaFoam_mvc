@@ -27,7 +27,7 @@ function fn_table_01(data) {
             var startIndex = currentSegment * rowsPerPage;
             var endIndex = Math.min(startIndex + rowsPerPage, len);
             for (var i = startIndex; i < endIndex; i++) {
-                    txt += "<tr><td>"+data[i].date_time
+                    txt += "<tr><td style='position: sticky;left: 0;z-index: 8;background-color:#fff'>"+data[i].date_time
                         +"</td><td>"+data[i].Den_auto
                         +"</td><td>"+data[i].Den_manual
                         +"</td><td>"+data[i].Nhiet_do
@@ -44,6 +44,8 @@ function fn_table_01(data) {
                         +"</td><td>"+data[i].Time_delay_set_tem_auto
                         +"</td><td>"+data[i].Cai_nhiet_do_thap
                         +"</td><td>"+data[i].Cai_nhiet_do_cao
+                        +"</td><td>"+data[i].Relay_contactor
+                        +"</td><td>"+data[i].Dung_khan_cap
                         +"</td><td>"+data[i].Canh_bao_nhiet
                         +"</td></tr>";
 

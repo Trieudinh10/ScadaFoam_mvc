@@ -40,11 +40,11 @@
             <li><%= __('Manual') %></li>
           </a>
           <a href="/huongdan">
-            <li>Hướng Dẫn</li>
+            <li><%= __('User guide') %></li>
           </a>
           <li class="textUlLi flagLi">
             <div class="blockFlagVn">
-              <a href="/change-lang/vi">
+              <a href="/change-lang/en">
                 <img src="/images/vi.png" alt="flagVN" style="width: 30px" />
                 <button class="buttonChanggeLang"></button
               ></a>
@@ -55,7 +55,7 @@
         </ul>
       </div>
       <div class="header_title">
-        <h3>PHÒNG SẢN XUẤT VÀ LƯU TRỮ FOAM</h3>
+        <h3><%= __('FOAM PRODUCTION AND STORAGE ROOM') %></h3>
       </div>
       <%- include('modal_menu.ejs'); -%>
     </div>
@@ -87,10 +87,11 @@
       }
     };
     setInterval(screen, 100);
+    
     var logoutBtn = document.querySelector(".icon_logout");
     logoutBtn.addEventListener("click", function () {
       document.cookie =
-        "loggedIn=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        "loggedIn=false;";
       window.location.href = "/login";
     });
     function checkLoggedIn() {

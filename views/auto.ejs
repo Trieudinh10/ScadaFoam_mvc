@@ -23,52 +23,98 @@
 
     <div class="operate_container">
       <div class="block_start_stop">
+
+          <!--Nút nhấn sửa lưu dữ liệu-->
         <div class="start_stop-btn-save">
-          <button class="btt_sua_luu" id="btt_Auto_Save">LƯU</button>
-          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()">SỬA</button>
+          <button class="btt_sua_luu" id="btt_Auto_Save"><%= __('Save') %></button>
+          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()"><%= __('Edit') %></button>
         </div>
-        <div class="start_stop-btn-start">
-          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">ON AUTO
-          </button>
-          <img id="Trang_thai_auto" class="den_cd" alt="den trang thai" />
+
+          <!--Nút nhấn cấp nguồn và ngắt nguồn-->
+        <div class="setting_content-item_btn">
+          <div class="block_btn-power block_btn-powerrs">
+              <div class="setting_on">
+                  <button class="setting_power-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>
+              </div>
+              <div class="setting_off">
+                  <button class="setting_power-btn" id="change_off_btt_power" onclick="socket.emit('cmd_stop_k', true);fn_change_off_btt_power()"><%= __('Power off') %></button>
+              </div>
+          </div>
+          <img id="Trang_thai_k" class="img_mobile_manual" />
           <script>
-            fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+            //fn_SymbolStatus("Trang_thai_k", "tt_k", "Relay_contactor");
+             // socket.removeAllListeners("Relay_contactor");
+              socket.on('Relay_contactor', function(data){
+              if (data == 0) {
+                  document.getElementById("change_on_btt_power").style.display = "block";
+                  document.getElementById("change_off_btt_power").style.display = "none";
+                  document.getElementById('change_on_btt_power').style.backgroundColor = "gray";
+              } else {
+                  document.getElementById("change_off_btt_power").style.display = "block";
+                  document.getElementById("change_on_btt_power").style.display = "none";
+                  document.getElementById('change_off_btt_power').style.backgroundColor = "#00ff05";
+              }});
           </script>
         </div>
-        <div class="setting_input">
+
+          <!--Nút nhấn khởi động chế độ auto-->
+        <div class="start_stop-btn-start">
+          <button class="btn_on" id="btn_on_tn1" onclick="socket.emit('cmd_start_auto', true); fn_Table01_SQL_Show();">ON AUTO</button>
+          <img id="Trang_thai_auto" class="den_cd" />
+          <script>
+            //fn_SymbolStatus("Trang_thai_auto", "Den_xanh", "Den_auto");
+            socket.removeAllListeners("Den_auto");
+            socket.on('Den_auto', function(data){
+            if (data == 0) {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "gray";
+            } else {
+              document.getElementById('btn_on_tn1').style.backgroundColor = "#00ff05"; // Change to the desired color
+            }
+          });
+          </script>
+        </div>
+<<<<<<< HEAD
+        <div class="setting_input-header setting_input-header_res">
+          <div class="setting_input-block-tem setting_input-block-temRS">
+=======
+
+          <!--Thẻ điền nhiệt độ thấp và nhiệt độ cao-->
+        <div class="setting_input-header">
           <div class="setting_input-block-tem">
-            <label for="" class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low">NHIỆT ĐỘ THẤP</label>
+>>>>>>> 28cb4bceafe56e6ea1adfd3a98ca3e5b7e4016e2
+            <label for="" class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low"><%= __('Low Temperature') %></label>
             <input id="nhiet_do_thap" isabled="disabled" type="number" disabled/>
             <script>
               fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
             </script>
           </div>
-          <div style="margin-left: 16px" class="setting_input-block-tem2">
-            <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max">NHIỆT ĐỘ CAO</label>
+          <div class="setting_input-block-tem2 setting_input-block-temRS">
+            <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('High Temperature') %></label>
             <input id="nhiet_do_cao" isabled="disabled" disabled type="number"/>
             <script>
               fn_Auto_IOField_IO("Cai_nhiet_do_cao", "nhiet_do_cao", 0);
             </script>
           </div>
         </div>
+
+          <!--Thẻ điền thời gian cập nhật nhiệt độ-->
         <div class="setting_input setting_input-mt">
-          <label for="" class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 8px">THỜI GIAN C/N (giây)</label>
+          <label for="" class="lable_tem-input setting_input-block-tem-respon3" id="lable_title-time-update" style="margin-right: 8px"><%= __('Update Time') %> (<%= __('Second') %>)</label>
           <input id="cai_thoi_gian" class="setting_input-block-tem-respon4" disabled="disabled" type="number"/>
           <script>
             fn_Auto_IOField_IO("Time_delay_set_tem_auto", "cai_thoi_gian", 0);
           </script>
         </div>
       </div>
-
       <div class="operate_row">
         <div class="block_pesido"></div>
         <!--//////////////////////////////////////////MÁY LẠNH 1 SLAVE2 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa1" class="setting_item-title">Điều Hòa 1</h2>
+          <h2 id="dieuhoa1" class="setting_item-title"><%= __('Air-conditioner') %> 1</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="on_off_aut_2" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -79,9 +125,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_aut_2" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -95,9 +141,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_auto_2" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -110,9 +156,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod) </h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_auto_2" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -127,24 +173,25 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_auto_2" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_2", "temp_auto_2", 0);
               </script>
             </div>
           </div>
+          
         </div>
 
         <!--//////////////////////////////////////////MÁY LẠNH 2 SLAVE3 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa2" class="setting_item-title">Điều Hòa 2</h2>
+          <h2 id="dieuhoa2" class="setting_item-title"><%= __('Air-conditioner') %> 2</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="on_off_aut_3" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -155,9 +202,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_aut_3" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -171,9 +218,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_auto_3" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -186,9 +233,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod) </h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_auto_3" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -203,9 +250,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_auto_3" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_3", "temp_auto_3", 0);
@@ -216,11 +263,11 @@
 
         <!--//////////////////////////////////////////MÁY LẠNH 3 SLAVE4 ///////////////////////////////////-->
         <div class="setting_item">
-          <h2 id="dieuhoa3" class="setting_item-title">Điều Hòa 3</h2>
+          <h2 id="dieuhoa3" class="setting_item-title"><%= __('Air-conditioner') %> 3</h2>
           <div class="setting_content-item">
             <h2>ON OFF</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="on_off_aut_4" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -231,9 +278,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Chế độ (mod)</h2>
+            <h2><%= __('Operating mode') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="mode_aut_4" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -247,9 +294,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Tốc độ Quạt (mod)</h2>
+            <h2><%= __('Fan speed') %> (mod)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="speed_auto_4" disabled="disabled" type="text">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -262,9 +309,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Góc mở (mod)</h2>
+            <h2><%= __('Angles of the louvers') %> (mod) </h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <select id="position_auto_4" disabled="disabled" type="text">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -279,9 +326,9 @@
             </div>
           </div>
           <div class="setting_content-item">
-            <h2>Nhiệt độ (&deg;C)</h2>
+            <h2><%= __('Temperature') %> (&deg;C)</h2>
             <div class="setting_input setting_input-primary">
-              <label for="">Cài đặt</label>
+              <label for=""><%= __('Setting') %></label>
               <input id="temp_auto_4" disabled="disabled" type="number" />
               <script>
                 fn_Auto_IOField_IO("Nhap_temp_auto_4", "temp_auto_4", 0);
@@ -290,7 +337,11 @@
           </div>
         </div>
       </div>
+      <div class="container-img-background">
+
+      </div>
     </div>
+
     <%- include('btn_scroll.ejs'); -%>
   </body>
   <script>

@@ -51,6 +51,6 @@ function fn_SymbolStatus(ObjectID, SymName, Tag) {
 
 // Chương trình con nút sửa/lưu dữ liệu
 function fn_DataEdit(button1, button2) {
-  document.getElementById(button1).style.zIndex = "1"; // Hiển nút 1
+  document.getElementById(button1).style.zIndex = "1"; // Hiển thị nút 1
   document.getElementById(button2).style.zIndex = "0"; // Ẩn nút 2
 }

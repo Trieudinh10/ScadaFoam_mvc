@@ -34,6 +34,7 @@
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 8px;
 }
 
 .energy_chart {
@@ -74,7 +75,7 @@
 .infogauge {
   width: 100%;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: -4px;
 }
 #chartLine,
 #chartPhase,

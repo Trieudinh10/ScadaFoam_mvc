@@ -35,6 +35,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   /*box-shadow: 1px 1px 0px 0px var(--color-grey), 2px 2px 0px 0px var(--color-grey), 3px 3px 0px 0px var(--color-grey), 4px 4px 0px 0px var(--color-grey), 5px 5px 0px 0px var(--color-grey) !important;*/
   margin: 16px 8px;
+  padding: 40px;
   /* flex: 1; */
   /* #07539d */
 }
@@ -44,7 +45,7 @@
 
 .setting_item h2 {
   min-width: 322px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -94,11 +95,10 @@
 
 .setting_content-item_btn {
   display: flex;
-  margin: 8px 0;
   align-items: center;
 }
 
-.setting_input {
+.setting_input,.setting_input-header {
   /* flex: 1; */
   display: flex;
   align-items: center;
@@ -107,7 +107,7 @@
   position: relative;
 }
 
-.setting_input label {
+.setting_input label,.setting_input-header label {
   margin-right: 8px;
   font-size: 24px;
   font-weight: 400;
@@ -119,21 +119,21 @@
 }
 
 .setting_input input,
-select {
+select , .setting_input-header input{
   height: 55px;
   border-radius: 5px;
-  border: 4px solid var(--color-border);
-  min-width: 150px;
+  border: 1px solid var(--color-border);
+  min-width: 80px;
   font-size: 24px;
   text-align: center;
   font-weight: 600;
-  max-width: 150px;
+  max-width: 80px;
 }
 
 .lable_tem-input {
   /* color: #fff; */
   /* margin-left: 32px; */
-  font-size: 26px !important;
+  font-size: 24px !important;
 }
 
 #nhiet_do_thap,
@@ -143,7 +143,7 @@ select {
 }
 
 .setting_input input:focus,
-select:focus {
+select:focus, .setting_input-header input:focu{
   outline: none !important;
   border-color: var(--color-red);
   position: relative;
@@ -159,3 +159,13 @@ select:focus {
   flex-wrap: wrap;
 }
 
+.container-img-background{
+  height: calc(100vh - 75px - 80px - 529px);
+  width: 100%;
+  background:url("../images/Symbol/Nha-may-VAM-2048x1152.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.container-img-background.container-img-background-manual{
+  height: calc(100vh - 75px - 80px - 519px);
+}

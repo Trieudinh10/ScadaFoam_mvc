@@ -299,7 +299,7 @@ var SQL_Excel = [];  // Dữ liệu nhập kho
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '192.168.1.8', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.84.193', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
@@ -535,11 +535,13 @@ var Read_tem_refer_4 = "'" + obj_tag_value["Read_tem_refer_4"] + "',";
 var Time_delay_set_tem_auto = "'" + obj_tag_value["Time_delay_set_tem_auto"] + "',";
 var Cai_nhiet_do_thap = "'" + obj_tag_value["Cai_nhiet_do_thap"] + "',";
 var Cai_nhiet_do_cao = "'" + obj_tag_value["Cai_nhiet_do_cao"] + "',";
+var Relay_contactor = "'" + obj_tag_value["Relay_contactor"] + "',";
+var Dung_khan_cap = "'" + obj_tag_value["Dung_khan_cap"] + "',";
 var Canh_bao_nhiet = "'" + obj_tag_value["Canh_bao_nhiet"] + "'";
 // Ghi dữ liệu vào SQL
 if (insert_trigger && !old_insert_trigger && !isNaN(insert_trigger))
 {
-    var sql_write_str11 = "INSERT INTO " + sqltable_Name + " (date_time, Den_auto, Den_manual, Nhiet_do, Do_am, Read_on_off_2,Read_tem_set_2,Read_tem_refer_2,Read_on_off_3,Read_tem_set_3,Read_tem_refer_3,Read_on_off_4,Read_tem_set_4,Read_tem_refer_4,Time_delay_set_tem_auto,Cai_nhiet_do_thap,Cai_nhiet_do_cao,Canh_bao_nhiet) VALUES (";
+    var sql_write_str11 = "INSERT INTO " + sqltable_Name + " (date_time, Den_auto, Den_manual, Nhiet_do, Do_am, Read_on_off_2,Read_tem_set_2,Read_tem_refer_2,Read_on_off_3,Read_tem_set_3,Read_tem_refer_3,Read_on_off_4,Read_tem_set_4,Read_tem_refer_4,Time_delay_set_tem_auto,Cai_nhiet_do_thap,Cai_nhiet_do_cao,Relay_contactor,Dung_khan_cap,Canh_bao_nhiet) VALUES (";
     var sql_write_str12 = timeNow_toSQL 
                         + Den_auto 
                         + Den_manual
@@ -557,6 +559,8 @@ if (insert_trigger && !old_insert_trigger && !isNaN(insert_trigger))
                         + Time_delay_set_tem_auto
                         + Cai_nhiet_do_thap
                         + Cai_nhiet_do_cao
+                        + Relay_contactor
+                        + Dung_khan_cap
                         + Canh_bao_nhiet
                         ;
     var sql_write_str1 = sql_write_str11 + sql_write_str12 + ");";
@@ -694,7 +698,7 @@ worksheet.getCell('M4').style = { font:{bold: false, italic: true},alignment: {h
  
 // Tên nhãn các cột
 var rowpos = 7;
-var collumName = ["STT","Thời gian", "Auto", "Manual", "Nhiệt độ phòng", "Độ ẩm", "Trạng thái máy lạnh 1", "Nhiệt độ máy lạnh 1","Nhiệt độ tham chiếu máy lạnh 1", "Trạng thái máy lạnh 2", "Nhiệt độ máy lạnh 2", "Nhiệt độ tham chiếu máy lạnh 2", "Trạng thái máy lạnh 3", "Nhiệt độ máy lạnh 3", "Nhiệt độ tham chiếu máy lạnh 3","Thời gian cập nhật nhiệt độ","Biên độ nhiệt thấp","Biên độ nhiệt cao","Cảnh báo nhiệt độ","Ghi chú"]
+var collumName = ["STT","Thời gian", "Auto", "Manual", "Nhiệt độ phòng", "Độ ẩm", "Trạng thái máy lạnh 1", "Nhiệt độ máy lạnh 1","Nhiệt độ tham chiếu máy lạnh 1", "Trạng thái máy lạnh 2", "Nhiệt độ máy lạnh 2", "Nhiệt độ tham chiếu máy lạnh 2", "Trạng thái máy lạnh 3", "Nhiệt độ máy lạnh 3", "Nhiệt độ tham chiếu máy lạnh 3","Thời gian cập nhật nhiệt độ","Biên độ nhiệt thấp","Biên độ nhiệt cao","Cấp nguồn","Dừng khẩn cấp","Cảnh báo nhiệt","Ghi chú"]
 worksheet.spliceRows(rowpos, 1, collumName);
  
 // =====================XUẤT DỮ LIỆU EXCEL SQL=====================
@@ -723,6 +727,8 @@ worksheet.columns = [
       {key: 'Time_delay_set_tem_auto'},
       {key: 'Cai_nhiet_do_thap'},
       {key: 'Cai_nhiet_do_cao'},
+      {key: 'Relay_contactor'},
+      {key: 'Dung_khan_cap'},
       {key: 'Canh_bao_nhiet'},
     ]
 worksheet.addRow({
@@ -756,12 +762,14 @@ worksheet.addRow([
 {formula: `=average(R${rowpos + 1}:R${totalNumberOfRows})`},
     '',
     '',
+    '',
+    '',
     
 ])
 // Style cho hàng total (Tổng cộng)
 worksheet.getCell(`A${totalNumberOfRows+1}`).style = { font:{bold: true,size: 12},alignment: {horizontal:'center',}} ;
 // Tô màu cho hàng total (Tổng cộng)
-const total_row = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+const total_row = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V']
 total_row.forEach((v) => {
     worksheet.getCell(`${v}${totalNumberOfRows+1}`).fill = {type: 'pattern',pattern:'solid',fgColor:{ argb:'f2ff00' }}
 })
@@ -769,7 +777,7 @@ total_row.forEach((v) => {
  
 // =====================STYLE CHO CÁC CỘT/HÀNG=====================
 // Style các cột nhãn
-const HeaderStyle = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+const HeaderStyle = ['A','B', 'C', 'D', 'E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V']
 HeaderStyle.forEach((v) => {
     worksheet.getCell(`${v}${rowpos}`).style = { font:{bold: true},alignment: {horizontal:'center',vertical: 'middle',wrapText: true}} ;
     worksheet.getCell(`${v}${rowpos}`).border = {
@@ -791,7 +799,7 @@ const row = worksheet.getRow(5);row.height = 40;
 // Set width header
 worksheet.getColumn(1).width = 18;
 worksheet.getColumn(2).width = 20;
-worksheet.getColumn(20).width = 30;
+worksheet.getColumn(22).width = 30;
 
  
 // ++++++++++++Style cho các hàng dữ liệu++++++++++++
@@ -800,7 +808,7 @@ worksheet.eachRow({ includeEmpty: true }, function (row, rowNumber) {
   var rowindex = rowNumber + datastartrow;
   const rowlength = datastartrow + SQL_Excel.length
   if(rowindex >= rowlength+1){rowindex = rowlength+1}
-  const insideColumns = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T']
+  const insideColumns = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V']
 // Tạo border
   insideColumns.forEach((v) => {
 	  // Border

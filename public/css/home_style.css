@@ -1,7 +1,7 @@
 .home_container {
   width: 100%;
   display: flex;
-  padding: 8px 8px 0 8px;
+  padding: 0px 0px 0 8px;
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
   /* min-height: calc(100vh - var(--height)); */
@@ -41,8 +41,7 @@
   margin: 8px 8px 8px 0;
   overflow: hidden;
   border-radius: 10px;
-  min-height: 400px;
-  max-height: 400px;
+
   flex: 1;
 }
 
@@ -64,6 +63,7 @@
   width: 66.5%;
   display: flex;
   order: 2;
+  height: 100%;
 }
 
 .system_item-air_block{
@@ -116,7 +116,7 @@
 }
 
 .item_air-tem h2 {
-  min-width: 228px;
+  min-width: 300px;
   background-color: var(--color-body);
   border-radius: 10px;
   padding: 4px;
@@ -311,7 +311,7 @@
 
 .den_ml {
   width: 300px;
-  height: 210px;
+  height: 190px;
   margin-left: 8px;
 }
 .den_cd {

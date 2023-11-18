@@ -71,7 +71,8 @@ iframe {
 
 input[type="number"]:enabled,
 select[type="text"]:enabled{
-  background-color: #00e478;
+  background-color: #cae272;
+  /*background-color: #00e478;*/
   border-color: #000;
 
 }

@@ -119,7 +119,7 @@
 
 .item_air-tem input,
 select {
-  width: 120px;
+  width: 60px;
   height: 30px;
   border-radius: 5px;
   background-color: var(--color-item);
@@ -155,63 +155,68 @@ select {
   height: 50%;
   align-items: center;
 }
+
+/*Nút nhấn sửa-lưu và nút on chế độ manu-auto*/
+/*.btn_off,*/
+/*.btn_start,*/
+/*.btn_stop,*/
 .btn_on,
-.btn_off,
-.btn_start,
-.btn_stop,.btt_sua_luu {
+.btt_sua_luu/*,.setting_power-btn*/ {
+  position: relative;
   min-width: 130px;
-  height: 50px;
-  border-radius: 4px;
+  height: 50px;   width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black_alpha);
-  font-size: 20px;
+  font-size: 15px;
   background: transparent;
-  border: 2px solid #1FB0E6;
-  color: #1FB0E6;
-  transition: 0.3s all;
-  transform: scale(1);
   text-transform: uppercase;
-  font-family: 'Roboto';
-  position: relative;
-}
-.btn_on,
-.btn_start {
-  margin-right: 8px;
-  margin-left: 36px;
-  background-color: #0e3551;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  /*color: var(--color-black_alpha);*/
+  /*transition: 0.3s all;*/
+  /*transform: scale(1);*/
+  /*font-family: 'Roboto';*/
+  /*background-color: #00ff05;*/
 }
 
-.btn_off,
+
+/*.btn_start,*/
+.btn_on {
+  margin-right: 8px;
+  margin-left: 36px;
+  /*background-color: #0e3551;*/
+}
+
+/*.btn_off,
 .btn_stop {
   background-color: var(--color-red);
   border: 1px solid var(--color-main);
-}
+}*/
 
-.btn_on:hover,
-.btn_off:hover,
+
+/*.btn_off:hover,
 .btn_start:hover,
 .btn_stop:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
+  background-color: #0056b3;
+}*/
 
-.btn_on:active{
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    top: 5px;
-    left: 5px;
-}
 
-.btn_on.active_btn,
-.btn_off.active_btn,
+
+/*.btn_off.active_btn,
 .btn_start.active_btn,
-.btn_stop.active_btn {
+.btn_stop.active_btn,*/
+.btn_on.active_btn {
   opacity: 0.5;
   border: 1px solid var(--color-main);
 }
 
-.btn_submit {
+/*.btn_submit {
   width: 55%;
   background-color: var(--color-skyblue);
   border-radius: 10px;
@@ -219,12 +224,12 @@ select {
   margin: 8px 0;
   text-align: center;
   padding: 8px;
-}
+}*/
 
-.btn_submit:hover {
+/*.btn_submit:hover {
   cursor: pointer;
   opacity: 0.8;
-}
+}*/
 
 .operate_auto-value {
   flex: 1;
@@ -257,7 +262,7 @@ select {
   height: 55px;
   border-radius: 5px;
   background-color: var(--color-body);
-  border: 4px solid var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .auto_value-item input:focus,
@@ -294,18 +299,17 @@ select:focus {
   right: 111px;
 }
 
-.block_pesido::before{
+/* .block_pesido::before{
   content: "";
   position: absolute;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: #a2c0eb;
-  bottom: 8px;
+  bottom: 7px;
   left: -53px;
   z-index: 3; 
-  }
-
+  } */
 
 .operate_container-title {
   width: 100%;
@@ -317,9 +321,9 @@ select:focus {
   align-items: center;
 }
 
-.operate_container-title h2 {
-  /* color: #fff; */
-}
+/* .operate_container-title h2 {
+  /color: #fff; 
+} */
 
 .btt_sua_luu {
   position: absolute;
@@ -327,27 +331,42 @@ select:focus {
   padding: 3px;
   text-decoration: none;
   user-select: none;
-
-  /* width: 100%; */
-  /* margin-left: 20px; */
   height: 50px;
   margin-left: 8px;
   z-index: 2;
-}
-#btt_Auto_Save,#btt_Main_Save{
-  margin-right: 20px;
-  background-color:#0F6EB8;
-  border-color:#fff ;
-  color:#fff;
+  /* width: 100%; */
+  /* margin-left: 20px; */
 }
 
+/*Nút sửa lưu auto-manual*/
+#btt_Auto_Save,#btt_Main_Save{
+  margin-right: 20px;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 120px;
+}
 #btt_Auto_Edit,#btt_Main_Edit{
   margin-right: 20px;
+  font-size: 15px;
   color: #000;
-  border-color: #000;
   background-color: #FFD311;
   cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 120px
 }
+
 .start_stop-btn-start {
   display: flex;
   /* width: 100%; */
@@ -365,19 +384,11 @@ select:focus {
   order: 1;
 }
 
-.btt_sua_luu:hover {
-
-}
-.btt_sua_luu:active {
-  opacity: 0.8;
-}
-
-
-.den_cd {
+/*.den_cd {
   width: 50px;
   height: 50px;
   margin-left: 8px;
-}
+}*/
 .air_con {
   width: 45px;
   height: 45px;
@@ -394,44 +405,72 @@ select:focus {
   margin-right: 10px;
 }
 
+/*Nút nhấn on-off máy lạnh*/
 .setting_on-btn {
-	align-items: center;
-	border: 0;
-	border-radius: 18px;
-	box-shadow: 1px 1px 0px 0px #07539d, 2px 2px 0px 0px #07539d, 3px 3px 0px 0px #07539d, 4px 4px 0px 0px #07539d, 5px 5px 0px 0px #07539d;
-	box-sizing: border-box;
-	color: #000;
-	display: flex;
-	font-family: Phantomsans, sans-serif;
-	font-size: 20px;
-	justify-content: center;
-	line-height: 1em;
-	/* max-width: 100%; */
-	min-width: 110px;
-	padding: 3px;
-	text-decoration: none;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	white-space: nowrap;
-	cursor: pointer;
-	/* width: 100%; */
-	margin-left: 20px;
-	height: 40px;
+	padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
   touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  position: relative;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 120px;
 }
 
-.setting_on-btn:hover {
-  opacity: 0.8;
+/*Nút nhấn cấp nguồn và ngắt nguồn*/
+.setting_power-btn {
+  min-width: 130px;
+  height: 50px;
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 120px;
+  text-transform: uppercase;
+  font-size: 15px;
 }
-.setting_on-btn:active {
-	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  top: 5px;
-  left: 5px;
- 
+
+
+.block_btn-power{
+  position: relative;
+  display: flex;
+  width: 100px;
+  height: 50px;
+  margin: 0 30px;
+}
+#change_off_btt_power{
+  /*z-index: 1;*/
+  position: absolute;
+  left: 0;
+  color: black;
+}
+#change_on_btt_power{
+ /* z-index: 0;*/
+  position: absolute;
+  left: 0;
+  color: black;
+}
+
+/*Active và hover nút nhấn*/
+.btn_on:hover,
+.setting_on-btn:hover,
+.btt_sua_luu:hover,
+.setting_power-btn:hover {
+  background-color: #0056b3;
+}
+
+.btn_on:active,
+.setting_on-btn:active,
+.btt_sua_luu:active,
+.setting_power-btn:active {
+	transform: scale(0.85); /* Thu nhỏ nút khi được nhấn */
 }
 
 
