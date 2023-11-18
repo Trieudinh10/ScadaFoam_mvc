@@ -4,7 +4,30 @@
   }
   .setting_item{
     flex: 1;
+    padding: 0;
   }
+  .setting_item.setting_input-header_res{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .block_btn-power.block_btn-powerRS{
+    margin: 0;
+  }
+  .setting_input-header_res{
+    flex: 1 !important;
+  }
+  .setting_input.setting_input-mt{
+    flex-direction: column-reverse;
+  }
+.block_btn-power.block_btn-powerrs{
+  margin: 0 60px;
+}
+.setting_input-block-temRS{
+  justify-content: flex-end !important;
+}
+.lable_tem-input.setting_input-block-tem-respon3{
+  margin: 0 !important;
+}
   #lable_tem-input-low,#lable_tem-input-max,#lable_title-time-update{
     margin: 0;
   }

@@ -29,7 +29,7 @@
         </div>
 
         <div class="setting_content-item_btn">
-          <div class="block_btn-power">
+          <div class="block_btn-power block_btn-powerrs">
               <div class="setting_on">
                   <button class="setting_power-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>
               </div>
@@ -71,15 +71,15 @@
           });
           </script>
         </div>
-        <div class="setting_input-header">
-          <div class="setting_input-block-tem">
+        <div class="setting_input-header setting_input-header_res">
+          <div class="setting_input-block-tem setting_input-block-temRS">
             <label for="" class="lable_tem-input setting_input-block-tem-respon" id="lable_tem-input-low"><%= __('Low Temperature') %></label>
             <input id="nhiet_do_thap" isabled="disabled" type="number" disabled/>
             <script>
               fn_Auto_IOField_IO("Cai_nhiet_do_thap", "nhiet_do_thap", 0);
             </script>
           </div>
-          <div class="setting_input-block-tem2">
+          <div class="setting_input-block-tem2 setting_input-block-temRS">
             <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('High Temperature') %></label>
             <input id="nhiet_do_cao" isabled="disabled" disabled type="number"/>
             <script>
