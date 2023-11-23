@@ -416,6 +416,18 @@
   #div_Table_01{
     height: calc(100% - 250px);
   }
+
+
+  .energy_watch-item{
+    width: 100%;
+    /* height: calc(100% / 3 - 5px); */
+    /*background-color: var(--color-item);*/
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    padding: 8px 0 8px 8px;
+  }
+  
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
