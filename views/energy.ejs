@@ -135,19 +135,19 @@
           <script src="js/current_chart.js"></script>
         </div> -->
 
-        <div class="energy_watch-item watch_item_copy">
-          <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('Power consumption (kW)') %></label>
-          <input id="nhiet_do" disabled="disabled" type="number"/>
+        <div class="chart_item">
+          <label><%= __('Power consumption (kW)') %></label>
+          <input id="tong_cong_suat" disabled="disabled" type="number"/>
           <script>
-            fn_Auto_IOField_IO("Total_power", "nhiet_do", 2);
+            fn_Auto_IOField_IO("Total_power", "tong_cong_suat", 2);
           </script>
         </div>
 
-        <div class=" energy_watch-item watch_item_copy">
-          <label for="" class="lable_tem-input setting_input-block-tem-respon2" id="lable_tem-input-max"><%= __('Energy consumption (kWh)') %></label>
-          <input id="nhiet_do_cao" disabled="disabled" type="number"/>
+        <div class="chart_item">
+          <label><%= __('Energy consumption (kWh)') %></label>
+          <input id="tong_nang_luong" disabled="disabled" type="number"/>
           <script>
-            fn_Auto_IOField_IO("Total_Energy", "nhiet_do_cao", 2);
+            fn_Auto_IOField_IO("Total_Energy", "tong_nang_luong", 2);
           </script>
         </div>
 

@@ -144,7 +144,7 @@ function run() {
 
            data_total_4byte=dataArrip2[3]+dataArrip2[2]*(65535);//(2^16-1)//+dataArrip2[1]*(65536^2-1)+dataArrip2[0]*(65536^2-1);
 
-           console.log(data_total_4byte);
+        //    console.log(data_total_4byte);
 
 
         })
