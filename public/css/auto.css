@@ -160,12 +160,12 @@ select:focus, .setting_input-header input:focu{
 }
 
 .container-img-background{
-  height: calc(100vh - 75px - 80px - 529px);
+  height: calc(100vh - 75px - 80px - 505px);
   width: 100%;
   background:url("../images/Symbol/Nha-may-VAM-2048x1152.jpg") no-repeat center center;
   background-size: cover;
 }
 
 .container-img-background.container-img-background-manual{
-  height: calc(100vh - 75px - 80px - 519px);
+  height: calc(100vh - 75px - 80px - 485px);
 }

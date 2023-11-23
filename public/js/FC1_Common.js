@@ -54,3 +54,18 @@ function fn_DataEdit(button1, button2) {
   document.getElementById(button1).style.zIndex = "1"; // Hiển thị nút 1
   document.getElementById(button2).style.zIndex = "0"; // Ẩn nút 2
 }
+
+
+
+function fn_SQL_By_Time_energy()
+{   
+    console.log('1');
+    socket.emit('msg_SQL_ByTime_energy', true);  
+    console.log('2');
+    socket.on('SQL_ByTime_energy', function(data){
+      fn_table_energy(data); // Show sdata
+      // console.log(data);
+  });
+  console.log('3');
+}
+

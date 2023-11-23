@@ -144,7 +144,7 @@ function run() {
 
            data_total_4byte=dataArrip2[3]+dataArrip2[2]*(65535);//(2^16-1)//+dataArrip2[1]*(65536^2-1)+dataArrip2[0]*(65536^2-1);
 
-           console.log(data_total_4byte);
+        //    console.log(data_total_4byte);
 
 
         })
@@ -278,11 +278,10 @@ setInterval(() => {
 }, 1000);
 
 
-
-
-////////////////////////////////////GIAM SAT LANH VAM///////////////////////////////////////
-
+////////////////////////////////////GIAM SAT LANH VAM//////////////////////////////////////
 // triger ghi dữ liệu vào SQL
+
+
 var insert_trigger = false;			// Trigger
 var old_insert_trigger = false;		// Trigger old
 

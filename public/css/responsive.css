@@ -18,6 +18,9 @@
   }
   .setting_input.setting_input-mt{
     flex-direction: column-reverse;
+    flex: unset;
+    width: 49%;
+    align-items: flex-start;
   }
 .block_btn-power.block_btn-powerrs{
   margin: 0 60px;
@@ -416,6 +419,18 @@
   #div_Table_01{
     height: calc(100% - 250px);
   }
+
+
+  .energy_watch-item{
+    width: 100%;
+    /* height: calc(100% / 3 - 5px); */
+    /*background-color: var(--color-item);*/
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    padding: 8px 0 8px 8px;
+  }
+  
 }
 
 @media (min-width: 795.5px) and (max-width: 1310px) {
@@ -430,7 +445,7 @@
     z-index: 9999;
   }
   .export_container{
-    margin-top: 75px;
+    margin-top: var(--height);
   }
   .lable_tem-input{
     font-size: 18px !important;
@@ -514,7 +529,10 @@
   .home_container {
     max-height: unset;
     flex-wrap: wrap;
-    margin-top: 80px;
+    margin-top: var(--height);
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
   }
   .item_air-room {
     display: flex;
@@ -558,7 +576,7 @@
     display: block;
   }
   .energy_container {
-    margin-top: 75px;
+    margin-top: var(--height);
     max-height: calc(100vh - var(--height));
   }
   .block_scroll_num {
@@ -612,7 +630,7 @@
   }
   .block_start_stop {
     position: sticky;
-    top: 75px;
+    top: 50px;
     background-color: var(--color-main);
     z-index: 1;
     /* margin-top: 16px; */
@@ -686,7 +704,7 @@
     padding-top: 2px;
   }
   .manual_body{
-    margin-top: 80px;
+    margin-top: var(--height);
   }
   .block_pesido{
     width: 24%;
@@ -696,7 +714,7 @@
   .operate_row{
     background-color: transparent;
     padding: 0;
-    margin-top: 80px;
+    margin-top: var(--height);
   }
   .den_cd_n{
     width: 105px;
@@ -772,6 +790,7 @@
   }
   .setting_content-item_btn{
     order: 2;
+    width: 35%;
   }
   #div_table_Alarm{
     max-height:calc(100vh / 2);
