@@ -45,6 +45,6 @@
 	"Power supply": "Cấp nguồn",
 	"Emergency": "Dừng khẩn cấp",
 	"Change Language": "Chuyển đổi ngôn ngữ",
-	"Power consumption": "Power consumption",
-	"Energy consumption": "Energy consumption"
+	"Power consumption (kW)": "Công suất tiêu thụ (kW)",
+	"Energy consumption (kWh)": "Năng lượng tiêu thụ (kWh)"
 }

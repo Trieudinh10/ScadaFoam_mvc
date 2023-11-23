@@ -45,6 +45,6 @@
 	"Power supply": "Power supply",
 	"Emergency": "Emergency",
 	"Change Language": "Change Language",
-	"Energy consumption": "Energy consumption",
-	"Power consumption": "Power consumption"
+	"Power consumption (kW)": "Power consumption (kW)",
+	"Energy consumption (kWh)": "Energy consumption (kWh)"
 }
