@@ -135,8 +135,10 @@
         </div> -->
 
         <div class="chart_item">
-          <div style="text-align: center;"><label><%= __('Power consumption (kW)') %></label>
-            <input id="tong_cong_suat" disabled="disabled" type="number" style="width: 65px;"/></div>
+          <div style="text-align: center;">
+            <h2><%= __('Power consumption (kW)') %></h2>
+            <input id="tong_cong_suat" disabled="disabled" type="number"/>
+          </div>
           <script>
             fn_Auto_IOField_IO("Total_power", "tong_cong_suat", 2);
           </script>
@@ -144,8 +146,8 @@
 
         <div class="chart_item">
           <div style="text-align: center;">
-            <label><%= __('Energy consumption (kWh)') %></label>
-          <input id="tong_nang_luong" disabled="disabled" type="number" style="width: 65px;"/>
+            <h2><%= __('Energy consumption (kWh)') %></h2>
+          <input id="tong_nang_luong" disabled="disabled" type="number"/>
           </div>
           <script>
             fn_Auto_IOField_IO("Total_Energy", "tong_nang_luong", 2);
