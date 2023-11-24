@@ -402,7 +402,6 @@ select:focus {
 .setting_off {
   display: flex;
   justify-content: flex-end;
-  margin-right: 10px;
 }
 
 /*Nút nhấn on-off máy lạnh*/
