@@ -201,6 +201,7 @@
 
   .operate_row {
     flex-wrap: wrap;
+    margin-top: 4px;
   }
 
   .operate_item-status {
@@ -285,6 +286,7 @@
 
   .start_stop-btn-start{
     width: unset;
+    margin-top: 4px;
   }
   .btn_on, .btn_start,.den_cd{
     margin-left: 0;
@@ -312,6 +314,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    justify-content:flex-end;
   }
   .setting_input-block-tem-respon{
     margin-right: 4px;
@@ -320,6 +323,7 @@
     margin-left: 0 !important;
     display: flex;
     width: 100%;
+    justify-content: flex-end;
     margin-top: 3px;
   }
   #nhiet_do_cao{
@@ -781,16 +785,18 @@
   }
   .setting_input-header{
     display: unset;
+    width: 63%;
   }
   #btt_Auto_Save, #btt_Main_Save,#btt_Auto_Edit, #btt_Main_Edit{
-    top: 108px;
+    top: 163px;
   }
   #lable_tem-input-low:first-child{
     margin-right: 4px;
   }
   .setting_content-item_btn{
-    order: 2;
-    width: 35%;
+    order: 0;
+    width: 100%;
+    margin-top: 4px;
   }
   #div_table_Alarm{
     max-height:calc(100vh / 2);
