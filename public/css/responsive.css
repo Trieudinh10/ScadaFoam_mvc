@@ -132,6 +132,7 @@
   }
   .energy_chart {
     width: 100%;
+    height: 100vh;
   }
   .item_air-data label {
     /* min-width: 60px; */
@@ -782,7 +783,7 @@
     display: unset;
   }
   #btt_Auto_Save, #btt_Main_Save,#btt_Auto_Edit, #btt_Main_Edit{
-    top: 133px;
+    top: 108px;
   }
   #lable_tem-input-low:first-child{
     margin-right: 4px;
