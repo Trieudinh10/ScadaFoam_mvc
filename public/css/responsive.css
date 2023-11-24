@@ -636,6 +636,7 @@
     padding: 8px;
     display: flex;
     align-items: flex-start;
+    box-shadow: 0 5px 8px -5px #555;
   }
   .setting_on-responsive{
     text-align: center;
