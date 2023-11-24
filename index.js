@@ -63,10 +63,10 @@ app.get('/loadding', function(req,res)
 })
 
 if(server){
-    console.log('ket noi thanh cong port: 8080')
+    console.log('Conected: 8080')
 }
 else{
-    console.log('loi')
+    console.log('error')
 }
 
 
