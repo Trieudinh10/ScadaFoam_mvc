@@ -421,15 +421,13 @@
     height: calc(100% - 250px);
   }
 
-
-  .energy_watch-item{
-    width: 100%;
-    /* height: calc(100% / 3 - 5px); */
-    /*background-color: var(--color-item);*/
-    border-radius: 10px;
-    margin-bottom: 8px;
+  .header_logo img {
+    /* width: 100%; */
+    padding: 4px;
+    height: 100%;
+    margin: auto;
     display: flex;
-    padding: 8px 0 8px 8px;
+  
   }
   
 }
@@ -639,6 +637,7 @@
     padding: 8px;
     display: flex;
     align-items: flex-start;
+    box-shadow: 0 5px 8px -5px #555;
   }
   .setting_on-responsive{
     text-align: center;
@@ -679,7 +678,7 @@
     margin-right: 8px;
   }
   .den_ml{
-    height: 94px;
+    height: 110px;
   }
 
   #btt_Auto_Save, #btt_Main_Save,#btt_Auto_Edit, #btt_Main_Edit{

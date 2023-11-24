@@ -87,3 +87,18 @@
 #chartCurrent {
   width: 100% !important;
 }
+
+h2{
+  background-color: bisque;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 5px 8px -5px #555;
+  padding: 8px;
+}
+
+#tong_nang_luong,
+#tong_cong_suat{
+  width: 50%;
+    height: 50px;
+    text-align: center;
+    font-size: 32px;
+}

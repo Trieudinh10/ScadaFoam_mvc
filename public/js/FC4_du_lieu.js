@@ -47,6 +47,7 @@ function fn_table_01(data) {
                         +"</td><td>"+data[i].Relay_contactor
                         +"</td><td>"+data[i].Dung_khan_cap
                         +"</td><td>"+data[i].Canh_bao_nhiet
+                        +"</td><td>"+data[i].Total_Energy
                         +"</td></tr>";
 
                        
