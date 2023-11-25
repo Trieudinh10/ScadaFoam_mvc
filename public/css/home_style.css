@@ -31,6 +31,7 @@
   display: flex;
   order: 3;
   margin-right: 8px;
+  min-height: calc(100vh - 58vh);
 }
 
 
@@ -63,7 +64,8 @@
   width: 66.5%;
   display: flex;
   order: 2;
-  height: 100%;
+  height: calc(100vh - 48vh);
+  min-height: 400px;
 }
 
 .system_item-air_block{
@@ -81,6 +83,7 @@
   width: calc(100% / 3);
   /*background-color: #fff;*/
   order: 1;
+  height: calc(100vh - 48vh);
 }
 
 .item_air-title {
