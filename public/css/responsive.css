@@ -684,6 +684,7 @@
 
   .row_status{
     width: 50%;
+    height: calc(100vh - 54vh);
   }
   .home_block-item .system_item{
     margin-right: 8px;
