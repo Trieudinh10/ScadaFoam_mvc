@@ -26,12 +26,12 @@
 
           <!--Nút nhấn sửa lưu dữ liệu-->
         <div class="start_stop-btn-save">
-          <button class="btt_sua_luu" id="btt_Auto_Save"><%= __('Save') %></button>
-          <button class="btt_sua_luu" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()"><%= __('Edit') %></button>
+          <button class="btt_sua_luu bttRsAuto" id="btt_Auto_Save"><%= __('Save') %></button>
+          <button class="btt_sua_luu bttRsAuto" id="btt_Auto_Edit" onclick="fn_Auto_EditBtt()"><%= __('Edit') %></button>
         </div>
 
           <!--Nút nhấn cấp nguồn và ngắt nguồn-->
-        <div class="setting_content-item_btn">
+        <div class="setting_content-item_btn setting_content-item_btnRsAuto">
           <div class="block_btn-power block_btn-powerrs">
               <div class="setting_on">
                   <button class="setting_power-btn" id="change_on_btt_power" onclick="socket.emit('cmd_start_k', true);fn_change_on_btt_power()"><%= __('Power on') %></button>

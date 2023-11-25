@@ -785,11 +785,17 @@
   }
   .setting_input-header{
     display: unset;
+    margin-top: 4px;
     width: 63%;
   }
   #btt_Auto_Save, #btt_Main_Save,#btt_Auto_Edit, #btt_Main_Edit{
     top: 163px;
   }
+
+  #btt_Auto_Save.bttRsAuto,#btt_Auto_Edit.bttRsAuto{
+    top: 108px;
+  }
+
   #lable_tem-input-low:first-child{
     margin-right: 4px;
   }
@@ -798,6 +804,13 @@
     width: 100%;
     margin-top: 4px;
   }
+
+  .setting_content-item_btn.setting_content-item_btnRsAuto{
+    order: 1;
+    width: 50%;
+    margin-top: 4px;
+  }
+
   #div_table_Alarm{
     max-height:calc(100vh / 2);
     overflow-y: scroll;
