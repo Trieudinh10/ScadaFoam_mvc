@@ -42,7 +42,7 @@
   margin: 8px 8px 8px 8px;
   overflow: hidden;
   border-radius: 10px;
-
+  margin-left: 0;
   flex: 1;
 }
 
@@ -84,6 +84,7 @@
   /*background-color: #fff;*/
   order: 1;
   height: calc(100vh - 48vh);
+  min-height: 400px;
 }
 
 .item_air-title {
