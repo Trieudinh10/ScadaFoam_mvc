@@ -12,10 +12,10 @@
   height: calc(100vh - var(--height) - 85px);
 }
 
-.export_para,
+/* .export_para,
 .export_error {
-  /* max-height: 500px; */
-}
+   max-height: 500px; 
+} */
 
 .export_error {
   flex: 1;
@@ -32,7 +32,7 @@
   margin-right: 8px;
   flex: 1;
   max-width: 50%;
-  height: calc(100vh - 83px);
+  height: calc(100vh - 85px);
   background-color: #fff;
   border-radius: 10px;
   padding: 3px;
@@ -335,7 +335,7 @@ td {
 #div_Table_01 {
   /* position: fixed; */
   /* width: 90%; */
-   height: calc(100% - 160px); 
+   height: calc(100% - 165px); 
   /* border-radius: 16px; */ /*bo góc*/
   overflow-x: scroll;
 }
