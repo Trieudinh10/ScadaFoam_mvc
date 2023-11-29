@@ -458,6 +458,7 @@
   }
   .export_container{
     margin-top: var(--height);
+    padding: 8px;
   }
   .lable_tem-input{
     font-size: 18px !important;
@@ -729,7 +730,7 @@
   }
   .operate_row{
     background-color: transparent;
-    padding: 0;
+    padding: 8px;
     margin-top: var(--height);
   }
   .den_cd_n{

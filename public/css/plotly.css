@@ -1,0 +1,6 @@
+.js-plotly-plot .plotly .main-svg {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    pointer-events: none;
+  }
