@@ -41,7 +41,7 @@
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin: 8px 8px 8px 8px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 14px;
   margin-left: 0;
   flex: 1;
 }
@@ -53,10 +53,10 @@
 .system_item-air {
   width: 100%;
   background-color: var(--color-body);
-  border-radius: 10px;
+  border-radius: 14px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  padding: 8px;
+  /* padding: 8px; */
   /* max-height: 425px; */
 }
 
@@ -207,7 +207,7 @@
   margin-top: 8px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .home_chart-room h2 {
@@ -259,7 +259,7 @@
 }
 
 .item_air-room {
-  border-radius: 10px;
+  border-radius: 14px;
   flex: 1;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;

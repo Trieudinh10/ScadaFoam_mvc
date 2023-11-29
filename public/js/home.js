@@ -295,7 +295,7 @@ function gauge_temp_1(idg,data_pre) {
           {
             id: 'ax1',
             defaultTick: { padding: 10, enabled: false },
-            customTicks: [4000, 8000, 12000, 16000],
+            customTicks: [0, 5000, 10000, 15000],
       
             line: {
               width: 5,
@@ -304,7 +304,7 @@ function gauge_temp_1(idg,data_pre) {
               /*Palette is defined at series level with an ID referenced here.*/
               color: 'smartPalette:pal1'
             },
-            scale_range: [4000, 16000]
+            scale_range: [0, 15000]
           },
         ],
         
@@ -334,7 +334,7 @@ function gauge_temp_1(idg,data_pre) {
               pointValue: '%yValue',
               ranges: [
   
-                { value: [4000, 16000], color: '#21D683' }
+                { value: [0, 15000], color: '#21D683' }
               ]
             },
           },
@@ -354,10 +354,10 @@ function gauge_temp_1(idg,data_pre) {
                 pointValue: '%yValue',
                 ranges: [
   
-                    { value: [4000, 16000], color: '#21D683' }
+                    { value: [0, 15000], color: '#21D683' }
                   ]
               },
-              points: [['x', [4000, value_gauge]]]
+              points: [['x', [0, value_gauge]]]
             },
           ]
           }); 

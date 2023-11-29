@@ -34,8 +34,8 @@
   max-width: 50%;
   height: calc(100vh - var(--height) - 8px);
   background-color: #fff;
-  border-radius: 10px;
-  padding: 3px;
+  border-radius: 14px;
+  /* padding: 3px; */
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -88,7 +88,7 @@
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 #div_table_info h2,
@@ -370,6 +370,7 @@ td {
   position: sticky;
   top: 0;
   min-width: 100px;
+  border: 0.5px solid #00000080;
 }
 #table_01 .th_time{
   min-width: 200px; 

@@ -141,6 +141,7 @@
   .system_item-air {
     /* border-radius: 0; */
     margin: 8px;
+    padding: 8px
   }
   .home_chart-tem,
   .home_chart-room,
@@ -377,6 +378,7 @@
   #tem{
     min-height: 400px;
     max-height: 400px;
+    margin-left: 8px;
   }
 
   .item_air-tem{
@@ -667,7 +669,7 @@
   }
   .export_para{
     max-width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 8px;
   }
   .block_start_stop .setting_input label ,.block_start_stop .setting_input-header lable {
     color: #fff;
@@ -703,6 +705,7 @@
   .system_item-air{
     flex-wrap: wrap;
     display: flex;
+    padding: 8px;
   }
   .item_air-status-block{
     width: 47%;
