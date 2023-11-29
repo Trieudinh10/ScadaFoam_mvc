@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="PQH tobi" />
+    <meta name="giám sát lưu foam" content="Author: PQH tobi" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/header_style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="css/font.css" />
+
+    <script src="/js/fontawesome.js" crossorigin="anonymous"></script>
+
+    <title>Scada Foam</title>
+  </head>
+  <body>
+    <div class="header_container" id="top_header">
+      <input type="checkbox" id="menu_mobile-check" />
+      <label for="menu_mobile-check" class="menu_mobile">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <div class="header_logo">
+        <img src="/images/LOGO_24-7-2023-01.png" alt="logo" />
+      </div>
+      <div class="header_menu">
+        <ul>
+          <a href="/"><li>Foam</li></a>
+
+          <a href="/export" id="exportLink">
+            <li><%= __('Export') %></li>
+          </a>
+          <a href="/energy">
+            <li><%= __('Energy') %></li>
+          </a>
+          <a href="/auto">
+            <li><%= __('Auto') %></li>
+          </a>
+          <a href="/manual">
+            <li><%= __('Manual') %></li>
+          </a>
+          <a href="/huongdan">
+            <!-- <li><%= __('User guide') %></li> -->
+            <i title="<%= __('User guide') %>" class="fa-solid fa-book fa-xl" style="color: #2c88dd;"></i>
+          </a>
+          <li class="textUlLi flagLi">
+            <div class="blockFlagVn">
+              <a href="/change-lang/en">
+                <img title="<%= __('Change Language') %>" src="/images/vi.png" alt="flagVN" style="width: 28px; padding: 4px 0 0 0;" />
+                <button class="buttonChanggeLang"></button
+              ></a>
+              <DownOutlined class="textIcon" />
+            </div>
+          </li>
+          <li class="icon_logout" title="Đăng xuất"></li>
+        </ul>
+      </div>
+      <div class="header_title">
+        <h3><%= __('FOAM PRODUCTION AND STORAGE ROOM') %></h3>
+      </div>
+      <%- include('modal_menu.ejs'); -%>
+    </div>
+  </body>
+  <script>
+    const newUrl = window.location.pathname; // lấy đường dẫn đầy đủ
+    const tachchuoiHeader = newUrl.split("/"); // tách đường dẫn thành các đoạn
+    const valueHeader = tachchuoiHeader[1]; // lấy giá trị ở đoạn thứ 2
+    const hrefHeader = document.querySelectorAll(".header_menu a li");
+    const logoutHeader = document.querySelector(".icon_logout");
+    if (valueHeader == "") {
+      hrefHeader[0].classList.add("active");
+    } else if (valueHeader == "export") {
+      hrefHeader[1].classList.add("active");
+    } else if (valueHeader == "auto") {
+      hrefHeader[3].classList.add("active");
+    } else if (valueHeader === "energy") {
+      hrefHeader[2].classList.add("active");
+    } else if (valueHeader === "manual") {
+      hrefHeader[4].classList.add("active");
+    } else {
+      hrefHeader[5].classList.add("active");
+    }
+    const screen = () => {
+      const screenWidth = document.documentElement.clientWidth;
+      if (screenWidth >= 767.5) {
+        const checkbox = document.getElementById("menu_mobile-check");
+        checkbox.checked = false;
+      }
+    };
+    setInterval(screen, 100);
+    
+    var logoutBtn = document.querySelector(".icon_logout");
+    logoutBtn.addEventListener("click", function () {
+      document.cookie =
+        "loggedIn=false;";
+      window.location.href = "/login";
+    });
+    function checkLoggedIn() {
+      var cookieValue = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("loggedIn="));
+      if (cookieValue) {
+        var loggedIn = cookieValue.split("=")[1];
+        if (loggedIn === "true") {
+          console.log("Người dùng đã đăng nhập.");
+        } else {
+          logoutHeader.style.display = "none";
+        }
+      } else {
+        logoutHeader.style.display = "none";
+      }
+    }
+    checkLoggedIn();
+
+    var cookieValue = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lang="));
+
+    const lang_cookie = cookieValue.split("=")[1];
+
+    const blockFlagVn_img = document.querySelector(".blockFlagVn img");
+    const blockFlagVn_btn = document.querySelector(".buttonChanggeLang");
+    const divChangge_img = document.querySelector(".divChangge img");
+    const divChangge_btn = document.querySelector(".buttonChangge");
+    const blockFlagVn_link = document.querySelector(".blockFlagVn a");
+    const divChangge_link = document.querySelector(".divChangge a");
+    const changeLangBlock = document.querySelector(".blockFlagVn");
+
+
+    changeLangBlock.addEventListener("click", changeLang());
+    function changeLang() {
+      if (lang_cookie == "en") {
+        blockFlagVn_link.href = "/change-lang/vi";
+        blockFlagVn_img.src = "/images/vi.png";
+      } else {
+        blockFlagVn_img.src = "/images/en.png";
+        blockFlagVn_link.href = "/change-lang/en";
+      }
+    }
+    changeLang();
+  </script>
+</html>
