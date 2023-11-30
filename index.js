@@ -799,6 +799,11 @@ worksheet.columns.forEach((column, index) => {
 const row = worksheet.getRow(5);row.height = 40;
             worksheet.getRow(7);row.height = 42.5;
 
+// Freeze Panes từ ô A1 đến W7
+worksheet.views = [
+    { state: 'frozen', xSplit: 0, ySplit: 7, topLeftCell: 'A8' }
+];
+        
 // Set width header
 worksheet.getColumn(1).width = 18;
 worksheet.getColumn(2).width = 20;
