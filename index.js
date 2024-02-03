@@ -5,18 +5,31 @@ var app = express();
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(i18n.init);
+const sqlcon = require('./config/database.js')
+const dotenv = require('dotenv');
+
+//.ENV
+dotenv.config();
 
 app.set('view engine', 'ejs');
 app.set("views","./views")
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
-server.listen(8080)
+
+// server.listen(8080)
+//CONECT SERVER
+const PORT = process.env.PORT;
+server.listen(PORT, () => {
+  console.log(`Server connected to port ${PORT}`);
+});
+
 i18n.configure({
     locales: ['vi', 'en'],
     directory: __dirname + '/locales',
     defaultLocale: 'vi',
     cookie: 'lang',
 });
+
 
 app.use('/change-lang/:lang', (req, res) => {
     res.cookie('lang', req.params.lang, { maxAge: 900000 });
@@ -62,12 +75,12 @@ app.get('/loadding', function(req,res)
     res.render('loadding');
 })
 
-if(server){
-    console.log('Conected: 8080')
-}
-else{
-    console.log('error')
-}
+// if(server){
+//     console.log('Conected: 8080')
+// }
+// else{
+//     console.log('error')
+// }
 
 
 var dataArrip = [];
@@ -173,13 +186,13 @@ io.on("connection", function(socket){
     /*console.log("giá trị la:" +data);     */ 
 });});
 
-var mysql = require("mysql");
-var sqlcon = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "123456",
-  database: "sql_dpm680",
-});
+// var mysql = require("mysql");
+// var sqlcon = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "123456",
+//   database: "sql_dpm680",
+// });
 
 var L1_line = 0;
 var L2_line = 0;
@@ -298,7 +311,7 @@ var SQL_Excel = [];  // Dữ liệu nhập kho
 var nodes7 = require('nodes7');  
 var conn_plc = new nodes7; //PLC1
 // Tạo địa chỉ kết nối (slot = 2 nếu là 300/400, slot = 1 nếu là 1200/1500)
-conn_plc.initiateConnection({port: 102, host: '10.14.84.228', rack: 0, slot: 1}, PLC_connected);
+conn_plc.initiateConnection({port: 102, host: '10.14.85.26', rack: 0, slot: 1}, PLC_connected);
 
 //Bảng tag trong Visual studio code
 const tag = require('./public/js/tag.js');
@@ -496,16 +509,16 @@ socket.on("cmd_Auto_Edit_Data", function(data){conn_plc.writeItems(['On_off_auto
 
 
 
-// Khởi tạo SQL
-var mysql = require('mysql');
+// // Khởi tạo SQL
+// var mysql = require('mysql');
 
-var sqlcon = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "123456",
-  database: "SQL_VAM",
-  dateStrings:true // Hiển thị không có T và Z
-});
+// var sqlcon = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "123456",
+//   database: "SQL_VAM",
+//   dateStrings:true // Hiển thị không có T và Z
+// });
 
 function fn_sql_insert(){
     insert_trigger = obj_tag_value["Trigger"];		// Read trigger from PLC
